@@ -14,7 +14,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
             <h1 className="font-sans text-2xl font-bold tracking-tight">
-              Profiles
+              Agentapedia
             </h1>
             <SearchTrigger />
           </div>

@@ -633,38 +633,49 @@ export const profiles: Record<string, ProfileData> = {
     currentRole: "Co-Founder",
     org: "Andean Systems",
     education: [
-      { institution: "Stanford University", degree: "MS", field: "Computer Science", years: "2024–2025" },
+      { institution: "Stanford University", degree: "MS", field: "Computer Science (coterminal)", years: "2024–2025" },
       { institution: "Stanford University", degree: "BS", field: "Economics (major), Computer Science (minor)", years: "2020–2024" },
+      { institution: "La Jolla Country Day School", degree: "High School Diploma", notes: "Co-founded TorreyMUN (Model UN)" },
     ],
     humanContent: `
-<p><strong>Matthew Wirtz</strong> is an entrepreneur and Stanford-educated economist and computer scientist. He is the Co-Founder of <a href="https://andean.systems">Andean Systems</a>, a manufacturing startup building a domestic sustainable supply chain for extracting critical metals from electronic waste.</p>
+<p><strong>Matthew Joyce-Wirtz</strong> (known professionally as <strong>Matthew Wirtz</strong>) is an entrepreneur, economist, and computer scientist. He is the Co-Founder of <a href="https://andean.systems">Andean Systems</a>, a manufacturing startup building the first domestic sustainable end-to-end supply chain for extracting critical metals from electronic waste using robotics and novel electrochemical processes. He previously co-founded <a href="https://tracxn.com/d/companies/candid/">Candid</a>, a VC-backed social video application, with <a href="https://linkedin.com/in/zanesabbagh">Zane Sabbagh</a>.</p>
 
 <h2>Early life and education</h2>
-<p>Wirtz attended Stanford University, where he earned a Bachelor of Science in Economics with a minor in Computer Science, followed by a Master of Science in Computer Science. While at Stanford, he worked as a Research Assistant at the Stanford Institute for Economic Policy Research (SIEPR), studying regulatory decisions affecting education funding.</p>
-
-<h2>Career</h2>
-<h3>Candid</h3>
-<p>In April 2023, Wirtz co-founded <strong>Candid</strong> alongside Zane Sabbagh, a vlog-based social wellbeing application. The startup received backing from OVO Fund, Reach Capital, Ulu Ventures, and GSR Ventures. Wirtz was a Student In Residence at StartX and a Z Fellow during this period. Candid operated until September 2024.</p>
-
-<h3>Andean Systems</h3>
-<p>In June 2025, Wirtz co-founded <strong>Andean Systems</strong>, which develops advanced manufacturing techniques to create sustainable domestic supply chains for recovering critical metals — including gold, silver, copper, neodymium, praseodymium, and dysprosium — from electronic waste.</p>
+<p>Wirtz grew up in La Jolla, San Diego. He attended <a href="https://ljcds.org">La Jolla Country Day School</a>, where he co-founded <strong>TorreyMUN</strong>, a Model United Nations conference. He received the TorreyMUN Founder Award in September 2025.</p>
+<p>He enrolled at <a href="https://www.stanford.edu/">Stanford University</a>, earning a Bachelor of Science in Economics with a minor in Computer Science. He subsequently completed a coterminal Master of Science in Computer Science. His Stanford email is mwirtz@stanford.edu.</p>
 
 <h2>Research</h2>
-<p>At SIEPR, Wirtz researched regulatory decisions related to education funding, working at the intersection of economics and public policy.</p>
+<p>From June 2021 to May 2023 (approximately two years), Wirtz served as a Research Assistant at the <a href="https://siepr.stanford.edu/">Stanford Institute for Economic Policy Research (SIEPR)</a>. He co-authored an <a href="https://www.nber.org/papers/w31271">NBER Working Paper #31271</a> with Dr. <a href="https://www.nber.org/people/eric_hanushek">Eric A. Hanushek</a>, titled <em>"Incidence and Outcomes of School Finance Litigation: 1968-2021"</em> (May 2023, revised June 2023). Published under his full name <a href="https://www.nber.org/people/matthew_joyce-wirtz">Matthew Joyce-Wirtz</a>, the paper found that defendants win the majority of school finance litigation decisions, and that plaintiff victories yield an immediate funding increase but do not produce long-run growth in education spending.</p>
+
+<h2>Career</h2>
+<h3>Candid (2023-2024)</h3>
+<p>In April 2023, Wirtz co-founded <strong>Candid</strong> alongside <a href="https://zanesabbagh.com">Zane Sabbagh</a>, a vlog-based social wellbeing application. The startup received backing from <a href="https://www.ovofund.com/">OVO Fund</a>, <a href="https://reachcapital.com/">Reach Capital</a>, <a href="https://www.uluventures.com/">Ulu Ventures</a>, <a href="https://www.gsrventures.com/">GSR Ventures</a>, and angel investor Cory Levy. During this period, Wirtz was selected as a Student In Residence at <a href="https://startx.com">StartX</a> (May&ndash;August 2023) and a <a href="https://www.zfellows.com/">Z Fellow</a> (May 2023, receiving a $10K grant with a less than 1% acceptance rate). Candid operated through September 2024.</p>
+
+<h3>Andean Systems (2025-present)</h3>
+<p>In June 2025, Wirtz co-founded <a href="https://andean.systems">Andean Systems</a>. The company is building the first domestic sustainable end-to-end supply chain for extracting critical metals from electronic waste. Andean uses <strong>robotics and novel electrochemical processes</strong> to build decentralized modular micro-factories. The metals produced include <strong>gold, silver, copper, neodymium, praseodymium, and dysprosium</strong> &mdash; rare earth elements essential for electronics, renewable energy, and defense applications.</p>
+<p>According to Andean's <a href="https://andean.systems/mission">mission page</a>, the United States discards approximately 6.8 million tons of e-waste per year, containing an estimated $91 billion in recoverable metals. The company is hiring in the Bay Area and Pittsburgh, PA, with salary ranges from $100K to $300K+ equity.</p>
+
+<h2>Media</h2>
+<p>Wirtz maintains a <a href="https://youtube.com/channel/UCsSyIOfGJwjbChQD-8tS2Kg">YouTube channel</a>.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Matthew Wirtz",
-      email: "matthew@andean.systems",
-      sameAs: ["https://linkedin.com/in/matthewwirtz"],
+      alternateName: "Matthew Joyce-Wirtz",
+      email: "mwirtz@stanford.edu",
+      sameAs: [
+        "https://linkedin.com/in/matthewwirtz",
+        "https://www.nber.org/people/matthew_joyce-wirtz",
+        "https://youtube.com/channel/UCsSyIOfGJwjbChQD-8tS2Kg",
+      ],
       jobTitle: "Co-Founder",
       worksFor: { "@type": "Organization", name: "Andean Systems", url: "https://andean.systems" },
       alumniOf: [
         {
           "@type": "EducationalOrganization",
           name: "Stanford University",
-          degree: "MS Computer Science",
+          degree: "MS Computer Science (coterminal)",
           startDate: "2024",
           endDate: "2025",
           _verificationStatus: "public",
@@ -676,6 +687,14 @@ export const profiles: Record<string, ProfileData> = {
           degree: "BS Economics (minor: Computer Science)",
           startDate: "2020",
           endDate: "2024",
+          _verificationStatus: "public",
+          _confidence: 0.95,
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "La Jolla Country Day School",
+          degree: "High School Diploma",
+          location: "La Jolla, San Diego",
           _verificationStatus: "public",
           _confidence: 0.90,
         },
@@ -690,13 +709,17 @@ export const profiles: Record<string, ProfileData> = {
             "@type": "Organization",
             name: "Andean Systems",
             url: "https://andean.systems",
-            description: "Sustainable domestic supply chain for extracting critical metals (Au, Ag, Cu, Nd, Pr, Dy) from e-waste",
+            description: "First domestic sustainable end-to-end supply chain for extracting critical metals from e-waste using robotics and novel electrochemical processes",
+            location: ["Bay Area, CA", "Pittsburgh, PA"],
           },
-          _whatTheyBuilt: "Advanced manufacturing techniques for critical metal recovery from electronic waste",
+          _whatTheyBuilt: "Decentralized modular micro-factories for critical metal recovery (Au, Ag, Cu, Nd, Pr, Dy) from e-waste",
+          _techStack: ["Robotics", "Electrochemistry", "Manufacturing automation"],
+          _marketContext: "US discards 6.8M tons e-waste/year with $91B in recoverable metals",
+          _hiring: "Bay Area and Pittsburgh, PA. Salary $100K-$300K+ equity.",
           _outcome: "Active",
           _verificationStatus: "public",
-          _confidence: 0.90,
-          _gaps: ["Funding status unknown", "Team size unknown", "Technology readiness level unknown"],
+          _confidence: 0.92,
+          _gaps: ["Funding status unknown", "Specific co-founder(s) unknown", "Technology readiness level unknown", "Customer/partner details unknown"],
         },
         {
           "@type": "Role",
@@ -706,80 +729,119 @@ export const profiles: Record<string, ProfileData> = {
           organization: {
             "@type": "Organization",
             name: "Candid",
+            url: "https://tracxn.com/d/companies/candid/",
             description: "Vlog-based social wellbeing application",
           },
-          _funding: "OVO Fund, Reach Capital, Ulu Ventures, GSR Ventures",
-          _outcome: "Shut down",
+          _coFounder: "Zane Sabbagh",
+          _funding: "OVO Fund, Reach Capital, Ulu Ventures, GSR Ventures, Cory Levy (angel)",
+          _outcome: "Shut down (Sept 2024)",
           _verificationStatus: "public",
           _confidence: 0.95,
         },
         {
           "@type": "Role",
           roleName: "Research Assistant",
+          startDate: "2021-06",
+          endDate: "2023-05",
           organization: {
             "@type": "Organization",
             name: "Stanford Institute for Economic Policy Research (SIEPR)",
+            url: "https://siepr.stanford.edu/",
             description: "Economic policy research institute at Stanford",
           },
-          _whatTheyBuilt: "Research on regulatory decisions affecting education funding",
+          _whatTheyBuilt: "Co-authored NBER Working Paper #31271 on school finance litigation outcomes (1968-2021)",
+          _advisor: "Dr. Eric A. Hanushek",
+          _publication: {
+            title: "Incidence and Outcomes of School Finance Litigation: 1968-2021",
+            url: "https://www.nber.org/papers/w31271",
+            date: "2023-05",
+            revised: "2023-06",
+            finding: "Defendants win majority of decisions; plaintiff victories yield immediate funding increase but no long-run growth",
+          },
           _verificationStatus: "public",
-          _confidence: 0.85,
+          _confidence: 0.98,
         },
       ],
       knowsAbout: [
-        { skill: "Economics / Economic Policy", type: "domain", _confidence: 0.90, _evidence: "BS Economics Stanford, SIEPR research on education funding policy" },
-        { skill: "Computer Science", type: "domain", _confidence: 0.85, _evidence: "MS CS Stanford, CS minor" },
-        { skill: "Materials Science / E-Waste Recovery", type: "domain", _confidence: 0.75, _evidence: "Andean Systems focuses on critical metal extraction from e-waste" },
-        { skill: "Entrepreneurship", type: "domain", _confidence: 0.90, _evidence: "Two startups co-founded (Candid, Andean Systems), StartX, Z Fellow" },
+        { skill: "Economics / Economic Policy", type: "domain", _confidence: 0.95, _evidence: "BS Economics Stanford, SIEPR RA for ~2 years, NBER working paper on school finance litigation" },
+        { skill: "Econometrics / Policy Analysis", type: "domain", _confidence: 0.90, _evidence: "NBER paper analyzing 53 years of school finance litigation data" },
+        { skill: "Computer Science", type: "domain", _confidence: 0.85, _evidence: "MS CS Stanford (coterminal), CS minor" },
+        { skill: "Manufacturing / Electrochemistry", type: "domain", _confidence: 0.75, _evidence: "Andean Systems uses novel electrochemical processes for critical metal extraction" },
+        { skill: "Robotics", type: "domain", _confidence: 0.70, _evidence: "Andean Systems uses robotics in decentralized modular micro-factories" },
+        { skill: "Rare Earth Metals / E-Waste Recovery", type: "domain", _confidence: 0.80, _evidence: "Andean Systems extracts Au, Ag, Cu, Nd, Pr, Dy from electronic waste" },
+        { skill: "Entrepreneurship", type: "domain", _confidence: 0.90, _evidence: "Two startups co-founded (Candid, Andean Systems), StartX SIR, Z Fellow ($10K grant, <1% acceptance)" },
       ],
       memberOf: [
-        { name: "Z Fellow", _verificationStatus: "public" },
-        { name: "Student In Residence, StartX", _verificationStatus: "public" },
+        { name: "Z Fellow", startDate: "2023-05", _grant: "$10K", _acceptanceRate: "<1%", _verificationStatus: "public" },
+        { name: "Student In Residence, StartX", startDate: "2023-05", endDate: "2023-08", _verificationStatus: "public" },
+        { name: "TorreyMUN Co-Founder", _institution: "La Jolla Country Day School", _award: "TorreyMUN Founder Award (Sep 2025)", _verificationStatus: "public" },
       ],
       _projects: [
-        { name: "Andean Systems", type: "product", url: "https://andean.systems", description: "Critical metal recovery from e-waste (Au, Ag, Cu, Nd, Pr, Dy)", status: "active" },
-        { name: "Candid", type: "product", description: "Vlog-based social wellbeing app (shut down)", status: "inactive" },
+        { name: "Andean Systems", type: "product", url: "https://andean.systems", description: "Critical metal recovery from e-waste via robotics + electrochemistry (Au, Ag, Cu, Nd, Pr, Dy)", status: "active" },
+        { name: "Candid", type: "product", url: "https://tracxn.com/d/companies/candid/", description: "Vlog-based social wellbeing app, co-founded with Zane Sabbagh (shut down Sep 2024)", status: "inactive" },
+        { name: "NBER Working Paper #31271", type: "research", url: "https://www.nber.org/papers/w31271", description: "School finance litigation incidence and outcomes, 1968-2021 (with Eric A. Hanushek)", status: "completed" },
+        { name: "TorreyMUN", type: "organization", url: "https://ljcds.org", description: "Model United Nations conference at La Jolla Country Day School", status: "unknown" },
       ],
       _dataQuality: {
-        sourcesConsulted: 7,
-        sourceList: ["LinkedIn", "Stanford Profiles", "SIEPR", "StartX", "OVO Fund", "Andean Systems website", "Z Fellows"],
+        sourcesConsulted: 12,
+        sourceList: [
+          "LinkedIn", "NBER (author page + paper)", "Stanford Profiles", "SIEPR",
+          "StartX", "OVO Fund", "Andean Systems website", "Andean Systems mission page",
+          "Z Fellows", "La Jolla Country Day School", "Tracxn (Candid)", "YouTube channel",
+        ],
         lastUpdated: "2026-03",
         overallConfidence: {
           identity: "HIGH",
           education: "HIGH",
           careerTimeline: "HIGH",
           technicalCapabilities: "MEDIUM",
-          currentWorkDetail: "LOW",
+          currentWorkDetail: "MEDIUM",
         },
         gaps: [
-          "Andean Systems funding and traction",
-          "Specific technology/process details for metal recovery",
-          "SIEPR research publications",
-          "Team composition at Andean",
+          "Andean Systems funding status and round details",
+          "Andean Systems co-founder(s) and team composition",
+          "Technology readiness level for electrochemical processes",
+          "Specific technical role at Andean (business vs. engineering)",
+          "Wirtz's specific engineering skills and programming languages",
         ],
-        recommendation: "Direct interview and Andean Systems technical documentation would fill most gaps.",
+        recommendation: "Andean Systems funding announcements and technical documentation would significantly strengthen this profile. Direct interview would clarify his technical vs. business role.",
       },
     },
     infobox: {
-      fullName: "Matthew Wirtz",
+      fullName: "Matthew Joyce-Wirtz",
       currentRole: "Co-Founder",
       org: "Andean Systems",
       education: [
-        "Stanford University (MS Computer Science)",
+        "Stanford University (MS Computer Science, coterminal)",
         "Stanford University (BS Economics, CS minor)",
+        "La Jolla Country Day School",
       ],
       knownFor: [
-        "Andean Systems — critical metal recovery from e-waste",
-        "Co-founding Candid (VC-backed social app)",
-        "SIEPR research on education funding policy",
+        "Andean Systems -- critical metal recovery from e-waste via robotics + electrochemistry",
+        "Co-authored NBER Working Paper #31271 with Eric A. Hanushek",
+        "Co-founding Candid (OVO, Reach, Ulu, GSR-backed)",
+        "Z Fellow ($10K grant, <1% acceptance rate)",
+        "TorreyMUN Co-Founder (La Jolla Country Day School)",
       ],
+      website: "https://andean.systems",
       links: [
         { label: "Andean Systems", url: "https://andean.systems" },
+        { label: "Andean Mission", url: "https://andean.systems/mission" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/matthewwirtz" },
+        { label: "NBER Author Page", url: "https://www.nber.org/people/matthew_joyce-wirtz" },
+        { label: "NBER Paper #31271", url: "https://www.nber.org/papers/w31271" },
+        { label: "YouTube", url: "https://youtube.com/channel/UCsSyIOfGJwjbChQD-8tS2Kg" },
       ],
     },
     references: [
-      { title: "Andean Systems", url: "https://andean.systems" },
-      { title: "SIEPR — Stanford Institute for Economic Policy Research", url: "https://siepr.stanford.edu" },
+      { title: "Andean Systems -- Official Website", url: "https://andean.systems" },
+      { title: "Andean Systems -- Mission", url: "https://andean.systems/mission" },
+      { title: "NBER Working Paper #31271: Incidence and Outcomes of School Finance Litigation", url: "https://www.nber.org/papers/w31271" },
+      { title: "NBER -- Matthew Joyce-Wirtz Author Page", url: "https://www.nber.org/people/matthew_joyce-wirtz" },
+      { title: "SIEPR -- Stanford Institute for Economic Policy Research", url: "https://siepr.stanford.edu" },
+      { title: "La Jolla Country Day School", url: "https://ljcds.org" },
+      { title: "Candid on Tracxn", url: "https://tracxn.com/d/companies/candid/" },
+      { title: "LinkedIn -- Matthew Wirtz", url: "https://linkedin.com/in/matthewwirtz" },
     ],
   },
 
@@ -931,10 +993,17 @@ export const profiles: Record<string, ProfileData> = {
     org: "Unknown",
     education: [],
     humanContent: `
-<p><strong>Akeil Andrews</strong> is a person about whom limited publicly verifiable information is available. Despite extensive web searches, no definitive professional profile, academic record, or public presence matching this individual has been confirmed.</p>
+<p><strong>Akeil Andrews</strong> is a person about whom limited publicly verifiable information is available in the expected professional or academic context. Despite extensive searches across LinkedIn, Stanford University directories, GitHub, Twitter/X, academic databases, and general web searches, no definitive profile matching this individual has been confirmed.</p>
 
 <h2>Research note</h2>
-<p>Multiple searches across professional networks, academic databases, and public records returned no verified matches for an individual named Akeil Andrews in the expected professional or academic context. A Trinidad-based entrepreneur of the same name (known as "Beard Boss") was identified but does not appear to be the same person.</p>
+<p>The only public figure found with this exact name is <strong>Akeil Andrews</strong> of Trinidad and Tobago, who serves as a Public Procurement Officer at the <a href="https://www.tha.gov.tt/">Tobago House of Assembly</a>, is the owner of <strong>Beard Boss</strong> (a men's grooming business), and sits on the Board of Directors of <strong>E-IDCOT</strong> (a community development organization). However, this individual does not appear to match the intended person for this profile based on available context.</p>
+<p>The intended Akeil Andrews may use a different public name, maintain minimal web presence, or have professional profiles that are not indexed by standard search engines. No verified claims about education, employment, technical skills, or projects can be made without additional identifying information.</p>
+
+<h2>Disambiguation</h2>
+<p>This profile should not be confused with:</p>
+<ul>
+  <li><strong>Akeil Andrews (Trinidad and Tobago)</strong> &mdash; Public Procurement Officer, Tobago House of Assembly; Owner, Beard Boss; Board of Directors, E-IDCOT.</li>
+</ul>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -942,25 +1011,49 @@ export const profiles: Record<string, ProfileData> = {
       name: "Akeil Andrews",
       hasOccupation: [],
       knowsAbout: [],
+      _disambiguation: {
+        note: "The only 'Akeil Andrews' found publicly is from Trinidad and Tobago (Public Procurement Officer at Tobago House of Assembly, Owner of Beard Boss men's grooming, Board of Directors at E-IDCOT). This does NOT appear to be the intended person.",
+        trinidadProfile: {
+          name: "Akeil Andrews",
+          roles: ["Public Procurement Officer, Tobago House of Assembly", "Owner, Beard Boss", "Board of Directors, E-IDCOT"],
+          location: "Trinidad and Tobago",
+          _confidence: 0.85,
+          _isIntendedPerson: false,
+        },
+      },
       _dataQuality: {
-        sourcesConsulted: 8,
-        sourceList: ["Google Search", "LinkedIn", "Stanford Profiles", "GitHub", "Twitter/X", "academic databases", "professional directories", "web search (multiple queries)"],
+        sourcesConsulted: 12,
+        sourceList: [
+          "Google Search (multiple query variations)",
+          "LinkedIn (multiple searches)",
+          "Stanford University Profiles",
+          "Stanford Directory",
+          "GitHub",
+          "Twitter/X",
+          "Google Scholar",
+          "ORCID",
+          "ResearchGate",
+          "Crunchbase",
+          "professional directories",
+          "Trinidad and Tobago public records",
+        ],
         lastUpdated: "2026-03",
         overallConfidence: {
-          identity: "LOW",
-          education: "LOW",
-          careerTimeline: "LOW",
-          technicalCapabilities: "LOW",
-          currentWorkDetail: "LOW",
+          identity: "NONE",
+          education: "NONE",
+          careerTimeline: "NONE",
+          technicalCapabilities: "NONE",
+          currentWorkDetail: "NONE",
         },
         gaps: [
-          "No verified identity found",
+          "No verified identity found matching expected context",
           "No confirmed education",
-          "No confirmed employment",
+          "No confirmed employment in tech/academic space",
           "No confirmed projects or publications",
-          "Person may use a different public name or have minimal web presence",
+          "Person may use a different public name, nickname, or have minimal web presence",
+          "Only match found is a Trinidad-based professional who does not appear to be the intended person",
         ],
-        recommendation: "Direct introduction or alternative identifying information needed. Current public data is insufficient for any verified claims.",
+        recommendation: "Direct introduction, alternative identifying information (e.g., university, employer, or social media handle), or confirmation of the Trinidad-based identity is needed. Current public data is insufficient for any verified claims about the intended individual.",
       },
     },
     infobox: {
@@ -971,7 +1064,13 @@ export const profiles: Record<string, ProfileData> = {
       knownFor: [],
       links: [],
     },
-    references: [],
+    references: [
+      { title: "Tobago House of Assembly", url: "https://www.tha.gov.tt/" },
+      { title: "LinkedIn Search Results", url: "https://linkedin.com/search/results/all/?keywords=akeil%20andrews" },
+      { title: "Google Search Results", url: "https://www.google.com/search?q=%22akeil+andrews%22" },
+      { title: "GitHub Search Results", url: "https://github.com/search?q=akeil+andrews&type=users" },
+      { title: "Google Scholar Search", url: "https://scholar.google.com/scholar?q=%22akeil+andrews%22" },
+    ],
   },
 
   // ===========================================================================
@@ -1233,57 +1332,68 @@ export const profiles: Record<string, ProfileData> = {
   michael_hla: {
     slug: "michael_hla",
     name: "Michael Hla",
-    currentRole: "ML Researcher / Engineer",
+    currentRole: "Research",
     org: "EvolutionaryScale",
     education: [
-      { institution: "Stanford University", degree: "BS", field: "Computer Science", notes: "Focus on AI/ML" },
+      { institution: "Harvard University", degree: "BA", field: "Computer Science & Biology", notes: "Writer for The Harvard Crimson" },
     ],
     humanContent: `
-<p><strong>Michael Hla</strong> is a machine learning researcher and engineer specializing in protein design and biological AI. He works at <a href="https://www.evolutionaryscale.ai/">EvolutionaryScale</a> in Palo Alto, the company behind ESM (Evolutionary Scale Modeling) protein language models. Previously, he was a Research Analyst at <a href="https://www.shv.com/">Sutter Hill Ventures</a> and a red-teaming researcher at <a href="https://www.haize.ai/">Haize Labs</a>.</p>
+<p><strong>Michael Hla</strong> is a machine learning researcher and computational biologist specializing in protein design and biological AI. He works at <a href="https://www.evolutionaryscale.ai/">EvolutionaryScale</a> in Palo Alto, the company behind the ESM (Evolutionary Scale Modeling) protein language models. Previously, he was at <a href="https://www.shv.com/">Sutter Hill Ventures</a> and was a <a href="https://776.org/">776 Foundation</a> Climate Fellow under Alexis Ohanian. Hla studied Computer Science and Biology at <a href="https://www.harvard.edu/">Harvard University</a>, where he also wrote for <a href="https://www.thecrimson.com/">The Harvard Crimson</a>.</p>
 
-<h2>Early life and education</h2>
-<p>Hla studied Computer Science at Stanford University with a focus on artificial intelligence and machine learning.</p>
+<h2>Education</h2>
+<p>Hla attended Harvard University, where he studied Computer Science and Biology. While at Harvard, he was a writer for The Harvard Crimson, the university's daily newspaper, where his work included an <a href="https://www.thecrimson.com/">article on Top Gun</a>.</p>
 
 <h2>Career</h2>
 <h3>EvolutionaryScale</h3>
-<p>Hla currently works at EvolutionaryScale, a leading protein AI company in Palo Alto. The company develops large-scale protein language models (ESM series) for biological research and protein design.</p>
+<p>Hla currently works in research at EvolutionaryScale, a leading protein AI company headquartered in Palo Alto. The company develops the ESM series of large-scale protein language models for biological research, protein engineering, and drug discovery.</p>
 
 <h3>Sutter Hill Ventures</h3>
-<p>Prior to EvolutionaryScale, Hla served as a Research Analyst at Sutter Hill Ventures, a venture capital firm known for early investments in companies like Snowflake and Pure Storage.</p>
+<p>Prior to EvolutionaryScale, Hla worked at Sutter Hill Ventures, a venture capital firm known for early investments in companies including Snowflake and Pure Storage.</p>
 
-<h3>Haize Labs</h3>
-<p>Hla worked at Haize Labs, a red-teaming and AI safety research company. His work there included red-teaming AI models for organizations including OpenAI.</p>
+<h3>776 Foundation Climate Fellow</h3>
+<p>Hla was selected as a Climate Fellow by the <a href="https://776.org/">776 Foundation</a>, founded by <a href="https://en.wikipedia.org/wiki/Alexis_Ohanian">Alexis Ohanian</a> (co-founder of Reddit). Ohanian publicly endorsed Hla's work on LinkedIn, calling it "incredible work by one of our 776 Foundation fellows." His fellowship work culminated in the <strong>hCA-776</strong> project on LLM-optimized carbonic anhydrase for carbon capture.</p>
 
 <h2>Notable work</h2>
-<h3>Pro-1: Protein design with reinforcement learning</h3>
-<p>Hla developed <strong>Pro-1</strong>, a protein design system built on Llama-3.1 as a base model. The system uses Group Relative Policy Optimization (GRPO) with a Rosetta REF2015 reward function, achieving a 71% pass rate when combined with a critic feedback loop. Notable results include the <strong>K116E mutation</strong>, which showed a 24°C improvement in thermal stability.</p>
+<h3>Pro-1: Open-source protein reasoning model</h3>
+<p>Hla developed <a href="https://github.com/michaelhla/pro-1"><strong>Pro-1</strong></a>, a fully open-source reasoning model for protein engineering, available in 8B and 70B parameter variants. The model is built on Meta's Llama-3.1-8B-Instruct and Llama-3.3-70B-Instruct, fine-tuned using 4-bit QLoRA and Group Relative Policy Optimization (GRPO). The supervised fine-tuning (SFT) phase incorporates data from the <a href="https://www.brenda-enzymes.org/">BRENDA</a> enzyme database, <a href="https://en.wikipedia.org/wiki/BLOSUM">BLOSUM</a> substitution matrices, and <a href="https://www.evolutionaryscale.ai/">ESM3</a> mutation predictions. The reward function is based on <a href="https://www.rosettacommons.org/">Rosetta REF2015</a>, incorporating Van der Waals interactions, electrostatics, and statistical potentials, augmented with creativity and specificity reward components.</p>
+<p>Pro-1 achieved a 71% pass rate when combined with a critic feedback loop over three iterations. Wet-lab validation at <a href="https://www.adaptyvbio.com/">Adaptyv Bio</a> tested 19 FGF-1 (fibroblast growth factor 1) designs, of which 3 showed improved thermostability with gains up to 23 degrees Celsius. The project was featured in an <a href="https://www.adaptyvbio.com/blog/pro1/">Adaptyv Bio Designer Spotlight</a>. The GitHub repository (<a href="https://github.com/michaelhla/pro-1">michaelhla/pro-1</a>) has accumulated 101 stars. Pro-1 was also cited by Stanford's <a href="https://cs224r.stanford.edu/projects/">CS 224R</a> course, with researchers writing "We extend the method of Hla (2025)."</p>
 
-<h3>hCA-776: Enhanced carbonic anhydrase</h3>
-<p>Hla's work on the <strong>hCA-776</strong> project produced a computationally designed carbonic anhydrase variant that is reportedly 170% more catalytically active than the wild-type enzyme.</p>
+<h3>hCA-776: LLM-optimized carbonic anhydrase for carbon capture</h3>
+<p>The <a href="https://michaelhla.com/blog/hca776.html"><strong>hCA-776</strong></a> project applied large language models to optimize human carbonic anhydrase II for industrial carbon capture. Hla compared multiple approaches including Pro-1, Claude Sonnet 4 equipped with PyMOL structural analysis tools, and an o3-powered variant. The best designs demonstrated 170% higher catalytic activity and 25% greater stability across extreme pH conditions compared to wild-type. Of 11 designed sequences, 8 successfully expressed in laboratory testing.</p>
 
-<h3>SMILES-MDLM</h3>
-<p>Hla has also worked on <strong>SMILES-MDLM</strong>, applying masked diffusion language models to molecular design using SMILES notation.</p>
+<h3>SMILES-MDLM: Masked diffusion for molecular generation</h3>
+<p>Hla developed <a href="https://michaelhla.com/blog/smiles-mdlm.html"><strong>SMILES-MDLM</strong></a>, a Masked Diffusion Language Model for de novo molecule generation using SMILES notation. The model uses a Diffusion Transformer (DiT) backbone with approximately 180 million parameters and a custom atom group tokenizer with 282 tokens. The system achieved a BLEU score of 0.678 on molecular generation benchmarks.</p>
+
+<h3>Other projects</h3>
+<p>Hla's <a href="https://github.com/michaelhla">GitHub profile</a> (17 repositories, 25 followers) includes additional projects: <strong>altdrugs.ai</strong> (a variational autoencoder for drug alternative discovery), <strong>fastfold</strong> (an accelerated implementation of AlphaFold), <strong>smiles-dreamer</strong>, and <strong>gpt1900</strong>. Models are also published on <a href="https://huggingface.co/mhla">Hugging Face</a>.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Michael Hla",
-      sameAs: ["https://github.com/michaelhla", "https://linkedin.com/in/michaelhla"],
-      jobTitle: "ML Researcher / Engineer",
+      url: "https://michaelhla.com",
+      sameAs: [
+        "https://github.com/michaelhla",
+        "https://linkedin.com/in/michaelhla",
+        "https://twitter.com/hla_michael",
+        "https://huggingface.co/mhla",
+      ],
+      jobTitle: "Research",
       worksFor: { "@type": "Organization", name: "EvolutionaryScale", url: "https://www.evolutionaryscale.ai/" },
       alumniOf: [
         {
           "@type": "EducationalOrganization",
-          name: "Stanford University",
-          degree: "BS Computer Science",
+          name: "Harvard University",
+          degree: "BA Computer Science & Biology",
           _verificationStatus: "public",
-          _confidence: 0.90,
+          _confidence: 0.95,
+          _notes: "Previously misreported as Stanford; confirmed Harvard via Crimson byline and personal site",
         },
       ],
       hasOccupation: [
         {
           "@type": "Role",
-          roleName: "ML Researcher / Engineer",
+          roleName: "Research",
           startDate: "2025",
           endDate: null,
           organization: {
@@ -1292,14 +1402,14 @@ export const profiles: Record<string, ProfileData> = {
             url: "https://www.evolutionaryscale.ai/",
             description: "Protein AI company developing ESM protein language models",
           },
-          _whatTheyBuilt: "Working on protein language models and biological AI",
+          _whatTheyBuilt: "Research on protein language models and biological AI",
           _verificationStatus: "public",
-          _confidence: 0.85,
-          _gaps: ["Specific role and team unknown", "Contributions to ESM models not documented"],
+          _confidence: 0.90,
+          _gaps: ["Specific team and project contributions at ESM unknown"],
         },
         {
           "@type": "Role",
-          roleName: "Research Analyst",
+          roleName: "Analyst",
           organization: {
             "@type": "Organization",
             name: "Sutter Hill Ventures",
@@ -1308,92 +1418,150 @@ export const profiles: Record<string, ProfileData> = {
           },
           _verificationStatus: "public",
           _confidence: 0.85,
+          _gaps: ["Dates unknown", "Specific deal involvement unknown"],
         },
         {
           "@type": "Role",
-          roleName: "Red-Teaming Researcher",
+          roleName: "776 Foundation Climate Fellow",
           organization: {
             "@type": "Organization",
-            name: "Haize Labs",
-            url: "https://www.haize.ai/",
-            description: "AI safety red-teaming company",
+            name: "776 Foundation",
+            url: "https://776.org/",
+            description: "Fellowship program founded by Alexis Ohanian (Reddit co-founder)",
           },
-          _whatTheyBuilt: "Red-teamed AI models including for OpenAI",
+          _whatTheyBuilt: "hCA-776 carbonic anhydrase optimization for carbon capture",
           _verificationStatus: "public",
-          _confidence: 0.80,
+          _confidence: 0.95,
+          _evidence: "Alexis Ohanian LinkedIn endorsement confirmed",
         },
       ],
       knowsAbout: [
-        { skill: "Protein Design / Computational Biology", type: "domain", _confidence: 0.95, _evidence: "Pro-1 system (GRPO + Rosetta REF2015), hCA-776 (170% more active carbonic anhydrase), EvolutionaryScale role" },
-        { skill: "Reinforcement Learning", type: "domain", _confidence: 0.90, _evidence: "Pro-1 uses GRPO (Group Relative Policy Optimization)" },
-        { skill: "LLMs / Foundation Models", type: "domain", _confidence: 0.90, _evidence: "Pro-1 built on Llama-3.1, SMILES-MDLM, ESM models at EvolutionaryScale" },
-        { skill: "AI Safety / Red Teaming", type: "domain", _confidence: 0.80, _evidence: "Red-teaming at Haize Labs for OpenAI" },
-        { skill: "Python", type: "technology", _confidence: 0.95, _evidence: "ML/AI research codebase" },
-        { skill: "PyTorch", type: "technology", _confidence: 0.85, _evidence: "Inferred from ML research and protein modeling work" },
-        { skill: "Molecular Design (SMILES)", type: "domain", _confidence: 0.80, _evidence: "SMILES-MDLM project" },
+        { skill: "Protein Design / Computational Biology", type: "domain", _confidence: 0.98, _evidence: "Pro-1 (open-source, wet-lab validated), hCA-776 (170% activity gain, 8/11 expressed), EvolutionaryScale role, BRENDA/BLOSUM/ESM3 pipeline" },
+        { skill: "Reinforcement Learning for Science", type: "domain", _confidence: 0.95, _evidence: "Pro-1 uses GRPO with Rosetta REF2015 reward (Van der Waals, electrostatics, statistical potentials), creativity + specificity rewards" },
+        { skill: "LLMs / Foundation Models", type: "domain", _confidence: 0.95, _evidence: "Pro-1 (Llama-3.1/3.3 fine-tuned with QLoRA), SMILES-MDLM (DiT ~180M params), ESM models at EvolutionaryScale, hCA-776 multi-LLM comparison" },
+        { skill: "Molecular Design (SMILES)", type: "domain", _confidence: 0.90, _evidence: "SMILES-MDLM (BLEU 0.678, custom 282-token tokenizer), altdrugs.ai VAE" },
+        { skill: "Python", type: "technology", _confidence: 0.95, _evidence: "17 GitHub repos, ML/AI research codebases" },
+        { skill: "PyTorch", type: "technology", _confidence: 0.90, _evidence: "QLoRA training, DiT backbone implementation, RL training pipelines" },
+        { skill: "Structural Biology Tools", type: "technology", _confidence: 0.85, _evidence: "Rosetta REF2015 scoring, PyMOL integration in hCA-776, AlphaFold (fastfold project)" },
+      ],
+      memberOf: [
+        { name: "776 Foundation Climate Fellow", _verificationStatus: "public", _evidence: "Alexis Ohanian LinkedIn endorsement" },
+        { name: "The Harvard Crimson (writer)", _verificationStatus: "public" },
       ],
       _projects: [
         {
           name: "Pro-1",
-          type: "research",
-          description: "Protein design with RL: Llama-3.1 base + GRPO with Rosetta REF2015 reward. 71% pass rate with critic loop. K116E mutation = 24°C thermal stability improvement.",
+          type: "research/open-source",
+          url: "https://github.com/michaelhla/pro-1",
+          description: "Fully open-source protein reasoning model (8B + 70B). Base: Llama-3.1-8B-Instruct / Llama-3.3-70B-Instruct. Training: 4-bit QLoRA + GRPO. SFT: BRENDA, BLOSUM, ESM3 mutations. Reward: Rosetta REF2015 + creativity + specificity. 71% pass rate with critic loop (3 iter). Wet lab at Adaptyv Bio: 3/19 FGF-1 designs improved thermostability, up to +23C.",
           status: "completed",
-          _techDetails: "Base model: Llama-3.1, Optimization: GRPO, Reward: Rosetta REF2015, Architecture: critic feedback loop",
+          _metrics: { githubStars: 101, wetLabResults: "3/19 improved, up to +23C", passRate: "71% with critic loop" },
+          _recognition: "Cited by Stanford CS 224R: 'We extend the method of Hla (2025)'. Featured in Adaptyv Bio Designer Spotlight.",
         },
         {
           name: "hCA-776",
           type: "research",
-          description: "Computationally designed carbonic anhydrase variant — 170% more catalytically active than wild-type",
+          url: "https://michaelhla.com/blog/hca776.html",
+          description: "LLM-optimized carbonic anhydrase for carbon capture. Compared Pro-1, Claude Sonnet 4 (with PyMOL tools), o3-powered variant. Best designs 170% more active, 25% more stable across extreme pH. 8/11 sequences expressed.",
           status: "completed",
+          _metrics: { activityGain: "170%", stabilityGain: "25%", expressionRate: "8/11" },
         },
         {
           name: "SMILES-MDLM",
           type: "research",
-          description: "Masked diffusion language model applied to molecular design via SMILES notation",
+          url: "https://michaelhla.com/blog/smiles-mdlm.html",
+          description: "Masked Diffusion Language Model for molecule generation. DiT backbone ~180M params. Custom atom group tokenizer (282 tokens). BLEU 0.678.",
+          status: "completed",
+          _metrics: { bleuScore: 0.678, params: "~180M", vocabSize: 282 },
+        },
+        {
+          name: "altdrugs.ai",
+          type: "open-source",
+          url: "https://github.com/michaelhla",
+          description: "Variational autoencoder for drug alternative discovery",
+          status: "unknown",
+        },
+        {
+          name: "fastfold",
+          type: "open-source",
+          url: "https://github.com/michaelhla",
+          description: "Accelerated AlphaFold implementation",
           status: "unknown",
         },
       ],
       _dataQuality: {
-        sourcesConsulted: 10,
-        sourceList: ["EvolutionaryScale", "Sutter Hill Ventures", "Haize Labs", "GitHub", "LinkedIn", "arXiv/preprints", "Stanford Profiles", "Pro-1 documentation", "hCA-776 results", "SMILES-MDLM paper"],
+        sourcesConsulted: 14,
+        sourceList: [
+          "michaelhla.com",
+          "michaelhla.com/blog/pro1.html",
+          "michaelhla.com/blog/hca776.html",
+          "michaelhla.com/blog/smiles-mdlm.html",
+          "GitHub (michaelhla, 17 repos)",
+          "Hugging Face (mhla)",
+          "Adaptyv Bio Designer Spotlight",
+          "Stanford CS 224R course projects",
+          "LinkedIn (michaelhla)",
+          "Twitter (hla_michael)",
+          "Alexis Ohanian LinkedIn endorsement",
+          "The Harvard Crimson",
+          "EvolutionaryScale",
+          "Sutter Hill Ventures",
+        ],
         lastUpdated: "2026-03",
         overallConfidence: {
           identity: "HIGH",
-          education: "HIGH",
+          education: "HIGH — corrected from Stanford to Harvard",
           careerTimeline: "HIGH",
-          technicalCapabilities: "HIGH",
+          technicalCapabilities: "VERY HIGH — wet-lab validated, open-source, cited by Stanford CS",
           currentWorkDetail: "MEDIUM",
         },
         gaps: [
-          "Specific role at EvolutionaryScale",
+          "Specific role and team at EvolutionaryScale",
+          "Harvard graduation year",
+          "Duration at Sutter Hill Ventures",
           "Peer-reviewed publication status for Pro-1 and hCA-776",
-          "Stanford graduation year",
-          "Duration at Sutter Hill and Haize Labs",
+          "776 Fellowship exact dates",
         ],
-        recommendation: "Publication records and EvolutionaryScale team page would complete this profile. Technical depth is unusually well-documented through project artifacts.",
+        corrections: [
+          "Education corrected from Stanford to Harvard (confirmed via Crimson byline and personal site)",
+          "Haize Labs red-teaming role NOT confirmed — removed from profile",
+        ],
+        recommendation: "Publication records and EvolutionaryScale team page would fully complete this profile. Technical depth is exceptionally well-documented through open-source artifacts and wet-lab results.",
       },
     },
     infobox: {
       fullName: "Michael Hla",
-      currentRole: "ML Researcher / Engineer",
+      currentRole: "Research",
       org: "EvolutionaryScale",
-      education: ["Stanford University (BS Computer Science)"],
+      education: ["Harvard University (BA Computer Science & Biology)"],
       knownFor: [
-        "Pro-1: protein design with RL (24°C stability gain)",
-        "hCA-776: 170% more active carbonic anhydrase",
-        "SMILES-MDLM molecular design",
-        "Red-teaming AI models at Haize Labs (for OpenAI)",
-        "Research Analyst at Sutter Hill Ventures",
+        "Pro-1: open-source protein reasoning model (wet-lab validated, cited by Stanford CS 224R)",
+        "hCA-776: LLM-optimized carbonic anhydrase, 170% more active for carbon capture",
+        "SMILES-MDLM: masked diffusion for molecular generation",
+        "776 Foundation Climate Fellow (Alexis Ohanian)",
+        "Research at EvolutionaryScale (ESM protein language models)",
       ],
+      website: "https://michaelhla.com",
       links: [
-        { label: "EvolutionaryScale", url: "https://www.evolutionaryscale.ai/" },
+        { label: "Website", url: "https://michaelhla.com" },
         { label: "GitHub", url: "https://github.com/michaelhla" },
+        { label: "Hugging Face", url: "https://huggingface.co/mhla" },
+        { label: "Twitter", url: "https://twitter.com/hla_michael" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/michaelhla" },
+        { label: "EvolutionaryScale", url: "https://www.evolutionaryscale.ai/" },
       ],
     },
     references: [
+      { title: "Michael Hla — Personal Website", url: "https://michaelhla.com" },
+      { title: "Pro-1 Blog Post", url: "https://michaelhla.com/blog/pro1.html" },
+      { title: "hCA-776 Blog Post", url: "https://michaelhla.com/blog/hca776.html" },
+      { title: "SMILES-MDLM Blog Post", url: "https://michaelhla.com/blog/smiles-mdlm.html" },
+      { title: "Pro-1 GitHub Repository (101 stars)", url: "https://github.com/michaelhla/pro-1" },
+      { title: "Pro-1 on Hugging Face", url: "https://huggingface.co/mhla/pro-1" },
+      { title: "Adaptyv Bio — Pro-1 Designer Spotlight", url: "https://www.adaptyvbio.com/blog/pro1/" },
+      { title: "Stanford CS 224R — Course Projects (cites Hla 2025)", url: "https://cs224r.stanford.edu/projects/" },
       { title: "EvolutionaryScale", url: "https://www.evolutionaryscale.ai/" },
       { title: "Sutter Hill Ventures", url: "https://www.shv.com/" },
-      { title: "Haize Labs", url: "https://www.haize.ai/" },
     ],
   },
 
@@ -1402,51 +1570,125 @@ export const profiles: Record<string, ProfileData> = {
   // ===========================================================================
   mirabella_sabbagh: {
     slug: "mirabella_sabbagh",
-    name: "Mirabella Sabbagh",
-    currentRole: "Unknown",
-    org: "Unknown",
-    education: [],
+    name: "Mira Bella Sabbagh",
+    currentRole: "Product Design Intern",
+    org: "Onton",
+    education: [
+      { institution: "Pomona College", degree: "BA (in progress)", field: "Cognitive Science & Art", years: "2023–2027 (expected)", notes: "UWC Davis Scholar. Junior year as of 2025–26." },
+    ],
     humanContent: `
-<p><strong>Mirabella Sabbagh</strong> has a limited publicly available professional profile. Based on available information, she appears to be connected to the technology and entrepreneurship community, but specific roles, education, and projects have not been publicly documented in detail.</p>
+<p><strong>Mira Bella Sabbagh</strong> is a student at <a href="https://www.pomona.edu/">Pomona College</a> in Claremont, California, where she is a junior studying Cognitive Science and Art. She is a <a href="https://www.davisuwcscholars.org/">UWC Davis Scholar</a>. Her interests center on the intersection of design, behavioral science, and artificial intelligence.</p>
 
-<h2>Research note</h2>
-<p>Searches across professional networks, academic databases, and public records returned limited verifiable information for Mirabella Sabbagh. Additional context or a direct introduction would be needed to build a comprehensive profile.</p>
+<h2>Education</h2>
+<p>Sabbagh is a junior at Pomona College, one of the Claremont Colleges, pursuing a dual focus in Cognitive Science and Art. She was awarded a UWC Davis Scholarship, a merit-based program supporting graduates of United World Colleges at select U.S. universities.</p>
+
+<h2>Career</h2>
+<h3>Onton</h3>
+<p>In the summer of 2025 (June through August), Sabbagh interned as a <strong>Product Design Intern</strong> at <a href="https://www.onton.ai/">Onton</a>, a San Francisco-based startup founded in 2022 with 1 to 10 employees. During her internship, she collaborated on product design and strategic scalability for a platform serving 2 million monthly users. She compartmentalized designs for production readiness and contributed to sourcing and outreach with best-in-class product designers.</p>
+
+<h2>Professional profile</h2>
+<p>Sabbagh has accumulated approximately 2 years and 4 months of professional experience. Her LinkedIn profile shows over 500 connections and 712 followers, indicating an active professional network. Her work sits at the intersection of design, behavioral science, and artificial intelligence.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Person",
-      name: "Mirabella Sabbagh",
-      hasOccupation: [],
-      knowsAbout: [],
+      name: "Mira Bella Sabbagh",
+      alternateName: "Mirabella Sabbagh",
+      sameAs: [
+        "https://linkedin.com/in/mirabellasabbagh",
+      ],
+      jobTitle: "Product Design Intern",
+      worksFor: { "@type": "Organization", name: "Onton", url: "https://www.onton.ai/" },
+      alumniOf: [
+        {
+          "@type": "EducationalOrganization",
+          name: "Pomona College",
+          degree: "BA Cognitive Science & Art (in progress)",
+          startDate: "2023",
+          endDate: "2027",
+          _verificationStatus: "public",
+          _confidence: 0.90,
+          _notes: "UWC Davis Scholar. Junior as of 2025-26 academic year.",
+        },
+      ],
+      hasOccupation: [
+        {
+          "@type": "Role",
+          roleName: "Product Design Intern",
+          startDate: "2025-06",
+          endDate: "2025-08",
+          organization: {
+            "@type": "Organization",
+            name: "Onton",
+            url: "https://www.onton.ai/",
+            description: "San Francisco startup (founded 2022, 1-10 employees) with 2M monthly users",
+          },
+          _whatTheyBuilt: "Product design and strategic scalability for 2M-user platform; compartmentalized designs for production readiness; sourcing/outreach with product designers",
+          _verificationStatus: "public",
+          _confidence: 0.90,
+        },
+      ],
+      knowsAbout: [
+        { skill: "Product Design", type: "domain", _confidence: 0.90, _evidence: "Product Design Intern at Onton (2M MAU platform)" },
+        { skill: "Cognitive Science", type: "domain", _confidence: 0.85, _evidence: "Pomona College major in Cognitive Science" },
+        { skill: "Art / Visual Design", type: "domain", _confidence: 0.80, _evidence: "Pomona College major in Art" },
+        { skill: "Behavioral Science", type: "domain", _confidence: 0.75, _evidence: "Self-described interest area on LinkedIn" },
+        { skill: "AI / Artificial Intelligence", type: "domain", _confidence: 0.70, _evidence: "Self-described interest area; intersection with design work" },
+      ],
+      memberOf: [
+        { name: "UWC Davis Scholar", _verificationStatus: "public" },
+      ],
       _dataQuality: {
         sourcesConsulted: 5,
-        sourceList: ["LinkedIn", "Google Search", "web search", "professional directories", "social media"],
+        sourceList: [
+          "LinkedIn (mirabellasabbagh, 500+ connections, 712 followers)",
+          "Pomona College",
+          "UWC Davis Scholars Program",
+          "Onton company profile",
+          "Web search",
+        ],
         lastUpdated: "2026-03",
         overallConfidence: {
-          identity: "LOW",
-          education: "LOW",
-          careerTimeline: "LOW",
+          identity: "MEDIUM",
+          education: "MEDIUM",
+          careerTimeline: "MEDIUM",
           technicalCapabilities: "LOW",
-          currentWorkDetail: "LOW",
+          currentWorkDetail: "MEDIUM",
         },
         gaps: [
-          "No verified professional profile found",
-          "Education details unavailable",
-          "Career history not documented publicly",
-          "May have limited web presence by choice",
+          "No personal website found",
+          "Portfolio or design work samples not publicly available",
+          "UWC origin school unknown",
+          "Other internships or work experience beyond Onton not documented",
+          "Specific design tools and technical skills unknown",
+          "Only ~2.3 years professional experience documented",
         ],
-        recommendation: "Direct introduction or additional context needed for profile completion.",
+        recommendation: "Portfolio review and additional LinkedIn details would strengthen this profile. Limited public footprint beyond LinkedIn.",
       },
     },
     infobox: {
-      fullName: "Mirabella Sabbagh",
-      currentRole: "Unknown",
-      org: "Unknown",
-      education: [],
-      knownFor: [],
-      links: [],
+      fullName: "Mira Bella Sabbagh",
+      currentRole: "Product Design Intern",
+      org: "Onton",
+      education: [
+        "Pomona College (BA Cognitive Science & Art, junior, UWC Davis Scholar)",
+      ],
+      knownFor: [
+        "Product design at Onton (2M monthly users)",
+        "Intersection of design, behavioral science, and AI",
+        "UWC Davis Scholar at Pomona College",
+      ],
+      links: [
+        { label: "LinkedIn", url: "https://linkedin.com/in/mirabellasabbagh" },
+      ],
     },
-    references: [],
+    references: [
+      { title: "Mirabella Sabbagh — LinkedIn", url: "https://linkedin.com/in/mirabellasabbagh" },
+      { title: "Pomona College", url: "https://www.pomona.edu/" },
+      { title: "UWC Davis Scholars Program", url: "https://www.davisuwcscholars.org/" },
+      { title: "Onton", url: "https://www.onton.ai/" },
+      { title: "Claremont Colleges", url: "https://www.claremont.edu/" },
+    ],
   },
 
   // ===========================================================================
@@ -1455,131 +1697,281 @@ export const profiles: Record<string, ProfileData> = {
   zeena_khazendar: {
     slug: "zeena_khazendar",
     name: "Zeena Khazendar",
-    currentRole: "Medical Student / Researcher",
-    org: "Stanford University",
+    currentRole: "AmeriCorps VISTA Fellow",
+    org: "Border Youth Tennis Exchange (BYTE)",
     education: [
-      { institution: "Stanford University", degree: "BS", field: "Human Biology", notes: "D1 Beach Volleyball, 3x Pac-12 Academic Honor Roll" },
+      { institution: "Stanford University", degree: "BS", field: "Human Biology", years: "2019–2023", notes: "Concentration: Design for Global Health and Social Impact. Minor: Human Rights. Pre-med. NCAA D1 Beach Volleyball. 3x Pac-12 Academic Honor Roll." },
+      { institution: "Palm Harbor University High School", degree: "High School Diploma", years: "2015–2019", notes: "Team captain indoor volleyball (2018-2020). Regional finalist. District champions 4 years. 'Hustle and Heart' award." },
     ],
     humanContent: `
-<p><strong>Zeena Khazendar</strong> is a Stanford-educated researcher, athlete, and public health advocate. She competed on the Stanford Division I Beach Volleyball team while maintaining academic honors, and has contributed to public health research and community health initiatives, with a particular focus on healthcare in underserved populations.</p>
+<p><strong>Zeena Khazendar</strong> is a Palestinian-American researcher, NCAA Division I athlete, public health advocate, and community organizer. She graduated from <a href="https://www.stanford.edu/">Stanford University</a> in 2023 with a degree in Human Biology (concentration in Design for Global Health and Social Impact) and a minor in Human Rights. She competed on the <a href="https://gostanford.com/sports/beach-volleyball/roster/player/zeena-khazendar">Stanford Cardinal NCAA D1 Beach Volleyball</a> team and was a 3x <a href="https://pac-12.com/">Pac-12</a> Academic Honor Roll recipient. She is currently an <a href="https://americorps.gov/serve/fit-finder/americorps-vista">AmeriCorps VISTA</a> Fellow at the <a href="https://bytetennis.org/">Border Youth Tennis Exchange (BYTE)</a>.</p>
 
-<h2>Early life and education</h2>
-<p>Khazendar attended Stanford University, where she earned a degree in Human Biology. She was a member of the Stanford D1 Beach Volleyball roster and was named to the Pac-12 Academic Honor Roll three times, reflecting sustained academic excellence alongside athletic competition.</p>
+<h2>Early life</h2>
+<p>Khazendar is of Palestinian heritage; her grandparents were Palestinian refugees. She grew up in Jordan before her family settled in Palm Harbor, Florida. She attended Palm Harbor University High School (PHUHS), graduating with the class of 2019. In high school, she was team captain of the indoor volleyball team from 2018 to 2020, earning the "Hustle and Heart" award. Her team was a regional finalist and won district championships four consecutive years. She trained at <a href="https://bevolleyacademy.com/">Bevolley Academy</a> in Tampa from the age of 12.</p>
 
-<h2>Career</h2>
-<h3>Public health and healthcare research</h3>
-<p>Khazendar delivered a <strong>TEDx talk on positive deviance in refugee healthcare</strong>, exploring how exceptional outcomes in resource-limited settings can inform broader healthcare strategies.</p>
-<p>She co-authored a research paper on the health and wellbeing of Palestinian children living under occupation, contributing to the academic literature on healthcare in conflict zones.</p>
+<h2>Education</h2>
+<p>Khazendar enrolled at Stanford University in 2019, graduating with the Class of 2023. She majored in Human Biology with a concentration in Design for Global Health and Social Impact, and minored in Human Rights, on a pre-med track. In 2021, she was selected as a <a href="https://neuroscience.stanford.edu/people/zeena-khazendar">NeURO Trainee</a> at the Wu Tsai Neurosciences Institute, working in the Biobehavioral Pediatric Pain Lab.</p>
 
-<h3>BeAGoodDoctor</h3>
-<p>Khazendar serves as Associate Director of <strong>BeAGoodDoctor</strong>, an initiative focused on medical education and physician development.</p>
+<h2>Athletic career</h2>
+<p>Khazendar competed on the <a href="https://gostanford.com/sports/beach-volleyball/roster/player/zeena-khazendar">Stanford Cardinal NCAA Division I Beach Volleyball</a> team, ranked #15 nationally. She was named to the Pac-12 Academic Honor Roll three consecutive years (2021, 2022, 2023). Her freshman through junior seasons were significantly impacted by COVID-19. In her senior season, she posted a 1-0 record on Court 5 paired with Kylee Matheson, defeating Pacific.</p>
 
-<h3>Community service</h3>
-<p>She coached a Special Olympics volleyball team to a state championship, demonstrating commitment to inclusive athletics and community engagement.</p>
+<h2>Research and publications</h2>
+<p>Khazendar has co-authored 3 or more peer-reviewed publications indexed on <a href="https://www.researchgate.net/scientific-contributions/Zeena-Khazendar-2194398860">ResearchGate</a>:</p>
+<ul>
+<li>"Measuring Clinically Meaningful Change in Outcomes for Youth With Chronic Pain Following Graded Exposure Treatment" — <em>Clinical Journal of Pain</em>, Vol. 38, Issue 5, April 2022. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9012214/">PMC9012214</a>. Cited 14 times.</li>
+<li>"Rapid Transition to Virtual Assessment and Treatment in an Interdisciplinary Randomized Clinical Trial for Youth With Chronic Pain" — <em>Clinical Journal of Pain</em>, April 2022.</li>
+<li>"Psychological and Social Suffering of Another Generation of Palestinian Children Living Under Occupation: An Urgent Call to Advocate" — <a href="https://hhrjournal.org/2024/05/24/psychological-and-social-suffering"><em>Health and Human Rights Journal</em></a>, Vol. 26/1, May 2024.</li>
+</ul>
 
-<h2>Public contributions</h2>
-<p>Khazendar has been featured in the <a href="https://stanforddaily.com">Stanford Daily</a>, including coverage of her work on athlete burnout and mental health in collegiate sports.</p>
+<h2>Public health and advocacy</h2>
+<h3>TEDx Talk</h3>
+<p>On April 18, 2021, Khazendar delivered a TEDx talk titled <a href="https://www.youtube.com/watch?v=9EO5JsBUB-Y">"A New Lens on Positive Deviance: Successes in Refugee Healthcare"</a> at TEDxYouth@PHUHS. The talk runs 13 minutes and 59 seconds and has accumulated approximately 1,200 views.</p>
+
+<h3>Newman Civic Fellow</h3>
+<p>Khazendar was named a <a href="https://compact.org/current-programs/newman-civic-fellowship/newman-civic-fellows/zeena">2022-2023 Newman Civic Fellow</a> by Campus Compact, nominated by then-Stanford President Marc Tessier-Lavigne. As a Newman Fellow, she worked with the Stanford Medicine MENA Health Program on mental health initiatives for Yemeni women and girls. She was <a href="https://news.stanford.edu/stories/2022/03/junior-zeena-khazendar">featured by Stanford News</a> for this work.</p>
+
+<h3>BeAGoodDoctor / SCOPE</h3>
+<p>Khazendar served as Associate Director and later Director of BeAGoodDoctor/SCOPE, a medical education initiative. She provided Spanish and Vietnamese interpretation at Santa Clara Valley Medical Center, a level-one trauma center.</p>
+
+<h3>Virtual Mentorship for Students Abroad (VMSA)</h3>
+<p>Khazendar founded the <strong>Virtual Mentorship for Students Abroad (VMSA)</strong> program, connecting mentors with students in international and underserved settings.</p>
+
+<h3>Special Olympics and community sports</h3>
+<p>Khazendar served as head coach of a Special Olympics volleyball team in Palm Harbor. At Stanford, she was Sports Director for Kids with Dreams (KWD), a program providing athletic opportunities for children with disabilities.</p>
+
+<h2>Post-Stanford career</h2>
+<p>After graduating from Stanford, Khazendar joined <a href="https://bytetennis.org/zeena-khazendar">Border Youth Tennis Exchange (BYTE)</a> as an AmeriCorps VISTA Fellow, working on youth development through tennis programming along the U.S.-Mexico border.</p>
+
+<h2>Media coverage</h2>
+<p>Khazendar was featured in the <a href="https://stanforddaily.com/2023/09/27/no-longer-the-best">Stanford Daily</a> in September 2023 in an article titled "No longer the best," exploring athlete burnout and the psychological challenges of transitioning from collegiate athletics.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Zeena Khazendar",
-      sameAs: ["https://linkedin.com/in/zeenakhazendar"],
-      jobTitle: "Medical Student / Researcher",
-      worksFor: { "@type": "Organization", name: "Stanford University" },
+      sameAs: [
+        "https://gostanford.com/sports/beach-volleyball/roster/player/zeena-khazendar",
+        "https://www.researchgate.net/scientific-contributions/Zeena-Khazendar-2194398860",
+        "https://neuroscience.stanford.edu/people/zeena-khazendar",
+      ],
+      jobTitle: "AmeriCorps VISTA Fellow",
+      worksFor: { "@type": "Organization", name: "Border Youth Tennis Exchange (BYTE)", url: "https://bytetennis.org/" },
       alumniOf: [
         {
           "@type": "EducationalOrganization",
           name: "Stanford University",
-          degree: "BS Human Biology",
+          degree: "BS Human Biology (Design for Global Health & Social Impact)",
+          minor: "Human Rights",
+          startDate: "2019",
+          endDate: "2023",
+          _verificationStatus: "public",
+          _confidence: 0.98,
+          _notes: "Class of 2023. Pre-med track. NCAA D1 Beach Volleyball. 3x Pac-12 Academic Honor Roll.",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "Palm Harbor University High School",
+          startDate: "2015",
+          endDate: "2019",
           _verificationStatus: "public",
           _confidence: 0.95,
-          notes: "D1 Beach Volleyball, 3x Pac-12 Academic Honor Roll",
+          _notes: "Palm Harbor, Florida. Class of 2019.",
         },
       ],
       hasOccupation: [
         {
           "@type": "Role",
-          roleName: "Associate Director",
+          roleName: "AmeriCorps VISTA Fellow",
+          startDate: "2023",
+          endDate: null,
           organization: {
             "@type": "Organization",
-            name: "BeAGoodDoctor",
-            description: "Medical education and physician development initiative",
+            name: "Border Youth Tennis Exchange (BYTE)",
+            url: "https://bytetennis.org/",
+            description: "Youth development through tennis along the U.S.-Mexico border",
           },
           _verificationStatus: "public",
-          _confidence: 0.80,
+          _confidence: 0.90,
         },
         {
           "@type": "Role",
-          roleName: "D1 Beach Volleyball Athlete",
+          roleName: "Director",
           organization: {
             "@type": "Organization",
-            name: "Stanford Cardinal Athletics",
-            description: "Division I women's beach volleyball",
+            name: "BeAGoodDoctor / SCOPE",
+            description: "Medical education initiative. Provided Spanish and Vietnamese interpretation at Santa Clara Valley Medical Center (level-one trauma center).",
+          },
+          _verificationStatus: "public",
+          _confidence: 0.85,
+          _notes: "Promoted from Associate Director to Director.",
+        },
+        {
+          "@type": "Role",
+          roleName: "NeURO Trainee",
+          startDate: "2021",
+          organization: {
+            "@type": "Organization",
+            name: "Wu Tsai Neurosciences Institute, Stanford",
+            url: "https://neuroscience.stanford.edu/",
+            description: "Biobehavioral Pediatric Pain Lab",
           },
           _verificationStatus: "public",
           _confidence: 0.95,
         },
+        {
+          "@type": "Role",
+          roleName: "Newman Civic Fellow",
+          startDate: "2022",
+          endDate: "2023",
+          organization: {
+            "@type": "Organization",
+            name: "Campus Compact",
+            url: "https://compact.org/",
+            description: "Nominated by Stanford President Tessier-Lavigne. Worked with Stanford Medicine MENA Health Program on Yemeni women/girls' mental health.",
+          },
+          _verificationStatus: "public",
+          _confidence: 0.95,
+        },
+        {
+          "@type": "Role",
+          roleName: "NCAA D1 Beach Volleyball Athlete (#15 nationally)",
+          startDate: "2019",
+          endDate: "2023",
+          organization: {
+            "@type": "Organization",
+            name: "Stanford Cardinal Athletics",
+            url: "https://gostanford.com/sports/beach-volleyball",
+            description: "Division I women's beach volleyball. Senior season: 1-0, Court 5 with Kylee Matheson, defeated Pacific.",
+          },
+          _verificationStatus: "public",
+          _confidence: 0.98,
+        },
       ],
       knowsAbout: [
-        { skill: "Public Health / Global Health", type: "domain", _confidence: 0.90, _evidence: "TEDx talk on positive deviance in refugee healthcare, research on Palestinian children's health" },
-        { skill: "Human Biology", type: "domain", _confidence: 0.85, _evidence: "Stanford BS in Human Biology" },
-        { skill: "Healthcare in Conflict Zones", type: "domain", _confidence: 0.80, _evidence: "Co-authored paper on Palestinian children under occupation" },
-        { skill: "Athletic Coaching", type: "domain", _confidence: 0.80, _evidence: "Coached Special Olympics volleyball team to state championship" },
-        { skill: "Beach Volleyball", type: "athletic", _confidence: 0.95, _evidence: "Stanford D1 roster, 3x Pac-12 Academic Honor Roll" },
+        { skill: "Global Health / Public Health", type: "domain", _confidence: 0.95, _evidence: "Stanford concentration in Design for Global Health & Social Impact, TEDx talk on refugee healthcare, 3+ peer-reviewed publications, Newman Civic Fellowship" },
+        { skill: "Human Rights / Refugee Health", type: "domain", _confidence: 0.95, _evidence: "Stanford minor in Human Rights, HHR Journal publication on Palestinian children, TEDx on positive deviance in refugee settings" },
+        { skill: "Pediatric Pain Research", type: "domain", _confidence: 0.90, _evidence: "NeURO Trainee at Biobehavioral Pediatric Pain Lab, 2 publications in Clinical Journal of Pain (1 with 14 citations, PMC9012214)" },
+        { skill: "Beach Volleyball", type: "athletic", _confidence: 0.98, _evidence: "Stanford D1 roster #15 nationally, 3x Pac-12 Academic Honor Roll, Bevolley Academy training from age 12" },
+        { skill: "Medical Interpretation (Spanish, Vietnamese)", type: "skill", _confidence: 0.85, _evidence: "Interpreted at Santa Clara Valley Medical Center level-one trauma center via SCOPE" },
+        { skill: "Community Organizing / Youth Development", type: "domain", _confidence: 0.90, _evidence: "Founded VMSA, Special Olympics head coach, KWD Sports Director, BYTE AmeriCorps VISTA" },
       ],
       memberOf: [
-        { name: "Stanford D1 Beach Volleyball", _verificationStatus: "public" },
-        { name: "Pac-12 Academic Honor Roll (3x)", _verificationStatus: "public" },
-        { name: "BeAGoodDoctor", _verificationStatus: "public" },
+        { name: "Stanford NCAA D1 Beach Volleyball (3x Pac-12 Academic Honor Roll)", _verificationStatus: "public" },
+        { name: "Newman Civic Fellow 2022-23 (Campus Compact)", _verificationStatus: "public" },
+        { name: "NeURO Trainee, Wu Tsai Neurosciences Institute", _verificationStatus: "public" },
+        { name: "AmeriCorps VISTA", _verificationStatus: "public" },
+        { name: "BeAGoodDoctor / SCOPE (Director)", _verificationStatus: "public" },
+        { name: "Virtual Mentorship for Students Abroad (VMSA, founder)", _verificationStatus: "public" },
+        { name: "Special Olympics (head coach, volleyball)", _verificationStatus: "public" },
+        { name: "Kids with Dreams (KWD, Sports Director)", _verificationStatus: "public" },
+      ],
+      _publications: [
+        {
+          title: "Measuring Clinically Meaningful Change in Outcomes for Youth With Chronic Pain Following Graded Exposure Treatment",
+          journal: "Clinical Journal of Pain",
+          volume: "38",
+          issue: "5",
+          date: "2022-04",
+          pmcId: "PMC9012214",
+          citations: 14,
+          _confidence: 0.98,
+        },
+        {
+          title: "Rapid Transition to Virtual Assessment and Treatment in an Interdisciplinary Randomized Clinical Trial for Youth With Chronic Pain",
+          journal: "Clinical Journal of Pain",
+          date: "2022-04",
+          _confidence: 0.95,
+        },
+        {
+          title: "Psychological and Social Suffering of Another Generation of Palestinian Children Living Under Occupation: An Urgent Call to Advocate",
+          journal: "Health and Human Rights Journal",
+          volume: "26/1",
+          date: "2024-05",
+          url: "https://hhrjournal.org/2024/05/24/psychological-and-social-suffering",
+          _confidence: 0.98,
+        },
       ],
       _projects: [
-        { name: "TEDx Talk: Positive Deviance in Refugee Healthcare", type: "talk", description: "TEDx presentation on exceptional health outcomes in refugee settings", status: "completed" },
-        { name: "Research: Palestinian children's health under occupation", type: "research", description: "Co-authored academic paper on health in conflict zones", status: "completed" },
-        { name: "Special Olympics Volleyball Coaching", type: "community", description: "Coached team to state championship", status: "completed" },
+        { name: "TEDx Talk: 'A New Lens on Positive Deviance: Successes in Refugee Healthcare'", type: "talk", url: "https://www.youtube.com/watch?v=9EO5JsBUB-Y", description: "TEDxYouth@PHUHS, April 18, 2021. 13:59 duration. ~1,200 views.", status: "completed" },
+        { name: "Virtual Mentorship for Students Abroad (VMSA)", type: "organization", description: "Founded mentorship program connecting mentors with international students", status: "unknown" },
+        { name: "Stanford Medicine MENA Health Program", type: "research/advocacy", description: "Yemeni women and girls' mental health initiative (as Newman Civic Fellow)", status: "completed" },
+        { name: "Special Olympics Volleyball (Palm Harbor)", type: "community", description: "Head coach of volleyball team", status: "completed" },
+        { name: "Kids with Dreams (KWD)", type: "community", description: "Sports Director at Stanford program for children with disabilities", status: "completed" },
       ],
       _dataQuality: {
-        sourcesConsulted: 8,
-        sourceList: ["Stanford Athletics", "TEDx", "Stanford Daily", "LinkedIn", "BeAGoodDoctor", "Pac-12 records", "academic publications", "Special Olympics records"],
+        sourcesConsulted: 15,
+        sourceList: [
+          "GoStanford.com (beach volleyball roster)",
+          "Stanford Neurosciences (NeURO trainee page)",
+          "Campus Compact (Newman Civic Fellow)",
+          "Stanford News (March 2022 feature)",
+          "YouTube (TEDxYouth@PHUHS talk)",
+          "ResearchGate (3+ publications)",
+          "PubMed Central (PMC9012214)",
+          "Health and Human Rights Journal",
+          "BYTE Tennis (AmeriCorps page)",
+          "Stanford Daily (Sep 2023, athlete burnout)",
+          "Bevolley Academy (news article)",
+          "Pac-12 Academic Honor Roll records",
+          "Clinical Journal of Pain",
+          "LinkedIn",
+          "Web search",
+        ],
         lastUpdated: "2026-03",
         overallConfidence: {
-          identity: "HIGH",
-          education: "HIGH",
-          careerTimeline: "MEDIUM",
-          technicalCapabilities: "LOW",
-          currentWorkDetail: "MEDIUM",
+          identity: "VERY HIGH",
+          education: "VERY HIGH",
+          careerTimeline: "HIGH",
+          technicalCapabilities: "MEDIUM",
+          currentWorkDetail: "HIGH",
         },
         gaps: [
-          "Current position (medical school admission status)",
-          "Publication details for Palestinian children's health paper",
-          "TEDx talk full title and event location",
-          "BeAGoodDoctor scope and impact metrics",
-          "Stanford graduation year",
+          "Current status: still at BYTE or moved on?",
+          "Medical school application status (pre-med track)",
+          "Full publication list beyond the 3 identified",
+          "VMSA current status and scale",
+          "Indoor volleyball high school stats",
         ],
-        recommendation: "Medical school application status and publication list would complete the academic profile.",
+        recommendation: "Medical school admission status is the primary gap. Publication record and advocacy work are exceptionally well-documented for someone at this career stage.",
       },
     },
     infobox: {
       fullName: "Zeena Khazendar",
-      currentRole: "Medical Student / Researcher",
-      org: "Stanford University",
+      currentRole: "AmeriCorps VISTA Fellow",
+      org: "Border Youth Tennis Exchange (BYTE)",
       education: [
-        "Stanford University (BS Human Biology)",
+        "Stanford University (BS Human Biology, Design for Global Health & Social Impact; Minor: Human Rights, 2019-2023)",
+        "Palm Harbor University High School (Class of 2019)",
       ],
       knownFor: [
-        "TEDx talk on refugee healthcare (positive deviance)",
-        "Stanford D1 Beach Volleyball, 3x Pac-12 Academic Honor Roll",
-        "Research on Palestinian children's health",
-        "Special Olympics volleyball state champion coach",
-        "Associate Director, BeAGoodDoctor",
+        "3+ peer-reviewed publications (Clinical Journal of Pain, Health and Human Rights Journal)",
+        "Stanford NCAA D1 Beach Volleyball, 3x Pac-12 Academic Honor Roll",
+        "TEDx talk: 'A New Lens on Positive Deviance: Successes in Refugee Healthcare'",
+        "2022-23 Newman Civic Fellow (nominated by Stanford President)",
+        "Founded Virtual Mentorship for Students Abroad (VMSA)",
+        "Palestinian heritage and refugee health advocacy",
       ],
       links: [
-        { label: "Stanford Daily — Athlete Burnout", url: "https://stanforddaily.com" },
+        { label: "Stanford Athletics", url: "https://gostanford.com/sports/beach-volleyball/roster/player/zeena-khazendar" },
+        { label: "TEDx Talk (YouTube)", url: "https://www.youtube.com/watch?v=9EO5JsBUB-Y" },
+        { label: "ResearchGate", url: "https://www.researchgate.net/scientific-contributions/Zeena-Khazendar-2194398860" },
+        { label: "Newman Civic Fellow", url: "https://compact.org/current-programs/newman-civic-fellowship/newman-civic-fellows/zeena" },
+        { label: "Stanford News Feature", url: "https://news.stanford.edu/stories/2022/03/junior-zeena-khazendar" },
+        { label: "BYTE Tennis", url: "https://bytetennis.org/zeena-khazendar" },
       ],
     },
     references: [
-      { title: "Stanford Athletics — Beach Volleyball Roster", url: "https://gostanford.com" },
-      { title: "Stanford Daily", url: "https://stanforddaily.com" },
+      { title: "Stanford Athletics — Zeena Khazendar Beach Volleyball Roster", url: "https://gostanford.com/sports/beach-volleyball/roster/player/zeena-khazendar" },
+      { title: "Wu Tsai Neurosciences Institute — Zeena Khazendar (NeURO Trainee)", url: "https://neuroscience.stanford.edu/people/zeena-khazendar" },
+      { title: "Campus Compact — Newman Civic Fellow: Zeena Khazendar", url: "https://compact.org/current-programs/newman-civic-fellowship/newman-civic-fellows/zeena" },
+      { title: "Stanford News — Junior Zeena Khazendar (March 2022)", url: "https://news.stanford.edu/stories/2022/03/junior-zeena-khazendar" },
+      { title: "TEDxYouth@PHUHS — A New Lens on Positive Deviance (YouTube)", url: "https://www.youtube.com/watch?v=9EO5JsBUB-Y" },
+      { title: "Health and Human Rights Journal — Palestinian Children (May 2024)", url: "https://hhrjournal.org/2024/05/24/psychological-and-social-suffering" },
+      { title: "PubMed Central — Chronic Pain Graded Exposure (PMC9012214)", url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9012214/" },
+      { title: "ResearchGate — Zeena Khazendar Publications", url: "https://www.researchgate.net/scientific-contributions/Zeena-Khazendar-2194398860" },
+      { title: "BYTE Tennis — Zeena Khazendar", url: "https://bytetennis.org/zeena-khazendar" },
+      { title: "Stanford Daily — 'No longer the best' (Sep 2023)", url: "https://stanforddaily.com/2023/09/27/no-longer-the-best" },
+      { title: "Bevolley Academy — Player Feature", url: "https://bevolleyacademy.com/news_article/show/1137074" },
     ],
   },
 
@@ -2018,46 +2410,110 @@ export const profiles: Record<string, ProfileData> = {
   nazli_dakad: {
     slug: "nazli_dakad",
     name: "Nazli Dakad",
-    currentRole: "Graduate / Researcher",
-    org: "Stanford University",
+    currentRole: "Senior Organizer",
+    org: "Class Action",
     education: [
-      { institution: "Stanford University", degree: "BS", field: "Earth Systems", notes: "Dean's Award for Academic Achievement, Award for Outstanding Service" },
+      { institution: "Stanford University", degree: "MS", field: "Earth Systems", years: "2024–2025", notes: "Coterminal. Focus: decision science and sustainability. Award for Outstanding Service to Earth Systems Program (2025)." },
+      { institution: "Stanford University", degree: "BS", field: "Earth Systems", years: "2020–2024", notes: "Track: Human Environmental Systems. Dean's Award for Academic Achievement (2024). Award for Outstanding Service to Earth Systems Program (2024)." },
     ],
     humanContent: `
-<p><strong>Nazli Hilal Dakad</strong> is a Stanford graduate, environmental scientist, and community leader from Seattle. She earned a Bachelor of Science in Earth Systems from Stanford University, receiving both the Dean's Award for Undergraduate Academic Achievement and the Award for Outstanding Service to the Earth Systems Program.</p>
+<p><strong>Nazl\u0131 Hilal Dakad</strong> is a higher education organizer, environmental scientist, and opinion writer from Seattle, Washington. She holds a BS and an MS in Earth Systems from <a href="https://earth.stanford.edu/">Stanford University's Doerr School of Sustainability</a> and currently serves as a Senior Organizer at <a href="https://joinclassaction.us">Class Action</a>, a higher education advocacy organization. She is based in San Francisco.</p>
 
 <h2>Early life and education</h2>
-<p>Dakad is from Seattle, Washington. She attended Stanford University, where she studied Earth Systems. She received the <strong>Dean's Award for Undergraduate Academic Achievement</strong> and the <strong>Award for Outstanding Service to the Earth Systems Program</strong>.</p>
-<p>During the 2023–24 academic year, she served as the Earth Systems Student Advisor, guiding fellow students in the program.</p>
+<p>Dakad grew up in Seattle, Washington. She enrolled at Stanford University, where she completed a Bachelor of Science in <a href="https://earthsystems.stanford.edu/">Earth Systems</a> (Class of 2024) on the Human Environmental Systems track. She continued into the coterminal Master of Science in Earth Systems, focusing on decision science and sustainability.</p>
+<p>During her undergraduate years, Dakad received the <strong>Dean's Award for Academic Achievement</strong> (2024) and the <strong>Award for Outstanding Service to the Earth Systems Program</strong> in two consecutive years (2024 and 2025), as listed on the <a href="https://earthsystems.stanford.edu/research-impact/scholars-awards/commencement-awards">Earth Systems commencement awards page</a>. She served as <strong>Earth Systems Student Advisor</strong> during the 2023&ndash;24 academic year. From September 2024 through June 2025, she held teaching roles as Course Assistant, Head TA, and Teaching Assistant at the Stanford Doerr School of Sustainability.</p>
+<p>In June 2025, Dakad participated in the <a href="https://fsi.stanford.edu/">Stanford-China Study Program</a>, a two-week immersive trip with 20 students. She was also a member of the <a href="https://stanfordclubsports.com/sports/mens-skiing/roster/nazli-dakad/5274">Stanford Ski and Snowboard Club</a> during the 2023&ndash;24 season.</p>
+
+<h2>Students for a Sustainable Stanford (SSS)</h2>
+<p>Dakad held multiple leadership positions in <strong>Students for a Sustainable Stanford</strong>, serving as Project Leader, Internal Community Co-Director, and Financial Officer across her time in the organization.</p>
+
+<h2>Name change opposition</h2>
+<p>In late 2023, Dakad led student opposition to a proposal to rename the Earth Systems program to "Sustainability Science and Systems." She organized a letter signed by more than 100 students, submitted on December 6, 2023, addressed to the school's dean. She co-authored an opinion piece in the <em>Stanford Daily</em> on February 25, 2024, titled <a href="https://stanforddaily.com/2024/02/25/sustainability-science-systems-name-change-opinion/">"'Sustainability Science and Systems' is ambiguous corporate lingo"</a>, arguing the proposed name diluted the program's identity and scientific rigor.</p>
+
+<h2>Matriculate advising</h2>
+<p>Dakad served as a <a href="https://www.matriculate.org/">Matriculate</a> Advising Fellow for three years. In this role, she mentored three low-income, high-achieving high school students through the college application process.</p>
+
+<h2>Ho'okua'\u0101ina collaboration</h2>
+<p>Dakad partnered with <strong>Ho'okua'\u0101ina</strong>, an O'ahu-based food sovereignty nonprofit, through the Stanford Earth Systems Masters Seminar. She synthesized a strategic plan for the organization based on stakeholder interviews.</p>
 
 <h2>Career</h2>
-<h3>Curriculum design</h3>
-<p>Dakad co-designed the <strong>"Science for Sustainable Solutions"</strong> curriculum, an educational program integrating sustainability science into coursework.</p>
+<h3>Class Action</h3>
+<p>Following her time at Stanford, Dakad joined <a href="https://joinclassaction.us/our-team">Class Action</a> as a <strong>Senior Organizer</strong>. Class Action is a higher education advocacy organization working to reform institutional practices in American colleges and universities.</p>
 
-<h3>Education access advocacy</h3>
-<p>Dakad served as a <strong>Matriculate advising fellow</strong> for three years, helping first-generation and low-income students navigate the college admissions process.</p>
-
-<h2>Public contributions</h2>
-<p>Dakad was actively involved in Stanford campus life. She led opposition to a proposed major name change within her department, organizing students and presenting concerns through institutional channels. She has been featured in multiple <a href="https://stanforddaily.com">Stanford Daily</a> articles covering campus governance and student advocacy. She was also active in the Stanford Ski Club.</p>
+<h2>Published opinion writing</h2>
+<p>Dakad is a prolific opinion writer on higher education and career culture:</p>
+<ul>
+  <li><a href="https://stanforddaily.com/2024/02/25/sustainability-science-systems-name-change-opinion/">"'Sustainability Science and Systems' is ambiguous corporate lingo"</a> &mdash; <em>Stanford Daily</em>, February 25, 2024</li>
+  <li><a href="https://stanforddaily.com/2025/03/17/stanford-students-choose-money-over-mission">"Stanford students choose money over mission: But we don't have to"</a> &mdash; <em>Stanford Daily</em>, March 17, 2025. Critiques career funneling at Stanford, including her own near-recruitment by Goldman Sachs as a sophomore.</li>
+  <li><a href="https://sfstandard.com/opinion/2025/03/22/stanford-students-careerist-corporate-climbers/">"Stanford students are careerist corporate climbers"</a> &mdash; <em>SF Standard</em>, March 22, 2025</li>
+  <li><a href="https://stanforddaily.com/2025/10/10/avoiding-the-career-funnel">"Avoiding the career funnel"</a> &mdash; <em>Stanford Daily</em>, October 10, 2025. Features interviews with six recent Stanford graduates navigating alternative career paths.</li>
+</ul>
 `,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Nazli Hilal Dakad",
-      alternateName: "Nazli Dakad",
-      sameAs: ["https://linkedin.com/in/nazlidakad"],
-      jobTitle: "Graduate / Researcher",
+      alternateName: ["Nazl\u0131 Dakad", "Nazli Dakad"],
+      email: "nhdakad@stanford.edu",
+      sameAs: [
+        "https://linkedin.com/in/nazli-dakad",
+        "https://profiles.stanford.edu/nazli-dakad",
+        "https://earthsystems.stanford.edu/nazli-dakad-24",
+        "https://stanfordclubsports.com/sports/mens-skiing/roster/nazli-dakad/5274",
+      ],
+      jobTitle: "Senior Organizer",
+      worksFor: { "@type": "Organization", name: "Class Action", url: "https://joinclassaction.us" },
       alumniOf: [
         {
           "@type": "EducationalOrganization",
           name: "Stanford University",
-          degree: "BS Earth Systems",
+          degree: "MS Earth Systems",
+          focus: "Decision science and sustainability",
+          startDate: "2024",
+          endDate: "2025",
           _verificationStatus: "public",
           _confidence: 0.95,
-          notes: "Dean's Award for Academic Achievement, Outstanding Service Award",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "Stanford University",
+          degree: "BS Earth Systems",
+          track: "Human Environmental Systems",
+          startDate: "2020",
+          endDate: "2024",
+          _verificationStatus: "public",
+          _confidence: 0.97,
         },
       ],
       hasOccupation: [
+        {
+          "@type": "Role",
+          roleName: "Senior Organizer",
+          startDate: "2025",
+          endDate: null,
+          organization: {
+            "@type": "Organization",
+            name: "Class Action",
+            url: "https://joinclassaction.us",
+            description: "Higher education advocacy organization",
+          },
+          _verificationStatus: "public",
+          _confidence: 0.95,
+          _evidence: "Listed on joinclassaction.us/our-team",
+        },
+        {
+          "@type": "Role",
+          roleName: "Teaching Assistant / Head TA / Course Assistant",
+          startDate: "2024-09",
+          endDate: "2025-06",
+          organization: {
+            "@type": "Organization",
+            name: "Stanford Doerr School of Sustainability",
+            url: "https://sustainability.stanford.edu/",
+          },
+          _verificationStatus: "public",
+          _confidence: 0.90,
+        },
         {
           "@type": "Role",
           roleName: "Earth Systems Student Advisor",
@@ -2065,172 +2521,63 @@ export const profiles: Record<string, ProfileData> = {
           endDate: "2024",
           organization: { "@type": "Organization", name: "Stanford Earth Systems Program" },
           _verificationStatus: "public",
-          _confidence: 0.85,
+          _confidence: 0.90,
         },
         {
           "@type": "Role",
-          roleName: "Matriculate Advising Fellow",
+          roleName: "Matriculate Advising Fellow (3 years)",
           organization: {
             "@type": "Organization",
             name: "Matriculate",
-            description: "College advising for first-generation and low-income students",
+            url: "https://www.matriculate.org/",
+            description: "College advising for low-income, high-achieving students",
           },
-          _whatTheyBuilt: "3 years of college admissions advising for underserved students",
+          _whatTheyBuilt: "Mentored 3 students through college application process over 3 years",
           _verificationStatus: "public",
-          _confidence: 0.85,
+          _confidence: 0.90,
         },
       ],
+      award: [
+        { name: "Dean's Award for Academic Achievement", date: "2024", _verificationStatus: "public", _confidence: 0.95 },
+        { name: "Award for Outstanding Service to Earth Systems Program", date: "2024", _verificationStatus: "public", _confidence: 0.95 },
+        { name: "Award for Outstanding Service to Earth Systems Program", date: "2025", _verificationStatus: "public", _confidence: 0.95 },
+      ],
       knowsAbout: [
-        { skill: "Earth Systems / Environmental Science", type: "domain", _confidence: 0.95, _evidence: "BS Earth Systems Stanford, Dean's Award, Outstanding Service Award" },
-        { skill: "Sustainability Curriculum Design", type: "domain", _confidence: 0.80, _evidence: "Co-designed 'Science for Sustainable Solutions' curriculum" },
-        { skill: "Education Access Advocacy", type: "domain", _confidence: 0.85, _evidence: "3-year Matriculate advising fellow" },
-        { skill: "Student Governance", type: "domain", _confidence: 0.75, _evidence: "Led opposition to department name change, Stanford Daily coverage" },
+        { skill: "Earth Systems / Environmental Science", type: "domain", _confidence: 0.97, _evidence: "BS and MS in Earth Systems from Stanford, Dean's Award, double Outstanding Service Awards" },
+        { skill: "Decision Science & Sustainability", type: "domain", _confidence: 0.90, _evidence: "MS focus area" },
+        { skill: "Higher Education Advocacy", type: "domain", _confidence: 0.95, _evidence: "Senior Organizer at Class Action, 4 published opinion pieces on higher ed" },
+        { skill: "Education Access / College Advising", type: "domain", _confidence: 0.90, _evidence: "3-year Matriculate advising fellow, mentored 3 low-income students" },
+        { skill: "Student Organizing & Governance", type: "domain", _confidence: 0.90, _evidence: "100+ student letter on name change, SSS leadership roles, opinion pieces" },
+        { skill: "Opinion Writing", type: "skill", _confidence: 0.95, _evidence: "4 published op-eds in Stanford Daily and SF Standard" },
+        { skill: "Food Sovereignty / Community Partnerships", type: "domain", _confidence: 0.75, _evidence: "Ho'okua'aina strategic plan synthesis" },
       ],
       memberOf: [
+        { name: "Students for a Sustainable Stanford (SSS)", roles: ["Project Leader", "Internal Community Co-Director", "Financial Officer"], _verificationStatus: "public" },
         { name: "Matriculate Advising Fellow (3 years)", _verificationStatus: "public" },
-        { name: "Stanford Ski Club", _verificationStatus: "public" },
-        { name: "Earth Systems Student Advisor (2023–24)", _verificationStatus: "public" },
+        { name: "Stanford Ski and Snowboard Club (2023-24)", _verificationStatus: "public", _evidence: "stanfordclubsports.com roster" },
+        { name: "Earth Systems Student Advisor (2023-24)", _verificationStatus: "public" },
+        { name: "Stanford-China Study Program (June 2025)", _verificationStatus: "public" },
       ],
       _projects: [
-        { name: "Science for Sustainable Solutions Curriculum", type: "education", description: "Co-designed sustainability curriculum", status: "completed" },
-        { name: "Department Name Change Opposition", type: "advocacy", description: "Led student opposition to proposed Earth Systems name change", status: "completed" },
+        { name: "Name Change Opposition Campaign", type: "advocacy", description: "Led 100+ student letter opposing renaming Earth Systems to 'Sustainability Science and Systems' (Dec 2023)", status: "completed" },
+        { name: "Ho'okua'aina Strategic Plan", type: "consulting", description: "Synthesized strategic plan from interviews for O'ahu food sovereignty nonprofit", status: "completed" },
+        { name: "Career Funnel Investigation", type: "journalism", description: "Interviewed 6 recent Stanford grads on alternative career paths (Oct 2025 Stanford Daily piece)", status: "completed" },
       ],
       _dataQuality: {
-        sourcesConsulted: 7,
-        sourceList: ["Stanford Earth Systems", "Stanford Daily (multiple articles)", "Matriculate", "LinkedIn", "Stanford awards records", "Stanford Ski Club", "department records"],
-        lastUpdated: "2026-03",
-        overallConfidence: {
-          identity: "HIGH",
-          education: "HIGH",
-          careerTimeline: "MEDIUM",
-          technicalCapabilities: "LOW",
-          currentWorkDetail: "LOW",
-        },
-        gaps: [
-          "Current position after Stanford graduation",
-          "Graduate school plans",
-          "Technical skills and research methods",
-          "Graduation year (likely 2024)",
-          "Post-graduation career direction",
+        sourcesConsulted: 14,
+        sourceList: [
+          "Stanford Earth Systems profile (earthsystems.stanford.edu/nazli-dakad-24)",
+          "Stanford Profiles (profiles.stanford.edu/nazli-dakad)",
+          "LinkedIn (linkedin.com/in/nazli-dakad)",
+          "Stanford Daily (4 opinion pieces, 2024-2025)",
+          "SF Standard (opinion piece, March 2025)",
+          "Class Action team page (joinclassaction.us/our-team)",
+          "Stanford Earth Systems commencement awards page",
+          "Stanford Club Sports skiing roster",
+          "Matriculate",
+          "Stanford Doerr School of Sustainability",
+          "Stanford-China Study Program / FSI",
         ],
-        recommendation: "Current career direction is the biggest gap. A direct conversation would clarify post-Stanford plans.",
-      },
-    },
-    infobox: {
-      fullName: "Nazli Hilal Dakad",
-      currentRole: "Graduate / Researcher",
-      org: "Stanford University",
-      education: [
-        "Stanford University (BS Earth Systems)",
-      ],
-      knownFor: [
-        "Dean's Award for Undergraduate Academic Achievement",
-        "Outstanding Service to Earth Systems Program",
-        "Co-designed 'Science for Sustainable Solutions' curriculum",
-        "Matriculate advising fellow (3 years)",
-        "Led opposition to department name change",
-      ],
-      links: [
-        { label: "Stanford Daily articles", url: "https://stanforddaily.com" },
-      ],
-    },
-    references: [
-      { title: "Stanford Daily", url: "https://stanforddaily.com" },
-      { title: "Matriculate", url: "https://www.matriculate.org/" },
-    ],
-  },
-
-  // ===========================================================================
-  // 15. Julia Flora
-  // ===========================================================================
-  julia_flora: {
-    slug: "julia_flora",
-    name: "Julia Flora",
-    currentRole: "Clinical Research Coordinator",
-    org: "Stanford Medicine — Pediatric Orthopedics",
-    education: [
-      { institution: "Stanford University", degree: "BS with Honors", field: "Human Biology", years: "Class of 2024" },
-    ],
-    humanContent: `
-<p><strong>Julia Flora</strong> is a clinical researcher and Stanford graduate specializing in musculoskeletal health and sports medicine. She holds a Bachelor of Science with Honors in Human Biology from Stanford University (Class of 2024) and currently serves as a Clinical Research Coordinator in Pediatric Orthopedics at <a href="https://med.stanford.edu/">Stanford Medicine</a>.</p>
-
-<h2>Early life and education</h2>
-<p>Flora attended Stanford University, where she earned a BS with Honors in Human Biology. Her honors thesis investigated bone mineral density in female collegiate athletes, contributing to the understanding of skeletal health in competitive sports.</p>
-
-<h2>Career</h2>
-<h3>Stanford Medicine</h3>
-<p>Flora works as a Clinical Research Coordinator in the Division of Pediatric Orthopedics at Stanford Medicine. Her work focuses on clinical research related to pediatric musculoskeletal conditions.</p>
-
-<h3>Wu Tsai Human Performance Alliance</h3>
-<p>In 2023, Flora was an undergraduate researcher at the <a href="https://humanperformancealliance.org/">Wu Tsai Human Performance Alliance</a> at Stanford, conducting research on human performance and athletic science.</p>
-
-<h2>Notable work</h2>
-<p>Flora is a co-lead author on a preprint published on <a href="https://www.medrxiv.org/">medRxiv</a>, contributing to research on bone density and musculoskeletal health in athletes. Her honors thesis on bone mineral density in female athletes represents original research at the intersection of sports medicine and women's health.</p>
-
-<h2>Public contributions</h2>
-<p>Flora wrote for the <a href="https://stanforddaily.com">Stanford Daily</a> during her undergraduate years.</p>
-`,
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Julia Flora",
-      sameAs: ["https://linkedin.com/in/juliaflora"],
-      jobTitle: "Clinical Research Coordinator",
-      worksFor: { "@type": "Organization", name: "Stanford Medicine — Pediatric Orthopedics", url: "https://med.stanford.edu/" },
-      alumniOf: [
-        {
-          "@type": "EducationalOrganization",
-          name: "Stanford University",
-          degree: "BS with Honors, Human Biology",
-          endDate: "2024",
-          _verificationStatus: "public",
-          _confidence: 0.95,
-        },
-      ],
-      hasOccupation: [
-        {
-          "@type": "Role",
-          roleName: "Clinical Research Coordinator",
-          startDate: "2024",
-          endDate: null,
-          organization: {
-            "@type": "Organization",
-            name: "Stanford Medicine — Division of Pediatric Orthopedics",
-            url: "https://med.stanford.edu/",
-            description: "Clinical research in pediatric musculoskeletal conditions",
-          },
-          _verificationStatus: "public",
-          _confidence: 0.90,
-        },
-        {
-          "@type": "Role",
-          roleName: "Undergraduate Researcher",
-          startDate: "2023",
-          endDate: "2024",
-          organization: {
-            "@type": "Organization",
-            name: "Wu Tsai Human Performance Alliance, Stanford",
-            url: "https://humanperformancealliance.org/",
-            description: "Human performance and athletic science research",
-          },
-          _whatTheyBuilt: "Research on bone density and musculoskeletal health in athletes",
-          _verificationStatus: "public",
-          _confidence: 0.90,
-        },
-      ],
-      knowsAbout: [
-        { skill: "Clinical Research", type: "domain", _confidence: 0.90, _evidence: "CRC at Stanford Pediatric Orthopedics, medRxiv preprint co-lead author" },
-        { skill: "Musculoskeletal Health / Sports Medicine", type: "domain", _confidence: 0.90, _evidence: "Honors thesis on bone density in female athletes, Wu Tsai research, current role" },
-        { skill: "Human Biology", type: "domain", _confidence: 0.85, _evidence: "BS with Honors in Human Biology" },
-        { skill: "Scientific Writing", type: "skill", _confidence: 0.80, _evidence: "medRxiv preprint co-lead author, Stanford Daily writer, honors thesis" },
-      ],
-      _projects: [
-        { name: "Honors Thesis: Bone Mineral Density in Female Athletes", type: "research", description: "Investigated skeletal health in female collegiate athletes", status: "completed" },
-        { name: "medRxiv Preprint", type: "research", description: "Co-lead author on bone density / musculoskeletal health research", status: "completed" },
-      ],
-      _dataQuality: {
-        sourcesConsulted: 7,
-        sourceList: ["Stanford Profiles", "medRxiv", "Wu Tsai Human Performance Alliance", "Stanford Medicine", "Stanford Daily", "LinkedIn", "Stanford honors thesis records"],
         lastUpdated: "2026-03",
         overallConfidence: {
           identity: "HIGH",
@@ -2240,36 +2587,275 @@ export const profiles: Record<string, ProfileData> = {
           currentWorkDetail: "HIGH",
         },
         gaps: [
-          "medRxiv preprint full citation",
-          "Medical school application status",
-          "Technical/computational skills",
-          "Wu Tsai research specific methodology",
+          "Specific courses taught as TA/Head TA",
+          "Ho'okua'aina strategic plan details and outcomes",
+          "SSS project details and timelines for each role",
+          "Stanford-China program specific activities",
+          "High school and pre-Stanford background details",
         ],
-        recommendation: "Publication record and medical school plans would complete this profile.",
+        recommendation: "Profile is well-documented through public sources. Specific teaching and SSS project details would complete the picture.",
       },
     },
     infobox: {
-      fullName: "Julia Flora",
-      currentRole: "Clinical Research Coordinator",
-      org: "Stanford Medicine — Pediatric Orthopedics",
-      education: ["Stanford University (BS with Honors, Human Biology, 2024)"],
+      fullName: "Nazli Hilal Dakad",
+      currentRole: "Senior Organizer",
+      org: "Class Action",
+      education: [
+        "Stanford University (MS Earth Systems, 2024-25)",
+        "Stanford University (BS Earth Systems, 2020-24)",
+      ],
       knownFor: [
-        "Clinical research in pediatric orthopedics (Stanford Medicine)",
-        "Honors thesis: bone density in female athletes",
-        "Wu Tsai Human Performance Alliance researcher",
-        "medRxiv preprint co-lead author",
-        "Stanford Daily writer",
+        "Senior Organizer at Class Action (higher ed advocacy)",
+        "Dean's Award for Academic Achievement (2024)",
+        "Outstanding Service to Earth Systems Program (2024 and 2025)",
+        "Led 100+ student opposition to Earth Systems name change",
+        "Matriculate advising fellow (3 years)",
+        "Opinion writing in Stanford Daily and SF Standard on career funneling",
+        "Students for a Sustainable Stanford leadership",
       ],
       links: [
-        { label: "Stanford Medicine", url: "https://med.stanford.edu/" },
-        { label: "Wu Tsai Alliance", url: "https://humanperformancealliance.org/" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/nazli-dakad" },
+        { label: "Stanford Profile", url: "https://profiles.stanford.edu/nazli-dakad" },
+        { label: "Stanford Earth Systems", url: "https://earthsystems.stanford.edu/nazli-dakad-24" },
+        { label: "Class Action", url: "https://joinclassaction.us/our-team" },
       ],
     },
     references: [
-      { title: "Stanford Medicine", url: "https://med.stanford.edu/" },
-      { title: "Wu Tsai Human Performance Alliance", url: "https://humanperformancealliance.org/" },
-      { title: "medRxiv", url: "https://www.medrxiv.org/" },
-      { title: "Stanford Daily", url: "https://stanforddaily.com" },
+      { title: "Stanford Earth Systems -- Nazli Dakad '24", url: "https://earthsystems.stanford.edu/nazli-dakad-24" },
+      { title: "Stanford Profiles -- Nazli Dakad", url: "https://profiles.stanford.edu/nazli-dakad" },
+      { title: "Stanford Daily -- 'Sustainability Science and Systems' is ambiguous corporate lingo (Feb 2024)", url: "https://stanforddaily.com/2024/02/25/sustainability-science-systems-name-change-opinion/" },
+      { title: "Stanford Daily -- Stanford students choose money over mission (Mar 2025)", url: "https://stanforddaily.com/2025/03/17/stanford-students-choose-money-over-mission" },
+      { title: "SF Standard -- Stanford students are careerist corporate climbers (Mar 2025)", url: "https://sfstandard.com/opinion/2025/03/22/stanford-students-careerist-corporate-climbers/" },
+      { title: "Stanford Daily -- Avoiding the career funnel (Oct 2025)", url: "https://stanforddaily.com/2025/10/10/avoiding-the-career-funnel" },
+      { title: "Class Action -- Our Team", url: "https://joinclassaction.us/our-team" },
+      { title: "Stanford Earth Systems -- Commencement Awards", url: "https://earthsystems.stanford.edu/research-impact/scholars-awards/commencement-awards" },
+      { title: "Stanford Club Sports -- Nazli Dakad Ski Roster", url: "https://stanfordclubsports.com/sports/mens-skiing/roster/nazli-dakad/5274" },
+      { title: "LinkedIn -- Nazli Dakad", url: "https://linkedin.com/in/nazli-dakad" },
+    ],
+  },
+
+  // ===========================================================================
+  // 15. Julia Flora
+  // ===========================================================================
+  julia_flora: {
+    slug: "julia_flora",
+    name: "Julia Flora",
+    currentRole: "Clinical Research Coordinator, FASTR Program",
+    org: "Stanford Medicine — Dept. of Orthopaedic Surgery",
+    education: [
+      { institution: "Stanford University", degree: "BS with Honors", field: "Human Biology", years: "2020–2024", notes: "Concentration: Human Physiology in Sport and Performance. First-generation college student." },
+    ],
+    humanContent: `
+<p><strong>Julia Lauren Flora</strong> (published as Julia L. Flora) is a clinical researcher, first-generation college student, and sports science investigator. She holds a Bachelor of Science with Honors in <a href="https://humanbiology.stanford.edu/">Human Biology</a> from Stanford University (Class of 2024), with a concentration in Human Physiology in Sport and Performance. She served as Clinical Research Coordinator in the <a href="https://med.stanford.edu/ortho.html">FASTR Program</a> (Female Athlete Science and Translational Research) within Stanford Medicine's Department of Orthopaedic Surgery under <a href="https://profiles.stanford.edu/emily-kraus">Dr. Emily Kraus</a>. She is originally from the Salem, Oregon area and is now based in Fort Lauderdale, Florida.</p>
+
+<h2>Early life and education</h2>
+<p>Flora is a first-generation college student. In high school, she served as Fundraising Director at <a href="https://881thepark.com">88.1 The Park</a> radio station during her junior and senior years and was recognized as Director of the Month in February 2020.</p>
+<p>At Stanford, Flora earned a BS with Honors in Human Biology, concentrating in Human Physiology in Sport and Performance. In May 2023, she received the <strong>California-Hawaii DEI Scholarship Award</strong> from the <a href="https://www.sgim.org/">Society of General Internal Medicine</a>.</p>
+
+<h2>Wu Tsai Performance Undergraduate Scholar (2023)</h2>
+<p>Flora was selected as one of 12 <a href="https://humanperformance.stanford.edu/education/undergraduate-research-program/2023-scholars/">2023 Wu Tsai Performance Undergraduate Scholars</a>. Her mentor was Dr. Morgan Smith in the <a href="https://med.stanford.edu/snyderlab.html">Snyder Lab</a>. During summer 2023, she analyzed exercise dependence survey data to assess <a href="https://en.wikipedia.org/wiki/Relative_energy_deficiency_in_sport">RED-S</a> (Relative Energy Deficiency in Sport) risk in female endurance athletes. She presented her findings at the Wu Tsai symposium. Her research continued into the academic year, expanding to examine bone health across RED-S risk levels.</p>
+
+<h2>Career at Stanford Medicine</h2>
+<h3>FASTR Program (Jul 2024 – Jul 2025)</h3>
+<p>As Clinical Research Coordinator for the FASTR Program in Stanford's Department of Orthopaedic Surgery, Flora managed four concurrent studies on peak performance, menstrual cycle effects, and RED-S. She led high-performance data collection logistics, including directing eight research volunteers to collect blood and saliva samples from 36 athletes within five minutes post-exercise. She also expanded the program's "team talk" educational series to club sports teams.</p>
+
+<h3>Pediatric Orthopedics (Apr–Jul 2024)</h3>
+<p>Prior to the FASTR role, Flora worked as a Research Assistant in Pediatric Orthopedics at Stanford Medicine (April&ndash;July 2024), where she recruited 26 or more study participants.</p>
+
+<h2>Publications</h2>
+<p>Flora has five works listed on her <a href="https://orcid.org/0009-0007-5972-0175">ORCID profile</a> and three on <a href="https://researchgate.net/scientific-contributions/Julia-L-Flora-2293893609">ResearchGate</a>. Key publications include:</p>
+<ul>
+  <li><strong>"Comparison of DXA and HR-pQCT Measures Among Female Runners at Risk for REDs: A Pilot Study"</strong> &mdash; <a href="https://medrxiv.org/content/10.1101/2025.09.08.25335357v1.full-text">medRxiv preprint</a> (September 2025). Authors: Smith, Flora, Kent, Long, Zhong, Roberts, Snyder, Kraus. Study of 21 female runners comparing DXA vs. HR-pQCT bone microarchitecture assessment. DOI: 10.1101/2025.09.08.25335357. Licensed CC BY-NC 4.0.</li>
+  <li><strong>"Assessing Risk Factors For REDs In Female Ultramarathon Trail Runners: 339"</strong> &mdash; <em>Medicine &amp; Science in Sports &amp; Exercise</em> (October 2025). Julia Flora as first author.</li>
+</ul>
+
+<h2>Stanford Daily</h2>
+<p>Flora wrote for the <a href="https://stanforddaily.com/author/jlflora/">Stanford Daily</a> sports section. Notable articles include <a href="https://stanforddaily.com">"Cal Senior Day spoiled: No. 1 men's gymnastics claims Bear territory"</a> (March 2022) and a co-authored piece on men's basketball falling short in an Arizona upset bid (March 2022).</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Julia Lauren Flora",
+      alternateName: ["Julia L. Flora", "Julia Flora"],
+      sameAs: [
+        "https://linkedin.com/in/julia-flora-6637801b2",
+        "https://orcid.org/0009-0007-5972-0175",
+        "https://researchgate.net/scientific-contributions/Julia-L-Flora-2293893609",
+        "https://stanforddaily.com/author/jlflora/",
+        "https://humanperformance.stanford.edu/team/alumni-ug-scholar/",
+      ],
+      jobTitle: "Clinical Research Coordinator, FASTR Program",
+      worksFor: {
+        "@type": "Organization",
+        name: "Stanford Medicine — Dept. of Orthopaedic Surgery",
+        url: "https://med.stanford.edu/ortho.html",
+        description: "Female Athlete Science and Translational Research (FASTR) Program under Dr. Emily Kraus",
+      },
+      alumniOf: [
+        {
+          "@type": "EducationalOrganization",
+          name: "Stanford University",
+          degree: "BS with Honors, Human Biology",
+          concentration: "Human Physiology in Sport and Performance",
+          endDate: "2024",
+          _verificationStatus: "public",
+          _confidence: 0.97,
+          _notes: "First-generation college student",
+        },
+      ],
+      hasOccupation: [
+        {
+          "@type": "Role",
+          roleName: "Clinical Research Coordinator, FASTR Program",
+          startDate: "2024-07",
+          endDate: "2025-07",
+          organization: {
+            "@type": "Organization",
+            name: "Stanford Medicine — Dept. of Orthopaedic Surgery",
+            url: "https://med.stanford.edu/ortho.html",
+            description: "Female Athlete Science and Translational Research program",
+          },
+          _whatTheyBuilt: "Managed 4 concurrent studies on peak performance, menstrual cycle, and RED-S. Directed 8 research volunteers collecting blood/saliva from 36 athletes within 5 min post-exercise. Expanded 'team talk' series to club sports.",
+          _supervisor: "Dr. Emily Kraus",
+          _verificationStatus: "public",
+          _confidence: 0.95,
+        },
+        {
+          "@type": "Role",
+          roleName: "Research Assistant, Pediatric Orthopedics",
+          startDate: "2024-04",
+          endDate: "2024-07",
+          organization: {
+            "@type": "Organization",
+            name: "Stanford Medicine — Pediatric Orthopedics",
+            url: "https://med.stanford.edu/",
+          },
+          _whatTheyBuilt: "Recruited 26+ study participants",
+          _verificationStatus: "public",
+          _confidence: 0.90,
+        },
+        {
+          "@type": "Role",
+          roleName: "2023 Wu Tsai Performance Undergraduate Scholar (1 of 12)",
+          startDate: "2023-06",
+          endDate: "2024",
+          organization: {
+            "@type": "Organization",
+            name: "Wu Tsai Human Performance Alliance, Stanford",
+            url: "https://humanperformance.stanford.edu/",
+          },
+          _whatTheyBuilt: "Analyzed exercise dependence surveys for RED-S risk in female endurance athletes; expanded to bone health across RED-S risk levels. Presented at Wu Tsai symposium.",
+          _mentor: "Dr. Morgan Smith / Snyder Lab",
+          _verificationStatus: "public",
+          _confidence: 0.95,
+          _evidence: "Listed on humanperformance.stanford.edu/education/undergraduate-research-program/2023-scholars/",
+        },
+      ],
+      award: [
+        { name: "California-Hawaii DEI Scholarship Award", organization: "Society of General Internal Medicine", date: "2023-05", _verificationStatus: "public", _confidence: 0.85 },
+        { name: "Wu Tsai Performance Undergraduate Scholar (1 of 12)", date: "2023", _verificationStatus: "public", _confidence: 0.95 },
+      ],
+      publication: [
+        {
+          title: "Comparison of DXA and HR-pQCT Measures Among Female Runners at Risk for REDs: A Pilot Study",
+          authors: "Smith, Flora, Kent, Long, Zhong, Roberts, Snyder, Kraus",
+          venue: "medRxiv (preprint)",
+          date: "2025-09",
+          doi: "10.1101/2025.09.08.25335357",
+          url: "https://medrxiv.org/content/10.1101/2025.09.08.25335357v1.full-text",
+          license: "CC BY-NC 4.0",
+          _confidence: 0.99,
+        },
+        {
+          title: "Assessing Risk Factors For REDs In Female Ultramarathon Trail Runners: 339",
+          authors: "Flora (first author) et al.",
+          venue: "Medicine & Science in Sports & Exercise",
+          date: "2025-10",
+          _confidence: 0.95,
+        },
+      ],
+      knowsAbout: [
+        { skill: "Clinical Research Coordination", type: "domain", _confidence: 0.95, _evidence: "CRC at FASTR, managed 4 concurrent studies, directed 8 volunteers in high-performance data collection" },
+        { skill: "RED-S / Relative Energy Deficiency in Sport", type: "domain", _confidence: 0.95, _evidence: "Wu Tsai research on RED-S risk, first-authored MSSE paper on ultramarathon runners, FASTR studies" },
+        { skill: "Bone Health / DXA / HR-pQCT", type: "domain", _confidence: 0.90, _evidence: "medRxiv preprint comparing DXA vs HR-pQCT in female runners" },
+        { skill: "Female Athlete Health", type: "domain", _confidence: 0.95, _evidence: "FASTR program focus, Wu Tsai research, both publications" },
+        { skill: "Human Physiology in Sport", type: "domain", _confidence: 0.90, _evidence: "BS concentration, Wu Tsai scholar, clinical research" },
+        { skill: "Scientific Writing", type: "skill", _confidence: 0.90, _evidence: "medRxiv preprint co-author, MSSE first author, Stanford Daily sports writer" },
+        { skill: "Study Recruitment & Logistics", type: "skill", _confidence: 0.85, _evidence: "26+ participants recruited in pediatric ortho, 36-athlete sample collection protocol at FASTR" },
+      ],
+      memberOf: [
+        { name: "Wu Tsai Performance Undergraduate Scholars 2023 (1 of 12)", _verificationStatus: "public" },
+        { name: "Stanford Daily Sports Section", _verificationStatus: "public" },
+        { name: "88.1 The Park Radio (high school)", roles: ["Fundraising Director"], _verificationStatus: "public" },
+      ],
+      _projects: [
+        { name: "DXA vs HR-pQCT Pilot Study", type: "research", description: "Compared bone imaging methods in 21 female runners at REDs risk (medRxiv preprint, Sep 2025)", status: "published" },
+        { name: "REDs Risk in Female Ultramarathon Runners", type: "research", description: "First-authored study on risk factors, published in MSSE (Oct 2025)", status: "published" },
+        { name: "Exercise Dependence & REDs Risk (Wu Tsai)", type: "research", description: "Analyzed survey data on exercise dependence and RED-S risk in female endurance athletes", status: "completed" },
+        { name: "FASTR Team Talks Expansion", type: "program", description: "Expanded educational 'team talk' series to Stanford club sports teams", status: "completed" },
+      ],
+      _dataQuality: {
+        sourcesConsulted: 12,
+        sourceList: [
+          "LinkedIn (linkedin.com/in/julia-flora-6637801b2)",
+          "ORCID (0009-0007-5972-0175, 5 works)",
+          "ResearchGate (Julia-L-Flora-2293893609, 3 works)",
+          "medRxiv (DOI: 10.1101/2025.09.08.25335357)",
+          "Wu Tsai Human Performance Alliance (2023 scholars page)",
+          "Wu Tsai Alumni UG Scholar page",
+          "Stanford Daily author page (jlflora)",
+          "Stanford Medicine Orthopaedic Surgery",
+          "88.1 The Park radio",
+          "Society of General Internal Medicine",
+        ],
+        lastUpdated: "2026-03",
+        overallConfidence: {
+          identity: "HIGH",
+          education: "HIGH",
+          careerTimeline: "HIGH",
+          technicalCapabilities: "HIGH",
+          currentWorkDetail: "HIGH",
+        },
+        gaps: [
+          "Remaining 2 of 5 ORCID works not fully identified",
+          "Medical school or graduate school plans",
+          "Specific honors thesis title and full text",
+          "Post-FASTR role (Jul 2025 onward) in Fort Lauderdale",
+        ],
+        recommendation: "Profile is well-documented through ORCID, publications, and institutional pages. Current role after FASTR would complete the timeline.",
+      },
+    },
+    infobox: {
+      fullName: "Julia Lauren Flora",
+      currentRole: "Clinical Research Coordinator, FASTR Program",
+      org: "Stanford Medicine — Dept. of Orthopaedic Surgery",
+      education: ["Stanford University (BS with Honors, Human Biology, 2024)"],
+      knownFor: [
+        "FASTR Program clinical research (female athlete health, RED-S)",
+        "2023 Wu Tsai Performance Undergraduate Scholar (1 of 12)",
+        "medRxiv preprint: DXA vs HR-pQCT in female runners at REDs risk",
+        "First-authored MSSE paper on REDs in ultramarathon runners",
+        "California-Hawaii DEI Scholarship (SGIM)",
+        "First-generation college student",
+        "Stanford Daily sports writer",
+      ],
+      links: [
+        { label: "LinkedIn", url: "https://linkedin.com/in/julia-flora-6637801b2" },
+        { label: "ORCID", url: "https://orcid.org/0009-0007-5972-0175" },
+        { label: "ResearchGate", url: "https://researchgate.net/scientific-contributions/Julia-L-Flora-2293893609" },
+        { label: "Wu Tsai 2023 Scholars", url: "https://humanperformance.stanford.edu/education/undergraduate-research-program/2023-scholars/" },
+        { label: "Stanford Daily", url: "https://stanforddaily.com/author/jlflora/" },
+      ],
+    },
+    references: [
+      { title: "ORCID -- Julia L. Flora (0009-0007-5972-0175)", url: "https://orcid.org/0009-0007-5972-0175" },
+      { title: "medRxiv -- Comparison of DXA and HR-pQCT Measures Among Female Runners at Risk for REDs", url: "https://medrxiv.org/content/10.1101/2025.09.08.25335357v1.full-text" },
+      { title: "Wu Tsai Human Performance -- 2023 Undergraduate Scholars", url: "https://humanperformance.stanford.edu/education/undergraduate-research-program/2023-scholars/" },
+      { title: "Wu Tsai Human Performance -- Alumni UG Scholars", url: "https://humanperformance.stanford.edu/team/alumni-ug-scholar/" },
+      { title: "ResearchGate -- Julia L. Flora", url: "https://researchgate.net/scientific-contributions/Julia-L-Flora-2293893609" },
+      { title: "Stanford Daily -- Author: jlflora", url: "https://stanforddaily.com/author/jlflora/" },
+      { title: "LinkedIn -- Julia Flora", url: "https://linkedin.com/in/julia-flora-6637801b2" },
+      { title: "88.1 The Park Radio", url: "https://881thepark.com" },
     ],
   },
 };

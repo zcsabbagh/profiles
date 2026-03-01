@@ -20,7 +20,7 @@ export async function generateMetadata({
   const profile = getProfile(slug);
   if (!profile) return { title: "Not Found" };
   return {
-    title: `${profile.name} — Profile`,
+    title: `${profile.name} — Agentapedia`,
     description: `Professional profile of ${profile.name}. ${profile.currentRole}${profile.org ? ` at ${profile.org}` : ""}.`,
   };
 }
@@ -80,7 +80,7 @@ export default async function ProfilePage({
             href="/"
             className="font-sans text-xs text-muted hover:text-link transition-colors"
           >
-            ← All profiles
+            ← Agentapedia
           </Link>
         </div>
 

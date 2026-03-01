@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Profiles — From Public Sources",
+  title: "Agentapedia — From Public Sources",
   description:
-    "Dual-view professional profile pages: human-readable articles and machine-readable structured data.",
+    "Agentapedia: dual-view professional profile pages with human-readable articles and machine-readable structured data.",
 };
 
 export default function RootLayout({
