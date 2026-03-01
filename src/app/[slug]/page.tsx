@@ -1,15 +1,16 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Script from "next/script";
-import { getProfile, getAllSlugs } from "@/lib/profiles";
+import { auth } from "@clerk/nextjs/server";
+import { getProfile } from "@/lib/profiles";
 import ViewToggle from "@/components/ViewToggle";
 import Infobox from "@/components/Infobox";
 import MachineView from "@/components/MachineView";
+import ProfileActions from "@/components/ProfileActions";
+import { getRuntimeProfileState } from "@/lib/profile-state";
 import type { Metadata } from "next";
 
-export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -33,13 +34,17 @@ export default async function ProfilePage({
   const { slug } = await params;
   const profile = getProfile(slug);
   if (!profile) notFound();
+  const { userId } = await auth();
+  const runtimeState = await getRuntimeProfileState(slug, userId ?? null);
+  if (!runtimeState) notFound();
 
   const humanView = (
     <div>
       <Infobox {...profile.infobox} />
-      <div
-        className="human-content"
-        dangerouslySetInnerHTML={{ __html: profile.humanContent }}
+      <ProfileActions
+        slug={slug}
+        initialState={runtimeState}
+        isSignedIn={Boolean(userId)}
       />
       {profile.references.length > 0 && (
         <div className="mt-8 pt-4 border-t border-border clear-both">
