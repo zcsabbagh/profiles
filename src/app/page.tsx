@@ -1,16 +1,23 @@
 import Link from "next/link";
 import { getAllProfiles } from "@/lib/profiles";
+import SearchDialog, { SearchTrigger } from "@/components/SearchDialog";
 
 export default function Home() {
   const profiles = getAllProfiles();
+  const searchItems = profiles.map((p) => ({ name: p.name, slug: p.slug }));
 
   return (
     <div className="min-h-screen">
+      <SearchDialog items={searchItems} />
+
       <header className="border-b border-border">
         <div className="max-w-3xl mx-auto px-6 py-8">
-          <h1 className="font-sans text-2xl font-bold tracking-tight">
-            Profiles
-          </h1>
+          <div className="flex items-center justify-between">
+            <h1 className="font-sans text-2xl font-bold tracking-tight">
+              Profiles
+            </h1>
+            <SearchTrigger />
+          </div>
           <p className="font-sans text-sm text-muted mt-1">
             From public sources — last updated March 2026
           </p>
@@ -33,15 +40,9 @@ export default function Home() {
               href={`/${p.slug}`}
               className="flex items-baseline justify-between py-3 px-1 border-b border-border hover:bg-[#f3f1ec] transition-colors group"
             >
-              <div>
-                <span className="font-sans font-semibold text-[0.9375rem] text-foreground group-hover:text-link transition-colors">
-                  {p.name}
-                </span>
-                <span className="font-sans text-sm text-muted ml-3">
-                  {p.currentRole}
-                  {p.org ? `, ${p.org}` : ""}
-                </span>
-              </div>
+              <span className="font-sans font-semibold text-[0.9375rem] text-foreground group-hover:text-link transition-colors">
+                {p.name}
+              </span>
               <span className="font-mono text-xs text-muted">
                 /{p.slug}
               </span>
