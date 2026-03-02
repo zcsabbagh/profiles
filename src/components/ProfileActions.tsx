@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { SignInButton, UserButton } from "@clerk/nextjs";
 import type { RuntimeProfileState } from "@/lib/profile-state";
 
@@ -9,6 +9,13 @@ interface ProfileActionsProps {
   initialState: RuntimeProfileState;
   isSignedIn: boolean;
 }
+
+type SelectionMenuState = {
+  open: boolean;
+  x: number;
+  y: number;
+  snippet: string;
+};
 
 export default function ProfileActions({
   slug,
@@ -19,14 +26,21 @@ export default function ProfileActions({
   const [isSaving, setIsSaving] = useState(false);
   const [isClaiming, setIsClaiming] = useState(false);
   const [isSubmittingVerifier, setIsSubmittingVerifier] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
-  const [draftHtml, setDraftHtml] = useState(initialState.humanContent);
-  const [selectedSnippet, setSelectedSnippet] = useState("");
+  const [isDirty, setIsDirty] = useState(false);
+  const [showVerifierForm, setShowVerifierForm] = useState(false);
   const [sectionLabel, setSectionLabel] = useState("");
   const [verifierName, setVerifierName] = useState("");
   const [verifierEmail, setVerifierEmail] = useState("");
   const [message, setMessage] = useState<string | null>(null);
+  const [selectionMenu, setSelectionMenu] = useState<SelectionMenuState>({
+    open: false,
+    x: 0,
+    y: 0,
+    snippet: "",
+  });
+
   const articleRef = useRef<HTMLDivElement>(null);
+  const selectionRangeRef = useRef<Range | null>(null);
 
   const claimStatusText = useMemo(() => {
     if (!state.claimedByUserId) return "Unclaimed";
@@ -51,7 +65,10 @@ export default function ProfileActions({
 
     if (json?.humanContent) {
       setState(json);
-      setDraftHtml(json.humanContent);
+      if (articleRef.current) {
+        articleRef.current.innerHTML = json.humanContent;
+      }
+      setIsDirty(false);
     }
 
     return json;
@@ -62,7 +79,7 @@ export default function ProfileActions({
       setIsClaiming(true);
       setMessage(null);
       await runAction(`/api/profiles/${slug}/claim`, { method: "POST" });
-      setMessage("Profile claimed. You can now edit and request verifiers.");
+      setMessage("Profile claimed. You can now edit inline and request verifiers.");
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Unable to claim profile");
     } finally {
@@ -70,16 +87,27 @@ export default function ProfileActions({
     }
   };
 
-  const saveContent = async () => {
+  const normalizeArticleLinks = () => {
+    if (!articleRef.current) return;
+    const links = articleRef.current.querySelectorAll("a");
+    for (const link of links) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+  };
+
+  const saveInlineContent = async (successMessage = "Profile text updated.") => {
+    if (!articleRef.current) return;
+
     try {
       setIsSaving(true);
       setMessage(null);
+      normalizeArticleLinks();
       await runAction(`/api/profiles/${slug}/content`, {
         method: "PUT",
-        body: JSON.stringify({ humanContent: draftHtml }),
+        body: JSON.stringify({ humanContent: articleRef.current.innerHTML }),
       });
-      setIsEditing(false);
-      setMessage("Profile text updated.");
+      setMessage(successMessage);
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Unable to save profile text");
     } finally {
@@ -87,37 +115,96 @@ export default function ProfileActions({
     }
   };
 
-  const captureSelection = () => {
+  const closeSelectionMenu = () => {
+    setSelectionMenu((prev) => ({ ...prev, open: false }));
+    setShowVerifierForm(false);
+    selectionRangeRef.current = null;
+  };
+
+  const refreshSelectionMenu = () => {
+    if (!state.isOwner || !articleRef.current) return;
+
     const selection = window.getSelection();
     if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
-      setMessage("Select text in the profile article first.");
+      closeSelectionMenu();
       return;
     }
 
     const range = selection.getRangeAt(0);
-    if (!articleRef.current?.contains(range.commonAncestorContainer)) {
-      setMessage("Select text from this profile article.");
+    if (!articleRef.current.contains(range.commonAncestorContainer)) {
+      closeSelectionMenu();
       return;
     }
 
-    const text = selection.toString().trim();
-    if (!text) {
-      setMessage("Selected text is empty.");
+    const snippet = selection.toString().trim().slice(0, 1000);
+    if (!snippet || snippet.length < 3) {
+      closeSelectionMenu();
       return;
     }
 
-    setSelectedSnippet(text.slice(0, 1000));
-    setMessage("Selected text added for verifier request.");
+    const rect = range.getBoundingClientRect();
+    selectionRangeRef.current = range.cloneRange();
+    setSelectionMenu({
+      open: true,
+      x: rect.left + rect.width / 2 + window.scrollX,
+      y: rect.top + window.scrollY - 10,
+      snippet,
+    });
+  };
+
+  useEffect(() => {
+    if (!state.isOwner) return;
+
+    const onMouseUp = () => {
+      setTimeout(refreshSelectionMenu, 0);
+    };
+    const onKeyUp = () => {
+      setTimeout(refreshSelectionMenu, 0);
+    };
+
+    document.addEventListener("mouseup", onMouseUp);
+    document.addEventListener("keyup", onKeyUp);
+
+    return () => {
+      document.removeEventListener("mouseup", onMouseUp);
+      document.removeEventListener("keyup", onKeyUp);
+    };
+  }, [state.isOwner]);
+
+  const addCitation = async () => {
+    if (!selectionRangeRef.current) return;
+    const url = window.prompt("Citation URL");
+    if (!url) return;
+
+    try {
+      const parsed = new URL(url);
+      const safeUrl = parsed.toString();
+
+      const selection = window.getSelection();
+      if (!selection) return;
+
+      selection.removeAllRanges();
+      selection.addRange(selectionRangeRef.current);
+      document.execCommand("createLink", false, safeUrl);
+
+      normalizeArticleLinks();
+      closeSelectionMenu();
+      await saveInlineContent("Citation added.");
+    } catch {
+      setMessage("Enter a valid URL (including https://)");
+    }
   };
 
   const submitVerifierRequest = async () => {
+    if (!selectionMenu.snippet) return;
+
     try {
       setIsSubmittingVerifier(true);
       setMessage(null);
       await runAction(`/api/profiles/${slug}/verifiers`, {
         method: "POST",
         body: JSON.stringify({
-          snippet: selectedSnippet,
+          snippet: selectionMenu.snippet,
           sectionLabel: sectionLabel || undefined,
           verifierName,
           verifierEmail,
@@ -126,7 +213,8 @@ export default function ProfileActions({
       setSectionLabel("");
       setVerifierName("");
       setVerifierEmail("");
-      setSelectedSnippet("");
+      setShowVerifierForm(false);
+      closeSelectionMenu();
       setMessage("Verifier request submitted.");
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Unable to submit verifier request");
@@ -150,118 +238,136 @@ export default function ProfileActions({
           <div className="flex items-center gap-2">
             {!isSignedIn && (
               <>
-              <SignInButton mode="modal">
-                <button className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold">
-                  Sign In
-                </button>
-              </SignInButton>
-              <span className="text-muted">to claim your profile</span>
+                <SignInButton mode="modal">
+                  <button className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold">
+                    Sign In
+                  </button>
+                </SignInButton>
+                <span className="text-muted">to claim your profile</span>
               </>
             )}
 
             {isSignedIn && (
               <>
-              <UserButton afterSignOutUrl="/" />
-              {!state.isOwner && state.canClaim && (
-                <button
-                  onClick={claimProfile}
-                  disabled={isClaiming}
-                  className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold disabled:opacity-50"
-                >
-                  {isClaiming ? "Claiming..." : "Claim Profile"}
-                </button>
-              )}
+                <UserButton afterSignOutUrl="/" />
+                {!state.isOwner && state.canClaim && (
+                  <button
+                    onClick={claimProfile}
+                    disabled={isClaiming}
+                    className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold disabled:opacity-50"
+                  >
+                    {isClaiming ? "Claiming..." : "Claim Profile"}
+                  </button>
+                )}
+                {state.isOwner && (
+                  <button
+                    onClick={() => saveInlineContent()}
+                    disabled={isSaving || !isDirty}
+                    className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold disabled:opacity-50"
+                  >
+                    {isSaving ? "Saving..." : isDirty ? "Save Changes" : "Saved"}
+                  </button>
+                )}
               </>
             )}
           </div>
         </div>
 
         {state.isOwner && (
-          <div className="mt-3 pt-3 border-t border-border">
-            <div className="font-semibold mb-2">Owner Controls</div>
-            <div className="flex items-center gap-2 flex-wrap mb-2">
-              <button
-                onClick={() => setIsEditing((value) => !value)}
-                className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold"
-              >
-                {isEditing ? "Cancel Edit" : "Edit Text"}
-              </button>
-              <button
-                onClick={captureSelection}
-                className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold"
-              >
-                Use Selected Text
-              </button>
-            </div>
-
-            {isEditing && (
-              <div className="space-y-2 mb-3">
-                <textarea
-                  value={draftHtml}
-                  onChange={(event) => setDraftHtml(event.target.value)}
-                  className="w-full min-h-56 border border-border p-2 font-mono text-xs bg-white"
-                />
-                <button
-                  onClick={saveContent}
-                  disabled={isSaving}
-                  className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold disabled:opacity-50"
-                >
-                  {isSaving ? "Saving..." : "Save Changes"}
-                </button>
-              </div>
-            )}
-
-            <div className="space-y-2">
-              <input
-                value={selectedSnippet}
-                onChange={(event) => setSelectedSnippet(event.target.value)}
-                placeholder="Selected text snippet"
-                className="w-full border border-border p-2 text-xs bg-white"
-              />
-              <input
-                value={sectionLabel}
-                onChange={(event) => setSectionLabel(event.target.value)}
-                placeholder="Section label (optional)"
-                className="w-full border border-border p-2 text-xs bg-white"
-              />
-              <div className="grid sm:grid-cols-2 gap-2">
-                <input
-                  value={verifierName}
-                  onChange={(event) => setVerifierName(event.target.value)}
-                  placeholder="Verifier name"
-                  className="w-full border border-border p-2 text-xs bg-white"
-                />
-                <input
-                  value={verifierEmail}
-                  onChange={(event) => setVerifierEmail(event.target.value)}
-                  placeholder="Verifier email"
-                  className="w-full border border-border p-2 text-xs bg-white"
-                />
-              </div>
-              <button
-                onClick={submitVerifierRequest}
-                disabled={isSubmittingVerifier}
-                className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold disabled:opacity-50"
-              >
-                {isSubmittingVerifier ? "Submitting..." : "Request Verifier"}
-              </button>
-            </div>
+          <div className="mt-3 pt-3 border-t border-border text-muted">
+            Edit directly in the article. Highlight text to request verifier or add citation.
           </div>
         )}
 
         {message && <div className="mt-2 text-xs text-muted">{message}</div>}
       </div>
 
-      <div ref={articleRef} className="human-content" dangerouslySetInnerHTML={{ __html: state.humanContent }} />
+      <div className="relative">
+        <div
+          ref={articleRef}
+          className={`human-content ${state.isOwner ? "outline-none" : ""}`}
+          contentEditable={state.isOwner}
+          suppressContentEditableWarning
+          onInput={() => setIsDirty(true)}
+          dangerouslySetInnerHTML={{ __html: state.humanContent }}
+        />
 
-      {state.verifierRequests.length > 0 && (
+        {state.isOwner && selectionMenu.open && (
+          <div
+            className="absolute z-20 border border-border bg-white shadow-sm p-2 rounded-sm font-sans text-xs w-72"
+            style={{
+              left: selectionMenu.x,
+              top: selectionMenu.y,
+              transform: "translate(-50%, -100%)",
+            }}
+          >
+            <div className="text-muted line-clamp-2 mb-2">“{selectionMenu.snippet}”</div>
+            <div className="flex items-center gap-2 mb-2">
+              <button
+                onClick={() => setShowVerifierForm((v) => !v)}
+                className="px-2 py-1 border border-border bg-[#f6f4ef] hover:bg-[#efece4] transition-colors font-semibold"
+              >
+                Request Verifier
+              </button>
+              <button
+                onClick={addCitation}
+                className="px-2 py-1 border border-border bg-[#f6f4ef] hover:bg-[#efece4] transition-colors font-semibold"
+              >
+                Add Citation
+              </button>
+              <button
+                onClick={closeSelectionMenu}
+                className="ml-auto text-muted hover:text-foreground"
+              >
+                Close
+              </button>
+            </div>
+
+            {showVerifierForm && (
+              <div className="space-y-2">
+                <input
+                  value={sectionLabel}
+                  onChange={(event) => setSectionLabel(event.target.value)}
+                  placeholder="Section label (optional)"
+                  className="w-full border border-border p-2 text-xs bg-white"
+                />
+                <div className="grid grid-cols-2 gap-2">
+                  <input
+                    value={verifierName}
+                    onChange={(event) => setVerifierName(event.target.value)}
+                    placeholder="Verifier name"
+                    className="w-full border border-border p-2 text-xs bg-white"
+                  />
+                  <input
+                    value={verifierEmail}
+                    onChange={(event) => setVerifierEmail(event.target.value)}
+                    placeholder="Verifier email"
+                    className="w-full border border-border p-2 text-xs bg-white"
+                  />
+                </div>
+                <button
+                  onClick={submitVerifierRequest}
+                  disabled={isSubmittingVerifier}
+                  className="px-2 py-1 border border-border bg-[#f6f4ef] hover:bg-[#efece4] transition-colors font-semibold disabled:opacity-50"
+                >
+                  {isSubmittingVerifier ? "Submitting..." : "Send Request"}
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      {state.isOwner && state.verifierRequests.length > 0 && (
         <div className="mt-6 border-t border-border pt-4 font-sans">
           <h2 className="text-base font-semibold mb-2">Verifier Requests</h2>
           <ul className="space-y-2 text-xs">
             {state.verifierRequests.map((request) => (
               <li key={request.id} className="border border-border bg-[#f6f4ef] p-2">
                 <div className="font-semibold">{request.sectionLabel || "Unlabeled section"}</div>
-                <div className="text-muted">{request.verifierName} ({request.verifierEmail})</div>
+                <div className="text-muted">
+                  {request.verifierName} ({request.verifierEmail})
+                </div>
                 <div className="mt-1 line-clamp-3">{request.snippet}</div>
                 <div className="mt-1 text-muted">
                   {new Date(request.createdAt).toLocaleString()} • {request.status}
