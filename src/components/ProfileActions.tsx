@@ -51,6 +51,13 @@ export default function ProfileActions({
     return "Claimed";
   }, [state.claimedByUserId, state.isOwner]);
 
+  const hideClaimPanel = Boolean(
+    isSignedIn &&
+      state.userClaimedSlug &&
+      state.userClaimedSlug !== slug &&
+      !state.isOwner
+  );
+
   const restoreSelection = () => {
     if (!selectionRangeRef.current) return;
     const selection = window.getSelection();
@@ -157,10 +164,19 @@ export default function ProfileActions({
     }
 
     const rect = range.getBoundingClientRect();
+    const menuWidth = 360;
+    const edgePadding = 16;
+    const viewportLeft = window.scrollX;
+    const viewportRight = window.scrollX + window.innerWidth;
+    const minX = viewportLeft + edgePadding + menuWidth / 2;
+    const maxX = viewportRight - edgePadding - menuWidth / 2;
+    const centeredX = rect.left + rect.width / 2 + window.scrollX;
+    const clampedX = Math.min(Math.max(centeredX, minX), maxX);
+
     selectionRangeRef.current = range.cloneRange();
     setSelectionMenu({
       open: true,
-      x: rect.left + rect.width / 2 + window.scrollX,
+      x: clampedX,
       y: rect.top + window.scrollY - 12,
       snippet,
     });
@@ -249,62 +265,64 @@ export default function ProfileActions({
 
   return (
     <div>
-      <div className="border border-border bg-[#f6f4ef] rounded-sm p-3 mb-4 font-sans text-xs">
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <div>
-            <div className="font-semibold">Profile Claim</div>
-            <div className="text-muted mt-0.5">Status: {claimStatusText}</div>
-            {state.userClaimedSlug && !state.isOwner && (
-              <div className="text-muted mt-0.5">You already claimed: /{state.userClaimedSlug}</div>
-            )}
+      {!hideClaimPanel && (
+        <div className="border border-border bg-[#f6f4ef] rounded-sm p-3 mb-4 font-sans text-xs">
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <div>
+              <div className="font-semibold">Profile Claim</div>
+              <div className="text-muted mt-0.5">Status: {claimStatusText}</div>
+              {state.userClaimedSlug && !state.isOwner && (
+                <div className="text-muted mt-0.5">You already claimed: /{state.userClaimedSlug}</div>
+              )}
+            </div>
+
+            <div className="flex items-center gap-2">
+              {!isSignedIn && (
+                <>
+                  <SignInButton mode="modal">
+                    <button className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold">
+                      Sign In
+                    </button>
+                  </SignInButton>
+                  <span className="text-muted">to claim your profile</span>
+                </>
+              )}
+
+              {isSignedIn && (
+                <>
+                  <UserButton afterSignOutUrl="/" />
+                  {!state.isOwner && state.canClaim && (
+                    <button
+                      onClick={claimProfile}
+                      disabled={isClaiming}
+                      className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold disabled:opacity-50"
+                    >
+                      {isClaiming ? "Claiming..." : "Claim Profile"}
+                    </button>
+                  )}
+                  {state.isOwner && (
+                    <button
+                      onClick={() => saveInlineContent()}
+                      disabled={isSaving || !isDirty}
+                      className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold disabled:opacity-50"
+                    >
+                      {isSaving ? "Saving..." : isDirty ? "Save Changes" : "Saved"}
+                    </button>
+                  )}
+                </>
+              )}
+            </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            {!isSignedIn && (
-              <>
-                <SignInButton mode="modal">
-                  <button className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold">
-                    Sign In
-                  </button>
-                </SignInButton>
-                <span className="text-muted">to claim your profile</span>
-              </>
-            )}
+          {state.isOwner && (
+            <div className="mt-3 pt-3 border-t border-border text-muted">
+              Edit inline. Highlight text to open citation/verifier actions.
+            </div>
+          )}
 
-            {isSignedIn && (
-              <>
-                <UserButton afterSignOutUrl="/" />
-                {!state.isOwner && state.canClaim && (
-                  <button
-                    onClick={claimProfile}
-                    disabled={isClaiming}
-                    className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold disabled:opacity-50"
-                  >
-                    {isClaiming ? "Claiming..." : "Claim Profile"}
-                  </button>
-                )}
-                {state.isOwner && (
-                  <button
-                    onClick={() => saveInlineContent()}
-                    disabled={isSaving || !isDirty}
-                    className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold disabled:opacity-50"
-                  >
-                    {isSaving ? "Saving..." : isDirty ? "Save Changes" : "Saved"}
-                  </button>
-                )}
-              </>
-            )}
-          </div>
+          {message && <div className="mt-2 text-xs text-muted">{message}</div>}
         </div>
-
-        {state.isOwner && (
-          <div className="mt-3 pt-3 border-t border-border text-muted">
-            Edit inline. Highlight text to open citation/verifier actions.
-          </div>
-        )}
-
-        {message && <div className="mt-2 text-xs text-muted">{message}</div>}
-      </div>
+      )}
 
       <div className="relative">
         <div
