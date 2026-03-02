@@ -817,37 +817,88 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress)", field: "Computational Biology / Computer Science" },
     ],
     humanContent: `
-<p><strong>Chehan Wijayaratne</strong> is a Stanford student researcher with public profile activity in computational biology and neuroscience-adjacent labs at Stanford School of Medicine.</p>
+<p><strong>Chehan Lakdhinu Wijayaratne</strong> is a Stanford undergraduate whose public profiles center on computational biology, computer science, and research activity in neuroscience-adjacent settings at Stanford. Public records identify him as an undergraduate affiliated with Stanford's Vice Provost for Undergraduate Education and as a student researcher in medicine-adjacent labs.</p>
+
+<h2>Education</h2>
+<p>Stanford Profiles lists Wijayaratne as an undergraduate student, and independent public profile data describes his course-of-study focus as computational biology and computer science.</p>
+
+<h2>Research and campus work</h2>
+<p>Public LinkedIn data describes research intern activity associated with the Giocomo Lab at Stanford and prior work tied to a Wu Lab context in Stanford Medicine. Because most technical detail is self-reported rather than publication-indexed, this profile treats specific project claims as medium-confidence unless independently published.</p>
+
+<h2>Other public activity</h2>
+<p>Open web materials also connect him to Stanford arts performance contexts (including Stanford Mendicants media credits). These sources are included as identity-corroborating context, not as scientific work evidence.</p>
+
+<h2>Verification note</h2>
+<p>This profile has been expanded to include multiple independent references, but publication-level outputs and lab-specific technical contributions remain under-documented in public sources.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Person",
-      name: "Chehan Wijayaratne",
-      sameAs: ["https://linkedin.com/in/chehan-wijayaratne-5b9b341b6"],
+      name: "Chehan Lakdhinu Wijayaratne",
+      alternateName: "Chehan Wijayaratne",
+      sameAs: ["https://profiles.stanford.edu/chehan-wijayaratne", "https://linkedin.com/in/chehan-wijayaratne-5b9b341b6"],
       jobTitle: "Research Intern",
       worksFor: { "@type": "Organization", name: "Stanford University School of Medicine" },
+      hasOccupation: [
+        {
+          "@type": "Role",
+          roleName: "Undergraduate Student",
+          organization: { "@type": "Organization", name: "Stanford University" },
+          _verificationStatus: "public",
+          _confidence: 0.95,
+          _evidence: "Stanford Profiles lists active undergraduate status.",
+        },
+        {
+          "@type": "Role",
+          roleName: "Research Intern (self-reported)",
+          organization: { "@type": "Organization", name: "Stanford University School of Medicine" },
+          _verificationStatus: "self-reported",
+          _confidence: 0.78,
+          _evidence: "LinkedIn lists Giocomo Lab and prior Wu Lab research roles.",
+          _gaps: ["No public publication list tied directly to these roles"],
+        },
+      ],
       knowsAbout: [
-        { skill: "Computational Biology", type: "domain", _confidence: 0.8, _evidence: "Public profile field and lab roles" },
-        { skill: "Systems Neuroscience", type: "domain", _confidence: 0.75, _evidence: "Giocomo Lab role mention" },
+        { skill: "Computational Biology", type: "domain", _confidence: 0.84, _evidence: "Stanford and LinkedIn profile positioning" },
+        { skill: "Systems Neuroscience", type: "domain", _confidence: 0.76, _evidence: "Self-reported Giocomo Lab research affiliation" },
+        { skill: "Research Communication / Team Collaboration", type: "domain", _confidence: 0.65, _evidence: "Public student research and campus activity footprint" },
+      ],
+      _projects: [
+        { name: "Giocomo Lab research internship", type: "research", description: "Self-reported systems-neuroscience-adjacent work in Stanford Medicine context", status: "active", _verificationStatus: "self-reported" },
+        { name: "Wu Lab research internship", type: "research", description: "Earlier self-reported Stanford Medicine lab internship", status: "completed", _verificationStatus: "self-reported" },
       ],
       _dataQuality: {
-        sourcesConsulted: 2,
-        sourceList: ["LinkedIn", "Web search"],
+        sourcesConsulted: 8,
+        sourceList: ["Stanford Profiles (person page)", "LinkedIn profile", "Stanford Profiles browse/disambiguation", "Giocomo Lab site", "Stanford School of Medicine", "Stanford Mendicants YouTube credit", "Schmidt Vocal Arts 2020-21 finalists", "General web disambiguation search"],
         lastUpdated: "2026-03",
-        overallConfidence: { identity: "MEDIUM", education: "MEDIUM", careerTimeline: "MEDIUM", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
-        gaps: ["No canonical Stanford profile page found in open index"],
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
+        gaps: [
+          "Few independently published technical outputs in open index",
+          "Lab project specifics are mostly self-reported",
+          "Public timeline still sparse outside profile summaries",
+        ],
+        recommendation: "Add publication links, project repositories, or lab pages naming specific contributions to raise technical-confidence level.",
       },
     },
     infobox: {
-      fullName: "Chehan Wijayaratne",
+      fullName: "Chehan Lakdhinu Wijayaratne",
       currentRole: "Student Researcher",
       org: "Stanford University",
       education: ["Stanford University (Computational Biology/CS, in progress)"],
-      knownFor: ["Research internships in Stanford medicine labs"],
-      links: [{ label: "LinkedIn", url: "https://linkedin.com/in/chehan-wijayaratne-5b9b341b6" }],
+      knownFor: ["Computational biology and CS undergraduate track", "Research internships in Stanford medicine-adjacent labs", "Campus performance activity (Mendicants credits)"],
+      links: [
+        { label: "Stanford Profile", url: "https://profiles.stanford.edu/chehan-wijayaratne" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/chehan-wijayaratne-5b9b341b6" },
+      ],
     },
     references: [
+      { title: "Chehan Lakdhinu Wijayaratne — Stanford Profiles", url: "https://profiles.stanford.edu/chehan-wijayaratne" },
       { title: "Chehan Wijayaratne — LinkedIn", url: "https://linkedin.com/in/chehan-wijayaratne-5b9b341b6" },
+      { title: "Stanford Profiles Browse (name disambiguation)", url: "https://profiles.stanford.edu/browse/stanford?name=wijayaratne" },
+      { title: "Giocomo Lab (Stanford)", url: "https://giocomolab.stanford.edu/" },
+      { title: "Stanford School of Medicine", url: "https://med.stanford.edu/" },
+      { title: "Stanford Mendicants — Wild (YouTube credits)", url: "https://www.youtube.com/watch?v=KyMZgDteUf0" },
+      { title: "Schmidt Vocal Arts — 2020-2021 Season Winners", url: "https://schmidtvocalarts.org/winners/2020-2021-season-winners/" },
     ],
   },
 
