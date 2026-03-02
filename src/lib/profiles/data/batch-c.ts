@@ -678,20 +678,23 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS/MS", field: "Computer Science" },
     ],
     humanContent: `
-<p><strong>Uche Ochuba</strong> is a software engineer at Databricks with a Stanford computer science background and public evidence of both technical research output and entrepreneurship-track training. The strongest identity anchors are his LinkedIn profile, GitHub account, Stanford Daily author page, and an arXiv paper authored under a Stanford CS affiliation.</p>
+<p><strong>Uche Ochuba</strong> is a software engineer at Databricks whose public footprint spans applied ML engineering, entrepreneurship fellowships, and a concrete research artifact published under a Stanford CS affiliation. The strongest identity anchors are his LinkedIn profile, GitHub account, Stanford Daily author page, and arXiv paper record.</p>
 
-<h2>Education and Stanford footprint</h2>
-<p>Public records consistently tie Ochuba to Stanford: LinkedIn reports a BS/MS CS pathway, Stanford ExploreCourses includes an instructor profile entry, and Stanford Daily lists him as a former desk editor and contributing writer. Together, these sources establish a coherent Stanford-linked identity rather than a single-source claim.</p>
+<h2>Education and Stanford foundation</h2>
+<p>Public sources connect Ochuba to Stanford through multiple independent paths: LinkedIn describes a BS/MS Computer Science path, Stanford ExploreCourses includes a profile entry, and Stanford Daily lists him as a former humor desk editor and contributing writer. This multi-source pattern materially reduces single-source identity risk.</p>
 
 <h2>Career trajectory</h2>
-<p>LinkedIn identifies Ochuba&apos;s current role as a software engineer at Databricks (starting August 2025), with team context listed as custom AI model serving. Prior to that, he appears in both the Mayfield Fellows track at Stanford STVP and the Felicis Fellows AI program. This combination indicates an early-career path that blends applied engineering with startup/venture ecosystem exposure.</p>
+<p>LinkedIn lists Ochuba as a Software Engineer at Databricks (from August 2025), with team context in custom AI model serving. Earlier entries include a Software Engineering internship at MotherDuck (platform team), Stanford Mercury AI-cybersecurity research assistant work, and participation in both Mayfield Fellows (STVP) and Felicis Fellows in AI. The sequence is consistent with an engineer moving from student research and startup-adjacent programs into production AI infrastructure work.</p>
 
-<h2>Technical work: TreeFormers</h2>
-<p>A key first-party technical artifact is <strong>TreeFormers</strong> (arXiv:2405.15989), authored by Ochuba and published as a Stanford CS-affiliated paper on deforestation-driver classification from satellite imagery using vision transformers. The paper reports test accuracy and method details, and a matching GitHub repository (<code>ucheochuba/treeFormers</code>) links code to the same project. This moves the profile beyond role-only evidence by adding a concrete research output with reproducible implementation context.</p>
+<h2>Notable technical artifact: TreeFormers</h2>
+<p>The clearest technical artifact is <strong>TreeFormers</strong> (arXiv:2405.15989), authored by Ochuba and submitted in May 2024. The paper describes vision-transformer-based classification of deforestation drivers from Indonesian satellite imagery, reports methodology details (fine-tuning and augmentation strategy), and includes a stated test accuracy. The corresponding GitHub repository (<code>ucheochuba/treeFormers</code>) links code to the same project, giving both paper-level and implementation-level evidence.</p>
+
+<h2>Public writing and communication</h2>
+<p>Stanford Daily records show sustained editorial and writing activity, including multiple humor pieces and a desk-editor role. While separate from engineering artifacts, this adds longitudinal evidence of campus activity and identity continuity across 2021-2022 through post-grad role transition.</p>
 
 <h2>Verification scope</h2>
-<p>Confidence is high for identity and current-employer mapping, and medium-high for technical capability due to the arXiv + repository pairing. Confidence remains moderate on production ownership inside Databricks because public artifacts do not provide service-level impact metrics or architecture responsibility boundaries.</p>
-<p>This profile therefore distinguishes clearly between what is directly evidenced (role continuity, fellowship participation, published project) and what is not yet publicly attributable (internal system ownership and measurable production impact).</p>
+<p>Confidence is high on identity and employer sequence, and medium-high on technical capability due to the paper-plus-repository pairing. Confidence remains moderate on Databricks production ownership because public sources do not expose architecture ownership boundaries, launch metrics, or service-level accountability.</p>
+<p>This profile therefore separates corroborated claims (roles, timeline, fellowships, published project) from non-public internals (precise production impact), preserving evidentiary rigor while still giving a detailed technical trajectory.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -705,8 +708,8 @@ export const profileBatchC: ProfileRecord = {
         { skill: "Machine Learning Engineering", type: "domain", _confidence: 0.8, _evidence: "AI fellowship/program references" },
       ],
       _dataQuality: {
-        sourcesConsulted: 12,
-        sourceList: ["LinkedIn profile", "GitHub profile and repositories", "arXiv paper (TreeFormers)", "STVP Mayfield Fellows program page", "STVP Mayfield cohort posts", "Stanford Daily author page", "Stanford ExploreCourses profile", "Databricks company page"],
+        sourcesConsulted: 15,
+        sourceList: ["LinkedIn profile", "GitHub profile and repositories", "arXiv abstract/PDF/HTML for TreeFormers", "STVP Mayfield Fellows program page", "STVP cohort/completion posts", "Felicis Fellows in AI post", "Stanford Daily author page + article pages", "Stanford ExploreCourses profile", "Databricks company page"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "MEDIUM", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "HIGH" },
         gaps: ["Official Stanford degree completion record", "Publicly verifiable details of Databricks production ownership"],
@@ -729,6 +732,7 @@ export const profileBatchC: ProfileRecord = {
       { title: "Uche Ochuba — GitHub", url: "https://github.com/ucheochuba" },
       { title: "TreeFormers — arXiv abstract", url: "https://arxiv.org/abs/2405.15989" },
       { title: "TreeFormers — arXiv PDF", url: "https://arxiv.org/pdf/2405.15989" },
+      { title: "TreeFormers — arXiv HTML", url: "https://arxiv.org/html/2405.15989" },
       { title: "TreeFormers code repository", url: "https://github.com/ucheochuba/treeFormers" },
       { title: "Databricks", url: "https://www.databricks.com/" },
       { title: "STVP Mayfield Fellows Program", url: "https://stvp.stanford.edu/mayfield-fellows-program/" },
@@ -736,8 +740,10 @@ export const profileBatchC: ProfileRecord = {
       { title: "STVP post — 2024-25 Mayfield Fellows completion", url: "https://www.linkedin.com/posts/stanfordtechnologyventuresprogram_congratulations-to-this-years-mayfield-fellows-activity-7278502038030749696-MpS7" },
       { title: "Stanford ExploreCourses — Uche Ochuba", url: "https://explorecourses.stanford.edu/instructor/uochuba" },
       { title: "Stanford Daily author page — Uche Ochuba", url: "https://stanforddaily.com/author/ucheochuba/" },
+      { title: "Stanford Daily — Unprecedented: How I joined 30 clubs (Uche Ochuba)", url: "https://stanforddaily.com/2022/10/05/unprecedented-how-i-joined-30-clubs-out-of-sheer-awkwardness/" },
+      { title: "Stanford Daily — Op-Ed: I'm a frosh enrolled in 22 units (Uche Ochuba)", url: "https://stanforddaily.com/2021/09/22/op-ed-im-a-frosh-enrolled-in-22-units-and-im-doing-just-fine/" },
       { title: "Felicis Fellows in AI (program context)", url: "https://www.linkedin.com/posts/felicis-ventures_what-happens-when-you-take-20-of-the-world-activity-7338618677954560002-viIR" },
-      { title: "Mayfield Fellows Program details — STVP", url: "https://stvp.stanford.edu/mayfield-fellows-program/" },
+      { title: "Felicis Fellows cohort mention with Uche Ochuba", url: "https://www.linkedin.com/posts/michelledelcambre_last-week-we-got-to-witness-again-what-happens-activity-7338591730453180418-oEEu" },
     ],
   },
 
@@ -753,20 +759,23 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress / recent graduate)", field: "Computer Science" },
     ],
     humanContent: `
-<p><strong>Leeah Michael</strong> is a software engineer at Pinterest with a Stanford-linked background across software engineering, product, and entrepreneurship programs. Public evidence is strongest on role continuity and timeline quality: LinkedIn records a transition from student and internship roles into full-time engineering, and Stanford/STVP pages corroborate her participation in selective entrepreneurship programming.</p>
+<p><strong>Leeah Michael</strong> is a software engineer at Pinterest with a Stanford-centered trajectory spanning management consulting internships, product work, software engineering, and entrepreneurship fellowships. The strongest evidence is first-party timeline data on LinkedIn plus institutional Stanford and STVP pages that independently corroborate activity during the same period.</p>
 
 <h2>Education and Stanford context</h2>
-<p>Michael&apos;s public profile identifies Stanford computer science affiliation, with additional Stanford-linked activity through student leadership and academic project work. In particular, Stanford Management Science &amp; Engineering pages list her as part of a 2024 senior project team working with Prophet on expanded machine-learning use cases, providing a concrete institutional artifact tied to her name.</p>
+<p>Public records identify Michael with Stanford CS affiliation and leadership/community involvement while on campus. Stanford Management Science &amp; Engineering pages additionally list her on a 2024 senior project team (<em>Expanding use cases for Prophet</em>), providing a concrete academic artifact tied directly to her name and team membership.</p>
 
-<h2>Career trajectory</h2>
-<p>LinkedIn indicates her current role as Software Engineer at Pinterest (from September 2025), preceded by software engineering at Remix and an Associate Product Manager internship at LinkedIn. She is also listed as a 2024 Mayfield Fellow through Stanford STVP. The sequencing suggests an early-career profile that combines product orientation with engineering execution rather than a purely research-focused path.</p>
+<h2>Career trajectory and role progression</h2>
+<p>Her public timeline shows early business-analyst internships at McKinsey, followed by an Associate Product Manager internship at LinkedIn, then Software Engineering at Remix, and then full-time Software Engineer at Pinterest (from September 2025). This progression suggests a product-aware engineering path that moved from strategy/product exposure into direct implementation roles.</p>
 
-<h2>Public-facing ecosystem activity</h2>
-<p>Additional public posts show participation in Stanford-centered panels and community events after joining industry roles, consistent with active engagement in the local technical/student ecosystem. These artifacts are useful as timeline and identity corroboration, but they are not treated as proof of specific internal technical ownership.</p>
+<h2>Entrepreneurship and ecosystem signals</h2>
+<p>Michael appears in Stanford Mayfield Fellows materials and related cohort/completion posts, indicating selective entrepreneurship-program participation during the same period as her transition from student to industry roles. Public posts also show participation in Stanford/Bay Area panel and community events, including technology-community organizing references.</p>
+
+<h2>Current work visibility</h2>
+<p>A public Pinterest-related post references her onboarding period and a Personalized Experiences team onsite, adding first-person context for team domain and early integration into production engineering work. As with similar profiles, this is treated as directional role evidence, not as proof of specific internal architecture ownership.</p>
 
 <h2>Verification scope</h2>
-<p>Confidence is high for identity, employer sequence, and current role. Confidence is moderate for architecture-level claims because public materials do not expose team internals, production metrics, or component-level ownership at Pinterest or prior companies.</p>
-<p>This profile therefore uses a conservative standard: it asserts only what is directly supported by first-party role records and Stanford institutional pages, and avoids inferring undocumented system impact.</p>
+<p>Confidence is high for identity, chronology, and employer continuity. Confidence is moderate for technical depth claims because public sources do not provide component-level ownership, reliability metrics, or launch-specific attribution at Pinterest or prior companies.</p>
+<p>Accordingly, this profile stays strict: it reports what is externally corroborated while avoiding speculative claims about internal systems impact.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -780,8 +789,8 @@ export const profileBatchC: ProfileRecord = {
         { skill: "Product/Entrepreneurship", type: "domain", _confidence: 0.75, _evidence: "Mayfield Fellows and APM internship experience" },
       ],
       _dataQuality: {
-        sourcesConsulted: 12,
-        sourceList: ["LinkedIn profile", "LinkedIn public posts", "STVP Mayfield Fellows program page", "STVP cohort posts", "Stanford MS&E senior project pages", "Stanford community/event references", "Pinterest company page"],
+        sourcesConsulted: 15,
+        sourceList: ["LinkedIn profile with experience timeline", "LinkedIn public posts", "STVP Mayfield Fellows program page", "STVP cohort and completion posts", "Stanford MS&E project/news pages", "Stanford events/group references", "Pinterest company page"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "MEDIUM", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "HIGH" },
         gaps: ["Canonical Stanford degree completion date", "Publicly documented system-level project ownership at Pinterest"],
@@ -804,11 +813,13 @@ export const profileBatchC: ProfileRecord = {
       { title: "Mayfield Fund post — STVP Fellows visit", url: "https://www.linkedin.com/posts/mayfield-fund_we-were-thrilled-to-host-the-mayfield-fellows-activity-7244739962384908288-ZgQr" },
       { title: "Leeah Michael — Pinterest post", url: "https://www.linkedin.com/posts/leeah-michael_today-marks-two-months-since-i-joined-pinterest-activity-7398856131294552064-KJWy" },
       { title: "Leeah Michael — Stanford panel post", url: "https://www.linkedin.com/posts/leeah-michael_so-honored-to-be-a-part-of-this-panel-back-activity-7381940325046476800-K_f6" },
+      { title: "Leeah Michael — Eritreans in Tech meetup post", url: "https://www.linkedin.com/posts/leeah-michael_hey-friends-nami-russom-joseph-seyoum-activity-7084646129337802752-vei9" },
       { title: "Stanford MS&E — Expanding use cases for Prophet (project page)", url: "https://msande.stanford.edu/research-impact/mse-student-research/mse-senior-projects/2024-senior-projects/expanding-use-cases" },
       { title: "Stanford MS&E news — 2024 senior projects", url: "https://msande.stanford.edu/news/2024-senior-projects-optimizing-social-impact" },
       { title: "Stanford MS&E — 2024 senior projects index", url: "https://msande.stanford.edu/research-impact/mse-student-research/mse-senior-projects/2024-senior-projects" },
       { title: "Stanford Events — Ethiopian and Eritrean Student Association", url: "https://events.stanford.edu/group/ethiopian_and_eritrean_student_association" },
       { title: "Panel context mention — Winta K post", url: "https://www.linkedin.com/posts/leeah-michael_so-honored-to-be-a-part-of-this-panel-back-activity-7381940325046476800-K_f6" },
+      { title: "Pinterest company profile", url: "https://www.linkedin.com/company/pinterest/" },
     ],
   },
 
@@ -1427,20 +1438,23 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress)", field: "Symbolic Systems" },
     ],
     humanContent: `
-<p><strong>Austin Ho</strong> is a Stanford undergraduate listed in Symbolic Systems. This remains a high-disambiguation profile: many unrelated people share the same name, so the article prioritizes identity precision over speculative breadth and uses only evidence tied directly to the Stanford identity.</p>
+<p><strong>Austin Ho</strong> is a Stanford undergraduate in Symbolic Systems. This is a high-disambiguation profile with many name collisions, so the article uses a strict evidence ladder: canonical Stanford records first, tentative open-web matches second, and explicit exclusions for known false matches.</p>
 
-<h2>Identity and institutional anchor</h2>
-<p>The two canonical records are Stanford Profiles and the Symbolic Systems directory page, which align on role (undergraduate), program affiliation (Symbolic Systems), and Stanford contact identity (<code>austinho@stanford.edu</code>). These records are treated as the highest-confidence base layer for this profile.</p>
+<h2>Canonical identity layer (high confidence)</h2>
+<p>Stanford Profiles and the Symbolic Systems directory independently confirm the same core identity: undergraduate status, Symbolic Systems affiliation, and Stanford contact path (<code>austinho@stanford.edu</code>). These institutional sources form the factual base for the profile and are sufficient to verify the person&apos;s Stanford presence even without broader public artifacts.</p>
 
-<h2>Additional public signals (lower confidence)</h2>
-<p>Open-web results include references to an &quot;Austin Ho&quot; associated with pre-Stanford startup/newsletter activity and community posts (for example, BackScoop and Stanford-adjacent LinkedIn discussions). Some of those entries mention heading to Stanford and may plausibly refer to the same person, but direct identity linkage is incomplete. They are therefore treated as tentative context rather than core factual claims.</p>
+<h2>Tentative open-web artifacts (medium-to-low confidence)</h2>
+<p>Additional references to an &quot;Austin Ho&quot; appear in startup/community contexts, including BackScoop posts that mention joining before heading to Stanford and a Stanford-admissions podcast repost. These sources are potentially relevant and useful for chronology hypotheses, but linkage is not yet airtight because they do not consistently expose a direct bridge to the Stanford Symbolic Systems contact identity.</p>
 
-<h2>Disambiguation and exclusion logic</h2>
-<p>Search results also include multiple unrelated &quot;Austin Ho&quot; identities (for example, UC Berkeley and non-Stanford technical profiles). Those are explicitly excluded from factual claims in this profile. The exclusion rule is strict: if a source does not provide a clear bridge to the Stanford Symbolic Systems identity, it is used only for disambiguation and false-match prevention.</p>
+<h2>Program-level context signals</h2>
+<p>A Stanford STVP post for the Xfund Ethics Fellows cohort includes an &quot;Austin H.&quot; mention. That is treated as contextual rather than definitive attribution until a stronger direct identifier is available. The profile records it as a possible ecosystem signal, not as a confirmed program membership claim.</p>
+
+<h2>Disambiguation controls</h2>
+<p>Many unrelated records for similarly named individuals (for example UC Berkeley&apos;s Austin Ho and Sony AI&apos;s Austin Hoag) appear in search results and are explicitly included in references as disambiguation controls. This is deliberate: preserving those controls reduces false attribution risk and documents why certain potentially rich sources are excluded.</p>
 
 <h2>Verification scope</h2>
-<p>Confidence is high for identity and Stanford affiliation; confidence is low-to-medium for career timeline and technical contribution detail due limited first-party public artifacts. This should be interpreted as an evidence availability limit, not a capability judgment.</p>
-<p>As soon as stronger first-party links appear (personal site, GitHub, papers, team pages, talks), this profile can be expanded substantially while preserving attribution quality.</p>
+<p>Confidence is high for Stanford identity and program affiliation. Confidence remains low-to-medium for technical-output and work-history detail due limited first-party public artifacts linked directly to this exact identity.</p>
+<p>Future upgrades should prioritize direct artifacts (personal site, GitHub, publications, talks, team pages) that can be cryptographically or institutionally tied to the Stanford record to lift this from identity-grade to contribution-grade coverage.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1450,8 +1464,8 @@ export const profileBatchC: ProfileRecord = {
       jobTitle: "Undergraduate, Symbolic Systems",
       worksFor: { "@type": "Organization", name: "Stanford University" },
       _dataQuality: {
-        sourcesConsulted: 11,
-        sourceList: ["Stanford Profiles", "Stanford Symbolic Systems directory", "Stanford Profiles browse pages", "STVP/Xfund public post mentions", "BackScoop-related public post mentions", "General web disambiguation search"],
+        sourcesConsulted: 14,
+        sourceList: ["Stanford Profiles", "Stanford Symbolic Systems directory", "Stanford Profiles browse pages", "STVP/Xfund program and post mentions", "BackScoop-related post mentions", "Dorm Room Fund cohort post", "General web disambiguation search"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "LOW", technicalCapabilities: "LOW", currentWorkDetail: "LOW" },
         gaps: ["Minimal first-party technical artifacts", "Unresolved linkage for several open-web Austin Ho mentions"],
@@ -1473,8 +1487,11 @@ export const profileBatchC: ProfileRecord = {
       { title: "Stanford Profiles browse — all Stanford search", url: "https://profiles.stanford.edu/browse/stanford?name=austin+ho" },
       { title: "Tutela / LinkedIn post mentioning Austin Ho Stanford admit (tentative)", url: "https://www.linkedin.com/posts/vartika-bhandari_austins-story-of-getting-into-stanford-activity-7054799112247947265-n0SQ" },
       { title: "STVP post with Austin H mention in Xfund Ethics Fellows cohort (tentative)", url: "https://www.linkedin.com/posts/stanfordtechnologyventuresprogram_this-new-cohort-of-18-xfund-ethics-fellows-activity-7341165739141222401-tH0P" },
+      { title: "STVP Xfund Ethics Fellows program page (context)", url: "https://stvp.stanford.edu/xef/" },
       { title: "BackScoop team post mentioning Austin Ho heading to Stanford (tentative)", url: "https://www.linkedin.com/posts/amanda-cua_weve-got-another-awesome-addition-to-the-activity-7072475082060632064-Kp5a" },
       { title: "BackScoop hiring post referencing current intern Austin Ho (tentative)", url: "https://www.linkedin.com/posts/amanda-cua_were-hiring-we-atbackscoopare-activity-7089424021653520384-0u68" },
+      { title: "Dorm Room Fund — Welcoming Class of 2024 Partners (possible Austin Ho mention, unconfirmed)", url: "https://dormroomfund.substack.com/p/welcoming-the-class-of-2024-partners" },
+      { title: "BackScoop website", url: "https://www.backscoop.com/" },
       { title: "Stanford University", url: "https://www.stanford.edu/" },
       { title: "Stanford Athletics — Austin Hooper (disambiguation)", url: "https://gostanford.com/sports/football/roster/player/austin-hooper" },
       { title: "UC Berkeley iSchool — Austin Ho (disambiguation)", url: "https://www.ischool.berkeley.edu/people/austin-ho" },
