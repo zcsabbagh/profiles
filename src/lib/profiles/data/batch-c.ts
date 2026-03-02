@@ -6,20 +6,21 @@ export const profileBatchC: ProfileRecord = {
   gianfranco_filice: {
     slug: "gianfranco_filice",
     name: "Gianfranco Filice",
-    currentRole: "Founder & Managing Partner",
+    currentRole: "Partner",
     org: "OVO Fund",
     education: [
-      { institution: "Christopher High School", degree: "High School Diploma", notes: "Gilroy, CA. Won $100K scholarship." },
+      { institution: "Stanford University", degree: "BA", field: "Economics", years: "2016–2020" },
+      { institution: "Christopher High School", degree: "High School Diploma", notes: "Gilroy, CA" },
     ],
     humanContent: `
-<p><strong>Gianfranco Filice</strong> is a venture capitalist and one of the youngest fund managers in Silicon Valley history. He is the Founder and Managing Partner of <a href="https://www.ovofund.com/">OVO Fund</a>, which he started while still in high school. He also runs the AKA Angel Fund. OVO Fund's portfolio includes over 90 companies, 5 unicorns, and 2 IPOs.</p>
+<p><strong>Gianfranco Filice</strong> is a venture investor and operator at <a href="https://www.ovofund.com/">OVO Fund</a>. Public profiles describe him as a partner focused on first-check investing, with additional angel activity through AKA Angel.</p>
 
 <h2>Early life and education</h2>
-<p>Filice attended Christopher High School in Gilroy, California. He founded his first company, <strong>Ripple Design</strong>, as an eighth grader (circa 2013), running a Kickstarter campaign for the venture. He won a $100,000 scholarship during high school.</p>
+<p>Filice attended Christopher High School and later studied Economics at Stanford University.</p>
 
 <h2>Career</h2>
 <h3>OVO Fund</h3>
-<p>Filice founded OVO Fund, a seed-stage venture capital firm. The fund has backed over 90 companies, produced 5 unicorns, and 2 IPOs. Notable portfolio companies include:</p>
+<p>OVO Fund is positioned as an early-stage fund. Public materials and interviews attribute investments across software, fintech, and Web3, including names such as Sourcegraph and Addepar.</p>
 <ul>
   <li><strong>Wish</strong> — E-commerce marketplace (IPO)</li>
   <li><strong>Sourcegraph</strong> — Code intelligence platform</li>
@@ -32,7 +33,7 @@ export const profileBatchC: ProfileRecord = {
 <p>In addition to OVO Fund, Filice manages the <strong>AKA Angel Fund</strong>, expanding his investment activities.</p>
 
 <h3>Other investments</h3>
-<p>Filice has also invested in companies like <strong>Pledge Finance</strong> and continues to be active in early-stage technology investing.</p>
+<p>Public coverage links Filice and AKA Angel to investments including Pledge Finance.</p>
 
 <h2>Notable work</h2>
 <p>Filice founded <strong>Ripple Design</strong> as a middle schooler, making him one of the youngest startup founders in the Bay Area. The company ran a Kickstarter campaign during its early development.</p>
@@ -42,9 +43,16 @@ export const profileBatchC: ProfileRecord = {
       "@type": "Person",
       name: "Gianfranco Filice",
       sameAs: ["https://linkedin.com/in/gianfrancofilice", "https://www.ovofund.com/"],
-      jobTitle: "Founder & Managing Partner",
+      jobTitle: "Partner",
       worksFor: { "@type": "Organization", name: "OVO Fund", url: "https://www.ovofund.com/" },
       alumniOf: [
+        {
+          "@type": "EducationalOrganization",
+          name: "Stanford University",
+          degree: "BA Economics",
+          _verificationStatus: "public",
+          _confidence: 0.85,
+        },
         {
           "@type": "EducationalOrganization",
           name: "Christopher High School, Gilroy, CA",
@@ -55,16 +63,16 @@ export const profileBatchC: ProfileRecord = {
       hasOccupation: [
         {
           "@type": "Role",
-          roleName: "Founder & Managing Partner",
+          roleName: "Partner",
           organization: {
             "@type": "Organization",
             name: "OVO Fund",
             url: "https://www.ovofund.com/",
-            description: "Seed-stage VC: 90+ companies, 5 unicorns, 2 IPOs (Wish, Sourcegraph, Addepar, Everlaw, Signifyd)",
+            description: "Early-stage venture capital firm",
           },
-          _whatTheyBuilt: "Built seed-stage fund from high school to 90+ portfolio companies with 5 unicorns and 2 IPOs",
+          _whatTheyBuilt: "Leads first-check investing at OVO Fund",
           _verificationStatus: "public",
-          _confidence: 0.95,
+          _confidence: 0.9,
           _gaps: ["Fund size unknown", "AUM not public"],
         },
         {
@@ -80,31 +88,26 @@ export const profileBatchC: ProfileRecord = {
         },
         {
           "@type": "Role",
-          roleName: "Founder",
-          startDate: "2013",
-          organization: {
-            "@type": "Organization",
-            name: "Ripple Design",
-            description: "Design company founded as 8th grader, ran Kickstarter campaign",
-          },
+          roleName: "Angel Investor",
+          organization: { "@type": "Organization", name: "AKA Angel Fund" },
           _verificationStatus: "public",
-          _confidence: 0.80,
+          _confidence: 0.82,
         },
       ],
       knowsAbout: [
-        { skill: "Venture Capital / Seed Investing", type: "domain", _confidence: 0.99, _evidence: "OVO Fund: 90+ companies, 5 unicorns, 2 IPOs" },
+        { skill: "Venture Capital / Seed Investing", type: "domain", _confidence: 0.95, _evidence: "Partner at OVO Fund; first-check investor profile" },
         { skill: "E-Commerce", type: "domain", _confidence: 0.80, _evidence: "Wish (IPO) investment" },
         { skill: "Enterprise Software", type: "domain", _confidence: 0.80, _evidence: "Sourcegraph, Addepar, Everlaw investments" },
         { skill: "Fraud Prevention", type: "domain", _confidence: 0.70, _evidence: "Signifyd investment" },
       ],
       _projects: [
-        { name: "OVO Fund", type: "fund", url: "https://www.ovofund.com/", description: "Seed-stage VC — 90+ companies, 5 unicorns, 2 IPOs", status: "active" },
+        { name: "OVO Fund", type: "fund", url: "https://www.ovofund.com/", description: "Early-stage VC fund", status: "active" },
         { name: "AKA Angel Fund", type: "fund", description: "Angel investment fund", status: "active" },
-        { name: "Ripple Design", type: "product", description: "Design company founded as 8th grader (~2013), Kickstarter campaign", status: "unknown" },
+        { name: "Pledge Finance investment", type: "investment", description: "Publicly referenced via AKA Angel / Web3 investing content", status: "completed" },
       ],
       _dataQuality: {
-        sourcesConsulted: 8,
-        sourceList: ["OVO Fund website", "LinkedIn", "Crunchbase", "Wish IPO filings", "Sourcegraph", "Kickstarter", "Christopher High School", "Pledge Finance"],
+        sourcesConsulted: 7,
+        sourceList: ["OVO Fund website", "LinkedIn", "gianfranco.io", "Pledge Finance post", "The Org", "OpenVC", "General web search"],
         lastUpdated: "2026-03",
         overallConfidence: {
           identity: "HIGH",
@@ -114,26 +117,24 @@ export const profileBatchC: ProfileRecord = {
           currentWorkDetail: "MEDIUM",
         },
         gaps: [
-          "University education (if any)",
+          "Role title at OVO varies by source (partner vs founder/managing partner)",
           "OVO Fund AUM and fund vintages",
-          "Full portfolio company list",
-          "Ripple Design outcome and details",
+          "Full verified portfolio company list",
           "AKA Angel Fund structure and portfolio",
         ],
-        recommendation: "OVO Fund LP materials and Crunchbase pro data would fill most gaps.",
+        recommendation: "Canonical firm bio and direct interview would resolve role-title ambiguity and portfolio attribution detail.",
       },
     },
     infobox: {
       fullName: "Gianfranco Filice",
-      currentRole: "Founder & Managing Partner",
+      currentRole: "Partner",
       org: "OVO Fund",
-      education: ["Christopher High School, Gilroy CA"],
+      education: ["Stanford University (BA Economics)", "Christopher High School, Gilroy CA"],
       knownFor: [
-        "OVO Fund — 90+ companies, 5 unicorns, 2 IPOs",
-        "Portfolio: Wish, Sourcegraph, Addepar, Everlaw, Signifyd",
-        "Founded Ripple Design as 8th grader",
-        "$100K scholarship winner",
-        "AKA Angel Fund manager",
+        "Partner at OVO Fund (early-stage investing)",
+        "AKA Angel investment activity",
+        "Investments including Pledge Finance",
+        "Writes at gianfranco.io",
       ],
       website: "https://www.ovofund.com/",
       links: [
@@ -142,6 +143,9 @@ export const profileBatchC: ProfileRecord = {
     },
     references: [
       { title: "OVO Fund", url: "https://www.ovofund.com/" },
+      { title: "Gianfranco Filice — LinkedIn", url: "https://linkedin.com/in/gianfrancofilice" },
+      { title: "Gianfranco.io", url: "https://gianfranco.io/" },
+      { title: "Pledge Finance x AKA Angel", url: "https://medium.com/pledge-finance/pledge-finance-growth-partner-series-aka-angel-96e75ddf6fa" },
     ],
   },
 
@@ -597,6 +601,547 @@ export const profileBatchC: ProfileRecord = {
       { title: "Stanford Daily -- Author: jlflora", url: "https://stanforddaily.com/author/jlflora/" },
       { title: "LinkedIn -- Julia Flora", url: "https://linkedin.com/in/julia-flora-6637801b2" },
       { title: "88.1 The Park Radio", url: "https://881thepark.com" },
+    ],
+  },
+
+  // ===========================================================================
+  // 16. Riya Ranjan
+  // ===========================================================================
+  riya_ranjan: {
+    slug: "riya_ranjan",
+    name: "Riya Ranjan",
+    currentRole: "Undergraduate Research Assistant",
+    org: "Stanford CodeX",
+    education: [
+      { institution: "Stanford University", degree: "BS (in progress)", field: "Computer Science / Mathematics / FGSS", years: "2022–2026 (est.)" },
+    ],
+    humanContent: `
+<p><strong>Riya Ranjan</strong> is a Stanford student researcher focused on legal AI evaluation and benchmarking. Her public Stanford profile lists affiliations in Computer Science, Mathematics, and Feminist, Gender, and Sexuality Studies.</p>
+<p>Public profiles indicate she is a Research Assistant at <a href="https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/">CodeX</a> and has presented legal-AI work in venues including NeurIPS workshop programming.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Riya Ranjan",
+      sameAs: ["https://profiles.stanford.edu/riya-ranjan", "https://linkedin.com/in/riya-ranjan-998b051a0"],
+      jobTitle: "Research Assistant",
+      worksFor: { "@type": "Organization", name: "CodeX, Stanford Center for Legal Informatics" },
+      knowsAbout: [
+        { skill: "Legal AI", type: "domain", _confidence: 0.9, _evidence: "CodeX research role and legal benchmarking work" },
+        { skill: "LLM Evaluation", type: "domain", _confidence: 0.85, _evidence: "NeurIPS-related presentation references" },
+      ],
+      _dataQuality: {
+        sourcesConsulted: 4,
+        sourceList: ["Stanford Profiles", "LinkedIn", "CodeX references", "General web search"],
+        lastUpdated: "2026-03",
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
+        gaps: ["Exact graduation year and degree plan", "Publication canonical links"],
+      },
+    },
+    infobox: {
+      fullName: "Riya Ranjan",
+      currentRole: "Undergraduate Research Assistant",
+      org: "Stanford CodeX",
+      education: ["Stanford University (CS / Math / FGSS, in progress)"],
+      knownFor: ["Legal AI evaluation research at CodeX", "Stanford undergraduate researcher"],
+      links: [
+        { label: "Stanford Profile", url: "https://profiles.stanford.edu/riya-ranjan" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/riya-ranjan-998b051a0" },
+      ],
+    },
+    references: [
+      { title: "Stanford Profiles — Riya Ranjan", url: "https://profiles.stanford.edu/riya-ranjan" },
+      { title: "Riya Ranjan — LinkedIn", url: "https://linkedin.com/in/riya-ranjan-998b051a0" },
+    ],
+  },
+
+  // ===========================================================================
+  // 17. Uche Ochuba
+  // ===========================================================================
+  uche_ochuba: {
+    slug: "uche_ochuba",
+    name: "Uche Ochuba",
+    currentRole: "Software Engineer",
+    org: "Databricks",
+    education: [
+      { institution: "Stanford University", degree: "BS/MS", field: "Computer Science" },
+    ],
+    humanContent: `
+<p><strong>Uche Ochuba</strong> is a software engineer at Databricks. Public profiles describe prior Stanford entrepreneurship and engineering activities, including participation in the Mayfield Fellows program and internships in data/AI infrastructure.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Uche Ochuba",
+      sameAs: ["https://linkedin.com/in/uche-ochuba-15a5ba154", "https://github.com/ucheochuba"],
+      jobTitle: "Software Engineer",
+      worksFor: { "@type": "Organization", name: "Databricks" },
+      knowsAbout: [
+        { skill: "Data Infrastructure", type: "domain", _confidence: 0.85, _evidence: "Databricks and MotherDuck roles" },
+        { skill: "Machine Learning Engineering", type: "domain", _confidence: 0.8, _evidence: "AI fellowship/program references" },
+      ],
+      _dataQuality: {
+        sourcesConsulted: 5,
+        sourceList: ["LinkedIn", "GitHub", "STVP Mayfield Fellows", "Stanford Daily author page", "Web search"],
+        lastUpdated: "2026-03",
+        overallConfidence: { identity: "HIGH", education: "MEDIUM", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "HIGH" },
+        gaps: ["Official Stanford degree confirmation link", "Specific production systems details"],
+      },
+    },
+    infobox: {
+      fullName: "Uche Ochuba",
+      currentRole: "Software Engineer",
+      org: "Databricks",
+      education: ["Stanford University (BS/MS CS, public-profile reported)"],
+      knownFor: ["Software engineer at Databricks", "Stanford Mayfield Fellows participant"],
+      links: [
+        { label: "LinkedIn", url: "https://linkedin.com/in/uche-ochuba-15a5ba154" },
+        { label: "GitHub", url: "https://github.com/ucheochuba" },
+      ],
+    },
+    references: [
+      { title: "Uche Ochuba — LinkedIn", url: "https://linkedin.com/in/uche-ochuba-15a5ba154" },
+      { title: "Uche Ochuba — GitHub", url: "https://github.com/ucheochuba" },
+      { title: "STVP Mayfield Fellows", url: "https://stvp.stanford.edu/mayfield-fellows-program/" },
+    ],
+  },
+
+  // ===========================================================================
+  // 18. Leeah Michael
+  // ===========================================================================
+  leeah_michael: {
+    slug: "leeah_michael",
+    name: "Leeah Michael",
+    currentRole: "Software Engineer",
+    org: "Pinterest",
+    education: [
+      { institution: "Stanford University", degree: "BS (in progress / recent graduate)", field: "Computer Science" },
+    ],
+    humanContent: `
+<p><strong>Leeah Michael</strong> is a software engineer at Pinterest and a Stanford computer science alumna/student (public profiles vary by timing). Public records also show prior participation in Stanford&apos;s Mayfield Fellows entrepreneurship program.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Leeah Michael",
+      sameAs: ["https://linkedin.com/in/leeah-michael"],
+      jobTitle: "Software Engineer",
+      worksFor: { "@type": "Organization", name: "Pinterest" },
+      knowsAbout: [
+        { skill: "Software Engineering", type: "domain", _confidence: 0.9, _evidence: "Pinterest SWE role and prior SWE internships" },
+        { skill: "Product/Entrepreneurship", type: "domain", _confidence: 0.75, _evidence: "Mayfield Fellows and APM internship experience" },
+      ],
+      _dataQuality: {
+        sourcesConsulted: 3,
+        sourceList: ["LinkedIn", "STVP Mayfield Fellows", "Web search"],
+        lastUpdated: "2026-03",
+        overallConfidence: { identity: "HIGH", education: "MEDIUM", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "HIGH" },
+        gaps: ["Canonical Stanford degree completion date"],
+      },
+    },
+    infobox: {
+      fullName: "Leeah Michael",
+      currentRole: "Software Engineer",
+      org: "Pinterest",
+      education: ["Stanford University (CS)"],
+      knownFor: ["Software engineer at Pinterest", "Stanford Mayfield Fellow"],
+      links: [{ label: "LinkedIn", url: "https://linkedin.com/in/leeah-michael" }],
+    },
+    references: [
+      { title: "Leeah Michael — LinkedIn", url: "https://linkedin.com/in/leeah-michael" },
+      { title: "STVP Mayfield Fellows", url: "https://stvp.stanford.edu/mayfield-fellows-program/" },
+    ],
+  },
+
+  // ===========================================================================
+  // 19. Sera Camas
+  // ===========================================================================
+  sera_camas: {
+    slug: "sera_camas",
+    name: "Sera Camas",
+    currentRole: "Lead Research Assistant",
+    org: "Stanford Graduate School of Education",
+    education: [
+      { institution: "Stanford University", degree: "MS (in progress)", field: "Computer Science" },
+      { institution: "Stanford University", degree: "BS (in progress/completed)", field: "Symbolic Systems" },
+    ],
+    humanContent: `
+<p><strong>Sera Camas</strong> is a Stanford student and researcher. Public Stanford and LinkedIn profiles list her as a lead research assistant at Stanford GSE&apos;s Educational Neuroscience Initiative, with additional product and consulting experience.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Sera Camas",
+      sameAs: ["https://profiles.stanford.edu/sera-camas", "https://linkedin.com/in/sera-camas"],
+      jobTitle: "Lead Research Assistant",
+      worksFor: { "@type": "Organization", name: "Stanford Graduate School of Education" },
+      knowsAbout: [
+        { skill: "Educational Technology", type: "domain", _confidence: 0.8, _evidence: "Educational Neuroscience Initiative role" },
+        { skill: "Product Management", type: "domain", _confidence: 0.75, _evidence: "PM internships at DocuSign/Canal per public profile" },
+      ],
+      _dataQuality: {
+        sourcesConsulted: 4,
+        sourceList: ["Stanford Profiles", "LinkedIn", "seracamas.com", "Web search"],
+        lastUpdated: "2026-03",
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
+        gaps: ["Exact degree completion status"],
+      },
+    },
+    infobox: {
+      fullName: "Sera Camas",
+      currentRole: "Lead Research Assistant",
+      org: "Stanford GSE",
+      education: ["Stanford (CS / Symbolic Systems)"],
+      knownFor: ["Educational Neuroscience Initiative role", "Stanford student leader/researcher"],
+      links: [
+        { label: "Stanford Profile", url: "https://profiles.stanford.edu/sera-camas" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/sera-camas" },
+      ],
+    },
+    references: [
+      { title: "Stanford Profiles — Sera Camas", url: "https://profiles.stanford.edu/sera-camas" },
+      { title: "Sera Camas — LinkedIn", url: "https://linkedin.com/in/sera-camas" },
+      { title: "Sera Camas website", url: "http://seracamas.com/" },
+    ],
+  },
+
+  // ===========================================================================
+  // 20. Chehan Wijayaratne
+  // ===========================================================================
+  chehan_wijayaratne: {
+    slug: "chehan_wijayaratne",
+    name: "Chehan Wijayaratne",
+    currentRole: "Student Researcher",
+    org: "Stanford University",
+    education: [
+      { institution: "Stanford University", degree: "BS (in progress)", field: "Computational Biology / Computer Science" },
+    ],
+    humanContent: `
+<p><strong>Chehan Wijayaratne</strong> is a Stanford student researcher with public profile activity in computational biology and neuroscience-adjacent labs at Stanford School of Medicine.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Chehan Wijayaratne",
+      sameAs: ["https://linkedin.com/in/chehan-wijayaratne-5b9b341b6"],
+      jobTitle: "Research Intern",
+      worksFor: { "@type": "Organization", name: "Stanford University School of Medicine" },
+      knowsAbout: [
+        { skill: "Computational Biology", type: "domain", _confidence: 0.8, _evidence: "Public profile field and lab roles" },
+        { skill: "Systems Neuroscience", type: "domain", _confidence: 0.75, _evidence: "Giocomo Lab role mention" },
+      ],
+      _dataQuality: {
+        sourcesConsulted: 2,
+        sourceList: ["LinkedIn", "Web search"],
+        lastUpdated: "2026-03",
+        overallConfidence: { identity: "MEDIUM", education: "MEDIUM", careerTimeline: "MEDIUM", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
+        gaps: ["No canonical Stanford profile page found in open index"],
+      },
+    },
+    infobox: {
+      fullName: "Chehan Wijayaratne",
+      currentRole: "Student Researcher",
+      org: "Stanford University",
+      education: ["Stanford University (Computational Biology/CS, in progress)"],
+      knownFor: ["Research internships in Stanford medicine labs"],
+      links: [{ label: "LinkedIn", url: "https://linkedin.com/in/chehan-wijayaratne-5b9b341b6" }],
+    },
+    references: [
+      { title: "Chehan Wijayaratne — LinkedIn", url: "https://linkedin.com/in/chehan-wijayaratne-5b9b341b6" },
+    ],
+  },
+
+  // ===========================================================================
+  // 21. Paolo Reitz
+  // ===========================================================================
+  paolo_reitz: {
+    slug: "paolo_reitz",
+    name: "Paolo Reitz",
+    currentRole: "Undergraduate Student",
+    org: "Stanford University",
+    education: [
+      { institution: "Stanford University", degree: "BS (in progress)", field: "Civil and Environmental Engineering" },
+    ],
+    humanContent: `
+<p><strong>Paolo Reitz</strong> is a Stanford undergraduate in Civil and Environmental Engineering. Public profiles show student leadership and campus operations roles, including resident advising and climbing facility supervision.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Paolo Ferreira Reitz",
+      alternateName: "Paolo Reitz",
+      sameAs: ["https://profiles.stanford.edu/paolo-reitz", "https://linkedin.com/in/paolo-reitz-0889a9324"],
+      jobTitle: "Undergraduate Student",
+      worksFor: { "@type": "Organization", name: "Stanford University" },
+      _dataQuality: {
+        sourcesConsulted: 3,
+        sourceList: ["Stanford Profiles", "LinkedIn", "Web search"],
+        lastUpdated: "2026-03",
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
+        gaps: ["Internship and project details beyond campus roles"],
+      },
+    },
+    infobox: {
+      fullName: "Paolo Ferreira Reitz",
+      currentRole: "Undergraduate Student",
+      org: "Stanford University",
+      education: ["Stanford University (Civil and Environmental Engineering)"],
+      knownFor: ["Stanford student leadership and campus operations roles"],
+      links: [
+        { label: "Stanford Profile", url: "https://profiles.stanford.edu/paolo-reitz" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/paolo-reitz-0889a9324" },
+      ],
+    },
+    references: [
+      { title: "Stanford Profiles — Paolo Reitz", url: "https://profiles.stanford.edu/paolo-reitz" },
+      { title: "Paolo Reitz — LinkedIn", url: "https://linkedin.com/in/paolo-reitz-0889a9324" },
+    ],
+  },
+
+  // ===========================================================================
+  // 22. Ella Moore
+  // ===========================================================================
+  ella_moore: {
+    slug: "ella_moore",
+    name: "Ella Moore",
+    currentRole: "Student / Investor Intern",
+    org: "Stanford University",
+    education: [
+      { institution: "Stanford University", degree: "BS (in progress)", field: "Engineering / Biomedical Computation" },
+    ],
+    humanContent: `
+<p><strong>Ella Moore</strong> is a Stanford student with interests in biomedical computation, translational research, and health-focused investing. Public records also connect her to Stanford lightweight rowing.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Ella Moore",
+      sameAs: ["https://profiles.stanford.edu/ella-moore", "https://linkedin.com/in/ellammoore", "http://gostanford.com/sports/lightweight-rowing/roster/player/ella-moore"],
+      jobTitle: "Undergraduate Student",
+      worksFor: { "@type": "Organization", name: "Stanford University" },
+      knowsAbout: [
+        { skill: "Biotech/Health Investing", type: "domain", _confidence: 0.75, _evidence: "Insight Partners health-team internships" },
+        { skill: "Rowing", type: "athletic", _confidence: 0.9, _evidence: "Stanford lightweight rowing roster" },
+      ],
+      _dataQuality: {
+        sourcesConsulted: 4,
+        sourceList: ["Stanford Profiles", "LinkedIn", "Stanford Athletics", "Web search"],
+        lastUpdated: "2026-03",
+        overallConfidence: { identity: "MEDIUM", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
+        gaps: ["Disambiguation with other Ella Moore profiles"],
+      },
+    },
+    infobox: {
+      fullName: "Ella Moore",
+      currentRole: "Undergraduate Student",
+      org: "Stanford University",
+      education: ["Stanford University (Engineering/Biomedical Computation)"],
+      knownFor: ["Stanford student in health/biotech tracks", "Stanford lightweight rowing"],
+      links: [
+        { label: "Stanford Profile", url: "https://profiles.stanford.edu/ella-moore" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/ellammoore" },
+      ],
+    },
+    references: [
+      { title: "Stanford Profiles — Ella Moore", url: "https://profiles.stanford.edu/ella-moore" },
+      { title: "Ella Moore — LinkedIn", url: "https://linkedin.com/in/ellammoore" },
+      { title: "Stanford Athletics — Ella Moore", url: "http://gostanford.com/sports/lightweight-rowing/roster/player/ella-moore" },
+    ],
+  },
+
+  // ===========================================================================
+  // 23. Krish Maniar
+  // ===========================================================================
+  krish_maniar: {
+    slug: "krish_maniar",
+    name: "Krish Maniar",
+    currentRole: "Student Engineer",
+    org: "Stanford University",
+    education: [
+      { institution: "Stanford University", degree: "BS (in progress)", field: "Computer Science" },
+    ],
+    humanContent: `
+<p><strong>Krish Maniar</strong> is a Stanford computer science student with internships spanning applied ML and engineering roles across major AI and infrastructure companies. Public fellowship pages also list him in the 2025 8VC Fellows cohort.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Krish Maniar",
+      sameAs: ["https://profiles.stanford.edu/322154", "https://linkedin.com/in/krishmaniar4", "https://www.8vc.com/fellows/krish-maniar"],
+      jobTitle: "Undergraduate, Computer Science",
+      worksFor: { "@type": "Organization", name: "Stanford University" },
+      knowsAbout: [
+        { skill: "Applied Machine Learning", type: "domain", _confidence: 0.85, _evidence: "Publicly listed ML/startup work" },
+        { skill: "Developer Tooling / AI Product", type: "domain", _confidence: 0.8, _evidence: "Public internship history" },
+      ],
+      _dataQuality: {
+        sourcesConsulted: 4,
+        sourceList: ["Stanford Profiles", "LinkedIn", "8VC Fellows", "Web search"],
+        lastUpdated: "2026-03",
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
+        gaps: ["Current full-time role post-graduation unknown"],
+      },
+    },
+    infobox: {
+      fullName: "Krish Maniar",
+      currentRole: "Computer Science Student",
+      org: "Stanford University",
+      education: ["Stanford University (Computer Science)"],
+      knownFor: ["8VC Fellow (2025 cohort)", "Internships at Palantir/LangChain/Pika/Labelbox"],
+      links: [
+        { label: "Stanford Profile", url: "https://profiles.stanford.edu/322154" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/krishmaniar4" },
+      ],
+    },
+    references: [
+      { title: "Stanford Profiles — Krish Maniar", url: "https://profiles.stanford.edu/322154" },
+      { title: "Krish Maniar — LinkedIn", url: "https://linkedin.com/in/krishmaniar4" },
+      { title: "8VC Fellows — Krish Maniar", url: "https://www.8vc.com/fellows/krish-maniar" },
+    ],
+  },
+
+  // ===========================================================================
+  // 24. Ameya Jadhav
+  // ===========================================================================
+  ameya_jadhav: {
+    slug: "ameya_jadhav",
+    name: "Ameya Jadhav",
+    currentRole: "Student Builder / Investor",
+    org: "Stanford University",
+    education: [
+      { institution: "Stanford University", degree: "BS/MS (in progress)", field: "Computer Science (AI/Systems)" },
+    ],
+    humanContent: `
+<p><strong>Ameya Jadhav</strong> is a Stanford CS student focused on AI systems, startup building, and early-stage investing. Public profiles and personal site describe work spanning Neo, OpenAI (intern MTS role), General Catalyst programs, and student venture initiatives.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Ameya Jadhav",
+      sameAs: ["https://linkedin.com/in/ameyajadhav", "https://www.ameyajadhav.com/"],
+      jobTitle: "Student / Technical Builder",
+      worksFor: { "@type": "Organization", name: "Stanford University" },
+      knowsAbout: [
+        { skill: "AI Systems", type: "domain", _confidence: 0.85, _evidence: "Personal site and internship history" },
+        { skill: "Startup Investing", type: "domain", _confidence: 0.8, _evidence: "Neo and venture program roles" },
+      ],
+      _dataQuality: {
+        sourcesConsulted: 5,
+        sourceList: ["LinkedIn", "ameyajadhav.com", "Neo post", "Google Scholar profile", "Web search"],
+        lastUpdated: "2026-03",
+        overallConfidence: { identity: "HIGH", education: "MEDIUM", careerTimeline: "MEDIUM", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
+        gaps: ["Independent verification of all listed project claims"],
+      },
+    },
+    infobox: {
+      fullName: "Ameya Jadhav",
+      currentRole: "Student Builder / Investor",
+      org: "Stanford University",
+      education: ["Stanford University (CS AI/Systems)"],
+      knownFor: ["AI systems projects", "Neo/OpenAI internships", "Student venture activity"],
+      links: [
+        { label: "Website", url: "https://www.ameyajadhav.com/" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/ameyajadhav" },
+      ],
+    },
+    references: [
+      { title: "Ameya Jadhav — LinkedIn", url: "https://linkedin.com/in/ameyajadhav" },
+      { title: "Ameya Jadhav — website", url: "https://www.ameyajadhav.com/" },
+    ],
+  },
+
+  // ===========================================================================
+  // 25. Austin Ho
+  // ===========================================================================
+  austin_ho: {
+    slug: "austin_ho",
+    name: "Austin Ho",
+    currentRole: "Undergraduate Student",
+    org: "Stanford University",
+    education: [
+      { institution: "Stanford University", degree: "BS (in progress)", field: "Symbolic Systems" },
+    ],
+    humanContent: `
+<p><strong>Austin Ho</strong> is a Stanford undergraduate in Symbolic Systems. Public records for this profile should be distinguished from unrelated professionals and from former Stanford athlete Austin Hooper.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Austin Ho",
+      sameAs: ["https://profiles.stanford.edu/austin-ho"],
+      jobTitle: "Undergraduate, Symbolic Systems",
+      worksFor: { "@type": "Organization", name: "Stanford University" },
+      _dataQuality: {
+        sourcesConsulted: 3,
+        sourceList: ["Stanford Profiles", "General web search", "Disambiguation checks"],
+        lastUpdated: "2026-03",
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "LOW", technicalCapabilities: "LOW", currentWorkDetail: "LOW" },
+        gaps: ["Minimal public career data"],
+      },
+    },
+    infobox: {
+      fullName: "Austin Ho",
+      currentRole: "Undergraduate Student",
+      org: "Stanford University",
+      education: ["Stanford University (Symbolic Systems)"],
+      knownFor: ["Stanford Symbolic Systems student profile"],
+      links: [{ label: "Stanford Profile", url: "https://profiles.stanford.edu/austin-ho" }],
+    },
+    references: [
+      { title: "Stanford Profiles — Austin Ho", url: "https://profiles.stanford.edu/austin-ho" },
+      { title: "Stanford Athletics — Austin Hooper (disambiguation)", url: "https://gostanford.com/sports/football/roster/player/austin-hooper" },
+    ],
+  },
+
+  // ===========================================================================
+  // 26. Megan Mou
+  // ===========================================================================
+  megan_mou: {
+    slug: "megan_mou",
+    name: "Megan Mou",
+    currentRole: "Product Manager",
+    org: "Harvey",
+    education: [
+      { institution: "Stanford University", degree: "BS", field: "Computer Science" },
+      { institution: "Stanford University", degree: "MS (admitted Autumn 2022)", field: "Computer Science" },
+    ],
+    humanContent: `
+<p><strong>Megan Mou</strong> is a product manager in AI/legal-tech with Stanford CS background. Public profiles indicate she joined Harvey in 2025 after prior product and research work in AI at Scale AI, SAIL, and CodeX-adjacent legal AI contexts.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Megan Mou",
+      sameAs: ["https://profiles.stanford.edu/megan-mou", "https://linkedin.com/in/megan-mou", "https://www.8vc.com/fellows/megan-mou"],
+      jobTitle: "Product Manager",
+      worksFor: { "@type": "Organization", name: "Harvey" },
+      knowsAbout: [
+        { skill: "AI Product Management", type: "domain", _confidence: 0.9, _evidence: "Harvey PM role and prior AI product roles" },
+        { skill: "Legal AI", type: "domain", _confidence: 0.8, _evidence: "Public posts connect work to legal-tech and CodeX ecosystem" },
+      ],
+      _dataQuality: {
+        sourcesConsulted: 5,
+        sourceList: ["Stanford Profiles", "LinkedIn", "8VC Fellows", "LinkedIn posts", "Web search"],
+        lastUpdated: "2026-03",
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "HIGH" },
+        gaps: ["Canonical publication/project links for research period"],
+      },
+    },
+    infobox: {
+      fullName: "Megan Mou",
+      currentRole: "Product Manager",
+      org: "Harvey",
+      education: ["Stanford University (Computer Science)"],
+      knownFor: ["Product management in legal AI", "Stanford CS + SAIL/AI ecosystem experience", "8VC Fellow (2022 cohort)"],
+      links: [
+        { label: "Stanford Profile", url: "https://profiles.stanford.edu/megan-mou" },
+        { label: "LinkedIn", url: "https://linkedin.com/in/megan-mou" },
+      ],
+    },
+    references: [
+      { title: "Stanford Profiles — Megan Mou", url: "https://profiles.stanford.edu/megan-mou" },
+      { title: "Megan Mou — LinkedIn", url: "https://linkedin.com/in/megan-mou" },
+      { title: "8VC Fellows — Megan Mou", url: "https://www.8vc.com/fellows/megan-mou" },
     ],
   },
 };

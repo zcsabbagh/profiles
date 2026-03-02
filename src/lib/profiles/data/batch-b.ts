@@ -6,8 +6,8 @@ export const profileBatchB: ProfileRecord = {
   mirabella_sabbagh: {
     slug: "mirabella_sabbagh",
     name: "Mira Bella Sabbagh",
-    currentRole: "Product Design Intern",
-    org: "Onton",
+    currentRole: "Student Designer",
+    org: "Pomona College / Onton",
     education: [
       { institution: "Pomona College", degree: "BA (in progress)", field: "Cognitive Science & Art", years: "2023–2027 (expected)", notes: "UWC Davis Scholar. Junior year as of 2025–26." },
     ],
@@ -19,10 +19,13 @@ export const profileBatchB: ProfileRecord = {
 
 <h2>Career</h2>
 <h3>Onton</h3>
-<p>In the summer of 2025 (June through August), Sabbagh interned as a <strong>Product Design Intern</strong> at <a href="https://www.onton.ai/">Onton</a>, a San Francisco-based startup founded in 2022 with 1 to 10 employees. During her internship, she collaborated on product design and strategic scalability for a platform serving 2 million monthly users. She compartmentalized designs for production readiness and contributed to sourcing and outreach with best-in-class product designers.</p>
+<p>In summer 2025, Sabbagh worked as a <strong>Product Design Intern</strong> at <a href="https://www.onton.ai/">Onton</a>, where her public role description references design work for a high-traffic consumer shopping experience.</p>
+
+<h3>GoAhead Ventures and Mobbin</h3>
+<p>Her public profile also lists prior work as a <strong>Venture Scout</strong> at GoAhead Ventures and as a contributor to <strong>Mobbin</strong>, a UI inspiration library.</p>
 
 <h2>Professional profile</h2>
-<p>Sabbagh has accumulated approximately 2 years and 4 months of professional experience. Her LinkedIn profile shows over 500 connections and 712 followers, indicating an active professional network. Her work sits at the intersection of design, behavioral science, and artificial intelligence.</p>
+<p>Sabbagh maintains a personal portfolio site and describes her design direction as centered on accessibility and visual language. Her work sits at the intersection of design, behavioral science, and AI.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -62,6 +65,24 @@ export const profileBatchB: ProfileRecord = {
           _verificationStatus: "public",
           _confidence: 0.90,
         },
+        {
+          "@type": "Role",
+          roleName: "Venture Capital Scout",
+          startDate: "2024-07",
+          endDate: "2025-05",
+          organization: { "@type": "Organization", name: "GoAhead Ventures" },
+          _verificationStatus: "public",
+          _confidence: 0.85,
+        },
+        {
+          "@type": "Role",
+          roleName: "Contributor",
+          startDate: "2024-07",
+          endDate: "2025-05",
+          organization: { "@type": "Organization", name: "Mobbin" },
+          _verificationStatus: "public",
+          _confidence: 0.8,
+        },
       ],
       knowsAbout: [
         { skill: "Product Design", type: "domain", _confidence: 0.90, _evidence: "Product Design Intern at Onton (2M MAU platform)" },
@@ -74,12 +95,15 @@ export const profileBatchB: ProfileRecord = {
         { name: "UWC Davis Scholar", _verificationStatus: "public" },
       ],
       _dataQuality: {
-        sourcesConsulted: 5,
+        sourcesConsulted: 7,
         sourceList: [
           "LinkedIn (mirabellasabbagh, 500+ connections, 712 followers)",
           "Pomona College",
           "UWC Davis Scholars Program",
           "Onton company profile",
+          "GoAhead Ventures",
+          "Mobbin",
+          "mirabellasabbagh.com",
           "Web search",
         ],
         lastUpdated: "2026-03",
@@ -91,20 +115,18 @@ export const profileBatchB: ProfileRecord = {
           currentWorkDetail: "MEDIUM",
         },
         gaps: [
-          "No personal website found",
-          "Portfolio or design work samples not publicly available",
+          "Design portfolio quality and depth not independently assessed",
           "UWC origin school unknown",
-          "Other internships or work experience beyond Onton not documented",
           "Specific design tools and technical skills unknown",
           "Only ~2.3 years professional experience documented",
         ],
-        recommendation: "Portfolio review and additional LinkedIn details would strengthen this profile. Limited public footprint beyond LinkedIn.",
+        recommendation: "Case studies and shipped product details would improve confidence on technical design depth.",
       },
     },
     infobox: {
       fullName: "Mira Bella Sabbagh",
-      currentRole: "Product Design Intern",
-      org: "Onton",
+      currentRole: "Student Designer",
+      org: "Pomona College / Onton",
       education: [
         "Pomona College (BA Cognitive Science & Art, junior, UWC Davis Scholar)",
       ],
@@ -115,13 +137,17 @@ export const profileBatchB: ProfileRecord = {
       ],
       links: [
         { label: "LinkedIn", url: "https://linkedin.com/in/mirabellasabbagh" },
+        { label: "Portfolio", url: "https://www.mirabellasabbagh.com/" },
       ],
     },
     references: [
       { title: "Mirabella Sabbagh — LinkedIn", url: "https://linkedin.com/in/mirabellasabbagh" },
+      { title: "Mirabella Sabbagh — Portfolio", url: "https://www.mirabellasabbagh.com/" },
       { title: "Pomona College", url: "https://www.pomona.edu/" },
       { title: "UWC Davis Scholars Program", url: "https://www.davisuwcscholars.org/" },
       { title: "Onton", url: "https://www.onton.ai/" },
+      { title: "GoAhead Ventures", url: "https://www.goaheadventures.com/" },
+      { title: "Mobbin", url: "https://mobbin.com/" },
       { title: "Claremont Colleges", url: "https://www.claremont.edu/" },
     ],
   },
@@ -420,54 +446,54 @@ export const profileBatchB: ProfileRecord = {
     org: "Hanabi Capital",
     education: [],
     humanContent: `
-<p><strong>Ishani Thakur</strong> is a venture capital investor and co-founder. She is a Co-Founder and General Partner at <strong>Hanabi Capital</strong>, a venture fund she co-founded with Mike Volpi and Bryan Offutt. Previously, she was at Nava Ventures and invested at Index Ventures, where she was involved in the firm's investment in <a href="https://www.cartesia.ai/">Cartesia</a>.</p>
+<p><strong>Ishani Thakur</strong> is a venture investor and technology operator. She is a Partner at <a href="https://www.hanabi.com/team/ishani-thakur">Hanabi Capital</a>. Public bios also describe prior investing roles at Index Ventures and Nava Ventures.</p>
 
 <h2>Career</h2>
 <h3>Hanabi Capital</h3>
-<p>Thakur co-founded Hanabi Capital alongside Mike Volpi (Index Ventures partner) and Bryan Offutt. The fund has made investments in several notable AI and technology companies, including <strong>Anysphere</strong> (the company behind <a href="https://cursor.sh">Cursor</a>, the AI code editor), <strong>LiveKit</strong> (real-time communication infrastructure), <strong>Cognition AI</strong> (the company behind Devin), and <strong>BRINC Drones</strong>.</p>
+<p>At Hanabi, Thakur focuses on AI and software infrastructure investing themes. Public deal coverage and team profiles associate Hanabi with early investments across the modern AI stack.</p>
 
-<h3>Index Ventures</h3>
-<p>At Index Ventures, Thakur was involved in the firm's investment in Cartesia, an AI company focused on efficient sequence modeling.</p>
+<h3>Index Ventures and Nava Ventures</h3>
+<p>Before Hanabi, Thakur worked at Index Ventures and previously at Nava Ventures. She is listed on SXSW 2024 programming as an Index Ventures Partner panelist.</p>
 
 <h3>Nava Ventures</h3>
 <p>Prior to Index, Thakur worked at Nava Ventures.</p>
 
-<h2>Public contributions</h2>
-<p>Thakur spoke at <strong>SXSW 2024</strong> and has written for <strong>TechCrunch</strong> on venture capital and technology topics.</p>
+<h2>Technical background</h2>
+<p>Hanabi&apos;s public team page describes a technical background including AI research and software engineering, and notes that she studied Course 6-3 (Computer Science) at MIT.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Ishani Thakur",
-      sameAs: ["https://linkedin.com/in/ishanithakur"],
+      sameAs: ["https://linkedin.com/in/ishanithakur", "https://www.hanabi.com/team/ishani-thakur"],
       jobTitle: "Co-Founder & General Partner",
       worksFor: { "@type": "Organization", name: "Hanabi Capital" },
       hasOccupation: [
         {
           "@type": "Role",
-          roleName: "Co-Founder & General Partner",
+          roleName: "Partner",
           endDate: null,
           organization: {
             "@type": "Organization",
             name: "Hanabi Capital",
             description: "Venture fund co-founded with Mike Volpi and Bryan Offutt",
           },
-          _whatTheyBuilt: "Co-founded venture fund with portfolio including Anysphere (Cursor), LiveKit, Cognition AI, BRINC Drones",
+          _whatTheyBuilt: "Invests in AI and software infrastructure companies at Hanabi Capital",
           _verificationStatus: "public",
-          _confidence: 0.90,
+          _confidence: 0.95,
           _gaps: ["Fund size unknown", "Full portfolio list unknown"],
         },
         {
           "@type": "Role",
-          roleName: "Investor",
+          roleName: "Partner",
           organization: {
             "@type": "Organization",
             name: "Index Ventures",
             description: "Global VC firm (Slack, Figma, Roblox)",
           },
-          _whatTheyBuilt: "Involved in Cartesia investment",
+          _whatTheyBuilt: "Invested in AI and infrastructure themes; appeared on SXSW 2024 as Index Ventures Partner",
           _verificationStatus: "public",
-          _confidence: 0.85,
+          _confidence: 0.9,
         },
         {
           "@type": "Role",
@@ -480,6 +506,8 @@ export const profileBatchB: ProfileRecord = {
       knowsAbout: [
         { skill: "Venture Capital", type: "domain", _confidence: 0.95, _evidence: "GP at Hanabi Capital, prior roles at Index Ventures and Nava Ventures" },
         { skill: "AI/ML Investing", type: "domain", _confidence: 0.90, _evidence: "Portfolio: Anysphere (Cursor), Cognition AI (Devin), Cartesia" },
+        { skill: "Software Engineering", type: "domain", _confidence: 0.75, _evidence: "Hanabi bio cites engineering experience at Confluent, Lyft Level 5, and Google" },
+        { skill: "Robotics / RL Research", type: "domain", _confidence: 0.7, _evidence: "Hanabi bio cites prior robotics/RL research at DeepMind and MIT" },
         { skill: "Real-time Infrastructure", type: "domain", _confidence: 0.70, _evidence: "LiveKit investment" },
         { skill: "Robotics / Defense Tech", type: "domain", _confidence: 0.60, _evidence: "BRINC Drones investment" },
       ],
@@ -487,8 +515,8 @@ export const profileBatchB: ProfileRecord = {
         { name: "Hanabi Capital", type: "fund", description: "VC fund with Volpi and Offutt. Portfolio: Anysphere (Cursor), LiveKit, Cognition AI, BRINC Drones", status: "active" },
       ],
       _dataQuality: {
-        sourcesConsulted: 8,
-        sourceList: ["LinkedIn", "Hanabi Capital", "Index Ventures", "TechCrunch", "SXSW 2024", "Cartesia", "Anysphere", "Cognition AI"],
+        sourcesConsulted: 9,
+        sourceList: ["LinkedIn", "Hanabi team page", "Index Ventures", "SXSW 2024 schedule", "Nava Ventures launch post", "Cartesia", "Anysphere", "Cognition AI", "General web search"],
         lastUpdated: "2026-03",
         overallConfidence: {
           identity: "HIGH",
@@ -498,31 +526,35 @@ export const profileBatchB: ProfileRecord = {
           currentWorkDetail: "MEDIUM",
         },
         gaps: [
-          "Education (university, degree) not publicly documented",
+          "Exact dates across Index/Nava/Hanabi not fully public",
           "Hanabi Capital fund size and vintage",
           "Full investment portfolio",
-          "Duration at Index Ventures and Nava Ventures",
-          "Technical vs. business background",
+          "Independent verification of all prior technical roles",
         ],
-        recommendation: "Education details and Hanabi Capital fund structure would complete the profile.",
+        recommendation: "Fund details and canonical timeline dates would complete this profile.",
       },
     },
     infobox: {
       fullName: "Ishani Thakur",
       currentRole: "Co-Founder & General Partner",
       org: "Hanabi Capital",
-      education: [],
+      education: ["MIT (Course 6-3 / Computer Science, per Hanabi bio)"],
       knownFor: [
-        "Co-founded Hanabi Capital (with Mike Volpi, Bryan Offutt)",
-        "Portfolio: Anysphere (Cursor), LiveKit, Cognition AI, BRINC",
-        "Previously at Index Ventures (Cartesia investment)",
-        "SXSW 2024 speaker, TechCrunch contributor",
+        "Partner at Hanabi Capital",
+        "Former Index Ventures Partner (SXSW 2024 panelist)",
+        "Prior Nava Ventures investor",
+        "AI/software infrastructure investing",
       ],
-      links: [],
+      links: [
+        { label: "Hanabi Profile", url: "https://www.hanabi.com/team/ishani-thakur" },
+        { label: "SXSW 2024 Speaker", url: "https://schedule.sxsw.com/2024/speakers/2197976" },
+      ],
     },
     references: [
-      { title: "TechCrunch — Ishani Thakur", url: "https://techcrunch.com" },
-      { title: "Cartesia", url: "https://www.cartesia.ai/" },
+      { title: "Hanabi — Ishani Thakur", url: "https://www.hanabi.com/team/ishani-thakur" },
+      { title: "SXSW 2024 — Ishani Thakur", url: "https://schedule.sxsw.com/2024/speakers/2197976" },
+      { title: "Ishani Thakur — LinkedIn", url: "https://linkedin.com/in/ishanithakur" },
+      { title: "Nava Ventures launch post", url: "https://www.linkedin.com/posts/ishani-thakur-04420613b_so-nava-ventures-has-officially-launched-activity-6900532630303989760-NdKQ" },
     ],
   },
 

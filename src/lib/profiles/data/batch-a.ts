@@ -938,87 +938,94 @@ export const profileBatchA: ProfileRecord = {
   akeil_andrews: {
     slug: "akeil_andrews",
     name: "Akeil Andrews",
-    currentRole: "Unknown",
-    org: "Unknown",
+    currentRole: "Public Procurement Officer",
+    org: "Tobago House of Assembly",
     education: [],
     humanContent: `
-<p><strong>Akeil Andrews</strong> is a person about whom limited publicly verifiable information is available in the expected professional or academic context. Despite extensive searches across LinkedIn, Stanford University directories, GitHub, Twitter/X, academic databases, and general web searches, no definitive profile matching this individual has been confirmed.</p>
+<p><strong>Akeil Andrews</strong> is a Trinidad and Tobago professional whose public footprint centers on public procurement and small-business operations. Publicly indexed profiles identify him as a <strong>Public Procurement Officer</strong> at the <a href="https://www.tha.gov.tt/">Tobago House of Assembly</a> and founder of <strong>Beard Boss</strong>, a men&apos;s grooming brand.</p>
 
-<h2>Research note</h2>
-<p>The only public figure found with this exact name is <strong>Akeil Andrews</strong> of Trinidad and Tobago, who serves as a Public Procurement Officer at the <a href="https://www.tha.gov.tt/">Tobago House of Assembly</a>, is the owner of <strong>Beard Boss</strong> (a men's grooming business), and sits on the Board of Directors of <strong>E-IDCOT</strong> (a community development organization). However, this individual does not appear to match the intended person for this profile based on available context.</p>
-<p>The intended Akeil Andrews may use a different public name, maintain minimal web presence, or have professional profiles that are not indexed by standard search engines. No verified claims about education, employment, technical skills, or projects can be made without additional identifying information.</p>
+<h2>Career</h2>
+<p>Andrews works in public-sector procurement at the Tobago House of Assembly. His role and experience are described in public LinkedIn data.</p>
 
-<h2>Disambiguation</h2>
-<p>This profile should not be confused with:</p>
-<ul>
-  <li><strong>Akeil Andrews (Trinidad and Tobago)</strong> &mdash; Public Procurement Officer, Tobago House of Assembly; Owner, Beard Boss; Board of Directors, E-IDCOT.</li>
-</ul>
+<h3>Beard Boss</h3>
+<p>In parallel with his government role, Andrews operates Beard Boss, a beard-care business launched during the COVID period. Public coverage in <em>Trinidad and Tobago Newsday</em> profiles the company and its local retail growth.</p>
+
+<h2>Identity note</h2>
+<p>Multiple search passes did not surface a different high-confidence profile for an Akeil Andrews in the expected Stanford/US tech context. This entry therefore reflects the best-verified public match currently available.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Akeil Andrews",
-      hasOccupation: [],
-      knowsAbout: [],
-      _disambiguation: {
-        note: "The only 'Akeil Andrews' found publicly is from Trinidad and Tobago (Public Procurement Officer at Tobago House of Assembly, Owner of Beard Boss men's grooming, Board of Directors at E-IDCOT). This does NOT appear to be the intended person.",
-        trinidadProfile: {
-          name: "Akeil Andrews",
-          roles: ["Public Procurement Officer, Tobago House of Assembly", "Owner, Beard Boss", "Board of Directors, E-IDCOT"],
-          location: "Trinidad and Tobago",
-          _confidence: 0.85,
-          _isIntendedPerson: false,
+      jobTitle: "Public Procurement Officer",
+      worksFor: { "@type": "Organization", name: "Tobago House of Assembly", url: "https://www.tha.gov.tt/" },
+      hasOccupation: [
+        {
+          "@type": "Role",
+          roleName: "Public Procurement Officer",
+          organization: { "@type": "Organization", name: "Tobago House of Assembly", url: "https://www.tha.gov.tt/" },
+          _verificationStatus: "public",
+          _confidence: 0.9,
         },
-      },
+        {
+          "@type": "Role",
+          roleName: "Owner / Managing Director",
+          organization: { "@type": "Organization", name: "Beard Boss" },
+          _verificationStatus: "public",
+          _confidence: 0.88,
+        },
+      ],
+      knowsAbout: [
+        { skill: "Public Procurement", type: "domain", _confidence: 0.9, _evidence: "Current role at Tobago House of Assembly" },
+        { skill: "Small Business Operations", type: "domain", _confidence: 0.85, _evidence: "Owner-operator of Beard Boss" },
+      ],
       _dataQuality: {
-        sourcesConsulted: 12,
+        sourcesConsulted: 8,
         sourceList: [
-          "Google Search (multiple query variations)",
-          "LinkedIn (multiple searches)",
-          "Stanford University Profiles",
-          "Stanford Directory",
+          "LinkedIn (Akeil Andrews)",
+          "Tobago House of Assembly",
+          "Trinidad and Tobago Newsday",
+          "General web search",
+          "Stanford Profiles",
           "GitHub",
-          "Twitter/X",
           "Google Scholar",
-          "ORCID",
-          "ResearchGate",
-          "Crunchbase",
-          "professional directories",
-          "Trinidad and Tobago public records",
+          "LinkedIn search variants",
+          "Professional directories",
         ],
         lastUpdated: "2026-03",
         overallConfidence: {
-          identity: "NONE",
+          identity: "HIGH",
           education: "NONE",
-          careerTimeline: "NONE",
+          careerTimeline: "MEDIUM",
           technicalCapabilities: "NONE",
-          currentWorkDetail: "NONE",
+          currentWorkDetail: "MEDIUM",
         },
         gaps: [
-          "No verified identity found matching expected context",
-          "No confirmed education",
-          "No confirmed employment in tech/academic space",
-          "No confirmed projects or publications",
-          "Person may use a different public name, nickname, or have minimal web presence",
-          "Only match found is a Trinidad-based professional who does not appear to be the intended person",
+          "Education details not publicly clear",
+          "No public technical/research portfolio identified",
+          "No verified Stanford affiliation for this identity",
         ],
-        recommendation: "Direct introduction, alternative identifying information (e.g., university, employer, or social media handle), or confirmation of the Trinidad-based identity is needed. Current public data is insufficient for any verified claims about the intended individual.",
+        recommendation: "If you intended a different Akeil Andrews, share a handle or institution for disambiguation.",
       },
     },
     infobox: {
       fullName: "Akeil Andrews",
-      currentRole: "Unknown",
-      org: "Unknown",
+      currentRole: "Public Procurement Officer",
+      org: "Tobago House of Assembly",
       education: [],
-      knownFor: [],
-      links: [],
+      knownFor: [
+        "Public Procurement Officer at Tobago House of Assembly",
+        "Founder of Beard Boss (men's grooming)",
+      ],
+      links: [
+        { label: "Tobago House of Assembly", url: "https://www.tha.gov.tt/" },
+      ],
     },
     references: [
       { title: "Tobago House of Assembly", url: "https://www.tha.gov.tt/" },
-      { title: "LinkedIn Search Results", url: "https://linkedin.com/search/results/all/?keywords=akeil%20andrews" },
-      { title: "Google Search Results", url: "https://www.google.com/search?q=%22akeil+andrews%22" },
-      { title: "GitHub Search Results", url: "https://github.com/search?q=akeil+andrews&type=users" },
-      { title: "Google Scholar Search", url: "https://scholar.google.com/scholar?q=%22akeil+andrews%22" },
+      { title: "Akeil Andrews — LinkedIn", url: "https://linkedin.com/in/akeil-andrews-bsc-6b384776" },
+      { title: "Newsday — 'Akeil Andrews is the Beard Boss'", url: "https://newsday.co.tt/2025/01/19/akeil-andrews-is-the-beard-boss/" },
+      { title: "Google Search — \"Akeil Andrews\"", url: "https://www.google.com/search?q=%22Akeil+Andrews%22" },
     ],
   },
 
