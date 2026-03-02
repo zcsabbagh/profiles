@@ -3,7 +3,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { headers } from "next/headers";
 import { auth } from "@clerk/nextjs/server";
-import { getProfile } from "@/lib/profiles";
+import { getProfileAsync } from "@/lib/profiles";
 import ViewToggle from "@/components/ViewToggle";
 import Infobox from "@/components/Infobox";
 import MachineView from "@/components/MachineView";
@@ -20,7 +20,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const profile = getProfile(slug);
+  const profile = await getProfileAsync(slug);
   if (!profile) return { title: "Not Found" };
   return {
     title: `${profile.name} — Agentapedia`,
@@ -40,7 +40,7 @@ export default async function ProfilePage({
 }) {
   const { slug } = await params;
   const { view } = await searchParams;
-  const profile = getProfile(slug);
+  const profile = await getProfileAsync(slug);
   if (!profile) notFound();
   const h = await headers();
   const userAgent = (h.get("user-agent") ?? "").toLowerCase();

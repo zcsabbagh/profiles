@@ -1,5 +1,5 @@
 import { createSupabaseServerClient } from "@/lib/supabase";
-import { getProfile } from "@/lib/profiles";
+import { getProfileAsync } from "@/lib/profiles";
 import { renderMarkdownToHtml, extractReferencesFromMarkdown } from "@/lib/markdown-shared";
 import { toEditableMarkdown } from "@/lib/markdown-server";
 
@@ -38,7 +38,7 @@ export async function getRuntimeProfileState(
   userId: string | null,
   accessToken?: string | null
 ): Promise<RuntimeProfileState | null> {
-  const baseProfile = getProfile(slug);
+  const baseProfile = await getProfileAsync(slug);
   if (!baseProfile) return null;
 
   const supabase = createSupabaseServerClient();
@@ -152,7 +152,7 @@ export async function getRuntimeProfileState(
 }
 
 export async function assertProfileExists(slug: string) {
-  const profile = getProfile(slug);
+  const profile = await getProfileAsync(slug);
   if (!profile) {
     throw new Error("PROFILE_NOT_FOUND");
   }

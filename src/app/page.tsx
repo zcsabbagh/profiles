@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { getAllProfiles } from "@/lib/profiles";
+import { getAllProfilesAsync } from "@/lib/profiles";
 import SearchDialog, { SearchTrigger } from "@/components/SearchDialog";
 
-export default function Home() {
-  const profiles = getAllProfiles();
+export default async function Home() {
+  const profiles = await getAllProfilesAsync();
   const searchItems = profiles.map((p) => ({ name: p.name, slug: p.slug }));
 
   return (
