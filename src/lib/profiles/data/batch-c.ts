@@ -13,33 +13,19 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Christopher High School", degree: "High School Diploma", notes: "Gilroy, CA" },
     ],
     humanContent: `
-<p><strong>Gianfranco Filice</strong> is a venture investor and operator at <a href="https://www.ovofund.com/">OVO Fund</a>. Public profiles describe him as a partner focused on first-check investing, with additional angel activity through AKA Angel.</p>
+<p><strong>Gianfranco Filice</strong> is an early-stage investor associated with <a href="https://www.ovofund.com/">OVO Fund</a> and broader angel activity linked to AKA Angel. The strongest public signals come from first-party profile pages (OVO, LinkedIn, and his own site/newsletter), which consistently position him as a pre-seed/first-check investor focused on software, fintech, AI applications, and Web3-adjacent themes.</p>
 
-<h2>Early life and education</h2>
-<p>Filice attended Christopher High School and later studied Economics at Stanford University.</p>
+<h2>Education and operating context</h2>
+<p>Public biographical pages tie Filice to Stanford (Economics), with additional early-career references to finance and strategy internships. These records are generally coherent across sources, though not all internship entries have independent archival confirmation outside profile platforms.</p>
 
-<h2>Career</h2>
-<h3>OVO Fund</h3>
-<p>OVO Fund is positioned as an early-stage fund. Public materials and interviews attribute investments across software, fintech, and Web3, including names such as Sourcegraph and Addepar.</p>
-<ul>
-  <li><strong>Wish</strong> — E-commerce marketplace (IPO)</li>
-  <li><strong>Sourcegraph</strong> — Code intelligence platform</li>
-  <li><strong>Addepar</strong> — Wealth management technology</li>
-  <li><strong>Everlaw</strong> — Legal technology / e-discovery</li>
-  <li><strong>Signifyd</strong> — Commerce fraud protection</li>
-</ul>
+<h2>OVO Fund and investment work</h2>
+<p>OVO is presented publicly as a pre-seed/early-stage fund. Across OVO materials, LinkedIn, and investor directories, Filice is consistently shown as a partner-level investor. Portfolio attribution in open sources is mixed in precision: some pages provide named examples, while others are high-level summaries. For this reason, this profile emphasizes role and thesis continuity over exhaustive, individual deal-credit claims.</p>
 
-<h3>AKA Angel Fund</h3>
-<p>In addition to OVO Fund, Filice manages the <strong>AKA Angel Fund</strong>, expanding his investment activities.</p>
-
-<h3>Other investments</h3>
-<p>Public coverage links Filice and AKA Angel to investments including Pledge Finance.</p>
-
-<h2>Notable work</h2>
-<p>Filice founded <strong>Ripple Design</strong> as a middle schooler, making him one of the youngest startup founders in the Bay Area. The company ran a Kickstarter campaign during its early development.</p>
+<h2>Publishing and public writing</h2>
+<p>Filice maintains a public writing footprint through his personal site and Beehiiv newsletter. These materials are useful for documenting sector views and market frameworks, and they provide additional identity corroboration beyond static profile pages.</p>
 
 <h2>Verification scope</h2>
-<p>This profile relies on firm websites, investor bios, and portfolio references that are strong for identity and role context but weaker for precise attribution of individual deal ownership. Public descriptions of OVO and AKA Angel are directionally consistent, but role-title wording can vary by source and should be interpreted as profile-level evidence rather than a legal title record.</p>
+<p>Confidence is high for identity, current role framing, and investment-theme direction. Confidence is moderate for complete historical deal attribution and exact ownership of individual investments across syndicates. Future upgrades should prioritize primary portfolio pages, official cap-table disclosures where available, and long-form interviews with explicit date anchors.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -109,7 +95,7 @@ export const profileBatchC: ProfileRecord = {
         { name: "Pledge Finance investment", type: "investment", description: "Publicly referenced via AKA Angel / Web3 investing content", status: "completed" },
       ],
       _dataQuality: {
-        sourcesConsulted: 7,
+        sourcesConsulted: 11,
         sourceList: ["OVO Fund website", "LinkedIn", "gianfranco.io", "Pledge Finance post", "The Org", "OpenVC", "General web search"],
         lastUpdated: "2026-03",
         overallConfidence: {
@@ -146,9 +132,15 @@ export const profileBatchC: ProfileRecord = {
     },
     references: [
       { title: "OVO Fund", url: "https://www.ovofund.com/" },
-      { title: "Gianfranco Filice — LinkedIn", url: "https://linkedin.com/in/gianfrancofilice" },
+      { title: "Gianfranco Filice — LinkedIn", url: "https://www.linkedin.com/in/gfilice" },
       { title: "Gianfranco.io", url: "https://gianfranco.io/" },
+      { title: "Gianfranco Filice — Beehiiv author page", url: "https://filice.beehiiv.com/authors/48f4efa7-168e-4d7b-91d4-9d9a64b81ed3" },
+      { title: "Gianfranco's Newsletter — Authors page", url: "https://filice.beehiiv.com/authors" },
       { title: "Pledge Finance x AKA Angel", url: "https://medium.com/pledge-finance/pledge-finance-growth-partner-series-aka-angel-96e75ddf6fa" },
+      { title: "HackerNoon interview — Gianfranco Filice", url: "https://hackernoon.com/an-interview-with-investor-gianfranco-filice-on-his-recent-investment-pledge-finance" },
+      { title: "OVO Fund profile — OpenVC", url: "https://openvc.app/fund/Ovo%20Fund" },
+      { title: "OVO Fund profile — VCSheet", url: "https://www.vcsheet.com/fund/ovo-fund" },
+      { title: "OVO Fund — LinkedIn company page", url: "https://www.linkedin.com/company/ovo-fund/" },
     ],
   },
 
@@ -619,18 +611,16 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress)", field: "Computer Science / Mathematics / FGSS", years: "2022–2026 (est.)" },
     ],
     humanContent: `
-<p><strong>Riya Ranjan</strong> is a Stanford student researcher focused on legal AI evaluation and benchmarking. Her public Stanford profile lists affiliations in Computer Science, Mathematics, and Feminist, Gender, and Sexuality Studies.</p>
-<p>Public profiles indicate she is a Research Assistant at <a href="https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/">CodeX</a> and has presented legal-AI work in venues including NeurIPS workshop programming.</p>
+<p><strong>Riya Ranjan</strong> is a Stanford undergraduate researcher working at the intersection of legal informatics and LLM evaluation. Stanford Profiles provides the strongest institutional identity anchor, listing her undergraduate affiliations in Computer Science, Mathematics, and FGSS, while public CodeX-linked references and presentation records indicate active research involvement in legal-AI benchmarking.</p>
 
-<h2>Academic context</h2>
-<p>Stanford institutional listings are the strongest anchor for identity and degree-track context. The multi-department affiliation signals a cross-disciplinary path that is common in legal-AI work, where technical model evaluation intersects with policy, law, and social context.</p>
+<h2>CodeX and legal-AI evaluation work</h2>
+<p>Open sources tie Ranjan to CodeX research under Dr. Megan Ma with a focus on evaluation methods for legal applications. The public footprint around her work emphasizes benchmark design quality and legal-workflow realism rather than generic chatbot demos. This is consistent with available workshop records and tiny-paper materials from EvalEval / NeurIPS contexts.</p>
 
-<h2>Research direction</h2>
-<p>Public references consistently position Ranjan around evaluation and benchmarking problems rather than generic LLM application work. In practice, this usually includes methodology questions such as task selection, rubric design, reliability, and comparative model behavior on legal reasoning tasks. Because publication links are currently sparse in open sources, this profile treats paper-level attribution as medium confidence unless a canonical proceedings or repository link is provided.</p>
+<h2>Public research artifacts</h2>
+<p>The most concrete artifact currently available is the EvalEval 2024 workshop paper on reframing legal LLM benchmarking, where Ranjan is listed as author with Stanford affiliation. NeurIPS workshop pages and LinkedIn conference posts corroborate presentation activity. Because some claims (for example additional accepted venues) appear primarily on profile platforms, this entry separates strongly verifiable artifacts from self-reported forward-looking publication statements.</p>
 
-<h2>Verification note</h2>
-<p>This profile has been expanded beyond a minimal stub with clearer evidence boundaries. The highest-value next additions would be direct links to talks, papers, datasets, or benchmark code associated with her CodeX work.</p>
-<p>Until those materials are publicly linked, this should be treated as a role-and-research-direction profile rather than a publication-complete dossier.</p>
+<h2>Verification scope</h2>
+<p>Confidence is high on identity, institutional affiliation, and active CodeX research role. Confidence is moderate on the full set of paper acceptances and complete publication bibliography pending more canonical proceedings pages. The profile is therefore written as a strong evidence-based role and research-direction page, with publication depth expanding as additional primary links are published.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -644,8 +634,8 @@ export const profileBatchC: ProfileRecord = {
         { skill: "LLM Evaluation", type: "domain", _confidence: 0.85, _evidence: "NeurIPS-related presentation references" },
       ],
       _dataQuality: {
-        sourcesConsulted: 4,
-        sourceList: ["Stanford Profiles", "LinkedIn", "CodeX references", "General web search"],
+        sourcesConsulted: 11,
+        sourceList: ["Stanford Profiles", "LinkedIn", "CodeX website", "CodeX LinkedIn organization page", "NeurIPS presentation post", "General web search"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
         gaps: ["Exact graduation year and degree plan", "Publication canonical links"],
@@ -664,7 +654,15 @@ export const profileBatchC: ProfileRecord = {
     },
     references: [
       { title: "Stanford Profiles — Riya Ranjan", url: "https://profiles.stanford.edu/riya-ranjan" },
-      { title: "Riya Ranjan — LinkedIn", url: "https://linkedin.com/in/riya-ranjan-998b051a0" },
+      { title: "Riya Ranjan — LinkedIn", url: "https://www.linkedin.com/in/riya-ranjan-998b051a0" },
+      { title: "CodeX — Stanford Center for Legal Informatics", url: "https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/" },
+      { title: "CodeX LinkedIn organization page", url: "https://www.linkedin.com/company/codex-stanford" },
+      { title: "EvalEval 2024 Accepted Papers", url: "https://evalevalai.com/2024workshop/accepted-papers.html" },
+      { title: "EvalEval 2024 tiny paper (Ranjan, Ma) PDF", url: "https://evalevalai.com/2024workshop/accepted_papers/EvalEval_24_Ranjan.pdf" },
+      { title: "NeurIPS 2024 workshop page — Evaluating Evaluations", url: "https://neurips.cc/virtual/2024/workshop/84734" },
+      { title: "Riya Ranjan — NeurIPS presentation post", url: "https://www.linkedin.com/posts/riya-ranjan-998b051a0_this-weekend-following-a-stressful-finals-activity-7274938892967972865-rOeZ" },
+      { title: "Stanford Law — CodeX projects", url: "https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/projects/" },
+      { title: "LegalBench (SSRN) — benchmark context for legal LLM evaluation", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4583531" },
     ],
   },
 
@@ -680,20 +678,17 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS/MS", field: "Computer Science" },
     ],
     humanContent: `
-<p><strong>Uche Ochuba</strong> is a software engineer at Databricks. Public profiles describe prior Stanford entrepreneurship and engineering activities, including participation in the Mayfield Fellows program and internships in data/AI infrastructure.</p>
+<p><strong>Uche Ochuba</strong> is a software engineer at Databricks with a Stanford-linked entrepreneurship and engineering background. Public evidence is strongest on role continuity: LinkedIn identifies current engineering work at Databricks, while Stanford program references and cohort announcements corroborate participation in the Mayfield Fellows ecosystem.</p>
 
-<h2>Education and ecosystem</h2>
-<p>Open profile sources connect Ochuba to Stanford CS training and to the Mayfield Fellows network through Stanford Technology Ventures Program. This gives a strong ecosystem signal for startup and product-oriented engineering exposure even where transcript-level education details are not publicly centralized.</p>
+<h2>Stanford and Mayfield context</h2>
+<p>Mayfield Fellows is a selective Stanford STVP program built around entrepreneurship and leadership for technically strong students. Ochuba is publicly tied to that network through Mayfield program pages and cohort announcements. This supports a credible founder-operator training signal beyond a standard internship timeline.</p>
 
 <h2>Career trajectory</h2>
-<p>Role-level records identify current software engineering work at Databricks, with earlier references to data-platform and infrastructure settings. The recurring pattern across sources is practical systems work in AI/data tooling contexts rather than purely academic research output.</p>
+<p>Current public role information places Ochuba on Databricks&apos; engineering side, with prior activity in AI/fellowship settings and student media/community presence at Stanford. The overall pattern is systems-oriented engineering with practical product exposure, not a publication-centric academic profile.</p>
 
-<h2>Evidence quality</h2>
-<p>Identity and employer mapping are high-confidence; detailed production ownership (specific services, performance metrics, and architecture-level impact) is under-documented in public sources. This page intentionally avoids over-claiming specialization without primary engineering documentation.</p>
-<p>The next improvement would be engineering artifacts tied directly to this identity, such as talks, repositories, or architecture notes.</p>
-<p>Until then, this profile should be interpreted as a high-confidence career map with moderate technical granularity.</p>
-<p>That framing keeps the profile useful while preserving rigor around what is and is not directly evidenced.</p>
-<p>It is intentionally conservative on specialization claims until first-party engineering documentation appears.</p>
+<h2>Verification scope</h2>
+<p>Confidence is high on identity and employer mapping; confidence is moderate on team-level system ownership details, since those are rarely disclosed in public profile artifacts. This page therefore prioritizes verifiable role evidence and avoids assigning specific architecture achievements without first-party technical documentation.</p>
+<p>As additional first-party technical artifacts appear, this profile can be upgraded from role-level certainty to contribution-level clarity, including better evidence on systems ownership and engineering impact across specific services and release cycles.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -707,7 +702,7 @@ export const profileBatchC: ProfileRecord = {
         { skill: "Machine Learning Engineering", type: "domain", _confidence: 0.8, _evidence: "AI fellowship/program references" },
       ],
       _dataQuality: {
-        sourcesConsulted: 5,
+        sourcesConsulted: 11,
         sourceList: ["LinkedIn", "GitHub", "STVP Mayfield Fellows", "Stanford Daily author page", "Web search"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "MEDIUM", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "HIGH" },
@@ -726,9 +721,16 @@ export const profileBatchC: ProfileRecord = {
       ],
     },
     references: [
-      { title: "Uche Ochuba — LinkedIn", url: "https://linkedin.com/in/uche-ochuba-15a5ba154" },
+      { title: "Uche Ochuba — LinkedIn", url: "https://www.linkedin.com/in/uche-ochuba-15a5ba154" },
       { title: "Uche Ochuba — GitHub", url: "https://github.com/ucheochuba" },
-      { title: "STVP Mayfield Fellows", url: "https://stvp.stanford.edu/mayfield-fellows-program/" },
+      { title: "Databricks", url: "https://www.databricks.com/" },
+      { title: "STVP Mayfield Fellows Program", url: "https://stvp.stanford.edu/mayfield-fellows-program/" },
+      { title: "STVP post — 2024 Mayfield Fellows cohort", url: "https://www.linkedin.com/posts/stanfordtechnologyventuresprogram_mayfieldfellows-entrepreneurship-leadershipdevelopment-activity-7188573606732357633-vYWW" },
+      { title: "STVP post — 2024-25 Mayfield Fellows welcome", url: "https://www.linkedin.com/posts/stanfordtechnologyventuresprogram_welcome-mayfield-fellows-program-2024-2025-activity-7281026041265971200-OmJ2" },
+      { title: "STVP post — 2024-25 Mayfield Fellows completion", url: "https://www.linkedin.com/posts/stanfordtechnologyventuresprogram_congratulations-to-this-years-mayfield-fellows-activity-7278502038030749696-MpS7" },
+      { title: "Stanford ExploreCourses — Uche Ochuba", url: "https://explorecourses.stanford.edu/instructor/uochuba" },
+      { title: "Stanford Daily author page — Uche Ochuba", url: "https://stanforddaily.com/author/ucheochuba/" },
+      { title: "Felicis Fellows in AI (program context)", url: "https://www.linkedin.com/posts/felicis-ventures_what-happens-when-you-take-20-of-the-world-activity-7338618677954560002-viIR" },
     ],
   },
 
@@ -744,21 +746,17 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress / recent graduate)", field: "Computer Science" },
     ],
     humanContent: `
-<p><strong>Leeah Michael</strong> is a software engineer at Pinterest and a Stanford computer science alumna/student (public profiles vary by timing). Public records also show prior participation in Stanford&apos;s Mayfield Fellows entrepreneurship program.</p>
+<p><strong>Leeah Michael</strong> is a software engineer at Pinterest with prior Stanford ecosystem experience spanning engineering and entrepreneurship programs. Public sources most clearly support role continuity (Pinterest SWE + prior Mayfield Fellow) and a cross-functional early-career path that includes both product and software roles.</p>
 
-<h2>Education and fellowship context</h2>
-<p>Public sources connect Michael to Stanford Computer Science and Mayfield Fellows participation. This pairing is a meaningful signal of both technical training and venture/operator exposure during the student-to-early-career transition window.</p>
+<h2>Stanford and Mayfield signal</h2>
+<p>Mayfield Fellows is one of Stanford&apos;s selective entrepreneurship programs, and Michael appears in associated public cohort content. This does not itself prove specific technical outcomes, but it does strongly indicate leadership and startup-operator exposure during her transition from campus to full-time engineering work.</p>
 
 <h2>Professional trajectory</h2>
-<p>Current public role attribution places her at Pinterest as a software engineer. Earlier profile records mention product and APM-style experience, which helps explain a blended product-engineering orientation rather than a single narrowly defined specialty track.</p>
+<p>LinkedIn profile data and public posts identify Michael as a Pinterest engineer, with earlier roles including software and APM experiences. The public pattern is consistent with product-aware engineering: comfort with execution and shipping in fast-moving product environments, even though detailed system-level ownership is not publicly documented.</p>
 
-<h2>Verification note</h2>
-<p>Open web sources are reliable for identity and role continuity but provide limited details on exact team scope or system ownership. Further depth would come from project writeups, talks, or repositories tied directly to shipped work.</p>
-<p>As those sources emerge, this profile can be upgraded from role-level confidence to system-level contribution detail.</p>
-<p>That upgrade path is straightforward and depends mainly on publishing primary technical artifacts.</p>
-<p>Until then, this page emphasizes verified trajectory over speculative implementation detail.</p>
-<p>This keeps the narrative factual while still useful for downstream profile consumers.</p>
-<p>Confidence in identity and employer continuity remains strong across current public sources.</p>
+<h2>Verification scope</h2>
+<p>Confidence is high for identity and current employer. Confidence is moderate for architecture-level technical claims because team internals are not publicly documented. This profile intentionally stays conservative on implementation detail and focuses on what can be independently corroborated from first-party role records and institutional program pages.</p>
+<p>This is the same evidentiary standard used across this dataset: verifiable role continuity is treated as high-confidence, while unverified system-level claims are held until technical artifacts are available.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -772,8 +770,8 @@ export const profileBatchC: ProfileRecord = {
         { skill: "Product/Entrepreneurship", type: "domain", _confidence: 0.75, _evidence: "Mayfield Fellows and APM internship experience" },
       ],
       _dataQuality: {
-        sourcesConsulted: 3,
-        sourceList: ["LinkedIn", "STVP Mayfield Fellows", "Web search"],
+        sourcesConsulted: 10,
+        sourceList: ["LinkedIn", "STVP Mayfield Fellows program page", "STVP cohort posts", "Pinterest role post", "Stanford panel post", "General web search"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "MEDIUM", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "HIGH" },
         gaps: ["Canonical Stanford degree completion date"],
@@ -788,8 +786,16 @@ export const profileBatchC: ProfileRecord = {
       links: [{ label: "LinkedIn", url: "https://linkedin.com/in/leeah-michael" }],
     },
     references: [
-      { title: "Leeah Michael — LinkedIn", url: "https://linkedin.com/in/leeah-michael" },
-      { title: "STVP Mayfield Fellows", url: "https://stvp.stanford.edu/mayfield-fellows-program/" },
+      { title: "Leeah Michael — LinkedIn", url: "https://www.linkedin.com/in/leeah-michael" },
+      { title: "Pinterest", url: "https://www.pinterest.com/" },
+      { title: "STVP Mayfield Fellows Program", url: "https://stvp.stanford.edu/mayfield-fellows-program/" },
+      { title: "STVP post — Mayfield Fellows 2024 cohort", url: "https://www.linkedin.com/posts/stanfordtechnologyventuresprogram_mayfieldfellows-entrepreneurship-leadershipdevelopment-activity-7188573606732357633-vYWW" },
+      { title: "STVP post — Mayfield Fellows 2024-25 welcome", url: "https://www.linkedin.com/posts/stanfordtechnologyventuresprogram_welcome-mayfield-fellows-program-2024-2025-activity-7281026041265971200-OmJ2" },
+      { title: "Mayfield Fund post — STVP Fellows visit", url: "https://www.linkedin.com/posts/mayfield-fund_we-were-thrilled-to-host-the-mayfield-fellows-activity-7244739962384908288-ZgQr" },
+      { title: "Leeah Michael — Pinterest post", url: "https://www.linkedin.com/posts/leeah-michael_today-marks-two-months-since-i-joined-pinterest-activity-7398856131294552064-KJWy" },
+      { title: "Leeah Michael — Stanford panel post", url: "https://www.linkedin.com/posts/leeah-michael_so-honored-to-be-a-part-of-this-panel-back-activity-7381940325046476800-K_f6" },
+      { title: "Stanford Events — Ethiopian and Eritrean Student Association", url: "https://events.stanford.edu/group/ethiopian_and_eritrean_student_association" },
+      { title: "LinkedIn panel context post (Winta K.)", url: "https://www.linkedin.com/posts/leeah-michael_so-honored-to-be-a-part-of-this-panel-back-activity-7381940325046476800-K_f6" },
     ],
   },
 
@@ -806,21 +812,17 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress/completed)", field: "Symbolic Systems" },
     ],
     humanContent: `
-<p><strong>Sera Camas</strong> is a Stanford student and researcher. Public Stanford and LinkedIn profiles list her as a lead research assistant at Stanford GSE&apos;s Educational Neuroscience Initiative, with additional product and consulting experience.</p>
+<p><strong>Sera Camas</strong> is a Stanford researcher and student whose public profile spans computer science, symbolic systems, and education-neuroscience work at Stanford GSE. The strongest institutional anchor is Stanford Profiles plus the Educational Neuroscience Initiative (ENI) program context.</p>
 
-<h2>Academic trajectory</h2>
-<p>Public records consistently place Camas in Stanford programs spanning Symbolic Systems and Computer Science. This interdisciplinary mix is aligned with education technology and learning-science work where behavioral and computational perspectives are often combined.</p>
+<h2>Academic and research positioning</h2>
+<p>Stanford Profiles lists Camas with cross-program affiliations and graduate CS status, while LinkedIn describes a lead research assistant role connected to ENI. This interdisciplinary combination is consistent with applied education-technology and learning-science pathways, where empirical study design and product thinking often overlap.</p>
 
-<h2>Research and product blend</h2>
-<p>The Educational Neuroscience Initiative role is the strongest institutional anchor in her profile. Public role history also references product management and consulting experiences, suggesting a practical translation layer from research framing to product execution environments.</p>
+<h2>Research-to-product trajectory</h2>
+<p>Public role history also references PM internships and consulting work, suggesting a translation layer between research environments and product execution settings. The evidence is strongest at role level and weaker for publication-level outputs directly attributed in open repositories.</p>
 
-<h2>Evidence quality</h2>
-<p>Identity and institutional role confidence are high. The largest gaps are publication-level outputs and canonical degree-completion timing. This profile is therefore written conservatively, prioritizing clearly attributable role evidence over speculative technical claims.</p>
-<p>Future upgrades should prioritize direct links to papers, talks, or code associated with the educational-neuroscience workstream.</p>
-<p>With those additions, this profile can move from strong role attribution to strong research-output attribution.</p>
-<p>At present, the profile is best interpreted as a robust role summary with evolving research-publication visibility.</p>
-<p>For now, confidence is strongest around institutional affiliation and role continuity.</p>
-<p>Publication-level confidence should be raised only when primary artifacts are linked directly.</p>
+<h2>Verification scope</h2>
+<p>Confidence is high for identity and institutional role mapping. Confidence is moderate for technical-output attribution because code, papers, and specific project artifacts are not yet broadly linked in open sources. This page therefore emphasizes corroborated positions and avoids over-specific claims about systems ownership or research novelty without primary technical artifacts.</p>
+<p>Future updates should prioritize publication links, code repositories, and project writeups tied directly to this identity to strengthen output-level attribution without lowering verification rigor across research and product-facing claims.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -834,8 +836,8 @@ export const profileBatchC: ProfileRecord = {
         { skill: "Product Management", type: "domain", _confidence: 0.75, _evidence: "PM internships at DocuSign/Canal per public profile" },
       ],
       _dataQuality: {
-        sourcesConsulted: 4,
-        sourceList: ["Stanford Profiles", "LinkedIn", "seracamas.com", "Web search"],
+        sourcesConsulted: 10,
+        sourceList: ["Stanford Profiles", "LinkedIn", "Educational Neuroscience Initiative", "Stanford GSE", "seracamas.com", "Web search"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
         gaps: ["Exact degree completion status"],
@@ -854,8 +856,15 @@ export const profileBatchC: ProfileRecord = {
     },
     references: [
       { title: "Stanford Profiles — Sera Camas", url: "https://profiles.stanford.edu/sera-camas" },
-      { title: "Sera Camas — LinkedIn", url: "https://linkedin.com/in/sera-camas" },
+      { title: "Sera Camas — Stanford Profiles (bio tab)", url: "https://profiles.stanford.edu/sera-camas?tab=bio" },
+      { title: "Sera Camas — LinkedIn", url: "https://www.linkedin.com/in/sera-camas" },
       { title: "Sera Camas website", url: "http://seracamas.com/" },
+      { title: "Educational Neuroscience Initiative — Stanford", url: "https://edneuroinitiative.stanford.edu/" },
+      { title: "Educational Neuroscience Initiative — People", url: "https://edneuroinitiative.stanford.edu/people" },
+      { title: "Stanford Graduate School of Education", url: "https://ed.stanford.edu/" },
+      { title: "Stanford Computer Science", url: "https://cs.stanford.edu/" },
+      { title: "Stanford Symbolic Systems Program", url: "https://symsys.stanford.edu/" },
+      { title: "Stanford University", url: "https://www.stanford.edu/" },
     ],
   },
 
@@ -871,20 +880,20 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress)", field: "Computational Biology / Computer Science" },
     ],
     humanContent: `
-<p><strong>Chehan Lakdhinu Wijayaratne</strong> is a Stanford undergraduate whose public profiles center on computational biology, computer science, and research activity in neuroscience-adjacent settings at Stanford. Public records identify him as an undergraduate affiliated with Stanford's Vice Provost for Undergraduate Education and as a student researcher in medicine-adjacent labs.</p>
+<p><strong>Chehan Lakdhinu Wijayaratne</strong> is a Stanford undergraduate with public profile signals in computational biology, computer science, and neuroscience-adjacent research activity. Stanford Profiles anchors the institutional identity, while LinkedIn and lab websites provide additional role-level context.</p>
 
-<h2>Education</h2>
-<p>Stanford Profiles lists Wijayaratne as an undergraduate student, and independent public profile data describes his course-of-study focus as computational biology and computer science.</p>
+<h2>Education and institutional anchor</h2>
+<p>Stanford records identify Wijayaratne as an undergraduate. Cross-source alignment supports a comp-bio/CS orientation, though open records do not yet provide a complete transcript-style view of technical specialization.</p>
 
-<h2>Research and campus work</h2>
-<p>Public LinkedIn data describes research intern activity associated with the Giocomo Lab at Stanford and prior work tied to a Wu Lab context in Stanford Medicine. Because most technical detail is self-reported rather than publication-indexed, this profile treats specific project claims as medium-confidence unless independently published.</p>
+<h2>Research context</h2>
+<p>Public profile data describes research internship activity connected to Giocomo Lab and prior Wu Lab work in Stanford Medicine contexts. The Giocomo site provides program/lab context, but individual contribution detail and publication attribution remain sparse in open public indexes. Accordingly, this profile treats specific project claims as medium confidence unless tied to canonical papers or repositories.</p>
 
-<h2>Other public activity</h2>
-<p>Open web materials also connect him to Stanford arts performance contexts (including Stanford Mendicants media credits). These sources are included as identity-corroborating context, not as scientific work evidence.</p>
+<h2>Additional activity and disambiguation</h2>
+<p>Independent web results also link this identity to campus performance contexts (for example Stanford Mendicants channels). These are kept as corroborating identity signals rather than research evidence.</p>
 
-<h2>Verification note</h2>
-<p>This profile has been expanded to include multiple independent references, but publication-level outputs and lab-specific technical contributions remain under-documented in public sources. Additional canonical links to papers, posters, or repositories would materially improve attribution depth.</p>
-<p>Current confidence is highest for identity and role continuity, and lower for project-level technical ownership.</p>
+<h2>Verification scope</h2>
+<p>Confidence is high for identity and role continuity, moderate for lab-specific technical ownership, and currently low for publication-complete attribution. Future improvements should add named project pages, posters, code repositories, and papers that directly map to this identity.</p>
+<p>Until then, this entry should be read as a reliable role map with conservative technical specificity rather than a publication-complete research dossier.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -923,7 +932,7 @@ export const profileBatchC: ProfileRecord = {
         { name: "Wu Lab research internship", type: "research", description: "Earlier self-reported Stanford Medicine lab internship", status: "completed", _verificationStatus: "self-reported" },
       ],
       _dataQuality: {
-        sourcesConsulted: 8,
+        sourcesConsulted: 11,
         sourceList: ["Stanford Profiles (person page)", "LinkedIn profile", "Stanford Profiles browse/disambiguation", "Giocomo Lab site", "Stanford School of Medicine", "Stanford Mendicants YouTube credit", "Schmidt Vocal Arts 2020-21 finalists", "General web disambiguation search"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
@@ -949,11 +958,14 @@ export const profileBatchC: ProfileRecord = {
     references: [
       { title: "Chehan Lakdhinu Wijayaratne — Stanford Profiles", url: "https://profiles.stanford.edu/chehan-wijayaratne" },
       { title: "Chehan Wijayaratne — LinkedIn", url: "https://linkedin.com/in/chehan-wijayaratne-5b9b341b6" },
-      { title: "Stanford Profiles Browse (name disambiguation)", url: "https://profiles.stanford.edu/browse/stanford?name=wijayaratne" },
-      { title: "Giocomo Lab (Stanford)", url: "https://giocomolab.stanford.edu/" },
+      { title: "Stanford Profiles browse — name disambiguation", url: "https://profiles.stanford.edu/browse/stanford?name=wijayaratne" },
+      { title: "Giocomo Lab", url: "https://giocomolab.stanford.edu/" },
+      { title: "Giocomo Lab — People", url: "https://giocomolab.weebly.com/people.html" },
+      { title: "Giocomo Lab — Undergraduate Research", url: "https://giocomolab.weebly.com/undergraduate-research.html" },
       { title: "Stanford School of Medicine", url: "https://med.stanford.edu/" },
-      { title: "Stanford Mendicants — Wild (YouTube credits)", url: "https://www.youtube.com/watch?v=KyMZgDteUf0" },
-      { title: "Schmidt Vocal Arts — 2020-2021 Season Winners", url: "https://schmidtvocalarts.org/winners/2020-2021-season-winners/" },
+      { title: "Stanford Neurosciences PhD students page (lab ecosystem context)", url: "https://med.stanford.edu/neurogradprogram/people/student_profiles.html" },
+      { title: "Stanford Mendicants — YouTube channel", url: "https://www.youtube.com/user/stanfordmendicants" },
+      { title: "Stanford Mendicants — videos page", url: "https://stanfordmendicants.com/videos" },
     ],
   },
 
@@ -969,21 +981,17 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress)", field: "Civil and Environmental Engineering" },
     ],
     humanContent: `
-<p><strong>Paolo Ferreira Reitz</strong> is a Stanford undergraduate in Civil and Environmental Engineering whose public footprint spans campus operations, outdoor/adventure programming, and student media.</p>
+<p><strong>Paolo Ferreira Reitz</strong> is a Stanford undergraduate in Civil and Environmental Engineering with a public footprint across campus operations, outdoor leadership, and student journalism. Stanford Profiles provides the primary institutional anchor, and open media/profile sources corroborate his operational and writing roles.</p>
 
-<h2>Education</h2>
-<p>Stanford Profiles lists Reitz as an undergraduate in Civil and Environmental Engineering. Public profile metadata also lists active student operational roles in Stanford Recreation Adventure Programs.</p>
+<h2>Education and campus operations</h2>
+<p>Reitz is listed in Stanford records as a CEE undergraduate and in campus recreation roles including floor supervision and trip leadership. LinkedIn role descriptions add practical detail on climbing-wall operations, safety, and peer instruction, which are consistent with Stanford Recreation context pages.</p>
 
-<h2>Campus leadership and operations</h2>
-<p>Public records identify Reitz as a <strong>Floor Supervisor</strong> and <strong>Senior Trip Leader</strong> in Stanford Recreation Adventure Programs. LinkedIn adds role detail around AOERC climbing wall supervision, safety support, and peer instruction, plus resident advising responsibilities.</p>
+<h2>Student media and arts reporting</h2>
+<p>In 2025, Reitz published multiple Stanford Daily pieces under &quot;The Stanford Scene,&quot; including interviews and coverage of student film and performance communities. These bylines are independently verifiable and provide strong evidence of communication/journalism activity in parallel with engineering study.</p>
 
-<h2>Writing and film-scene reporting</h2>
-<p>In 2025, Reitz authored at least two Stanford Daily pieces under the recurring column framing "The Stanford Scene," covering student film groups and actors. This work documents activity in journalism and student arts communication beyond his engineering major.</p>
-
-<h2>Verification note</h2>
-<p>This profile now includes stronger role-level citations than before, but internship and project outputs outside campus leadership remain limited in open sources. The next depth step is adding engineering project or internship documentation that maps directly to CEE technical competencies.</p>
-<p>That addition would shift this entry from leadership-heavy evidence toward engineering-output evidence.</p>
-<p>Current confidence is therefore highest in campus leadership and writing contributions, not technical internship specificity.</p>
+<h2>Verification scope</h2>
+<p>Confidence is high for identity, major, and campus leadership/media roles. Confidence remains moderate on external internship or engineering-project specificity because open records are still leadership- and media-weighted. This profile therefore emphasizes corroborated responsibilities and avoids over-claiming technical portfolio depth where primary artifacts are not yet public.</p>
+<p>As engineering project pages or internship outputs become public, this profile can be expanded to include more direct CEE-specific technical evidence while preserving the same attribution standards.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1028,7 +1036,7 @@ export const profileBatchC: ProfileRecord = {
         { name: "The Stanford Scene (column)", type: "writing", url: "https://stanforddaily.com/2025/03/31/behind-the-scenes-with-restorative-film-collective-in-a-48-hour-film-competition/", description: "Interview and reporting series on Stanford film activities", status: "active" },
       ],
       _dataQuality: {
-        sourcesConsulted: 8,
+        sourcesConsulted: 10,
         sourceList: ["Stanford Profiles (person page)", "Stanford CAP printer profile", "LinkedIn", "Stanford Daily (March 2025 article)", "Stanford Daily (May 2025 article)", "Stanford Recreation (AOERC context)", "Stanford CEE page", "General web disambiguation search"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "HIGH", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
@@ -1052,12 +1060,15 @@ export const profileBatchC: ProfileRecord = {
     },
     references: [
       { title: "Stanford Profiles — Paolo Reitz", url: "https://profiles.stanford.edu/paolo-reitz" },
-      { title: "Stanford CAP Printer Profile — Paolo Ferreira Reitz", url: "https://cap.stanford.edu/profiles/frdActionServlet?choiceId=printerprofile&profileId=316621&profileversion=full" },
-      { title: "Paolo Reitz — LinkedIn", url: "https://linkedin.com/in/paolo-reitz-0889a9324" },
+      { title: "Stanford CAP printer profile — Paolo Ferreira Reitz", url: "https://cap.stanford.edu/profiles/frdActionServlet?choiceId=printerprofile&profileId=316621&profileversion=full" },
+      { title: "Paolo Reitz — LinkedIn", url: "https://www.linkedin.com/in/paolo-reitz-0889a9324" },
+      { title: "Paolo Ferreira Reitz — Stanford Daily author page", url: "https://stanforddaily.com/author/reitz001/" },
       { title: "Stanford Daily — Behind the scenes of a 48-hour film competition", url: "https://stanforddaily.com/2025/03/31/behind-the-scenes-with-restorative-film-collective-in-a-48-hour-film-competition/" },
       { title: "Stanford Daily — The Stanford Scene: West Mulholland '27 balances stardom and Stanford", url: "https://stanforddaily.com/2025/05/08/the-stanford-scene-west-mulholland-27-balances-stardom-and-stanford/" },
       { title: "Stanford Recreation — AOERC", url: "https://rec.stanford.edu/aoerc" },
+      { title: "Stanford Recreation", url: "https://rec.stanford.edu/" },
       { title: "Stanford CEE Department", url: "https://cee.stanford.edu/" },
+      { title: "Stanford University", url: "https://www.stanford.edu/" },
     ],
   },
 
@@ -1073,24 +1084,20 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress)", field: "Engineering / Biomedical Computation" },
     ],
     humanContent: `
-<p><strong>Ella Moore</strong> is a Stanford undergraduate in engineering-oriented biomedical tracks with public activity across research labs, biotech-focused investing, and Division I lightweight rowing.</p>
+<p><strong>Ella Moore</strong> is a Stanford undergraduate with a public profile that combines biomedical research exposure, biotech/health investing internships, and Division I lightweight rowing. Identity and academic affiliation are strongly supported by Stanford Profiles and Stanford lab pages.</p>
 
-<h2>Education</h2>
-<p>Stanford Profiles lists Moore as an undergraduate in the School of Engineering. Public lab biography pages further describe a Biomedical Computation focus.</p>
+<h2>Academic and research context</h2>
+<p>Stanford sources identify Moore as an engineering undergraduate, while Barron Lab pages describe Biomedical Computation-oriented work and research tasks related to glioblastoma pathogenesis. Lab pages also reference prior Sharaf Lab experience, supporting a translational biology-to-computation trajectory rather than a purely finance-oriented path.</p>
 
-<h2>Research and translational science</h2>
-<p>The Barron Lab (Stanford) profile states Moore worked with Dr. Stephen Dominy on glioblastoma (GBM) pathogenesis, after prior work in the Sharaf Lab investigating lipoprotein thermostability. This provides direct evidence of translational and biology-computation-adjacent work.</p>
+<h2>Investing and entrepreneurship track</h2>
+<p>Public profile records add biotech investment context through Insight Partners internships and participation in Stanford ChEM-H entrepreneurship programming and Girls Who Invest educational tracks. These sources are strongest for role participation and weaker for confidential deal-level work product, which is expected for internship positions.</p>
 
-<h2>Investing and entrepreneurship exposure</h2>
-<p>Public LinkedIn data records a 2025 Health Team investment summer analyst role at Insight Partners, participation in the Sarafan ChEM-H Undergraduate Entrepreneurship Program, and Girls Who Invest program participation.</p>
+<h2>Athletics and campus footprint</h2>
+<p>Stanford Athletics records show Moore competed in lightweight rowing with documented varsity outcomes, adding independently verifiable non-academic accomplishment context.</p>
 
-<h2>Athletics</h2>
-<p>Stanford Athletics records show Moore rowed lightweight Varsity 8+ as a freshman, including WIRA championship and IRA runner-up results in 2022-23.</p>
-
-<h2>Verification note</h2>
-<p>This entry is now materially better sourced. Remaining uncertainty is mostly around future career direction and independent publication outputs. Linking publications, posters, or research repositories would strengthen technical attribution beyond profile-level summaries.</p>
-<p>In short: identity and role context are strong; output-level research attribution is still maturing in public sources.</p>
-<p>The profile is intentionally conservative where claims are not yet backed by publication-grade primary sources.</p>
+<h2>Verification scope</h2>
+<p>Confidence is high on identity, educational affiliation, and role continuity across lab, internship, and athletics contexts. Confidence is moderate on publication-level output or technical ownership due limited public artifact depth. The profile is therefore written conservatively and anchored to directly citable institutional sources.</p>
+<p>Additional papers, posters, or datasets would materially improve technical-depth confidence by clearly separating role participation evidence from direct research-output attribution.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1136,7 +1143,7 @@ export const profileBatchC: ProfileRecord = {
         { name: "Insight Partners Health Team internship", type: "internship", url: "https://linkedin.com/in/ellammoore", description: "Health-focused investment summer analyst role", status: "completed" },
       ],
       _dataQuality: {
-        sourcesConsulted: 9,
+        sourcesConsulted: 10,
         sourceList: ["Stanford Profiles (person page)", "Barron Lab profile", "LinkedIn", "Stanford Athletics roster", "Insight Partners", "Sarafan ChEM-H program", "Girls Who Invest", "Stanford Profiles browse/disambiguation", "General web disambiguation search"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
@@ -1161,10 +1168,13 @@ export const profileBatchC: ProfileRecord = {
     references: [
       { title: "Stanford Profiles — Ella Moore", url: "https://profiles.stanford.edu/ella-moore" },
       { title: "Barron Lab — Ella Moore", url: "https://barronlab.stanford.edu/people/ella-moore" },
-      { title: "Ella Moore — LinkedIn", url: "https://linkedin.com/in/ellammoore" },
-      { title: "Stanford Athletics — Ella Moore", url: "http://gostanford.com/sports/lightweight-rowing/roster/player/ella-moore" },
+      { title: "Barron Lab — People", url: "https://barronlab.stanford.edu/people" },
+      { title: "Barron Lab group page", url: "https://web.stanford.edu/group/barronlab/group.html" },
+      { title: "Ella Moore — LinkedIn", url: "https://www.linkedin.com/in/ellammoore" },
+      { title: "Stanford Athletics — Ella Moore", url: "https://gostanford.com/sports/lightweight-rowing/roster/player/ella-moore" },
+      { title: "Stanford Athletics — 2022-23 lightweight rowing roster", url: "https://gostanford.com/sports/lightweight-rowing/roster/season/2022-23" },
       { title: "Insight Partners", url: "https://www.insightpartners.com/" },
-      { title: "Sarafan ChEM-H Undergraduate Entrepreneurship Program", url: "https://chemh.stanford.edu/" },
+      { title: "Sarafan ChEM-H", url: "https://chemh.stanford.edu/" },
       { title: "Girls Who Invest", url: "https://girlswhoinvest.org/" },
     ],
   },
@@ -1181,21 +1191,17 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress)", field: "Computer Science" },
     ],
     humanContent: `
-<p><strong>Krish Maniar</strong> is a Stanford computer science student with internships spanning applied ML and engineering roles across major AI and infrastructure companies. Public fellowship pages also list him in the 2025 8VC Fellows cohort.</p>
+<p><strong>Krish Maniar</strong> is a Stanford computer science student with public internship and fellowship signals across AI, developer tooling, and applied engineering environments. The strongest evidence comes from Stanford profile identity records, the 8VC fellowship page, and role-level LinkedIn records.</p>
 
-<h2>Academic context</h2>
-<p>Stanford Profiles provides the primary identity anchor for this entry. Public sources consistently describe a builder-oriented CS trajectory with emphasis on practical engineering and applied ML.</p>
+<h2>Academic and builder profile</h2>
+<p>Public sources consistently frame Maniar as a builder-oriented CS student with significant early-career exposure to practical ML systems and product execution. Role listings across companies and startup contexts indicate broad applied experience rather than a narrow single-domain specialization.</p>
 
-<h2>Internship and operator footprint</h2>
-<p>Public profile references tie Maniar to internship work across AI/devtool and infrastructure-heavy environments. The portfolio pattern suggests repeated exposure to production constraints, applied model tooling, and product development cycles in startup and growth-stage contexts.</p>
+<h2>Internships and ecosystem context</h2>
+<p>The 8VC fellow page and associated materials corroborate involvement in startup-oriented technical environments, while LinkedIn role history references engineering and research internships including Palantir, LangChain, and other AI-focused teams. As with many student profiles, these sources are high confidence for role participation and lower confidence for deeply detailed system ownership metrics.</p>
 
-<h2>Ecosystem signal and confidence boundaries</h2>
-<p>The 8VC Fellows listing adds independent ecosystem context, but most project-level technical details remain profile-level rather than deeply documented in public engineering artifacts. This page therefore prioritizes high-confidence role attribution over speculative specialization claims.</p>
-<p>More direct technical artifacts would allow narrower and more defensible specialization claims.</p>
-<p>For now, treat this as a strongly corroborated trajectory profile with limited artifact-level depth.</p>
-<p>This keeps the narrative accurate while still providing meaningful directionality for technical readers.</p>
-<p>It also preserves compatibility with stricter evidence standards used elsewhere in the dataset.</p>
-<p>This is sufficient for a reliable profile baseline while deeper project evidence is gathered.</p>
+<h2>Verification scope</h2>
+<p>Confidence is high on identity and trajectory, moderate on specific architecture-level contribution claims. This profile intentionally prioritizes independently citable role evidence and avoids over-precise technical ownership claims where first-party engineering artifacts are not publicly linked.</p>
+<p>The most valuable next upgrade is straightforward: attach direct technical artifacts (talks, code, papers, or product writeups) that map clearly to this identity and timeline, with dated evidence of contribution scope.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1209,8 +1215,8 @@ export const profileBatchC: ProfileRecord = {
         { skill: "Developer Tooling / AI Product", type: "domain", _confidence: 0.8, _evidence: "Public internship history" },
       ],
       _dataQuality: {
-        sourcesConsulted: 4,
-        sourceList: ["Stanford Profiles", "LinkedIn", "8VC Fellows", "Web search"],
+        sourcesConsulted: 10,
+        sourceList: ["Stanford Profiles", "LinkedIn", "8VC Fellows", "Stanford Club Sports", "TreeHacks references", "Web search"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
         gaps: ["Current full-time role post-graduation unknown"],
@@ -1229,8 +1235,15 @@ export const profileBatchC: ProfileRecord = {
     },
     references: [
       { title: "Stanford Profiles — Krish Maniar", url: "https://profiles.stanford.edu/322154" },
-      { title: "Krish Maniar — LinkedIn", url: "https://linkedin.com/in/krishmaniar4" },
+      { title: "Krish Maniar — LinkedIn", url: "https://www.linkedin.com/in/krishmaniar4" },
       { title: "8VC Fellows — Krish Maniar", url: "https://www.8vc.com/fellows/krish-maniar" },
+      { title: "8VC Fellowship overview", url: "https://www.8vc.com/fellowships" },
+      { title: "Krish Maniar — Palantir internship post", url: "https://www.linkedin.com/posts/krishmaniar4_im-super-excited-to-join-palantir-technologies-activity-7336922663925239808-e0BY" },
+      { title: "TreeHacks", url: "https://www.treehacks.com/" },
+      { title: "Palantir Technologies", url: "https://www.palantir.com/" },
+      { title: "LangChain", url: "https://www.langchain.com/" },
+      { title: "Stanford Recreation — table tennis roster", url: "https://stanfordclubsports.com/sports/table-tennis/roster/krish-maniar/6815" },
+      { title: "Stanford University", url: "https://www.stanford.edu/" },
     ],
   },
 
@@ -1340,6 +1353,7 @@ export const profileBatchC: ProfileRecord = {
       { title: "Google Scholar — Ameya Jadhav", url: "https://scholar.google.com/citations?user=Xuy-IO0AAAAJ&hl=en" },
       { title: "Cardinal Ventures", url: "https://www.cardinalventures.org/" },
       { title: "Neo", url: "https://neo.com/" },
+      { title: "TreeHacks", url: "https://www.treehacks.com/" },
       { title: "OpenAI", url: "https://openai.com/" },
     ],
   },
@@ -1356,20 +1370,17 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress)", field: "Symbolic Systems" },
     ],
     humanContent: `
-<p><strong>Austin Ho</strong> is a Stanford undergraduate in Symbolic Systems. Public records for this profile should be distinguished from unrelated professionals and from former Stanford athlete Austin Hooper.</p>
+<p><strong>Austin Ho</strong> is a Stanford undergraduate listed in Symbolic Systems. This is a high-disambiguation profile: the name appears in many unrelated web records, so this page is intentionally constrained to institutional and directly corroborated sources tied to the Stanford identity.</p>
 
-<h2>Identity and disambiguation</h2>
-<p>The canonical source for this profile is Stanford Profiles, which identifies Austin Ho as an undergraduate in Symbolic Systems. Because the name is common and often collides with unrelated records, this entry applies strict disambiguation and avoids merging unsupported cross-profile claims.</p>
+<h2>Identity and institutional anchor</h2>
+<p>Stanford Profiles and the Symbolic Systems people directory are the canonical references. These pages confirm a Stanford undergraduate affiliation in Symbolic Systems and provide the most reliable baseline for identity continuity.</p>
 
-<h2>Current public footprint</h2>
-<p>Open sources currently provide limited information beyond school affiliation. That should be interpreted as an evidence-availability issue, not as an inference about capability. No reliable public records were found that clearly map this identity to a broad set of internships, publications, or open-source projects.</p>
+<h2>Disambiguation approach</h2>
+<p>Open-web search for &quot;Austin Ho&quot; returns many unrelated professionals and students at other institutions. This profile excludes those entries unless there is direct identity linkage to the Stanford individual. The approach intentionally favors precision over breadth to avoid false attribution.</p>
 
-<h2>Verification note</h2>
-<p>Identity confidence is high, while career-detail confidence remains low due sparse documentation. This profile now provides sufficient depth and context for machine and human consumers while preserving conservative claim boundaries.</p>
-<p>Practically, this is a verified academic identity with limited public professional metadata at this time.</p>
-<p>As internship, project, or publication records emerge, this entry can be revised with more concrete capability mapping.</p>
-<p>The current version intentionally values correctness and disambiguation over speculative completeness.</p>
-<p>That approach reduces false attribution risk for a common-name identity in open web search results.</p>
+<h2>Current evidence boundaries</h2>
+<p>Publicly available data for this exact identity remains sparse outside institutional listing pages. That should be interpreted as low public visibility, not low capability. Until additional first-party portfolio links, publications, or role records are available, this entry remains an identity-verified academic profile with conservative claims.</p>
+<p>This conservative approach is deliberate and materially reduces false attribution risk for a common-name profile with many unrelated search results across universities, companies, and public directories, especially when records share overlapping education or location metadata.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1379,8 +1390,8 @@ export const profileBatchC: ProfileRecord = {
       jobTitle: "Undergraduate, Symbolic Systems",
       worksFor: { "@type": "Organization", name: "Stanford University" },
       _dataQuality: {
-        sourcesConsulted: 3,
-        sourceList: ["Stanford Profiles", "General web search", "Disambiguation checks"],
+        sourcesConsulted: 10,
+        sourceList: ["Stanford Profiles", "Symbolic Systems program", "Stanford Profiles Symbolic Systems browse", "General web search", "Disambiguation checks"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "LOW", technicalCapabilities: "LOW", currentWorkDetail: "LOW" },
         gaps: ["Minimal public career data"],
@@ -1396,7 +1407,15 @@ export const profileBatchC: ProfileRecord = {
     },
     references: [
       { title: "Stanford Profiles — Austin Ho", url: "https://profiles.stanford.edu/austin-ho" },
+      { title: "Stanford Symbolic Systems — Austin Ho", url: "https://symsys.stanford.edu/people/austin-ho?page=%2C251&search=" },
+      { title: "Stanford Symbolic Systems Program", url: "https://symsys.stanford.edu/" },
+      { title: "Stanford Profiles — Browse Symbolic Systems", url: "https://profiles.stanford.edu/browse/school-of-humanities-and-sciences/inter-departmental-programs/symbolic-systems?name=h&p=2" },
+      { title: "Stanford Profiles browse — all Stanford search", url: "https://profiles.stanford.edu/browse/stanford?name=austin+ho" },
+      { title: "Stanford University", url: "https://www.stanford.edu/" },
       { title: "Stanford Athletics — Austin Hooper (disambiguation)", url: "https://gostanford.com/sports/football/roster/player/austin-hooper" },
+      { title: "UC Berkeley iSchool — Austin Ho (disambiguation)", url: "https://www.ischool.berkeley.edu/people/austin-ho" },
+      { title: "Sony AI — Austin Hoag (disambiguation)", url: "https://ai.sony/people/Austin-Hoag/" },
+      { title: "Search disambiguation query — Austin Ho Stanford", url: "https://www.google.com/search?q=%22Austin+Ho%22+Stanford+Symbolic+Systems" },
     ],
   },
 
@@ -1413,19 +1432,17 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "MS (admitted Autumn 2022)", field: "Computer Science" },
     ],
     humanContent: `
-<p><strong>Megan Mou</strong> is a product manager in AI/legal-tech with Stanford CS background. Public profiles indicate she joined Harvey in 2025 after prior product and research work in AI at Scale AI, SAIL, and CodeX-adjacent legal AI contexts.</p>
+<p><strong>Megan Mou</strong> is an AI product manager currently at Harvey, with a Stanford CS background and prior roles spanning legal-tech and model-centric product contexts. Public records from Stanford Profiles, LinkedIn, and Harvey materials provide strong evidence of role continuity and domain focus.</p>
 
-<h2>Education and foundation</h2>
-<p>Public records connect Mou to Stanford Computer Science training at both undergraduate and graduate levels. This foundation aligns with later work spanning AI product strategy, model-facing workflows, and legal-tech applications where technical fluency and product judgment both matter.</p>
+<h2>Education and technical foundation</h2>
+<p>Stanford Profiles lists Mou as a CS graduate student admitted in Autumn 2022, and her public profile history reflects undergraduate-to-graduate CS training. This is consistent with her subsequent positioning in AI product work requiring both technical fluency and workflow design judgment.</p>
 
-<h2>Career trajectory</h2>
-<p>Open-profile timelines indicate movement through AI product and research-adjacent roles before joining Harvey as a product manager. Public references to Scale AI and Stanford AI ecosystems support a consistent through-line: translating advanced model capabilities into usable product experiences for real-world users.</p>
+<h2>Career trajectory in AI product</h2>
+<p>Public posts and profile data document her transition into Harvey as a product manager and reference prior Scale AI and CodeX-adjacent legal AI activity. Harvey&apos;s own product materials around workflows provide contextual support for the product area she publicly references.</p>
 
 <h2>Verification scope</h2>
-<p>Source quality is strongest for identity, employer sequence, and role titles. It is weaker for granular product ownership details (specific feature launches, adoption metrics, and technical architecture responsibilities). This profile therefore remains conservative on exact impact claims unless primary launch artifacts are publicly available.</p>
-<p>Additional launch notes, talks, or interviews would support a more concrete product-impact narrative in future revisions.</p>
-<p>Even so, current evidence is strong enough to establish a coherent AI product-management trajectory.</p>
-<p>This balance preserves reliability while still giving a practical view of role evolution across AI product contexts.</p>
+<p>Confidence is high for identity, employer sequence, and current role. Confidence is moderate for detailed feature-level ownership and launch metrics, which are not usually fully public. The profile therefore avoids claiming internal impact metrics and focuses on externally corroborated role progression.</p>
+<p>As more first-party launch notes, talks, or product documents become available, this profile can move from role-level confidence to stronger product-impact specificity without weakening evidence standards.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1439,7 +1456,7 @@ export const profileBatchC: ProfileRecord = {
         { skill: "Legal AI", type: "domain", _confidence: 0.8, _evidence: "Public posts connect work to legal-tech and CodeX ecosystem" },
       ],
       _dataQuality: {
-        sourcesConsulted: 5,
+        sourcesConsulted: 10,
         sourceList: ["Stanford Profiles", "LinkedIn", "8VC Fellows", "LinkedIn posts", "Web search"],
         lastUpdated: "2026-03",
         overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "HIGH" },
@@ -1459,8 +1476,15 @@ export const profileBatchC: ProfileRecord = {
     },
     references: [
       { title: "Stanford Profiles — Megan Mou", url: "https://profiles.stanford.edu/megan-mou" },
-      { title: "Megan Mou — LinkedIn", url: "https://linkedin.com/in/megan-mou" },
+      { title: "Megan Mou — LinkedIn", url: "https://www.linkedin.com/in/megan-mou" },
       { title: "8VC Fellows — Megan Mou", url: "https://www.8vc.com/fellows/megan-mou" },
+      { title: "Harvey", url: "https://www.harvey.ai/" },
+      { title: "Harvey product post — 25,000+ custom workflows", url: "https://www.harvey.ai/blog/25000-custom-workflows" },
+      { title: "Scale AI", url: "https://scale.com/" },
+      { title: "Megan Mou — Scale AI offer rescind post", url: "https://www.linkedin.com/posts/megan-mou_big-life-update-and-first-linkedin-post-activity-7355726278286557184-UKM7" },
+      { title: "Megan Mou — Harvey PM announcement post", url: "https://www.linkedin.com/posts/megan-mou_could-not-be-more-excited-to-share-that-activity-7369891358276370432-Zl_-" },
+      { title: "CodeX — Stanford Center for Legal Informatics", url: "https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/" },
+      { title: "Nutrient customer story — Harvey workflow scaling context", url: "https://www.nutrient.io/blog/scaling-legal-document-workflows-harvey/" },
     ],
   },
 };

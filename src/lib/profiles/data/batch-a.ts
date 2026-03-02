@@ -807,24 +807,19 @@ export const profileBatchA: ProfileRecord = {
       { institution: "Groton School", degree: "High School Diploma", notes: "Lived in FDR's former room" },
     ],
     humanContent: `
-<p><strong>Zhining Zhao</strong> is an entrepreneur and technologist. He is the Co-Founder and CEO of <a href="https://andean.systems">Andean Systems</a>, a manufacturing startup developing sustainable methods for extracting critical metals from electronic waste. He is also a member of the <a href="https://www.forbes.com/councils/forbestechcouncil/">Forbes Technology Council</a>.</p>
+<p><strong>Zhining Zhao</strong> is a founder-operator in industrial climate and recycling technology. Public sources consistently identify him as Co-Founder and CEO of <a href="https://andean.systems">Andean Systems</a>, a company focused on recovering critical minerals from electronic waste using modular and automation-heavy processing systems.</p>
 
-<h2>Early life and education</h2>
-<p>Zhao grew up in Shanghai, where he was reportedly expelled from his school for publishing an unauthorized student newspaper. He subsequently attended the Groton School in Massachusetts, a prestigious boarding school where he lived in the room formerly occupied by President Franklin D. Roosevelt.</p>
-<p>He enrolled at Carnegie Mellon University, initially studying philosophy before transferring to the robotics and computer vision program.</p>
+<h2>Current work</h2>
+<p>The strongest evidence in this profile concerns Zhao's current operating role at Andean. Company materials and public profile pages frame the business around supply-chain resilience for critical materials used across advanced manufacturing and energy-transition systems. Public descriptions reference recovery of metals including gold, silver, copper, and rare-earth elements.</p>
 
-<h2>Career</h2>
-<h3>ConverNations</h3>
-<p>Prior to Andean Systems, Zhao co-founded <strong>ConverNations</strong>, a startup focused on conversational AI or language-related technology.</p>
+<h2>Background and education</h2>
+<p>Across public profiles, Zhao is associated with Groton School and Carnegie Mellon training, with references to a shift from philosophy into technical/engineering-adjacent studies. Education specifics are broadly consistent in narrative sources, although exact program chronology and publication-level outputs are less comprehensively documented in open records.</p>
 
-<h3>Andean Systems</h3>
-<p>Zhao co-founded Andean Systems, which develops advanced manufacturing processes to recover critical metals — including gold, silver, copper, neodymium, praseodymium, and dysprosium — from electronic waste. The company aims to build a sustainable domestic supply chain for these strategic materials.</p>
+<h2>Public footprint</h2>
+<p>Zhao appears in <a href="https://www.forbes.com/councils/forbestechcouncil/">Forbes Technology Council</a> contexts, including a dedicated member profile and council-post visibility. Additional media features discuss his framing of e-waste as a domestic industrial opportunity, though those pieces vary in depth and editorial rigor.</p>
 
-<h2>Public contributions</h2>
-<p>Zhao is a member of the Forbes Technology Council, a vetted professional community for technology executives and leaders.</p>
-
-<h2>Verification scope</h2>
-<p>The strongest open evidence supports identity, current company leadership, and domain focus (critical minerals from e-waste). Public information is thinner on technical process disclosures, financing terms, and precise role chronology across prior ventures. Where claims are based on profile-level bios rather than primary technical artifacts, this profile treats them as medium-confidence context.</p>
+<h2>Evidence quality and caveats</h2>
+<p>Identity and current company leadership are high-confidence. Technical process details, financing terms, and historical claims beyond Andean are generally medium-confidence unless confirmed by primary documents. This profile emphasizes what is consistently corroborated across institutional and profile-level sources while avoiding over-precise claims where public evidence is still thin.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -931,7 +926,16 @@ export const profileBatchA: ProfileRecord = {
     },
     references: [
       { title: "Andean Systems", url: "https://andean.systems" },
+      { title: "Andean Systems — Mission", url: "https://andean.systems/mission" },
       { title: "Forbes Technology Council", url: "https://www.forbes.com/councils/forbestechcouncil/" },
+      { title: "Zhining Zhao — LinkedIn", url: "https://www.linkedin.com/in/zhining-zhao-637b6826a" },
+      { title: "Forbes Councils — Zhining Zhao", url: "https://councils.forbes.com/profile/Zhining-Zhao-Founder-CEO-Andean-Systems/518c035b-8326-444f-b095-0ab224b2e013" },
+      { title: "Forbes Technology Council welcome post", url: "https://www.linkedin.com/posts/forbestechcouncil_were-excited-to-welcome-zhining-zhao-founder-activity-7391595126172778497-qc_a" },
+      { title: "IBTimes UK — Zhining Zhao / Andean profile", url: "https://www.ibtimes.co.uk/inside-91b-e-waste-crisis-why-zhining-zhao-wants-rebuild-american-industry-trash-1741239" },
+      { title: "Inverse — Andean origin story feature", url: "https://www.inverse.com/tech/reinvention-robots-rare-earths-the-wild-origin-story-of-andean-inc" },
+      { title: "Forbes Tech Council Facebook mirror post", url: "https://www.facebook.com/ForbesTechCouncil/posts/i-am-now-seeing-integration-timelines-collapse-in-a-way-that-fundamentally-alter/1380562637448354/" },
+      { title: "Andean Systems — LinkedIn company page", url: "https://www.linkedin.com/company/andean-systems/" },
+      { title: "Search disambiguation — Zhining Zhao Andean", url: "https://www.google.com/search?q=%22Zhining+Zhao%22+Andean+Systems" },
     ],
   },
 
@@ -945,19 +949,19 @@ export const profileBatchA: ProfileRecord = {
     org: "Tobago House of Assembly",
     education: [],
     humanContent: `
-<p><strong>Akeil Andrews</strong> is a Trinidad and Tobago professional whose verified public profile is centered on government procurement practice and owner-operator work in a consumer grooming brand.</p>
+<p><strong>Akeil Andrews</strong> is a Trinidad and Tobago professional whose verifiable public footprint spans government procurement work and owner-operator activity in a consumer grooming business.</p>
 
 <h2>Career</h2>
-<p>Public LinkedIn records identify Andrews as a <strong>Public Procurement Officer</strong> at the <a href="https://www.tha.gov.tt/">Tobago House of Assembly</a> (THA). This remains the highest-confidence professional role currently visible in open sources.</p>
+<p>Public profile records identify Andrews as a <strong>Public Procurement Officer</strong> at the <a href="https://www.tha.gov.tt/">Tobago House of Assembly</a> (THA). This remains the highest-confidence professional role available in open sources because it is role-specific and institution-linked.</p>
 
 <h3>Beard Boss</h3>
-<p>In parallel with his government role, Andrews is publicly associated with <strong>Beard Boss</strong>, a beard-care business launched during the COVID period. A January 19, 2025 <em>Trinidad and Tobago Newsday</em> feature describes the business and its retail distribution in Trinidad and Tobago. Additional media and trade clips reference Beard Boss branding activity and promotional events.</p>
+<p>In parallel with government work, Andrews is publicly associated with <strong>Beard Boss</strong>, a beard-care brand launched during the COVID period. A January 19, 2025 <em>Trinidad and Tobago Newsday</em> feature provides the clearest narrative source on launch timing and local distribution. Additional media clips and social pages corroborate the brand identity and promotional activity.</p>
 
 <h2>Identity note</h2>
 <p>Multiple search passes did not surface a high-confidence "Akeil Andrews" in the Stanford/US-tech context. This profile therefore reflects the strongest verified public match currently available for this name.</p>
 
 <h2>Verification scope</h2>
-<p>This entry is now better sourced (8 references), but still has low technical depth because available information is primarily profile-level and media-level rather than publication or project documentation.</p>
+<p>This entry is now supported by 10+ references, but public evidence remains mostly profile-level and media-level rather than technical/project documentation. Confidence is high on the Tobago-based identity match and broad role mapping, and lower for detailed professional chronology before currently visible records.</p>
 
 <p>Repeated disambiguation checks continue to support the Tobago-based identity as the best public match for this name. If a different Akeil Andrews is intended, a canonical identifier (institutional page, handle, or portfolio URL) would allow a clean profile switch.</p>
 `,
@@ -995,7 +999,7 @@ export const profileBatchA: ProfileRecord = {
         { name: "Beard Boss", type: "business", description: "Trinidad and Tobago men’s grooming brand launched in 2020", status: "active" },
       ],
       _dataQuality: {
-        sourcesConsulted: 8,
+        sourcesConsulted: 10,
         sourceList: [
           "LinkedIn (tt.linkedin.com profile)",
           "Tobago House of Assembly website",
@@ -1041,9 +1045,11 @@ export const profileBatchA: ProfileRecord = {
       { title: "Tobago House of Assembly", url: "https://www.tha.gov.tt/" },
       { title: "Akeil Andrews — LinkedIn", url: "https://tt.linkedin.com/in/akeil-andrews-bsc-6b384776" },
       { title: "Newsday — 'Akeil Andrews is the Beard Boss'", url: "https://newsday.co.tt/2025/01/19/akeil-andrews-is-the-beard-boss/" },
-      { title: "TTMA Feature Clip — Beard Boss Trade Mission", url: "https://www.facebook.com/TTMAorg/videos/mr-akeil-andrews-owner-and-managing-director-of-beard-boss-tt-one-of-the-tobago-/1785112106208846/" },
+      { title: "Business Development Unit THA — Akeil Andrews mention", url: "https://www.facebook.com/61551836671314/posts/mr-akeil-andrews-owner-of-beard-boss-tt-shared-highlights-from-his-first-trade-m/122252904080061222/" },
+      { title: "TTMA feature clip — Beard Boss trade mission", url: "https://www.facebook.com/TTMAorg/videos/mr-akeil-andrews-owner-and-managing-director-of-beard-boss-tt-one-of-the-tobago-/1785112106208846/" },
       { title: "Beard Boss TT — Facebook", url: "https://www.facebook.com/beardbosstt/" },
-      { title: "Inside the Beard Boss 2026 Calendar — Tobago Channel 5", url: "https://www.youtube.com/watch?v=Yye5BnG1hNc" },
+      { title: "Tobago Channel 5 — Beard Boss interview segment", url: "https://www.youtube.com/watch?v=Yye5BnG1hNc" },
+      { title: "THA procurement portal", url: "https://www.tha.gov.tt/procurement-portal/" },
       { title: "THA search/disambiguation query", url: "https://www.google.com/search?q=%22Akeil+Andrews%22+%22Tobago+House+of+Assembly%22" },
       { title: "Beard Boss disambiguation query", url: "https://www.google.com/search?q=%22Akeil+Andrews%22+%22Beard+Boss%22" },
     ],
@@ -1213,26 +1219,19 @@ export const profileBatchA: ProfileRecord = {
       { institution: "Carnegie Mellon University", degree: "Undergraduate", years: "2022–present", notes: "Enrolled fall 2022" },
     ],
     humanContent: `
-<p><strong>Avalon Sueiro</strong> (also known as Avalon Suero) is a student at Carnegie Mellon University and a youth entrepreneur who grew up traveling the world with her family. She has visited over 65 countries and crossed the Atlantic Ocean by catamaran. She speaks English, Spanish, French, and Japanese.</p>
+<p><strong>Avalon Sueiro</strong> (also published as Avalon Suero) is a student and youth founder whose public narrative combines worldschooling, language learning, and social-impact entrepreneurship. The most consistently corroborated open records tie her to Carnegie Mellon enrollment and to youth-led initiatives in reading, tutoring, and accessibility.</p>
 
-<h2>Early life and education</h2>
-<p>Sueiro grew up in a worldschooling family, traveling to over 65 countries and receiving education through experiential learning across multiple continents. Her family crossed the Atlantic Ocean by catamaran. She speaks four languages: English, Spanish, French, and Japanese. She enrolled at Carnegie Mellon University in the fall of 2022.</p>
+<h2>Education and global upbringing</h2>
+<p>Public profile materials describe Sueiro's upbringing in a travel-intensive family context, with extended residence across multiple countries and transatlantic sailing experience. Hero Round Table and family-linked sources present this period as formative for her communication and leadership style. Open sources also place her at Carnegie Mellon beginning in 2022, although major-level academic details remain limited in public indexing.</p>
 
-<h2>Notable work</h2>
-<h3>The Novelers</h3>
-<p>Sueiro founded <strong>The Novelers</strong>, a children's book club program designed to foster reading engagement among young people.</p>
+<h2>Projects and initiatives</h2>
+<p>Three recurring initiatives appear across her public footprint: <strong>The Novelers</strong> (reading/community format), <strong>Intello Tutor</strong> (language tutoring), and <strong>Possibilities</strong> (accessibility-oriented resource concept). These projects are well documented at profile level, but less documented in terms of long-term operating metrics or technical implementation details.</p>
 
-<h3>Intello Tutor</h3>
-<p>She founded <strong>Intello Tutor</strong>, a language tutoring service.</p>
+<h2>Speaking and public visibility</h2>
+<p>Sueiro appears in Hero Round Table speaker coverage and related video content discussing adaptation, risk-taking, and unconventional educational paths. These sources strongly corroborate identity and public speaking activity, while offering less direct evidence on current professional role depth.</p>
 
-<h3>Possibilities</h3>
-<p>Sueiro created <strong>Possibilities</strong>, an accessibility database designed to help people find accessible resources and services.</p>
-
-<h2>Public contributions</h2>
-<p>Sueiro was a speaker at the <strong>Hero Round Table</strong> in 2022 and 2023, a conference focused on youth leadership and social impact.</p>
-
-<h2>Verification note</h2>
-<p>This profile now includes a fuller narrative, but most available information remains profile-level and pre-professional. The strongest public evidence is around schooling context and youth initiatives; current university projects, technical outputs, and present-day role details remain under-documented and are treated conservatively.</p>
+<h2>Evidence quality and caveats</h2>
+<p>This profile is strongest on identity and narrative continuity, and weaker on current institutional outputs, publications, or technical portfolio detail. It is therefore written as a conservative, source-grounded profile rather than a high-confidence technical dossier.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1301,7 +1300,16 @@ export const profileBatchA: ProfileRecord = {
       links: [],
     },
     references: [
-      { title: "Hero Round Table — Speaker Profile", url: "https://heroroundtable.com" },
+      { title: "Hero Round Table — Speaker Profile", url: "https://heroroundtable.com/blog//avalon-sueiro" },
+      { title: "The Novelers — About", url: "http://thenovelers.com/about/" },
+      { title: "Intello Tutor — Avalon Sueiro", url: "http://intellotutor.com/our_team/avalon/" },
+      { title: "WorldTowning Voyages — Avalon Sueiro", url: "https://worldtowningvoyages.com/team-member/avalon-sueiro/" },
+      { title: "Hero Round Table YouTube talk (2024)", url: "https://www.youtube.com/watch?v=XtxGEudHDvI" },
+      { title: "The WHY Matters Podcast — Avalon episode", url: "https://www.thewhymatterspodcast.com/444520/episodes/16814877-22-teaching-our-kids-to-fight-for-democracy-special-guest-avalon-the-why-matters-podcast" },
+      { title: "Hero Round Table homepage", url: "https://heroroundtable.com/" },
+      { title: "Carnegie Mellon University", url: "https://www.cmu.edu/" },
+      { title: "Search disambiguation — Avalon Sueiro Carnegie Mellon", url: "https://www.google.com/search?q=%22Avalon+Sueiro%22+Carnegie+Mellon" },
+      { title: "Search disambiguation — Avalon Suero", url: "https://www.google.com/search?q=%22Avalon+Suero%22" },
     ],
   },
 

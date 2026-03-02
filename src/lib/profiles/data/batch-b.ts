@@ -449,25 +449,19 @@ export const profileBatchB: ProfileRecord = {
     org: "Hanabi Capital",
     education: [],
     humanContent: `
-<p><strong>Ishani Thakur</strong> is a venture investor and technology operator. She is a Partner at <a href="https://www.hanabi.com/team/ishani-thakur">Hanabi Capital</a>. Public bios also describe prior investing roles at Index Ventures and Nava Ventures.</p>
+<p><strong>Ishani Thakur</strong> is a venture investor focused on AI and software infrastructure. The strongest primary source is her team biography at <a href="https://www.hanabi.com/team/ishani-thakur">Hanabi Capital</a>, where she is listed as Partner. That profile also links her earlier investing period at Index Ventures and describes her pre-investing work in engineering and AI research.</p>
 
-<h2>Career</h2>
-<h3>Hanabi Capital</h3>
-<p>At Hanabi, Thakur focuses on AI and software infrastructure investing themes. Public deal coverage and team profiles associate Hanabi with early investments across the modern AI stack.</p>
+<h2>Current role at Hanabi</h2>
+<p>Hanabi positions itself as an early-stage firm concentrated on frontier technology, particularly AI and infrastructure. Thakur is publicly presented as one of the firm&apos;s core investing partners. The available open-web evidence is strongest on role identity and thesis area (frontier technology and infrastructure), and weaker on a complete, dated deal-by-deal ownership record.</p>
 
-<h3>Index Ventures and Nava Ventures</h3>
-<p>Before Hanabi, Thakur worked at Index Ventures and previously at Nava Ventures. She is listed on SXSW 2024 programming as an Index Ventures Partner panelist.</p>
+<h2>Prior investing and operator background</h2>
+<p>Before Hanabi, Thakur is publicly associated with Index Ventures, including SXSW 2024 programming that lists her as an Index partner panelist. Her Hanabi bio additionally describes engineering and research experience across DeepMind/MIT research contexts and industry engineering roles (including Confluent, Lyft Level 5, and Google). These details are coherent across first-party sources, though some are still biography-style summaries rather than independently archived employment records.</p>
 
-<h3>Nava Ventures</h3>
-<p>Prior to Index, Thakur worked at Nava Ventures.</p>
+<h2>Education and technical orientation</h2>
+<p>Hanabi&apos;s team page describes Thakur as MIT Course 6-3 (Computer Science). In practical terms, her public profile is that of an investor with operator-level fluency in technical systems and applied AI workflows, rather than a purely financial-track investor.</p>
 
-<h2>Technical background</h2>
-<p>Hanabi&apos;s public team page describes a technical background including AI research and software engineering, and notes that she studied Course 6-3 (Computer Science) at MIT.</p>
-
-<h2>Verification note</h2>
-<p>Open-source coverage is strong on current investing identity and thematic focus, but weaker on exact historical role boundaries and full portfolio attribution across firms. This profile therefore distinguishes between high-confidence current-role evidence and medium-confidence retrospective details sourced from biography-style summaries.</p>
-<p>As more primary materials are available (portfolio announcements, interviews, dated firm bios), timeline precision and attribution confidence can be further improved.</p>
-<p>At this stage, readers should treat this as a solid directional map of her investing scope rather than a complete historical transaction ledger.</p>
+<h2>Verification scope</h2>
+<p>This profile is grounded primarily in first-party firm pages, event programs, and role-level public records. Confidence is high on identity, current firm, and broad investment focus. Confidence is moderate on historical timeline precision and portfolio attribution at the individual-partner level. As additional dated interviews, fund documents, and portfolio announcements are added, this entry can move from strong role mapping to stronger transaction-level historical detail.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -523,7 +517,7 @@ export const profileBatchB: ProfileRecord = {
         { name: "Hanabi Capital", type: "fund", description: "VC fund with Volpi and Offutt. Portfolio: Anysphere (Cursor), LiveKit, Cognition AI, BRINC Drones", status: "active" },
       ],
       _dataQuality: {
-        sourcesConsulted: 9,
+        sourcesConsulted: 12,
         sourceList: ["LinkedIn", "Hanabi team page", "Index Ventures", "SXSW 2024 schedule", "Nava Ventures launch post", "Cartesia", "Anysphere", "Cognition AI", "General web search"],
         lastUpdated: "2026-03",
         overallConfidence: {
@@ -560,9 +554,15 @@ export const profileBatchB: ProfileRecord = {
     },
     references: [
       { title: "Hanabi — Ishani Thakur", url: "https://www.hanabi.com/team/ishani-thakur" },
-      { title: "SXSW 2024 — Ishani Thakur", url: "https://schedule.sxsw.com/2024/speakers/2197976" },
-      { title: "Ishani Thakur — LinkedIn", url: "https://linkedin.com/in/ishanithakur" },
+      { title: "Hanabi Capital", url: "https://www.hanabi.com/" },
+      { title: "Ishani Thakur — LinkedIn", url: "https://www.linkedin.com/in/ishani-thakur-04420613b" },
+      { title: "SXSW 2024 Speaker — Ishani Thakur", url: "https://schedule.sxsw.com/2024/speakers/2197976" },
+      { title: "SXSW 2024 Session — Investing in the Future of AI Infrastructure", url: "https://schedule.sxsw.com/2024/events/PP1144819" },
+      { title: "Index Ventures Team", url: "https://www.indexventures.com/team/" },
       { title: "Nava Ventures launch post", url: "https://www.linkedin.com/posts/ishani-thakur-04420613b_so-nava-ventures-has-officially-launched-activity-6900532630303989760-NdKQ" },
+      { title: "LiveKit", url: "https://livekit.io/" },
+      { title: "Hanabi Capital profile (directory)", url: "https://starthere.co/venture-funds/hanabi-capital/" },
+      { title: "Business Insider — Rising Stars of VC 2026", url: "https://www.businessinsider.com/venture-capital-industry-rising-stars-list-2026-1" },
     ],
   },
 
@@ -579,32 +579,22 @@ export const profileBatchB: ProfileRecord = {
       { institution: "Stanford University", degree: "BS", field: "Electrical Engineering" },
     ],
     humanContent: `
-<p><strong>Michelangelo "Mike" Volpi</strong> (born December 13, 1966) is an Italian-American venture capitalist and technology executive. He is a Partner at <a href="https://www.indexventures.com/">Index Ventures</a>, one of the world's leading venture capital firms. He has led nine IPOs at Index, including <a href="https://slack.com">Slack</a>, <a href="https://www.purestorage.com/">Pure Storage</a>, and <a href="https://www.arista.com/">Arista Networks</a>. He was ranked #34 on the New York Times / CB Insights Top 100 Venture Capitalists list.</p>
+<p><strong>Michelangelo "Mike" Volpi</strong> is an Italian-American technology executive and investor best known for leadership roles at Cisco and Index Ventures. The most authoritative sources for current identity and role are the <a href="https://www.indexventures.com/team/mike-volpi/">Index Ventures team page</a> and public-company governance records (including Ferrari board documentation).</p>
 
-<h2>Early life and education</h2>
-<p>Volpi was born on December 13, 1966. His father, Vittorio Volpi, was a senior executive at UBS. Volpi earned a Bachelor of Science in Electrical Engineering from Stanford University, followed by an MBA from the Stanford Graduate School of Business.</p>
+<h2>Education and early executive track</h2>
+<p>Ferrari governance disclosures and related public biographies identify Volpi as a Stanford graduate with a BS in Mechanical Engineering, an MS in Manufacturing Systems Engineering, and an MBA from Stanford GSB. Before venture investing, he held senior operating roles at Cisco, including strategy and major business leadership responsibilities during Cisco&apos;s large acquisition era.</p>
 
-<h2>Career</h2>
-<h3>Cisco Systems</h3>
-<p>Before entering venture capital, Volpi held senior positions at Cisco Systems, where he was involved in corporate strategy and business development during the company's rapid growth period.</p>
+<h2>Index Ventures period</h2>
+<p>Index states Volpi joined in 2009 to build the firm&apos;s San Francisco and North American operations. Public bios consistently position his focus in AI, infrastructure, and enterprise software, and list long-running board involvement across major technology companies. Third-party coverage (Forbes, Bloomberg, Microsoft&apos;s Behind the Tech episode) aligns with this operating-to-investor trajectory.</p>
 
-<h3>Joost</h3>
-<p>Volpi served as CEO of <strong>Joost</strong>, an online video platform founded by the creators of Skype (Niklas Zennström and Janus Friis). He was recruited as an Entrepreneur-in-Residence (EIR) at Sequoia Capital before taking the Joost role.</p>
+<h2>Board and governance footprint</h2>
+<p>Volpi&apos;s board activity is independently verifiable through corporate governance documents, including Ferrari public filings and board pages. This strengthens confidence beyond profile-style sources because it is tied to formal issuer disclosures and annual-report governance sections.</p>
 
-<h3>Index Ventures</h3>
-<p>At Index Ventures, Volpi has been one of the most prolific partners, leading investments that resulted in nine IPOs. Notable portfolio companies include:</p>
-<ul>
-  <li><strong>Slack</strong> — Enterprise messaging (IPO)</li>
-  <li><strong>Pure Storage</strong> — Flash storage (IPO)</li>
-  <li><strong>Arista Networks</strong> — Cloud networking (IPO)</li>
-</ul>
-<p>He was ranked #34 on the NYT/CB Insights list of the top 100 venture capitalists.</p>
+<h2>Hanabi Capital</h2>
+<p>Public fund profiles and first-party materials identify Volpi as a co-founder/partner at Hanabi Capital, an early-stage AI and software-infrastructure investment firm. Source quality is high for role identity and broad strategy, but still mixed on complete fund-level portfolio metadata across all external directories.</p>
 
-<h3>Hanabi Capital</h3>
-<p>Volpi co-founded <strong>Hanabi Capital</strong> alongside Ishani Thakur and Bryan Offutt, a venture fund investing in AI and frontier technology companies.</p>
-
-<h2>Personal life</h2>
-<p>Volpi is married with two children.</p>
+<h2>Verification scope</h2>
+<p>This entry is high-confidence on identity, education, executive history, and current investing role. Residual uncertainty is mostly in fine-grained historical timing and secondary-source ranking claims. Where possible, this profile prioritizes company disclosures, firm bios, and primary governance records over aggregator summaries.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -729,8 +719,16 @@ export const profileBatchB: ProfileRecord = {
       ],
     },
     references: [
-      { title: "Index Ventures — Mike Volpi", url: "https://www.indexventures.com/team/mike-volpi" },
-      { title: "NYT/CB Insights Top 100 VCs", url: "https://www.cbinsights.com" },
+      { title: "Index Ventures — Mike Volpi", url: "https://www.indexventures.com/team/mike-volpi/" },
+      { title: "Index Ventures", url: "https://www.indexventures.com/" },
+      { title: "Ferrari Board Candidate CV — Michelangelo Volpi (PDF)", url: "https://cdn.ferrari.com/cms/network/media/pdf/6.%20CV%20Michelangelo%20Volpi.pdf" },
+      { title: "Ferrari — Board of Directors", url: "https://www.ferrari.com/en-EN/corporate/board-directors" },
+      { title: "Ferrari 2024 Annual Report and Form 20-F (PDF)", url: "https://cdn.ferrari.com/cms/network/media/pdf/Ferrari%20NV%20Annual%20Report%202024%20-%2020F%20Form.pdf" },
+      { title: "Microsoft Behind the Tech — Mike Volpi episode", url: "https://www.microsoft.com/en-us/behind-the-tech/mike-volpi-partner-index-ventures" },
+      { title: "Bloomberg profile — Michelangelo A Volpi", url: "https://www.bloomberg.com/profile/person/1797517" },
+      { title: "Forbes profile — Mike Volpi", url: "https://www.forbes.com/profile/mike-volpi/" },
+      { title: "Apple Podcasts — Logan Bartlett Show EP 92 with Mike Volpi", url: "https://podcasts.apple.com/us/podcast/ep-92-mike-volpi-partner-index-ventures-top-ai-investor/id1606770839?i=1000643124575" },
+      { title: "Mike Volpi — Wikipedia (secondary context)", url: "https://en.wikipedia.org/wiki/Mike_Volpi" },
     ],
   },
 
