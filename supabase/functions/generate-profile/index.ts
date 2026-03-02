@@ -154,63 +154,70 @@ async function runParallelResearch(
     .filter(Boolean)
     .join(" ");
 
-  // Create the deep research run
-  const createRes = await fetch("https://api.parallel.ai/v1/tasks/runs", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      task_type: "deep-research",
-      input: query,
-    }),
-  });
-
-  if (!createRes.ok) {
-    const text = await createRes.text();
-    throw new Error(`Parallel create failed (${createRes.status}): ${text}`);
-  }
-
-  const { id: runId } = await createRes.json();
-  console.log(`[parallel] Created run: ${runId}`);
-
-  // Poll for completion (max 120s)
-  const maxWait = 120_000;
-  const pollInterval = 5_000;
-  const start = Date.now();
-
-  while (Date.now() - start < maxWait) {
-    await new Promise((r) => setTimeout(r, pollInterval));
-
-    const statusRes = await fetch(`https://api.parallel.ai/v1/tasks/runs/${runId}`, {
-      headers: { Authorization: `Bearer ${apiKey}` },
+  try {
+    // Create the deep research run
+    const createRes = await fetch("https://api.parallel.ai/v1/tasks/runs", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": apiKey,
+      },
+      body: JSON.stringify({
+        input: query,
+        processor: "pro-fast",
+      }),
     });
-    if (!statusRes.ok) continue;
 
-    const statusData = await statusRes.json();
-    console.log(`[parallel] Status: ${statusData.status}`);
+    if (!createRes.ok) {
+      const text = await createRes.text();
+      console.warn(`[parallel] Create failed (${createRes.status}): ${text}`);
+      return "Deep research unavailable — proceeding with Exa results only.";
+    }
 
-    if (statusData.status === "completed") {
-      // Fetch the result
-      const resultRes = await fetch(`https://api.parallel.ai/v1/tasks/runs/${runId}/result`, {
-        headers: { Authorization: `Bearer ${apiKey}` },
+    const createData = await createRes.json();
+    const runId = createData.run_id;
+    console.log(`[parallel] Created run: ${runId}`);
+
+    // Poll for completion (max 45s — leave time for Claude synthesis within edge function timeout)
+    const maxWait = 45_000;
+    const pollInterval = 5_000;
+    const start = Date.now();
+
+    while (Date.now() - start < maxWait) {
+      await new Promise((r) => setTimeout(r, pollInterval));
+
+      const statusRes = await fetch(`https://api.parallel.ai/v1/tasks/runs/${runId}`, {
+        headers: { "x-api-key": apiKey },
       });
-      if (resultRes.ok) {
-        const resultData = await resultRes.json();
-        return resultData.markdown || resultData.result || JSON.stringify(resultData);
+      if (!statusRes.ok) continue;
+
+      const statusData = await statusRes.json();
+      console.log(`[parallel] Status: ${statusData.status}`);
+
+      if (statusData.status === "completed") {
+        // Fetch the result
+        const resultRes = await fetch(`https://api.parallel.ai/v1/tasks/runs/${runId}/result`, {
+          headers: { "x-api-key": apiKey },
+        });
+        if (resultRes.ok) {
+          const resultData = await resultRes.json();
+          return resultData.markdown || resultData.output || JSON.stringify(resultData);
+        }
+        return "Deep research completed but result could not be retrieved.";
       }
-      return "Deep research completed but result could not be retrieved.";
+
+      if (statusData.status === "failed") {
+        console.warn(`[parallel] Research failed: ${JSON.stringify(statusData)}`);
+        return "Deep research failed — proceeding with Exa results only.";
+      }
     }
 
-    if (statusData.status === "failed") {
-      console.warn(`[parallel] Research failed: ${JSON.stringify(statusData)}`);
-      return "Deep research failed — proceeding with Exa results only.";
-    }
+    console.warn(`[parallel] Timed out after ${maxWait / 1000}s`);
+    return "Deep research timed out — proceeding with Exa results only.";
+  } catch (err) {
+    console.warn(`[parallel] Unexpected error:`, err);
+    return "Deep research error — proceeding with Exa results only.";
   }
-
-  console.warn(`[parallel] Timed out after ${maxWait / 1000}s`);
-  return "Deep research timed out — proceeding with Exa results only.";
 }
 
 // ---------------------------------------------------------------------------
