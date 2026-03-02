@@ -15,6 +15,7 @@ type SelectionMenuState = {
   x: number;
   y: number;
   snippet: string;
+  side: "left" | "right";
 };
 
 export default function ProfileActions({
@@ -39,6 +40,7 @@ export default function ProfileActions({
     x: 0,
     y: 0,
     snippet: "",
+    side: "right",
   });
 
   const articleRef = useRef<HTMLDivElement>(null);
@@ -76,11 +78,25 @@ export default function ProfileActions({
   };
 
   const closeSelectionMenu = () => {
-    setSelectionMenu((prev) => ({ ...prev, open: false }));
+    setSelectionMenu((prev) => ({ ...prev, open: false, snippet: "" }));
     setShowVerifierForm(false);
     setShowCitationInput(false);
     setCitationUrl("");
     selectionRangeRef.current = null;
+  };
+
+  const applyFormat = (command: string, value?: string) => {
+    restoreSelection();
+    document.execCommand(command, false, value);
+    setIsDirty(true);
+    requestAnimationFrame(restoreSelection);
+  };
+
+  const insertBlockElement = (tagName: "H2" | "H3" | "BLOCKQUOTE" | "PRE") => {
+    restoreSelection();
+    document.execCommand("formatBlock", false, tagName);
+    setIsDirty(true);
+    requestAnimationFrame(restoreSelection);
   };
 
   const runAction = async (url: string, init?: RequestInit) => {
@@ -164,21 +180,44 @@ export default function ProfileActions({
     }
 
     const rect = range.getBoundingClientRect();
-    const menuWidth = 360;
+    const menuWidth = 440;
+    const menuHeight = 180;
+    const gap = 10;
     const edgePadding = 16;
     const viewportLeft = window.scrollX;
     const viewportRight = window.scrollX + window.innerWidth;
-    const minX = viewportLeft + edgePadding + menuWidth / 2;
-    const maxX = viewportRight - edgePadding - menuWidth / 2;
-    const centeredX = rect.left + rect.width / 2 + window.scrollX;
-    const clampedX = Math.min(Math.max(centeredX, minX), maxX);
+    const viewportTop = window.scrollY;
+    const viewportBottom = window.scrollY + window.innerHeight;
+
+    const rightAnchorX = rect.right + window.scrollX + gap;
+    const leftAnchorX = rect.left + window.scrollX - gap - menuWidth;
+    const prefersRight = rightAnchorX + menuWidth <= viewportRight - edgePadding;
+    const canFitLeft = leftAnchorX >= viewportLeft + edgePadding;
+
+    let x = prefersRight ? rightAnchorX : leftAnchorX;
+    let side: "left" | "right" = prefersRight ? "right" : "left";
+
+    if (!prefersRight && !canFitLeft) {
+      x = Math.max(
+        viewportLeft + edgePadding,
+        Math.min(rect.left + window.scrollX, viewportRight - menuWidth - edgePadding)
+      );
+      side = "right";
+    }
+
+    const centeredY = rect.top + window.scrollY + rect.height / 2 - menuHeight / 2;
+    const y = Math.max(
+      viewportTop + edgePadding,
+      Math.min(centeredY, viewportBottom - menuHeight - edgePadding)
+    );
 
     selectionRangeRef.current = range.cloneRange();
     setSelectionMenu({
       open: true,
-      x: clampedX,
-      y: rect.top + window.scrollY - 12,
+      x,
+      y,
       snippet,
+      side,
     });
 
     requestAnimationFrame(restoreSelection);
@@ -336,14 +375,86 @@ export default function ProfileActions({
         {state.isOwner && selectionMenu.open && (
           <div
             ref={selectionMenuRef}
-            className="absolute z-30 w-[360px] rounded-xl border border-border bg-white/95 backdrop-blur px-3 py-2 shadow-md font-sans text-xs"
+            className="absolute z-30 w-[440px] rounded-xl border border-border bg-[#1f1f1f] text-[#ececec] px-3 py-2 shadow-xl font-sans text-xs"
             style={{
               left: selectionMenu.x,
               top: selectionMenu.y,
-              transform: "translate(-50%, -100%)",
             }}
           >
-            <div className="text-muted mb-2 line-clamp-2">“{selectionMenu.snippet}”</div>
+            <div className="mb-2 text-[11px] text-[#b8b8b8] line-clamp-2">“{selectionMenu.snippet}”</div>
+
+            <div className="mb-2">
+              <input
+                readOnly
+                value="Search actions..."
+                className="w-full rounded-md border border-[#3a3a3a] bg-[#2a2a2a] px-2 py-1.5 text-[11px] text-[#9a9a9a]"
+              />
+            </div>
+
+            <div className="mb-2">
+              <div className="text-[10px] uppercase tracking-wide text-[#8f8f8f] mb-1">Text</div>
+              <div className="flex flex-wrap gap-1">
+                <button
+                  onClick={() => applyFormat("bold")}
+                  className="px-2 py-1 rounded border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434] font-semibold"
+                >
+                  B
+                </button>
+                <button
+                  onClick={() => applyFormat("italic")}
+                  className="px-2 py-1 rounded border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434] italic"
+                >
+                  I
+                </button>
+                <button
+                  onClick={() => insertBlockElement("H2")}
+                  className="px-2 py-1 rounded border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434] font-semibold"
+                >
+                  H2
+                </button>
+                <button
+                  onClick={() => insertBlockElement("H3")}
+                  className="px-2 py-1 rounded border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434] font-semibold"
+                >
+                  H3
+                </button>
+                <button
+                  onClick={() => applyFormat("insertUnorderedList")}
+                  className="px-2 py-1 rounded border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434]"
+                >
+                  • List
+                </button>
+                <button
+                  onClick={() => applyFormat("insertOrderedList")}
+                  className="px-2 py-1 rounded border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434]"
+                >
+                  1. List
+                </button>
+                <button
+                  onClick={() => insertBlockElement("BLOCKQUOTE")}
+                  className="px-2 py-1 rounded border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434]"
+                >
+                  Quote
+                </button>
+                <button
+                  onClick={() => insertBlockElement("PRE")}
+                  className="px-2 py-1 rounded border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434]"
+                >
+                  Code
+                </button>
+                <button
+                  onClick={() => {
+                    setShowCitationInput((v) => !v);
+                    setShowVerifierForm(false);
+                  }}
+                  className="px-2 py-1 rounded border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434]"
+                >
+                  Link
+                </button>
+              </div>
+            </div>
+
+            <div className="h-px bg-[#353535] my-2" />
 
             <div className="flex items-center gap-2">
               <button
@@ -351,7 +462,7 @@ export default function ProfileActions({
                   setShowVerifierForm((v) => !v);
                   setShowCitationInput(false);
                 }}
-                className="px-2.5 py-1 rounded-md border border-border bg-[#f8f7f5] hover:bg-[#efece4] font-semibold"
+                className="px-2.5 py-1 rounded-md border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434] font-semibold"
               >
                 Request Verifier
               </button>
@@ -360,11 +471,11 @@ export default function ProfileActions({
                   setShowCitationInput((v) => !v);
                   setShowVerifierForm(false);
                 }}
-                className="px-2.5 py-1 rounded-md border border-border bg-[#f8f7f5] hover:bg-[#efece4] font-semibold"
+                className="px-2.5 py-1 rounded-md border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434] font-semibold"
               >
                 Add Citation
               </button>
-              <button onClick={closeSelectionMenu} className="ml-auto text-muted hover:text-foreground">
+              <button onClick={closeSelectionMenu} className="ml-auto text-[#9c9c9c] hover:text-white">
                 Close
               </button>
             </div>
@@ -375,11 +486,11 @@ export default function ProfileActions({
                   value={citationUrl}
                   onChange={(event) => setCitationUrl(event.target.value)}
                   placeholder="https://..."
-                  className="flex-1 border border-border rounded-md p-2 text-xs bg-white"
+                  className="flex-1 border border-[#3a3a3a] rounded-md p-2 text-xs bg-[#2a2a2a] text-white placeholder:text-[#8f8f8f]"
                 />
                 <button
                   onClick={addCitation}
-                  className="px-2.5 py-1 rounded-md border border-border bg-[#f8f7f5] hover:bg-[#efece4] font-semibold"
+                  className="px-2.5 py-1 rounded-md border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434] font-semibold"
                 >
                   Insert
                 </button>
@@ -392,26 +503,26 @@ export default function ProfileActions({
                   value={sectionLabel}
                   onChange={(event) => setSectionLabel(event.target.value)}
                   placeholder="Section label (optional)"
-                  className="w-full border border-border rounded-md p-2 text-xs bg-white"
+                  className="w-full border border-[#3a3a3a] rounded-md p-2 text-xs bg-[#2a2a2a] text-white placeholder:text-[#8f8f8f]"
                 />
                 <div className="grid grid-cols-2 gap-2">
                   <input
                     value={verifierName}
                     onChange={(event) => setVerifierName(event.target.value)}
                     placeholder="Verifier name"
-                    className="w-full border border-border rounded-md p-2 text-xs bg-white"
+                    className="w-full border border-[#3a3a3a] rounded-md p-2 text-xs bg-[#2a2a2a] text-white placeholder:text-[#8f8f8f]"
                   />
                   <input
                     value={verifierEmail}
                     onChange={(event) => setVerifierEmail(event.target.value)}
                     placeholder="Verifier email"
-                    className="w-full border border-border rounded-md p-2 text-xs bg-white"
+                    className="w-full border border-[#3a3a3a] rounded-md p-2 text-xs bg-[#2a2a2a] text-white placeholder:text-[#8f8f8f]"
                   />
                 </div>
                 <button
                   onClick={submitVerifierRequest}
                   disabled={isSubmittingVerifier}
-                  className="px-2.5 py-1 rounded-md border border-border bg-[#f8f7f5] hover:bg-[#efece4] font-semibold disabled:opacity-50"
+                  className="px-2.5 py-1 rounded-md border border-[#3a3a3a] bg-[#2a2a2a] hover:bg-[#343434] font-semibold disabled:opacity-50"
                 >
                   {isSubmittingVerifier ? "Submitting..." : "Send Request"}
                 </button>
