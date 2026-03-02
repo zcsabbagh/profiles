@@ -611,16 +611,23 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress)", field: "Computer Science / Mathematics / FGSS", years: "2022–2026 (est.)" },
     ],
     humanContent: `
-<p><strong>Riya Ranjan</strong> is a Stanford undergraduate researcher working at the intersection of legal informatics and LLM evaluation. Stanford Profiles provides the strongest institutional identity anchor, listing her undergraduate affiliations in Computer Science, Mathematics, and FGSS, while public CodeX-linked references and presentation records indicate active research involvement in legal-AI benchmarking.</p>
+<p><strong>Riya Ranjan</strong> is a Stanford undergraduate researcher focused on legal AI evaluation and computational legal workflows. Public evidence supports a technically serious, early-career profile centered on how legal professionals actually judge model outputs, not just benchmark accuracy on isolated tasks.</p>
 
-<h2>CodeX and legal-AI evaluation work</h2>
-<p>Open sources tie Ranjan to CodeX research under Dr. Megan Ma with a focus on evaluation methods for legal applications. The public footprint around her work emphasizes benchmark design quality and legal-workflow realism rather than generic chatbot demos. This is consistent with available workshop records and tiny-paper materials from EvalEval / NeurIPS contexts.</p>
+<h2>Education and institutional anchors</h2>
+<p>Stanford Profiles is the strongest identity anchor: it lists Ranjan as an undergraduate in Computer Science, Mathematics, and Feminist, Gender, and Sexuality Studies, with a law instructional support affiliation. Her LinkedIn profile aligns with that record and places her in a research assistant role at CodeX, the Stanford Center for Legal Informatics.</p>
 
-<h2>Public research artifacts</h2>
-<p>The most concrete artifact currently available is the EvalEval 2024 workshop paper on reframing legal LLM benchmarking, where Ranjan is listed as author with Stanford affiliation. NeurIPS workshop pages and LinkedIn conference posts corroborate presentation activity. Because some claims (for example additional accepted venues) appear primarily on profile platforms, this entry separates strongly verifiable artifacts from self-reported forward-looking publication statements.</p>
+<h2>Research direction: legal preference benchmarking</h2>
+<p>The most concrete public artifact is the EvalEval 2024 tiny paper, <em>Motivations for Reframing Large Language Model Benchmarking for Legal Applications</em> (Ranjan, Ma), which argues for evaluating legal AI through lawyer preference and real workflow criteria instead of narrow synthetic task scoring. A NeurIPS 2024 workshop page plus Ranjan&apos;s conference post corroborate presentation activity around this work.</p>
+
+<h2>ICAIL and publication trajectory</h2>
+<p>Ranjan appears as co-author with Megan Ma on the ICAIL 2025 paper <em>Human-Machine Legal Preference Benchmarking</em>, with DOI <code>10.1145/3769126.3769247</code>. DBLP indexes the paper and credits both authors, providing a second high-confidence bibliographic source beyond profile claims. Together with the EvalEval paper, this supports a coherent research arc from framing critique (2024) to empirical human-machine legal evaluation (2025).</p>
+
+<h2>Adjacent technical and legal practice work</h2>
+<p>LinkedIn records additional experiences in trading systems development (Five Rings), technology strategy consulting (PwC), and EPFL fellowship activity, suggesting broad applied technical exposure alongside legal AI research. The same profile also lists co-founding work with The Survivors Pro Bono, and Stanford Law&apos;s Campus Survivors Pro Bono Project plus the organization website provide external corroboration that this initiative exists and operates around Title IX support.</p>
 
 <h2>Verification scope</h2>
-<p>Confidence is high on identity, institutional affiliation, and active CodeX research role. Confidence is moderate on the full set of paper acceptances and complete publication bibliography pending more canonical proceedings pages. The profile is therefore written as a strong evidence-based role and research-direction page, with publication depth expanding as additional primary links are published.</p>
+<p>Confidence is high for identity, Stanford affiliation, CodeX role direction, and two core publication anchors (EvalEval + ICAIL bibliographic evidence). Confidence is moderate for full project-level contribution detail at each institution, because public sources rarely expose fine-grained implementation ownership or complete publication lists for student researchers.</p>
+<p>This profile therefore emphasizes verifiable milestones and explicit evidence quality tiers: canonical institutional pages and proceedings-grade links are treated as primary, while profile-platform claims without independent corroboration remain secondary.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -631,14 +638,14 @@ export const profileBatchC: ProfileRecord = {
       worksFor: { "@type": "Organization", name: "CodeX, Stanford Center for Legal Informatics" },
       knowsAbout: [
         { skill: "Legal AI", type: "domain", _confidence: 0.9, _evidence: "CodeX research role and legal benchmarking work" },
-        { skill: "LLM Evaluation", type: "domain", _confidence: 0.85, _evidence: "NeurIPS-related presentation references" },
+        { skill: "LLM Evaluation", type: "domain", _confidence: 0.9, _evidence: "EvalEval tiny paper + ICAIL publication record + NeurIPS workshop presentation evidence" },
       ],
       _dataQuality: {
-        sourcesConsulted: 11,
-        sourceList: ["Stanford Profiles", "LinkedIn", "CodeX website", "CodeX LinkedIn organization page", "NeurIPS presentation post", "General web search"],
+        sourcesConsulted: 16,
+        sourceList: ["Stanford Profiles", "LinkedIn profile and post", "CodeX site", "EvalEval accepted papers + tiny paper PDF", "NeurIPS workshop page", "ICAIL DOI and bibliographic listings", "DBLP author entry", "Stanford Law Campus Survivors Pro Bono page", "The Survivors Pro Bono website", "General web disambiguation search"],
         lastUpdated: "2026-03",
-        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
-        gaps: ["Exact graduation year and degree plan", "Publication canonical links"],
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
+        gaps: ["Complete canonical publication list beyond currently indexed artifacts", "Fine-grained implementation ownership per project/internship"],
       },
     },
     infobox: {
@@ -657,12 +664,19 @@ export const profileBatchC: ProfileRecord = {
       { title: "Riya Ranjan — LinkedIn", url: "https://www.linkedin.com/in/riya-ranjan-998b051a0" },
       { title: "CodeX — Stanford Center for Legal Informatics", url: "https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/" },
       { title: "CodeX LinkedIn organization page", url: "https://www.linkedin.com/company/codex-stanford" },
+      { title: "Home — EvalEval 2024 (NeurIPS workshop site)", url: "https://evalevalai.com/2024workshop/" },
       { title: "EvalEval 2024 Accepted Papers", url: "https://evalevalai.com/2024workshop/accepted-papers.html" },
       { title: "EvalEval 2024 tiny paper (Ranjan, Ma) PDF", url: "https://evalevalai.com/2024workshop/accepted_papers/EvalEval_24_Ranjan.pdf" },
       { title: "NeurIPS 2024 workshop page — Evaluating Evaluations", url: "https://neurips.cc/virtual/2024/workshop/84734" },
       { title: "Riya Ranjan — NeurIPS presentation post", url: "https://www.linkedin.com/posts/riya-ranjan-998b051a0_this-weekend-following-a-stressful-finals-activity-7274938892967972865-rOeZ" },
+      { title: "Human-Machine Legal Preference Benchmarking — DOI", url: "https://doi.org/10.1145/3769126.3769247" },
+      { title: "DBLP — Riya Ranjan author page", url: "https://dblp.uni-trier.de/pid/304/7681.html" },
+      { title: "ResearchGate entry — Human-Machine Legal Preference Benchmarking", url: "https://www.researchgate.net/publication/394257448_Human-Machine_Legal_Preference_Benchmarking_An_Experimental_Pilot_Evaluating_the_Comparative_Performance_of_LLM_Models_Enterprise_Tools_and_Humans_on_Legal_Tasks" },
+      { title: "EDM 2024 paper page — Investigation of behavioral Differences", url: "https://educationaldatamining.org/edm2024/proceedings/2024.EDM-short-papers.43/index.html" },
+      { title: "EDM 2024 short paper PDF (Riya Ranjan listed as Stanford)", url: "https://www.educationaldatamining.org/edm2024/proceedings/2024.EDM-short-papers.43/2024.EDM-short-papers.43.pdf" },
       { title: "Stanford Law — CodeX projects", url: "https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/projects/" },
-      { title: "LegalBench (SSRN) — benchmark context for legal LLM evaluation", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4583531" },
+      { title: "Campus Survivors Pro Bono Project — Stanford Law", url: "https://law.stanford.edu/campus-survivors-pro-bono-project/" },
+      { title: "The Survivors Pro Bono — official site", url: "https://www.survivorsprobono.com/" },
     ],
   },
 
@@ -1568,4 +1582,5 @@ export const profileBatchC: ProfileRecord = {
       { title: "Nutrient customer story — Harvey workflow scaling context", url: "https://www.nutrient.io/blog/scaling-legal-document-workflows-harvey/" },
     ],
   },
+
 };
