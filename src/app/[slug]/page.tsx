@@ -34,8 +34,9 @@ export default async function ProfilePage({
   const { slug } = await params;
   const profile = getProfile(slug);
   if (!profile) notFound();
-  const { userId } = await auth();
-  const runtimeState = await getRuntimeProfileState(slug, userId ?? null);
+  const { userId, getToken } = await auth();
+  const accessToken = userId ? await getToken() : null;
+  const runtimeState = await getRuntimeProfileState(slug, userId ?? null, accessToken);
   if (!runtimeState) notFound();
 
   const humanView = (

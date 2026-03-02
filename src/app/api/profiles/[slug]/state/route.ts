@@ -7,9 +7,10 @@ export async function GET(
   context: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await context.params;
-  const { userId } = await auth();
+  const { userId, getToken } = await auth();
+  const accessToken = userId ? await getToken() : null;
 
-  const state = await getRuntimeProfileState(slug, userId ?? null);
+  const state = await getRuntimeProfileState(slug, userId ?? null, accessToken);
   if (!state) {
     return NextResponse.json({ error: "Profile not found" }, { status: 404 });
   }

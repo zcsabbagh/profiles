@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Agentapedia Profiles
 
-## Getting Started
+Next.js App Router site with static profile content plus authenticated owner workflows:
 
-First, run the development server:
+- claim a profile (one profile per user)
+- edit profile article content (owner only)
+- submit verifier requests for selected snippets (owner only)
+
+Data is persisted in Supabase Postgres and secured with RLS policies.
+
+## Stack
+
+- Next.js 16 (App Router)
+- Clerk auth
+- Supabase Postgres + Data API (`@supabase/supabase-js`)
+- TypeScript + Zod
+
+## Required Environment Variables
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=...
+CLERK_SECRET_KEY=...
+
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://<project-ref>.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_... # preferred
+# or legacy:
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Auth Integration Requirements (Clerk -> Supabase)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This app uses Supabase RLS with Clerk-issued JWTs. Ensure:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Supabase project has a Clerk Third-Party Auth integration enabled.
+2. Clerk session tokens include `role: authenticated` claim.
+3. App sends Clerk session token to Supabase as bearer token (already implemented server-side).
 
-## Learn More
+If these are not configured, authenticated writes will fail with RLS errors.
 
-To learn more about Next.js, take a look at the following resources:
+## Database Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Apply migration:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `supabase/migrations/202603020001_profile_claiming.sql`
 
-## Deploy on Vercel
+It creates:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `profile_claims`
+- `profile_contents`
+- `verifier_requests`
+- RLS policies for public reads and owner-only writes/owner-only verifier visibility.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+## Build
+
+```bash
+npm run build
+```
