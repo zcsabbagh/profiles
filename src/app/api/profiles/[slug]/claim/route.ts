@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { assertProfileExists, getRuntimeProfileState } from "@/lib/profile-state";
 import { createSupabaseServerClient } from "@/lib/supabase";
+import { getSupabaseAccessToken } from "@/lib/clerk-token";
 
 export async function POST(
   _request: Request,
@@ -11,7 +12,7 @@ export async function POST(
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  const accessToken = await getToken();
+  const accessToken = await getSupabaseAccessToken(getToken);
   if (!accessToken) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

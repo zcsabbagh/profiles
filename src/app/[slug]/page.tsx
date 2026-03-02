@@ -8,6 +8,7 @@ import Infobox from "@/components/Infobox";
 import MachineView from "@/components/MachineView";
 import ProfileActions from "@/components/ProfileActions";
 import { getRuntimeProfileState } from "@/lib/profile-state";
+import { getSupabaseAccessToken } from "@/lib/clerk-token";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -35,7 +36,7 @@ export default async function ProfilePage({
   const profile = getProfile(slug);
   if (!profile) notFound();
   const { userId, getToken } = await auth();
-  const accessToken = userId ? await getToken() : null;
+  const accessToken = userId ? await getSupabaseAccessToken(getToken) : null;
   const runtimeState = await getRuntimeProfileState(slug, userId ?? null, accessToken);
   if (!runtimeState) notFound();
 

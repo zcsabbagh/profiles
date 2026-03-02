@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { assertProfileExists, getRuntimeProfileState } from "@/lib/profile-state";
 import { createSupabaseServerClient } from "@/lib/supabase";
+import { getSupabaseAccessToken } from "@/lib/clerk-token";
 
 const updateContentSchema = z.object({
   humanContent: z.string().min(1).max(120000),
@@ -16,7 +17,7 @@ export async function PUT(
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  const accessToken = await getToken();
+  const accessToken = await getSupabaseAccessToken(getToken);
   if (!accessToken) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

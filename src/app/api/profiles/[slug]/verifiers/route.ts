@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { assertProfileExists, getRuntimeProfileState } from "@/lib/profile-state";
 import { createSupabaseServerClient } from "@/lib/supabase";
+import { getSupabaseAccessToken } from "@/lib/clerk-token";
 
 const createVerifierRequestSchema = z.object({
   snippet: z.string().trim().min(3).max(1000),
@@ -19,7 +20,7 @@ export async function POST(
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  const accessToken = await getToken();
+  const accessToken = await getSupabaseAccessToken(getToken);
   if (!accessToken) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

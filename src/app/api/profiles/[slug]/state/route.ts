@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { getRuntimeProfileState } from "@/lib/profile-state";
+import { getSupabaseAccessToken } from "@/lib/clerk-token";
 
 export async function GET(
   _request: Request,
@@ -8,7 +9,7 @@ export async function GET(
 ) {
   const { slug } = await context.params;
   const { userId, getToken } = await auth();
-  const accessToken = userId ? await getToken() : null;
+  const accessToken = userId ? await getSupabaseAccessToken(getToken) : null;
 
   const state = await getRuntimeProfileState(slug, userId ?? null, accessToken);
   if (!state) {
