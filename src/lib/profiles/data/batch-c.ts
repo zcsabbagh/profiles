@@ -914,7 +914,19 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress)", field: "Civil and Environmental Engineering" },
     ],
     humanContent: `
-<p><strong>Paolo Reitz</strong> is a Stanford undergraduate in Civil and Environmental Engineering. Public profiles show student leadership and campus operations roles, including resident advising and climbing facility supervision.</p>
+<p><strong>Paolo Ferreira Reitz</strong> is a Stanford undergraduate in Civil and Environmental Engineering whose public footprint spans campus operations, outdoor/adventure programming, and student media.</p>
+
+<h2>Education</h2>
+<p>Stanford Profiles lists Reitz as an undergraduate in Civil and Environmental Engineering. Public profile metadata also lists active student operational roles in Stanford Recreation Adventure Programs.</p>
+
+<h2>Campus leadership and operations</h2>
+<p>Public records identify Reitz as a <strong>Floor Supervisor</strong> and <strong>Senior Trip Leader</strong> in Stanford Recreation Adventure Programs. LinkedIn adds role detail around AOERC climbing wall supervision, safety support, and peer instruction, plus resident advising responsibilities.</p>
+
+<h2>Writing and film-scene reporting</h2>
+<p>In 2025, Reitz authored at least two Stanford Daily pieces under the recurring column framing "The Stanford Scene," covering student film groups and actors. This work documents activity in journalism and student arts communication beyond his engineering major.</p>
+
+<h2>Verification note</h2>
+<p>This profile now includes stronger role-level citations than before, but internship and project outputs outside campus leadership remain limited in open sources.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -924,12 +936,50 @@ export const profileBatchC: ProfileRecord = {
       sameAs: ["https://profiles.stanford.edu/paolo-reitz", "https://linkedin.com/in/paolo-reitz-0889a9324"],
       jobTitle: "Undergraduate Student",
       worksFor: { "@type": "Organization", name: "Stanford University" },
+      hasOccupation: [
+        {
+          "@type": "Role",
+          roleName: "Undergraduate, Civil and Environmental Engineering",
+          organization: { "@type": "Organization", name: "Stanford University" },
+          _verificationStatus: "public",
+          _confidence: 0.96,
+          _evidence: "Stanford Profiles degree listing.",
+        },
+        {
+          "@type": "Role",
+          roleName: "Floor Supervisor / Senior Trip Leader",
+          organization: { "@type": "Organization", name: "Stanford Recreation Adventure Programs" },
+          _verificationStatus: "public",
+          _confidence: 0.9,
+          _evidence: "Stanford Profiles title lines and LinkedIn role details.",
+        },
+        {
+          "@type": "Role",
+          roleName: "Columnist (The Stanford Scene)",
+          organization: { "@type": "Organization", name: "The Stanford Daily" },
+          _verificationStatus: "public",
+          _confidence: 0.86,
+          _evidence: "Bylines in March and May 2025 Stanford Daily film coverage.",
+        },
+      ],
+      knowsAbout: [
+        { skill: "Civil and Environmental Engineering", type: "domain", _confidence: 0.88, _evidence: "Declared Stanford undergraduate program" },
+        { skill: "Outdoor Leadership / Climbing Operations", type: "domain", _confidence: 0.86, _evidence: "Floor Supervisor and trip leadership roles" },
+        { skill: "Student Journalism / Interviews", type: "domain", _confidence: 0.8, _evidence: "Stanford Daily column work interviewing film community members" },
+      ],
+      _projects: [
+        { name: "The Stanford Scene (column)", type: "writing", url: "https://stanforddaily.com/2025/03/31/behind-the-scenes-with-restorative-film-collective-in-a-48-hour-film-competition/", description: "Interview and reporting series on Stanford film activities", status: "active" },
+      ],
       _dataQuality: {
-        sourcesConsulted: 3,
-        sourceList: ["Stanford Profiles", "LinkedIn", "Web search"],
+        sourcesConsulted: 8,
+        sourceList: ["Stanford Profiles (person page)", "Stanford CAP printer profile", "LinkedIn", "Stanford Daily (March 2025 article)", "Stanford Daily (May 2025 article)", "Stanford Recreation (AOERC context)", "Stanford CEE page", "General web disambiguation search"],
         lastUpdated: "2026-03",
-        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
-        gaps: ["Internship and project details beyond campus roles"],
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "HIGH", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
+        gaps: [
+          "No broad public portfolio of engineering projects yet",
+          "Internship history outside campus roles is still sparse in open sources",
+        ],
+        recommendation: "Add internships, technical project pages, or publications to improve engineering-depth coverage.",
       },
     },
     infobox: {
@@ -937,7 +987,7 @@ export const profileBatchC: ProfileRecord = {
       currentRole: "Undergraduate Student",
       org: "Stanford University",
       education: ["Stanford University (Civil and Environmental Engineering)"],
-      knownFor: ["Stanford student leadership and campus operations roles"],
+      knownFor: ["Stanford Recreation Adventure Programs leadership", "AOERC climbing-floor supervision and instruction", "The Stanford Scene student film reporting"],
       links: [
         { label: "Stanford Profile", url: "https://profiles.stanford.edu/paolo-reitz" },
         { label: "LinkedIn", url: "https://linkedin.com/in/paolo-reitz-0889a9324" },
@@ -945,7 +995,12 @@ export const profileBatchC: ProfileRecord = {
     },
     references: [
       { title: "Stanford Profiles — Paolo Reitz", url: "https://profiles.stanford.edu/paolo-reitz" },
+      { title: "Stanford CAP Printer Profile — Paolo Ferreira Reitz", url: "https://cap.stanford.edu/profiles/frdActionServlet?choiceId=printerprofile&profileId=316621&profileversion=full" },
       { title: "Paolo Reitz — LinkedIn", url: "https://linkedin.com/in/paolo-reitz-0889a9324" },
+      { title: "Stanford Daily — Behind the scenes of a 48-hour film competition", url: "https://stanforddaily.com/2025/03/31/behind-the-scenes-with-restorative-film-collective-in-a-48-hour-film-competition/" },
+      { title: "Stanford Daily — The Stanford Scene: West Mulholland '27 balances stardom and Stanford", url: "https://stanforddaily.com/2025/05/08/the-stanford-scene-west-mulholland-27-balances-stardom-and-stanford/" },
+      { title: "Stanford Recreation — AOERC", url: "https://rec.stanford.edu/aoerc" },
+      { title: "Stanford CEE Department", url: "https://cee.stanford.edu/" },
     ],
   },
 
@@ -961,7 +1016,22 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS (in progress)", field: "Engineering / Biomedical Computation" },
     ],
     humanContent: `
-<p><strong>Ella Moore</strong> is a Stanford student with interests in biomedical computation, translational research, and health-focused investing. Public records also connect her to Stanford lightweight rowing.</p>
+<p><strong>Ella Moore</strong> is a Stanford undergraduate in engineering-oriented biomedical tracks with public activity across research labs, biotech-focused investing, and Division I lightweight rowing.</p>
+
+<h2>Education</h2>
+<p>Stanford Profiles lists Moore as an undergraduate in the School of Engineering. Public lab biography pages further describe a Biomedical Computation focus.</p>
+
+<h2>Research and translational science</h2>
+<p>The Barron Lab (Stanford) profile states Moore worked with Dr. Stephen Dominy on glioblastoma (GBM) pathogenesis, after prior work in the Sharaf Lab investigating lipoprotein thermostability. This provides direct evidence of translational and biology-computation-adjacent work.</p>
+
+<h2>Investing and entrepreneurship exposure</h2>
+<p>Public LinkedIn data records a 2025 Health Team investment summer analyst role at Insight Partners, participation in the Sarafan ChEM-H Undergraduate Entrepreneurship Program, and Girls Who Invest program participation.</p>
+
+<h2>Athletics</h2>
+<p>Stanford Athletics records show Moore rowed lightweight Varsity 8+ as a freshman, including WIRA championship and IRA runner-up results in 2022-23.</p>
+
+<h2>Verification note</h2>
+<p>This entry is now materially better sourced. Remaining uncertainty is mostly around future career direction and independent publication outputs.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -970,16 +1040,52 @@ export const profileBatchC: ProfileRecord = {
       sameAs: ["https://profiles.stanford.edu/ella-moore", "https://linkedin.com/in/ellammoore", "http://gostanford.com/sports/lightweight-rowing/roster/player/ella-moore"],
       jobTitle: "Undergraduate Student",
       worksFor: { "@type": "Organization", name: "Stanford University" },
+      hasOccupation: [
+        {
+          "@type": "Role",
+          roleName: "Undergraduate, School of Engineering",
+          organization: { "@type": "Organization", name: "Stanford University" },
+          _verificationStatus: "public",
+          _confidence: 0.95,
+          _evidence: "Stanford Profiles person page.",
+        },
+        {
+          "@type": "Role",
+          roleName: "Undergraduate Researcher (Barron Lab context)",
+          organization: { "@type": "Organization", name: "The Barron Lab, Stanford University" },
+          _verificationStatus: "public",
+          _confidence: 0.86,
+          _evidence: "Barron Lab biography describes work on GBM pathogenesis.",
+        },
+        {
+          "@type": "Role",
+          roleName: "Investment Summer Analyst (Health Team)",
+          organization: { "@type": "Organization", name: "Insight Partners" },
+          _verificationStatus: "self-reported",
+          _confidence: 0.8,
+          _evidence: "LinkedIn role listing.",
+        },
+      ],
       knowsAbout: [
-        { skill: "Biotech/Health Investing", type: "domain", _confidence: 0.75, _evidence: "Insight Partners health-team internships" },
-        { skill: "Rowing", type: "athletic", _confidence: 0.9, _evidence: "Stanford lightweight rowing roster" },
+        { skill: "Biomedical Computation", type: "domain", _confidence: 0.86, _evidence: "Stanford and Barron Lab profile descriptions" },
+        { skill: "Translational Neuroscience / Neuroimmunology", type: "domain", _confidence: 0.8, _evidence: "Barron Lab statement of GBM pathogenesis focus" },
+        { skill: "Biotech/Health Investing", type: "domain", _confidence: 0.8, _evidence: "Insight Partners health team internship listing" },
+        { skill: "Rowing", type: "athletic", _confidence: 0.92, _evidence: "Stanford lightweight rowing roster and race outcomes" },
+      ],
+      _projects: [
+        { name: "Barron Lab GBM work", type: "research", url: "https://barronlab.stanford.edu/people/ella-moore", description: "Undergraduate work on glioblastoma pathogenesis with Dr. Stephen Dominy", status: "active" },
+        { name: "Insight Partners Health Team internship", type: "internship", url: "https://linkedin.com/in/ellammoore", description: "Health-focused investment summer analyst role", status: "completed" },
       ],
       _dataQuality: {
-        sourcesConsulted: 4,
-        sourceList: ["Stanford Profiles", "LinkedIn", "Stanford Athletics", "Web search"],
+        sourcesConsulted: 9,
+        sourceList: ["Stanford Profiles (person page)", "Barron Lab profile", "LinkedIn", "Stanford Athletics roster", "Insight Partners", "Sarafan ChEM-H program", "Girls Who Invest", "Stanford Profiles browse/disambiguation", "General web disambiguation search"],
         lastUpdated: "2026-03",
-        overallConfidence: { identity: "MEDIUM", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
-        gaps: ["Disambiguation with other Ella Moore profiles"],
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
+        gaps: [
+          "Few publication-indexed outputs currently visible",
+          "Public sources mix research, investing, and athletics without a single canonical bio timeline",
+        ],
+        recommendation: "Add publication links, conference abstracts, or project repositories to strengthen technical attribution.",
       },
     },
     infobox: {
@@ -987,7 +1093,7 @@ export const profileBatchC: ProfileRecord = {
       currentRole: "Undergraduate Student",
       org: "Stanford University",
       education: ["Stanford University (Engineering/Biomedical Computation)"],
-      knownFor: ["Stanford student in health/biotech tracks", "Stanford lightweight rowing"],
+      knownFor: ["Biomedical computation and translational research interests", "Barron Lab GBM-related work", "Insight Partners health-team internship", "Stanford lightweight rowing V8+ competition"],
       links: [
         { label: "Stanford Profile", url: "https://profiles.stanford.edu/ella-moore" },
         { label: "LinkedIn", url: "https://linkedin.com/in/ellammoore" },
@@ -995,8 +1101,12 @@ export const profileBatchC: ProfileRecord = {
     },
     references: [
       { title: "Stanford Profiles — Ella Moore", url: "https://profiles.stanford.edu/ella-moore" },
+      { title: "Barron Lab — Ella Moore", url: "https://barronlab.stanford.edu/people/ella-moore" },
       { title: "Ella Moore — LinkedIn", url: "https://linkedin.com/in/ellammoore" },
       { title: "Stanford Athletics — Ella Moore", url: "http://gostanford.com/sports/lightweight-rowing/roster/player/ella-moore" },
+      { title: "Insight Partners", url: "https://www.insightpartners.com/" },
+      { title: "Sarafan ChEM-H Undergraduate Entrepreneurship Program", url: "https://chemh.stanford.edu/" },
+      { title: "Girls Who Invest", url: "https://girlswhoinvest.org/" },
     ],
   },
 
@@ -1063,25 +1173,76 @@ export const profileBatchC: ProfileRecord = {
       { institution: "Stanford University", degree: "BS/MS (in progress)", field: "Computer Science (AI/Systems)" },
     ],
     humanContent: `
-<p><strong>Ameya Jadhav</strong> is a Stanford CS student focused on AI systems, startup building, and early-stage investing. Public profiles and personal site describe work spanning Neo, OpenAI (intern MTS role), General Catalyst programs, and student venture initiatives.</p>
+<p><strong>Ameya Jadhav</strong> is a Stanford computer science student-builder whose public profile combines AI systems work, hackathon/project development, and early-stage investing activity.</p>
+
+<h2>Education</h2>
+<p>Stanford Profiles lists Jadhav as a master's student in Computer Science admitted in Autumn 2023, while his personal site describes a BS/MS trajectory focused on AI/Systems.</p>
+
+<h2>Career and ecosystem roles</h2>
+<p>Across public materials (personal site + LinkedIn), Jadhav is associated with Neo, OpenAI (intern Member of Technical Staff), Stanford AI Lab research context, TreeHacks leadership, Cardinal Ventures, and prior investing exposure through General Catalyst-linked programs. The highest-confidence claims are those independently visible on Stanford and personal-site records; some role specifics remain self-reported.</p>
+
+<h2>Projects and research direction</h2>
+<p>His website documents multiple AI projects and hackathon wins (including TreeHacks, Hack the North, Pear x OpenAI, and SPC x Meta AI contexts), plus a research thread on web agents and LLM reasoning. A Google Scholar profile also lists him as a student researcher at Stanford.</p>
+
+<h2>Verification note</h2>
+<p>This profile has been substantially expanded and now cites more independent sources, but some internship and investing details still rely on first-party reporting.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Ameya Jadhav",
-      sameAs: ["https://linkedin.com/in/ameyajadhav", "https://www.ameyajadhav.com/"],
+      sameAs: ["https://profiles.stanford.edu/ameya-jadhav", "https://linkedin.com/in/ameyajadhav", "https://www.ameyajadhav.com/", "https://www.ameyajadhav.xyz/", "https://scholar.google.com/citations?user=Xuy-IO0AAAAJ&hl=en"],
       jobTitle: "Student / Technical Builder",
       worksFor: { "@type": "Organization", name: "Stanford University" },
+      hasOccupation: [
+        {
+          "@type": "Role",
+          roleName: "Masters Student in Computer Science",
+          organization: { "@type": "Organization", name: "Stanford University" },
+          _verificationStatus: "public",
+          _confidence: 0.96,
+          _evidence: "Stanford Profiles page lists CS master's student status.",
+        },
+        {
+          "@type": "Role",
+          roleName: "Neo Scholar / Builder (self-reported)",
+          organization: { "@type": "Organization", name: "Neo" },
+          _verificationStatus: "self-reported",
+          _confidence: 0.82,
+          _evidence: "Personal site and LinkedIn profile positioning.",
+        },
+        {
+          "@type": "Role",
+          roleName: "Intern Member of Technical Staff (self-reported)",
+          organization: { "@type": "Organization", name: "OpenAI" },
+          _verificationStatus: "self-reported",
+          _confidence: 0.8,
+          _evidence: "LinkedIn + personal site.",
+        },
+      ],
       knowsAbout: [
-        { skill: "AI Systems", type: "domain", _confidence: 0.85, _evidence: "Personal site and internship history" },
-        { skill: "Startup Investing", type: "domain", _confidence: 0.8, _evidence: "Neo and venture program roles" },
+        { skill: "AI Systems", type: "domain", _confidence: 0.9, _evidence: "Project portfolio and research statements on personal site" },
+        { skill: "LLM Agents", type: "domain", _confidence: 0.86, _evidence: "Web-agent and tool-using agent project descriptions" },
+        { skill: "Startup Investing", type: "domain", _confidence: 0.82, _evidence: "Neo/Cardinal Ventures/General Catalyst references on public profiles" },
+        { skill: "Hackathon Product Engineering", type: "domain", _confidence: 0.88, _evidence: "Multiple cited wins and shipped prototypes across major hackathons" },
+      ],
+      _projects: [
+        { name: "Textreme", type: "project", url: "https://www.ameyajadhav.com/", description: "Neo Hackathon 2025 winner; iMessage-oriented product prototype", status: "completed" },
+        { name: "PathSense", type: "project", url: "https://www.ameyajadhav.com/", description: "Indoor navigation assistant project highlighted in public profiles", status: "completed" },
+        { name: "Dave", type: "project", url: "https://www.ameyajadhav.com/", description: "SWE-agent style build interacting with local dev tools", status: "completed" },
+        { name: "HRL for Web Agents", type: "research", url: "https://www.ameyajadhav.com/", description: "Research direction around hierarchical RL and web agents", status: "active" },
       ],
       _dataQuality: {
-        sourcesConsulted: 5,
-        sourceList: ["LinkedIn", "ameyajadhav.com", "Neo post", "Google Scholar profile", "Web search"],
+        sourcesConsulted: 10,
+        sourceList: ["Stanford Profiles (person page)", "LinkedIn", "ameyajadhav.com", "ameyajadhav.com/about", "ameyajadhav.xyz", "Google Scholar profile", "Cardinal Ventures", "Neo website", "OpenAI company page", "General web disambiguation search"],
         lastUpdated: "2026-03",
-        overallConfidence: { identity: "HIGH", education: "MEDIUM", careerTimeline: "MEDIUM", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
-        gaps: ["Independent verification of all listed project claims"],
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
+        gaps: [
+          "Some internship and investing role detail is self-reported",
+          "Limited third-party writeups for individual projects",
+          "Publication list is still early-stage",
+        ],
+        recommendation: "Link code repositories and independent project demos to strengthen verification on specific technical claims.",
       },
     },
     infobox: {
@@ -1089,15 +1250,23 @@ export const profileBatchC: ProfileRecord = {
       currentRole: "Student Builder / Investor",
       org: "Stanford University",
       education: ["Stanford University (CS AI/Systems)"],
-      knownFor: ["AI systems projects", "Neo/OpenAI internships", "Student venture activity"],
+      knownFor: ["AI systems and agentic project builds", "Neo/OpenAI-linked work (publicly self-reported)", "TreeHacks and student venture activity", "Hackathon-winning engineering prototypes"],
       links: [
+        { label: "Stanford Profile", url: "https://profiles.stanford.edu/ameya-jadhav" },
         { label: "Website", url: "https://www.ameyajadhav.com/" },
         { label: "LinkedIn", url: "https://linkedin.com/in/ameyajadhav" },
       ],
     },
     references: [
+      { title: "Ameya Jadhav — Stanford Profiles", url: "https://profiles.stanford.edu/ameya-jadhav" },
       { title: "Ameya Jadhav — LinkedIn", url: "https://linkedin.com/in/ameyajadhav" },
       { title: "Ameya Jadhav — website", url: "https://www.ameyajadhav.com/" },
+      { title: "Ameya Jadhav — About page", url: "https://www.ameyajadhav.com/about" },
+      { title: "Ameya Jadhav — alternate site", url: "https://www.ameyajadhav.xyz/" },
+      { title: "Google Scholar — Ameya Jadhav", url: "https://scholar.google.com/citations?user=Xuy-IO0AAAAJ&hl=en" },
+      { title: "Cardinal Ventures", url: "https://www.cardinalventures.org/" },
+      { title: "Neo", url: "https://neo.com/" },
+      { title: "OpenAI", url: "https://openai.com/" },
     ],
   },
 
