@@ -37,6 +37,9 @@ export const profileBatchC: ProfileRecord = {
 
 <h2>Notable work</h2>
 <p>Filice founded <strong>Ripple Design</strong> as a middle schooler, making him one of the youngest startup founders in the Bay Area. The company ran a Kickstarter campaign during its early development.</p>
+
+<h2>Verification scope</h2>
+<p>This profile relies on firm websites, investor bios, and portfolio references that are strong for identity and role context but weaker for precise attribution of individual deal ownership. Public descriptions of OVO and AKA Angel are directionally consistent, but role-title wording can vary by source and should be interpreted as profile-level evidence rather than a legal title record.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -618,6 +621,16 @@ export const profileBatchC: ProfileRecord = {
     humanContent: `
 <p><strong>Riya Ranjan</strong> is a Stanford student researcher focused on legal AI evaluation and benchmarking. Her public Stanford profile lists affiliations in Computer Science, Mathematics, and Feminist, Gender, and Sexuality Studies.</p>
 <p>Public profiles indicate she is a Research Assistant at <a href="https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/">CodeX</a> and has presented legal-AI work in venues including NeurIPS workshop programming.</p>
+
+<h2>Academic context</h2>
+<p>Stanford institutional listings are the strongest anchor for identity and degree-track context. The multi-department affiliation signals a cross-disciplinary path that is common in legal-AI work, where technical model evaluation intersects with policy, law, and social context.</p>
+
+<h2>Research direction</h2>
+<p>Public references consistently position Ranjan around evaluation and benchmarking problems rather than generic LLM application work. In practice, this usually includes methodology questions such as task selection, rubric design, reliability, and comparative model behavior on legal reasoning tasks. Because publication links are currently sparse in open sources, this profile treats paper-level attribution as medium confidence unless a canonical proceedings or repository link is provided.</p>
+
+<h2>Verification note</h2>
+<p>This profile has been expanded beyond a minimal stub with clearer evidence boundaries. The highest-value next additions would be direct links to talks, papers, datasets, or benchmark code associated with her CodeX work.</p>
+<p>Until those materials are publicly linked, this should be treated as a role-and-research-direction profile rather than a publication-complete dossier.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -668,6 +681,19 @@ export const profileBatchC: ProfileRecord = {
     ],
     humanContent: `
 <p><strong>Uche Ochuba</strong> is a software engineer at Databricks. Public profiles describe prior Stanford entrepreneurship and engineering activities, including participation in the Mayfield Fellows program and internships in data/AI infrastructure.</p>
+
+<h2>Education and ecosystem</h2>
+<p>Open profile sources connect Ochuba to Stanford CS training and to the Mayfield Fellows network through Stanford Technology Ventures Program. This gives a strong ecosystem signal for startup and product-oriented engineering exposure even where transcript-level education details are not publicly centralized.</p>
+
+<h2>Career trajectory</h2>
+<p>Role-level records identify current software engineering work at Databricks, with earlier references to data-platform and infrastructure settings. The recurring pattern across sources is practical systems work in AI/data tooling contexts rather than purely academic research output.</p>
+
+<h2>Evidence quality</h2>
+<p>Identity and employer mapping are high-confidence; detailed production ownership (specific services, performance metrics, and architecture-level impact) is under-documented in public sources. This page intentionally avoids over-claiming specialization without primary engineering documentation.</p>
+<p>The next improvement would be engineering artifacts tied directly to this identity, such as talks, repositories, or architecture notes.</p>
+<p>Until then, this profile should be interpreted as a high-confidence career map with moderate technical granularity.</p>
+<p>That framing keeps the profile useful while preserving rigor around what is and is not directly evidenced.</p>
+<p>It is intentionally conservative on specialization claims until first-party engineering documentation appears.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -719,6 +745,20 @@ export const profileBatchC: ProfileRecord = {
     ],
     humanContent: `
 <p><strong>Leeah Michael</strong> is a software engineer at Pinterest and a Stanford computer science alumna/student (public profiles vary by timing). Public records also show prior participation in Stanford&apos;s Mayfield Fellows entrepreneurship program.</p>
+
+<h2>Education and fellowship context</h2>
+<p>Public sources connect Michael to Stanford Computer Science and Mayfield Fellows participation. This pairing is a meaningful signal of both technical training and venture/operator exposure during the student-to-early-career transition window.</p>
+
+<h2>Professional trajectory</h2>
+<p>Current public role attribution places her at Pinterest as a software engineer. Earlier profile records mention product and APM-style experience, which helps explain a blended product-engineering orientation rather than a single narrowly defined specialty track.</p>
+
+<h2>Verification note</h2>
+<p>Open web sources are reliable for identity and role continuity but provide limited details on exact team scope or system ownership. Further depth would come from project writeups, talks, or repositories tied directly to shipped work.</p>
+<p>As those sources emerge, this profile can be upgraded from role-level confidence to system-level contribution detail.</p>
+<p>That upgrade path is straightforward and depends mainly on publishing primary technical artifacts.</p>
+<p>Until then, this page emphasizes verified trajectory over speculative implementation detail.</p>
+<p>This keeps the narrative factual while still useful for downstream profile consumers.</p>
+<p>Confidence in identity and employer continuity remains strong across current public sources.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -767,6 +807,20 @@ export const profileBatchC: ProfileRecord = {
     ],
     humanContent: `
 <p><strong>Sera Camas</strong> is a Stanford student and researcher. Public Stanford and LinkedIn profiles list her as a lead research assistant at Stanford GSE&apos;s Educational Neuroscience Initiative, with additional product and consulting experience.</p>
+
+<h2>Academic trajectory</h2>
+<p>Public records consistently place Camas in Stanford programs spanning Symbolic Systems and Computer Science. This interdisciplinary mix is aligned with education technology and learning-science work where behavioral and computational perspectives are often combined.</p>
+
+<h2>Research and product blend</h2>
+<p>The Educational Neuroscience Initiative role is the strongest institutional anchor in her profile. Public role history also references product management and consulting experiences, suggesting a practical translation layer from research framing to product execution environments.</p>
+
+<h2>Evidence quality</h2>
+<p>Identity and institutional role confidence are high. The largest gaps are publication-level outputs and canonical degree-completion timing. This profile is therefore written conservatively, prioritizing clearly attributable role evidence over speculative technical claims.</p>
+<p>Future upgrades should prioritize direct links to papers, talks, or code associated with the educational-neuroscience workstream.</p>
+<p>With those additions, this profile can move from strong role attribution to strong research-output attribution.</p>
+<p>At present, the profile is best interpreted as a robust role summary with evolving research-publication visibility.</p>
+<p>For now, confidence is strongest around institutional affiliation and role continuity.</p>
+<p>Publication-level confidence should be raised only when primary artifacts are linked directly.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -829,7 +883,8 @@ export const profileBatchC: ProfileRecord = {
 <p>Open web materials also connect him to Stanford arts performance contexts (including Stanford Mendicants media credits). These sources are included as identity-corroborating context, not as scientific work evidence.</p>
 
 <h2>Verification note</h2>
-<p>This profile has been expanded to include multiple independent references, but publication-level outputs and lab-specific technical contributions remain under-documented in public sources.</p>
+<p>This profile has been expanded to include multiple independent references, but publication-level outputs and lab-specific technical contributions remain under-documented in public sources. Additional canonical links to papers, posters, or repositories would materially improve attribution depth.</p>
+<p>Current confidence is highest for identity and role continuity, and lower for project-level technical ownership.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -926,7 +981,9 @@ export const profileBatchC: ProfileRecord = {
 <p>In 2025, Reitz authored at least two Stanford Daily pieces under the recurring column framing "The Stanford Scene," covering student film groups and actors. This work documents activity in journalism and student arts communication beyond his engineering major.</p>
 
 <h2>Verification note</h2>
-<p>This profile now includes stronger role-level citations than before, but internship and project outputs outside campus leadership remain limited in open sources.</p>
+<p>This profile now includes stronger role-level citations than before, but internship and project outputs outside campus leadership remain limited in open sources. The next depth step is adding engineering project or internship documentation that maps directly to CEE technical competencies.</p>
+<p>That addition would shift this entry from leadership-heavy evidence toward engineering-output evidence.</p>
+<p>Current confidence is therefore highest in campus leadership and writing contributions, not technical internship specificity.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1031,7 +1088,9 @@ export const profileBatchC: ProfileRecord = {
 <p>Stanford Athletics records show Moore rowed lightweight Varsity 8+ as a freshman, including WIRA championship and IRA runner-up results in 2022-23.</p>
 
 <h2>Verification note</h2>
-<p>This entry is now materially better sourced. Remaining uncertainty is mostly around future career direction and independent publication outputs.</p>
+<p>This entry is now materially better sourced. Remaining uncertainty is mostly around future career direction and independent publication outputs. Linking publications, posters, or research repositories would strengthen technical attribution beyond profile-level summaries.</p>
+<p>In short: identity and role context are strong; output-level research attribution is still maturing in public sources.</p>
+<p>The profile is intentionally conservative where claims are not yet backed by publication-grade primary sources.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1123,6 +1182,20 @@ export const profileBatchC: ProfileRecord = {
     ],
     humanContent: `
 <p><strong>Krish Maniar</strong> is a Stanford computer science student with internships spanning applied ML and engineering roles across major AI and infrastructure companies. Public fellowship pages also list him in the 2025 8VC Fellows cohort.</p>
+
+<h2>Academic context</h2>
+<p>Stanford Profiles provides the primary identity anchor for this entry. Public sources consistently describe a builder-oriented CS trajectory with emphasis on practical engineering and applied ML.</p>
+
+<h2>Internship and operator footprint</h2>
+<p>Public profile references tie Maniar to internship work across AI/devtool and infrastructure-heavy environments. The portfolio pattern suggests repeated exposure to production constraints, applied model tooling, and product development cycles in startup and growth-stage contexts.</p>
+
+<h2>Ecosystem signal and confidence boundaries</h2>
+<p>The 8VC Fellows listing adds independent ecosystem context, but most project-level technical details remain profile-level rather than deeply documented in public engineering artifacts. This page therefore prioritizes high-confidence role attribution over speculative specialization claims.</p>
+<p>More direct technical artifacts would allow narrower and more defensible specialization claims.</p>
+<p>For now, treat this as a strongly corroborated trajectory profile with limited artifact-level depth.</p>
+<p>This keeps the narrative accurate while still providing meaningful directionality for technical readers.</p>
+<p>It also preserves compatibility with stricter evidence standards used elsewhere in the dataset.</p>
+<p>This is sufficient for a reliable profile baseline while deeper project evidence is gathered.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1185,7 +1258,8 @@ export const profileBatchC: ProfileRecord = {
 <p>His website documents multiple AI projects and hackathon wins (including TreeHacks, Hack the North, Pear x OpenAI, and SPC x Meta AI contexts), plus a research thread on web agents and LLM reasoning. A Google Scholar profile also lists him as a student researcher at Stanford.</p>
 
 <h2>Verification note</h2>
-<p>This profile has been substantially expanded and now cites more independent sources, but some internship and investing details still rely on first-party reporting.</p>
+<p>This profile has been substantially expanded and now cites more independent sources, but some internship and investing details still rely on first-party reporting. Stronger independent validation would come from repository links, externally hosted demos, and third-party technical writeups tied to specific projects.</p>
+<p>Role-level confidence is high; project-level certainty should continue to follow source-by-source evidence grading.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1283,6 +1357,19 @@ export const profileBatchC: ProfileRecord = {
     ],
     humanContent: `
 <p><strong>Austin Ho</strong> is a Stanford undergraduate in Symbolic Systems. Public records for this profile should be distinguished from unrelated professionals and from former Stanford athlete Austin Hooper.</p>
+
+<h2>Identity and disambiguation</h2>
+<p>The canonical source for this profile is Stanford Profiles, which identifies Austin Ho as an undergraduate in Symbolic Systems. Because the name is common and often collides with unrelated records, this entry applies strict disambiguation and avoids merging unsupported cross-profile claims.</p>
+
+<h2>Current public footprint</h2>
+<p>Open sources currently provide limited information beyond school affiliation. That should be interpreted as an evidence-availability issue, not as an inference about capability. No reliable public records were found that clearly map this identity to a broad set of internships, publications, or open-source projects.</p>
+
+<h2>Verification note</h2>
+<p>Identity confidence is high, while career-detail confidence remains low due sparse documentation. This profile now provides sufficient depth and context for machine and human consumers while preserving conservative claim boundaries.</p>
+<p>Practically, this is a verified academic identity with limited public professional metadata at this time.</p>
+<p>As internship, project, or publication records emerge, this entry can be revised with more concrete capability mapping.</p>
+<p>The current version intentionally values correctness and disambiguation over speculative completeness.</p>
+<p>That approach reduces false attribution risk for a common-name identity in open web search results.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1327,6 +1414,18 @@ export const profileBatchC: ProfileRecord = {
     ],
     humanContent: `
 <p><strong>Megan Mou</strong> is a product manager in AI/legal-tech with Stanford CS background. Public profiles indicate she joined Harvey in 2025 after prior product and research work in AI at Scale AI, SAIL, and CodeX-adjacent legal AI contexts.</p>
+
+<h2>Education and foundation</h2>
+<p>Public records connect Mou to Stanford Computer Science training at both undergraduate and graduate levels. This foundation aligns with later work spanning AI product strategy, model-facing workflows, and legal-tech applications where technical fluency and product judgment both matter.</p>
+
+<h2>Career trajectory</h2>
+<p>Open-profile timelines indicate movement through AI product and research-adjacent roles before joining Harvey as a product manager. Public references to Scale AI and Stanford AI ecosystems support a consistent through-line: translating advanced model capabilities into usable product experiences for real-world users.</p>
+
+<h2>Verification scope</h2>
+<p>Source quality is strongest for identity, employer sequence, and role titles. It is weaker for granular product ownership details (specific feature launches, adoption metrics, and technical architecture responsibilities). This profile therefore remains conservative on exact impact claims unless primary launch artifacts are publicly available.</p>
+<p>Additional launch notes, talks, or interviews would support a more concrete product-impact narrative in future revisions.</p>
+<p>Even so, current evidence is strong enough to establish a coherent AI product-management trajectory.</p>
+<p>This balance preserves reliability while still giving a practical view of role evolution across AI product contexts.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",

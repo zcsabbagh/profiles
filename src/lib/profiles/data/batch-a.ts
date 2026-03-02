@@ -822,6 +822,9 @@ export const profileBatchA: ProfileRecord = {
 
 <h2>Public contributions</h2>
 <p>Zhao is a member of the Forbes Technology Council, a vetted professional community for technology executives and leaders.</p>
+
+<h2>Verification scope</h2>
+<p>The strongest open evidence supports identity, current company leadership, and domain focus (critical minerals from e-waste). Public information is thinner on technical process disclosures, financing terms, and precise role chronology across prior ventures. Where claims are based on profile-level bios rather than primary technical artifacts, this profile treats them as medium-confidence context.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -955,6 +958,8 @@ export const profileBatchA: ProfileRecord = {
 
 <h2>Verification scope</h2>
 <p>This entry is now better sourced (8 references), but still has low technical depth because available information is primarily profile-level and media-level rather than publication or project documentation.</p>
+
+<p>Repeated disambiguation checks continue to support the Tobago-based identity as the best public match for this name. If a different Akeil Andrews is intended, a canonical identifier (institutional page, handle, or portfolio URL) would allow a clean profile switch.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -1225,6 +1230,9 @@ export const profileBatchA: ProfileRecord = {
 
 <h2>Public contributions</h2>
 <p>Sueiro was a speaker at the <strong>Hero Round Table</strong> in 2022 and 2023, a conference focused on youth leadership and social impact.</p>
+
+<h2>Verification note</h2>
+<p>This profile now includes a fuller narrative, but most available information remains profile-level and pre-professional. The strongest public evidence is around schooling context and youth initiatives; current university projects, technical outputs, and present-day role details remain under-documented and are treated conservatively.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",

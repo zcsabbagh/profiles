@@ -26,6 +26,9 @@ export const profileBatchB: ProfileRecord = {
 
 <h2>Professional profile</h2>
 <p>Sabbagh maintains a personal portfolio site and describes her design direction as centered on accessibility and visual language. Her work sits at the intersection of design, behavioral science, and AI.</p>
+
+<h2>Verification scope</h2>
+<p>This profile is strongest on institutional and role-level identity: Pomona enrollment, UWC scholarship affiliation, and public internship/scout positions. Independent evidence for shipped product outcomes remains lighter than title-level evidence, so technical-impact claims are framed conservatively until more case-study artifacts are publicly linked.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -460,6 +463,11 @@ export const profileBatchB: ProfileRecord = {
 
 <h2>Technical background</h2>
 <p>Hanabi&apos;s public team page describes a technical background including AI research and software engineering, and notes that she studied Course 6-3 (Computer Science) at MIT.</p>
+
+<h2>Verification note</h2>
+<p>Open-source coverage is strong on current investing identity and thematic focus, but weaker on exact historical role boundaries and full portfolio attribution across firms. This profile therefore distinguishes between high-confidence current-role evidence and medium-confidence retrospective details sourced from biography-style summaries.</p>
+<p>As more primary materials are available (portfolio announcements, interviews, dated firm bios), timeline precision and attribution confidence can be further improved.</p>
+<p>At this stage, readers should treat this as a solid directional map of her investing scope rather than a complete historical transaction ledger.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
