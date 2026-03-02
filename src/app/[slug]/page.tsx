@@ -39,6 +39,12 @@ export default async function ProfilePage({
   const accessToken = userId ? await getSupabaseAccessToken(getToken) : null;
   const runtimeState = await getRuntimeProfileState(slug, userId ?? null, accessToken);
   if (!runtimeState) notFound();
+  const mergedReferences = [
+    ...profile.references,
+    ...runtimeState.runtimeReferences
+      .filter((ref) => !profile.references.some((existing) => existing.url === ref.url))
+      .map((ref) => ({ title: ref.title, url: ref.url })),
+  ];
 
   const humanView = (
     <div>
@@ -48,11 +54,11 @@ export default async function ProfilePage({
         initialState={runtimeState}
         isSignedIn={Boolean(userId)}
       />
-      {profile.references.length > 0 && (
+      {mergedReferences.length > 0 && (
         <div className="mt-8 pt-4 border-t border-border clear-both">
           <h2 className="font-sans text-lg font-semibold mb-2">References</h2>
           <ol className="references-list list-decimal list-inside">
-            {profile.references.map((ref, i) => (
+            {mergedReferences.map((ref, i) => (
               <li key={i}>
                 <a
                   href={ref.url}

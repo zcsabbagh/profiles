@@ -1,5 +1,7 @@
 import { createSupabaseServerClient } from "@/lib/supabase";
 import { getProfile } from "@/lib/profiles";
+import { renderMarkdownToHtml, extractReferencesFromMarkdown } from "@/lib/markdown-shared";
+import { toEditableMarkdown } from "@/lib/markdown-server";
 
 export interface RuntimeProfileState {
   claimedByUserId: string | null;
@@ -8,6 +10,11 @@ export interface RuntimeProfileState {
   canClaim: boolean;
   userClaimedSlug: string | null;
   humanContent: string;
+  editableContent: string;
+  runtimeReferences: Array<{
+    title: string;
+    url: string;
+  }>;
   verifierRequests: Array<{
     id: string;
     snippet: string;
@@ -79,6 +86,9 @@ export async function getRuntimeProfileState(
   const claimedByUserId = claim?.clerk_user_id ?? null;
   const isOwner = Boolean(effectiveUserId && claim?.clerk_user_id === effectiveUserId);
   const userClaimedSlug = userClaim?.slug ?? null;
+  const rawContent = content?.html_content ?? baseProfile.humanContent;
+  const editableContent = toEditableMarkdown(rawContent);
+  const humanContent = renderMarkdownToHtml(editableContent);
   const canClaim = Boolean(
     effectiveUserId &&
       (!claim || claim.clerk_user_id === effectiveUserId) &&
@@ -91,7 +101,9 @@ export async function getRuntimeProfileState(
     isOwner,
     canClaim,
     userClaimedSlug,
-    humanContent: content?.html_content ?? baseProfile.humanContent,
+    humanContent,
+    editableContent,
+    runtimeReferences: extractReferencesFromMarkdown(editableContent),
     verifierRequests: verifierRequests.map((request) => ({
       id: request.id,
       snippet: request.snippet,

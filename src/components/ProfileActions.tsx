@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { SignInButton, UserButton } from "@clerk/nextjs";
 import type { RuntimeProfileState } from "@/lib/profile-state";
+import { renderMarkdownToHtml } from "@/lib/markdown-shared";
 
 interface ProfileActionsProps {
   slug: string;
@@ -10,10 +11,9 @@ interface ProfileActionsProps {
   isSignedIn: boolean;
 }
 
-type SelectionMenuState = {
-  open: boolean;
-  x: number;
-  y: number;
+type SelectionState = {
+  start: number;
+  end: number;
   snippet: string;
 };
 
@@ -23,40 +23,30 @@ export default function ProfileActions({
   isSignedIn,
 }: ProfileActionsProps) {
   const [state, setState] = useState(initialState);
-  const [articleHtml, setArticleHtml] = useState(initialState.humanContent);
+  const [markdown, setMarkdown] = useState(initialState.editableContent);
   const [isSaving, setIsSaving] = useState(false);
   const [isClaiming, setIsClaiming] = useState(false);
   const [isSubmittingVerifier, setIsSubmittingVerifier] = useState(false);
   const [isDirty, setIsDirty] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+
+  const [selection, setSelection] = useState<SelectionState | null>(null);
   const [showVerifierForm, setShowVerifierForm] = useState(false);
+  const [showCitationInput, setShowCitationInput] = useState(false);
+  const [citationUrl, setCitationUrl] = useState("");
   const [sectionLabel, setSectionLabel] = useState("");
   const [verifierName, setVerifierName] = useState("");
   const [verifierEmail, setVerifierEmail] = useState("");
-  const [message, setMessage] = useState<string | null>(null);
-  const [selectionMenu, setSelectionMenu] = useState<SelectionMenuState>({
-    open: false,
-    x: 0,
-    y: 0,
-    snippet: "",
-  });
 
-  const articleRef = useRef<HTMLDivElement>(null);
-  const selectionMenuRef = useRef<HTMLDivElement>(null);
-  const selectionRangeRef = useRef<Range | null>(null);
-
-  const restoreSelection = () => {
-    if (!selectionRangeRef.current) return;
-    const selection = window.getSelection();
-    if (!selection) return;
-    selection.removeAllRanges();
-    selection.addRange(selectionRangeRef.current);
-  };
+  const editorRef = useRef<HTMLTextAreaElement>(null);
 
   const claimStatusText = useMemo(() => {
     if (!state.claimedByUserId) return "Unclaimed";
     if (state.isOwner) return "Claimed by you";
     return "Claimed";
   }, [state.claimedByUserId, state.isOwner]);
+
+  const previewHtml = useMemo(() => renderMarkdownToHtml(markdown), [markdown]);
 
   const runAction = async (url: string, init?: RequestInit) => {
     const response = await fetch(url, {
@@ -75,11 +65,12 @@ export default function ProfileActions({
 
     if (json?.humanContent) {
       setState(json);
-      setArticleHtml(json.humanContent);
-      if (articleRef.current) {
-        articleRef.current.innerHTML = json.humanContent;
-      }
+      setMarkdown(json.editableContent ?? "");
       setIsDirty(false);
+      setSelection(null);
+      setShowVerifierForm(false);
+      setShowCitationInput(false);
+      setCitationUrl("");
     }
 
     return json;
@@ -90,7 +81,7 @@ export default function ProfileActions({
       setIsClaiming(true);
       setMessage(null);
       await runAction(`/api/profiles/${slug}/claim`, { method: "POST" });
-      setMessage("Profile claimed. You can now edit inline and request verifiers.");
+      setMessage("Profile claimed. You can now edit in markdown.");
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Unable to claim profile");
     } finally {
@@ -98,25 +89,13 @@ export default function ProfileActions({
     }
   };
 
-  const normalizeArticleLinks = () => {
-    if (!articleRef.current) return;
-    const links = articleRef.current.querySelectorAll("a");
-    for (const link of links) {
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-    }
-  };
-
-  const saveInlineContent = async (successMessage = "Profile text updated.") => {
-    if (!articleRef.current) return;
-
+  const saveContent = async (successMessage = "Profile text updated.") => {
     try {
       setIsSaving(true);
       setMessage(null);
-      normalizeArticleLinks();
       await runAction(`/api/profiles/${slug}/content`, {
         method: "PUT",
-        body: JSON.stringify({ humanContent: articleRef.current.innerHTML }),
+        body: JSON.stringify({ humanContent: markdown }),
       });
       setMessage(successMessage);
     } catch (error) {
@@ -126,104 +105,55 @@ export default function ProfileActions({
     }
   };
 
-  const closeSelectionMenu = () => {
-    setSelectionMenu((prev) => ({ ...prev, open: false }));
-    setShowVerifierForm(false);
-    selectionRangeRef.current = null;
-  };
+  const refreshSelection = () => {
+    const textarea = editorRef.current;
+    if (!textarea) return;
 
-  const refreshSelectionMenu = () => {
-    if (!state.isOwner || !articleRef.current) return;
-
-    const selection = window.getSelection();
-    if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
-      closeSelectionMenu();
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    if (start === end) {
+      setSelection(null);
+      setShowVerifierForm(false);
+      setShowCitationInput(false);
       return;
     }
 
-    const range = selection.getRangeAt(0);
-    if (!articleRef.current.contains(range.commonAncestorContainer)) {
-      closeSelectionMenu();
-      return;
-    }
-
-    const snippet = selection.toString().trim().slice(0, 1000);
+    const snippet = markdown.slice(start, end).trim();
     if (!snippet || snippet.length < 3) {
-      closeSelectionMenu();
+      setSelection(null);
+      setShowVerifierForm(false);
+      setShowCitationInput(false);
       return;
     }
 
-    const rect = range.getBoundingClientRect();
-    selectionRangeRef.current = range.cloneRange();
-    setSelectionMenu({
-      open: true,
-      x: rect.left + rect.width / 2 + window.scrollX,
-      y: rect.top + window.scrollY - 10,
-      snippet,
-    });
-    requestAnimationFrame(restoreSelection);
+    setSelection({ start, end, snippet: snippet.slice(0, 1000) });
   };
 
-  useEffect(() => {
-    if (!state.isOwner || !articleRef.current) return;
-    if (articleRef.current.innerHTML !== articleHtml) {
-      articleRef.current.innerHTML = articleHtml;
-    }
-  }, [articleHtml, state.isOwner]);
-
-  useEffect(() => {
-    if (!state.isOwner) return;
-
-    const onMouseUp = (event: MouseEvent) => {
-      const target = event.target as Node | null;
-      if (target && selectionMenuRef.current?.contains(target)) {
-        return;
-      }
-      setTimeout(refreshSelectionMenu, 0);
-    };
-    const onKeyUp = (event: KeyboardEvent) => {
-      const target = event.target as Node | null;
-      if (target && selectionMenuRef.current?.contains(target)) {
-        return;
-      }
-      setTimeout(refreshSelectionMenu, 0);
-    };
-
-    document.addEventListener("mouseup", onMouseUp);
-    document.addEventListener("keyup", onKeyUp);
-
-    return () => {
-      document.removeEventListener("mouseup", onMouseUp);
-      document.removeEventListener("keyup", onKeyUp);
-    };
-  }, [state.isOwner]);
-
-  const addCitation = async () => {
-    if (!selectionRangeRef.current) return;
-    const url = window.prompt("Citation URL");
-    if (!url) return;
+  const addCitation = () => {
+    if (!selection) return;
 
     try {
-      const parsed = new URL(url);
+      const parsed = new URL(citationUrl.trim());
       const safeUrl = parsed.toString();
+      const selectedText = markdown.slice(selection.start, selection.end);
+      const linked = `[${selectedText}](${safeUrl})`;
+      const nextMarkdown =
+        markdown.slice(0, selection.start) + linked + markdown.slice(selection.end);
 
-      const selection = window.getSelection();
-      if (!selection) return;
-
-      selection.removeAllRanges();
-      selection.addRange(selectionRangeRef.current);
-      document.execCommand("createLink", false, safeUrl);
-
-      normalizeArticleLinks();
-      closeSelectionMenu();
-      await saveInlineContent("Citation added.");
+      setMarkdown(nextMarkdown);
+      setIsDirty(true);
+      setMessage("Citation inserted in markdown. Save to persist and update references.");
+      setCitationUrl("");
+      setShowCitationInput(false);
+      setSelection(null);
+      void saveContent("Citation added and references updated.");
     } catch {
       setMessage("Enter a valid URL (including https://)");
     }
   };
 
   const submitVerifierRequest = async () => {
-    if (!selectionMenu.snippet) return;
+    if (!selection) return;
 
     try {
       setIsSubmittingVerifier(true);
@@ -231,7 +161,7 @@ export default function ProfileActions({
       await runAction(`/api/profiles/${slug}/verifiers`, {
         method: "POST",
         body: JSON.stringify({
-          snippet: selectionMenu.snippet,
+          snippet: selection.snippet,
           sectionLabel: sectionLabel || undefined,
           verifierName,
           verifierEmail,
@@ -240,8 +170,8 @@ export default function ProfileActions({
       setSectionLabel("");
       setVerifierName("");
       setVerifierEmail("");
+      setSelection(null);
       setShowVerifierForm(false);
-      closeSelectionMenu();
       setMessage("Verifier request submitted.");
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Unable to submit verifier request");
@@ -288,7 +218,7 @@ export default function ProfileActions({
                 )}
                 {state.isOwner && (
                   <button
-                    onClick={() => saveInlineContent()}
+                    onClick={() => saveContent()}
                     disabled={isSaving || !isDirty}
                     className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold disabled:opacity-50"
                   >
@@ -302,96 +232,116 @@ export default function ProfileActions({
 
         {state.isOwner && (
           <div className="mt-3 pt-3 border-t border-border text-muted">
-            Edit directly in the article. Highlight text to request verifier or add citation.
+            Edit in markdown below. Highlight selected markdown text to open the citation/verifier toolbar.
           </div>
         )}
 
         {message && <div className="mt-2 text-xs text-muted">{message}</div>}
       </div>
 
-      <div className="relative">
-        {state.isOwner ? (
-          <div
-            ref={articleRef}
-            className="human-content outline-none"
-            contentEditable
-            suppressContentEditableWarning
-            onInput={() => setIsDirty(true)}
-          />
-        ) : (
-          <div
-            ref={articleRef}
-            className="human-content"
-            dangerouslySetInnerHTML={{ __html: articleHtml }}
-          />
-        )}
-
-        {state.isOwner && selectionMenu.open && (
-          <div
-            ref={selectionMenuRef}
-            className="absolute z-20 border border-border bg-white shadow-sm p-2 rounded-sm font-sans text-xs w-72"
-            style={{
-              left: selectionMenu.x,
-              top: selectionMenu.y,
-              transform: "translate(-50%, -100%)",
+      {state.isOwner && (
+        <div className="mb-4 border border-border bg-white p-3 rounded-sm font-sans">
+          <div className="text-xs font-semibold mb-2">Markdown Editor</div>
+          <textarea
+            ref={editorRef}
+            value={markdown}
+            onChange={(event) => {
+              setMarkdown(event.target.value);
+              setIsDirty(true);
             }}
-          >
-            <div className="text-muted line-clamp-2 mb-2">“{selectionMenu.snippet}”</div>
-            <div className="flex items-center gap-2 mb-2">
-              <button
-                onClick={() => setShowVerifierForm((v) => !v)}
-                className="px-2 py-1 border border-border bg-[#f6f4ef] hover:bg-[#efece4] transition-colors font-semibold"
-              >
-                Request Verifier
-              </button>
-              <button
-                onClick={addCitation}
-                className="px-2 py-1 border border-border bg-[#f6f4ef] hover:bg-[#efece4] transition-colors font-semibold"
-              >
-                Add Citation
-              </button>
-              <button
-                onClick={closeSelectionMenu}
-                className="ml-auto text-muted hover:text-foreground"
-              >
-                Close
-              </button>
-            </div>
+            onMouseUp={refreshSelection}
+            onKeyUp={refreshSelection}
+            className="w-full min-h-72 border border-border p-2 font-mono text-sm bg-white"
+          />
 
-            {showVerifierForm && (
-              <div className="space-y-2">
-                <input
-                  value={sectionLabel}
-                  onChange={(event) => setSectionLabel(event.target.value)}
-                  placeholder="Section label (optional)"
-                  className="w-full border border-border p-2 text-xs bg-white"
-                />
-                <div className="grid grid-cols-2 gap-2">
-                  <input
-                    value={verifierName}
-                    onChange={(event) => setVerifierName(event.target.value)}
-                    placeholder="Verifier name"
-                    className="w-full border border-border p-2 text-xs bg-white"
-                  />
-                  <input
-                    value={verifierEmail}
-                    onChange={(event) => setVerifierEmail(event.target.value)}
-                    placeholder="Verifier email"
-                    className="w-full border border-border p-2 text-xs bg-white"
-                  />
-                </div>
+          {selection && (
+            <div className="mt-3 border border-border rounded-md bg-[#f8f7f5] p-3">
+              <div className="text-xs text-muted line-clamp-2 mb-2">“{selection.snippet}”</div>
+              <div className="flex items-center gap-2">
                 <button
-                  onClick={submitVerifierRequest}
-                  disabled={isSubmittingVerifier}
-                  className="px-2 py-1 border border-border bg-[#f6f4ef] hover:bg-[#efece4] transition-colors font-semibold disabled:opacity-50"
+                  onClick={() => {
+                    setShowVerifierForm((v) => !v);
+                    setShowCitationInput(false);
+                  }}
+                  className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold"
                 >
-                  {isSubmittingVerifier ? "Submitting..." : "Send Request"}
+                  Request Verifier
+                </button>
+                <button
+                  onClick={() => {
+                    setShowCitationInput((v) => !v);
+                    setShowVerifierForm(false);
+                  }}
+                  className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold"
+                >
+                  Add Citation
+                </button>
+                <button
+                  onClick={() => {
+                    setSelection(null);
+                    setShowVerifierForm(false);
+                    setShowCitationInput(false);
+                  }}
+                  className="ml-auto text-muted hover:text-foreground"
+                >
+                  Close
                 </button>
               </div>
-            )}
-          </div>
-        )}
-      </div>
+
+              {showCitationInput && (
+                <div className="mt-2 flex items-center gap-2">
+                  <input
+                    value={citationUrl}
+                    onChange={(event) => setCitationUrl(event.target.value)}
+                    placeholder="https://..."
+                    className="flex-1 border border-border p-2 text-xs bg-white"
+                  />
+                  <button
+                    onClick={addCitation}
+                    className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold"
+                  >
+                    Insert Link
+                  </button>
+                </div>
+              )}
+
+              {showVerifierForm && (
+                <div className="mt-2 space-y-2">
+                  <input
+                    value={sectionLabel}
+                    onChange={(event) => setSectionLabel(event.target.value)}
+                    placeholder="Section label (optional)"
+                    className="w-full border border-border p-2 text-xs bg-white"
+                  />
+                  <div className="grid sm:grid-cols-2 gap-2">
+                    <input
+                      value={verifierName}
+                      onChange={(event) => setVerifierName(event.target.value)}
+                      placeholder="Verifier name"
+                      className="w-full border border-border p-2 text-xs bg-white"
+                    />
+                    <input
+                      value={verifierEmail}
+                      onChange={(event) => setVerifierEmail(event.target.value)}
+                      placeholder="Verifier email"
+                      className="w-full border border-border p-2 text-xs bg-white"
+                    />
+                  </div>
+                  <button
+                    onClick={submitVerifierRequest}
+                    disabled={isSubmittingVerifier}
+                    className="px-2.5 py-1 border border-border bg-white hover:bg-[#efece4] transition-colors text-xs font-semibold disabled:opacity-50"
+                  >
+                    {isSubmittingVerifier ? "Submitting..." : "Send Request"}
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      <div className="human-content" dangerouslySetInnerHTML={{ __html: previewHtml }} />
 
       {state.isOwner && state.verifierRequests.length > 0 && (
         <div className="mt-6 border-t border-border pt-4 font-sans">
