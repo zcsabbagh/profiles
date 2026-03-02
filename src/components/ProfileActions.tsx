@@ -23,6 +23,7 @@ export default function ProfileActions({
   isSignedIn,
 }: ProfileActionsProps) {
   const [state, setState] = useState(initialState);
+  const [articleHtml, setArticleHtml] = useState(initialState.humanContent);
   const [isSaving, setIsSaving] = useState(false);
   const [isClaiming, setIsClaiming] = useState(false);
   const [isSubmittingVerifier, setIsSubmittingVerifier] = useState(false);
@@ -40,7 +41,16 @@ export default function ProfileActions({
   });
 
   const articleRef = useRef<HTMLDivElement>(null);
+  const selectionMenuRef = useRef<HTMLDivElement>(null);
   const selectionRangeRef = useRef<Range | null>(null);
+
+  const restoreSelection = () => {
+    if (!selectionRangeRef.current) return;
+    const selection = window.getSelection();
+    if (!selection) return;
+    selection.removeAllRanges();
+    selection.addRange(selectionRangeRef.current);
+  };
 
   const claimStatusText = useMemo(() => {
     if (!state.claimedByUserId) return "Unclaimed";
@@ -65,6 +75,7 @@ export default function ProfileActions({
 
     if (json?.humanContent) {
       setState(json);
+      setArticleHtml(json.humanContent);
       if (articleRef.current) {
         articleRef.current.innerHTML = json.humanContent;
       }
@@ -150,15 +161,31 @@ export default function ProfileActions({
       y: rect.top + window.scrollY - 10,
       snippet,
     });
+    requestAnimationFrame(restoreSelection);
   };
+
+  useEffect(() => {
+    if (!state.isOwner || !articleRef.current) return;
+    if (articleRef.current.innerHTML !== articleHtml) {
+      articleRef.current.innerHTML = articleHtml;
+    }
+  }, [articleHtml, state.isOwner]);
 
   useEffect(() => {
     if (!state.isOwner) return;
 
-    const onMouseUp = () => {
+    const onMouseUp = (event: MouseEvent) => {
+      const target = event.target as Node | null;
+      if (target && selectionMenuRef.current?.contains(target)) {
+        return;
+      }
       setTimeout(refreshSelectionMenu, 0);
     };
-    const onKeyUp = () => {
+    const onKeyUp = (event: KeyboardEvent) => {
+      const target = event.target as Node | null;
+      if (target && selectionMenuRef.current?.contains(target)) {
+        return;
+      }
       setTimeout(refreshSelectionMenu, 0);
     };
 
@@ -283,17 +310,25 @@ export default function ProfileActions({
       </div>
 
       <div className="relative">
-        <div
-          ref={articleRef}
-          className={`human-content ${state.isOwner ? "outline-none" : ""}`}
-          contentEditable={state.isOwner}
-          suppressContentEditableWarning
-          onInput={() => setIsDirty(true)}
-          dangerouslySetInnerHTML={{ __html: state.humanContent }}
-        />
+        {state.isOwner ? (
+          <div
+            ref={articleRef}
+            className="human-content outline-none"
+            contentEditable
+            suppressContentEditableWarning
+            onInput={() => setIsDirty(true)}
+          />
+        ) : (
+          <div
+            ref={articleRef}
+            className="human-content"
+            dangerouslySetInnerHTML={{ __html: articleHtml }}
+          />
+        )}
 
         {state.isOwner && selectionMenu.open && (
           <div
+            ref={selectionMenuRef}
             className="absolute z-20 border border-border bg-white shadow-sm p-2 rounded-sm font-sans text-xs w-72"
             style={{
               left: selectionMenu.x,
