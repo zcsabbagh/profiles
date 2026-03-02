@@ -874,26 +874,25 @@ export const profileBatchC: ProfileRecord = {
   chehan_wijayaratne: {
     slug: "chehan_wijayaratne",
     name: "Chehan Wijayaratne",
-    currentRole: "Student Researcher",
+    currentRole: "Computational Biology Student Researcher",
     org: "Stanford University",
     education: [
       { institution: "Stanford University", degree: "BS (in progress)", field: "Computational Biology / Computer Science" },
     ],
     humanContent: `
-<p><strong>Chehan Lakdhinu Wijayaratne</strong> is a Stanford undergraduate with public profile signals in computational biology, computer science, and neuroscience-adjacent research activity. Stanford Profiles anchors the institutional identity, while LinkedIn and lab websites provide additional role-level context.</p>
+<p><strong>Chehan Lakdhinu Wijayaratne</strong> is a Stanford undergraduate in the computational biology/computer science pathway with a research timeline spanning neurobiology and translational medicine settings. The strongest institutional anchor is his <a href="https://profiles.stanford.edu/chehan-wijayaratne">Stanford Profiles</a> page; role-level details are primarily from self-reported LinkedIn entries and should be interpreted with that caveat.</p>
 
-<h2>Education and institutional anchor</h2>
-<p>Stanford records identify Wijayaratne as an undergraduate. Cross-source alignment supports a comp-bio/CS orientation, though open records do not yet provide a complete transcript-style view of technical specialization.</p>
+<h2>Education</h2>
+<p>Wijayaratne is listed as a Stanford undergraduate and publicly describes his program as Computer Science with a Computational Biology track. Public source coverage does not yet provide a transcript-level specialization map (for example, concentration-level coursework, capstones, or thesis).</p>
 
-<h2>Research context</h2>
-<p>Public profile data describes research internship activity connected to Giocomo Lab and prior Wu Lab work in Stanford Medicine contexts. The Giocomo site provides program/lab context, but individual contribution detail and publication attribution remain sparse in open public indexes. Accordingly, this profile treats specific project claims as medium confidence unless tied to canonical papers or repositories.</p>
+<h2>Research trajectory</h2>
+<p>His public timeline shows progressive research exposure: a Memory and Aging Department internship at UCSF (2020-2021), a Wu Lab internship at Stanford Medicine (2022-2023), and a Giocomo Lab internship (2024-present). His Wu Lab description references work on an ocular/nasolacrimal duct squamous cell carcinoma mouse model using DMBA/TPA methods, while his current profile emphasizes systems neuroscience and computational biology interests in the Giocomo ecosystem.</p>
 
-<h2>Additional activity and disambiguation</h2>
-<p>Independent web results also link this identity to campus performance contexts (for example Stanford Mendicants channels). These are kept as corroborating identity signals rather than research evidence.</p>
+<h2>Lab ecosystem context</h2>
+<p>The Giocomo Lab itself is a high-output Stanford neurobiology group with publicly listed preprints, publications, and shared methods pages. However, currently available open sources do not cleanly attribute specific publications, datasets, or repositories directly to Wijayaratne by name. This profile therefore distinguishes between verified lab affiliation and unverified publication-level ownership.</p>
 
-<h2>Verification scope</h2>
-<p>Confidence is high for identity and role continuity, moderate for lab-specific technical ownership, and currently low for publication-complete attribution. Future improvements should add named project pages, posters, code repositories, and papers that directly map to this identity.</p>
-<p>Until then, this entry should be read as a reliable role map with conservative technical specificity rather than a publication-complete research dossier.</p>
+<h2>Evidence quality and gaps</h2>
+<p>Identity and institutional affiliation confidence are high. Specific technical-contribution confidence remains medium-to-low until primary artifacts (named papers, posters, code, or methods contributions tied to this identity) are available in public indexes.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -901,55 +900,77 @@ export const profileBatchC: ProfileRecord = {
       name: "Chehan Lakdhinu Wijayaratne",
       alternateName: "Chehan Wijayaratne",
       sameAs: ["https://profiles.stanford.edu/chehan-wijayaratne", "https://linkedin.com/in/chehan-wijayaratne-5b9b341b6"],
-      jobTitle: "Research Intern",
-      worksFor: { "@type": "Organization", name: "Stanford University School of Medicine" },
+      jobTitle: "Computational Biology Student Researcher",
+      worksFor: { "@type": "Organization", name: "Stanford University" },
       hasOccupation: [
         {
           "@type": "Role",
-          roleName: "Undergraduate Student",
+          roleName: "Undergraduate Student (Computer Science / Computational Biology track)",
           organization: { "@type": "Organization", name: "Stanford University" },
           _verificationStatus: "public",
-          _confidence: 0.95,
-          _evidence: "Stanford Profiles lists active undergraduate status.",
+          _confidence: 0.96,
+          _evidence: "Stanford Profiles + self-described track on LinkedIn.",
         },
         {
           "@type": "Role",
-          roleName: "Research Intern (self-reported)",
+          roleName: "Research Intern, Giocomo Lab",
+          startDate: "2024-06",
+          organization: { "@type": "Organization", name: "Stanford University School of Medicine (Neurobiology)" },
+          _verificationStatus: "self-reported",
+          _confidence: 0.82,
+          _evidence: "LinkedIn role listing with ongoing status; lab website corroborates context.",
+        },
+        {
+          "@type": "Role",
+          roleName: "Research Intern, Wu Lab",
+          startDate: "2022-06",
+          endDate: "2023-07",
           organization: { "@type": "Organization", name: "Stanford University School of Medicine" },
           _verificationStatus: "self-reported",
           _confidence: 0.78,
-          _evidence: "LinkedIn lists Giocomo Lab and prior Wu Lab research roles.",
-          _gaps: ["No public publication list tied directly to these roles"],
+          _evidence: "LinkedIn role listing with project summary (DMBA/TPA mouse model).",
+        },
+        {
+          "@type": "Role",
+          roleName: "Research Intern, Memory and Aging Department",
+          startDate: "2020-06",
+          endDate: "2021-08",
+          organization: { "@type": "Organization", name: "University of California, San Francisco" },
+          _verificationStatus: "self-reported",
+          _confidence: 0.72,
+          _evidence: "LinkedIn role listing references EEG/MEG analysis on Alzheimer's cohort.",
         },
       ],
       knowsAbout: [
-        { skill: "Computational Biology", type: "domain", _confidence: 0.84, _evidence: "Stanford and LinkedIn profile positioning" },
-        { skill: "Systems Neuroscience", type: "domain", _confidence: 0.76, _evidence: "Self-reported Giocomo Lab research affiliation" },
-        { skill: "Research Communication / Team Collaboration", type: "domain", _confidence: 0.65, _evidence: "Public student research and campus activity footprint" },
+        { skill: "Computational Biology", type: "domain", _confidence: 0.88, _evidence: "Program positioning and multi-year research internships." },
+        { skill: "Systems Neuroscience", type: "domain", _confidence: 0.8, _evidence: "Giocomo Lab affiliation and stated interests." },
+        { skill: "Translational Biomedical Research", type: "domain", _confidence: 0.74, _evidence: "Wu Lab model-development summary and UCSF internship history." },
+        { skill: "Neurodata Analysis", type: "domain", _confidence: 0.68, _evidence: "Self-reported EEG/MEG analysis exposure at UCSF." },
       ],
       _projects: [
-        { name: "Giocomo Lab research internship", type: "research", description: "Self-reported systems-neuroscience-adjacent work in Stanford Medicine context", status: "active", _verificationStatus: "self-reported" },
-        { name: "Wu Lab research internship", type: "research", description: "Earlier self-reported Stanford Medicine lab internship", status: "completed", _verificationStatus: "self-reported" },
+        { name: "Giocomo Lab internship", type: "research", description: "Current systems-neuroscience research internship in Stanford neurobiology ecosystem", status: "active", _verificationStatus: "self-reported" },
+        { name: "Wu Lab internship", type: "research", description: "Mouse-model-focused internship (ocular/nasolacrimal SCC context) per self-reported role summary", status: "completed", _verificationStatus: "self-reported" },
+        { name: "UCSF Memory and Aging internship", type: "research", description: "Self-reported EEG/MEG analysis exposure in Alzheimer's context", status: "completed", _verificationStatus: "self-reported" },
       ],
       _dataQuality: {
-        sourcesConsulted: 11,
-        sourceList: ["Stanford Profiles (person page)", "LinkedIn profile", "Stanford Profiles browse/disambiguation", "Giocomo Lab site", "Stanford School of Medicine", "Stanford Mendicants YouTube credit", "Schmidt Vocal Arts 2020-21 finalists", "General web disambiguation search"],
+        sourcesConsulted: 12,
+        sourceList: ["Stanford Profiles (person page)", "LinkedIn profile", "Giocomo Lab home", "Giocomo Lab people", "Giocomo Lab publications", "Giocomo Lab data/code/methods context", "Stanford School of Medicine", "UCSF Memory and Aging Center context", "Stanford Mendicants pages", "General disambiguation search"],
         lastUpdated: "2026-03",
-        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "MEDIUM", technicalCapabilities: "MEDIUM-LOW", currentWorkDetail: "MEDIUM" },
         gaps: [
-          "Few independently published technical outputs in open index",
-          "Lab project specifics are mostly self-reported",
-          "Public timeline still sparse outside profile summaries",
+          "No clearly attributable publication or code artifacts tied to this identity in open sources",
+          "Most contribution-level details remain self-reported",
+          "Limited public detail on current Giocomo project scope",
         ],
-        recommendation: "Add publication links, project repositories, or lab pages naming specific contributions to raise technical-confidence level.",
+        recommendation: "Highest-value upgrade is publication/poster/repository attribution that explicitly names this contributor.",
       },
     },
     infobox: {
       fullName: "Chehan Lakdhinu Wijayaratne",
-      currentRole: "Student Researcher",
+      currentRole: "Computational Biology Student Researcher",
       org: "Stanford University",
-      education: ["Stanford University (Computational Biology/CS, in progress)"],
-      knownFor: ["Computational biology and CS undergraduate track", "Research internships in Stanford medicine-adjacent labs", "Campus performance activity (Mendicants credits)"],
+      education: ["Stanford University (CS / Computational Biology track, in progress)"],
+      knownFor: ["Giocomo Lab internship (2024-present)", "Prior Wu Lab and UCSF Memory & Aging internships", "Computational biology + systems neuroscience orientation"],
       links: [
         { label: "Stanford Profile", url: "https://profiles.stanford.edu/chehan-wijayaratne" },
         { label: "LinkedIn", url: "https://linkedin.com/in/chehan-wijayaratne-5b9b341b6" },
@@ -958,14 +979,15 @@ export const profileBatchC: ProfileRecord = {
     references: [
       { title: "Chehan Lakdhinu Wijayaratne — Stanford Profiles", url: "https://profiles.stanford.edu/chehan-wijayaratne" },
       { title: "Chehan Wijayaratne — LinkedIn", url: "https://linkedin.com/in/chehan-wijayaratne-5b9b341b6" },
-      { title: "Stanford Profiles browse — name disambiguation", url: "https://profiles.stanford.edu/browse/stanford?name=wijayaratne" },
       { title: "Giocomo Lab", url: "https://giocomolab.stanford.edu/" },
       { title: "Giocomo Lab — People", url: "https://giocomolab.weebly.com/people.html" },
+      { title: "Giocomo Lab — Publications", url: "https://giocomolab.weebly.com/publications.html" },
       { title: "Giocomo Lab — Undergraduate Research", url: "https://giocomolab.weebly.com/undergraduate-research.html" },
       { title: "Stanford School of Medicine", url: "https://med.stanford.edu/" },
-      { title: "Stanford Neurosciences PhD students page (lab ecosystem context)", url: "https://med.stanford.edu/neurogradprogram/people/student_profiles.html" },
+      { title: "UCSF Memory and Aging Center", url: "https://memory.ucsf.edu/" },
       { title: "Stanford Mendicants — YouTube channel", url: "https://www.youtube.com/user/stanfordmendicants" },
       { title: "Stanford Mendicants — videos page", url: "https://stanfordmendicants.com/videos" },
+      { title: "Stanford Profiles browse — name disambiguation", url: "https://profiles.stanford.edu/browse/stanford?name=wijayaratne" },
     ],
   },
 
@@ -975,23 +997,22 @@ export const profileBatchC: ProfileRecord = {
   paolo_reitz: {
     slug: "paolo_reitz",
     name: "Paolo Reitz",
-    currentRole: "Undergraduate Student",
+    currentRole: "CEE Student and Campus Operator",
     org: "Stanford University",
     education: [
       { institution: "Stanford University", degree: "BS (in progress)", field: "Civil and Environmental Engineering" },
     ],
     humanContent: `
-<p><strong>Paolo Ferreira Reitz</strong> is a Stanford undergraduate in Civil and Environmental Engineering with a public footprint across campus operations, outdoor leadership, and student journalism. Stanford Profiles provides the primary institutional anchor, and open media/profile sources corroborate his operational and writing roles.</p>
+<p><strong>Paolo Ferreira Reitz</strong> is a Stanford Civil and Environmental Engineering undergraduate with a notable dual track in campus operations leadership and arts journalism. Official Stanford records establish identity, major, and Recreation Adventure Program roles; The Stanford Daily provides independent evidence for his recurring column work.</p>
 
-<h2>Education and campus operations</h2>
-<p>Reitz is listed in Stanford records as a CEE undergraduate and in campus recreation roles including floor supervision and trip leadership. LinkedIn role descriptions add practical detail on climbing-wall operations, safety, and peer instruction, which are consistent with Stanford Recreation context pages.</p>
+<h2>Engineering and campus leadership</h2>
+<p>Stanford Profiles lists Reitz as an undergraduate in CEE and identifies him as both a floor supervisor and senior trip leader in Recreation Adventure Programs. Public role descriptions emphasize climbing-wall operations, safety protocols, instruction for newer climbers, and logistics for outdoor trip programming.</p>
 
-<h2>Student media and arts reporting</h2>
-<p>In 2025, Reitz published multiple Stanford Daily pieces under &quot;The Stanford Scene,&quot; including interviews and coverage of student film and performance communities. These bylines are independently verifiable and provide strong evidence of communication/journalism activity in parallel with engineering study.</p>
+<h2>The Stanford Scene reporting</h2>
+<p>Reitz writes for The Stanford Daily under “The Stanford Scene.” Verified bylines include a March 31, 2025 feature on the Restorative Film Collective’s 48-hour film competition and a May 8, 2025 profile on student actor West Mulholland. These pieces establish sustained interviewing/reporting output rather than a one-off contribution.</p>
 
-<h2>Verification scope</h2>
-<p>Confidence is high for identity, major, and campus leadership/media roles. Confidence remains moderate on external internship or engineering-project specificity because open records are still leadership- and media-weighted. This profile therefore emphasizes corroborated responsibilities and avoids over-claiming technical portfolio depth where primary artifacts are not yet public.</p>
-<p>As engineering project pages or internship outputs become public, this profile can be expanded to include more direct CEE-specific technical evidence while preserving the same attribution standards.</p>
+<h2>Role blend and evidence quality</h2>
+<p>This profile is unusually strong on operating-leadership and communication artifacts (staffing, trip leadership, published media output), and lighter on externally visible CEE project artifacts. The current evidence supports a high-confidence campus-operator/journalism profile with moderate confidence on domain-specific engineering technical depth.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
@@ -999,7 +1020,7 @@ export const profileBatchC: ProfileRecord = {
       name: "Paolo Ferreira Reitz",
       alternateName: "Paolo Reitz",
       sameAs: ["https://profiles.stanford.edu/paolo-reitz", "https://linkedin.com/in/paolo-reitz-0889a9324"],
-      jobTitle: "Undergraduate Student",
+      jobTitle: "Undergraduate (Civil and Environmental Engineering)",
       worksFor: { "@type": "Organization", name: "Stanford University" },
       hasOccupation: [
         {
@@ -1012,47 +1033,58 @@ export const profileBatchC: ProfileRecord = {
         },
         {
           "@type": "Role",
-          roleName: "Floor Supervisor / Senior Trip Leader",
+          roleName: "Floor Supervisor / Senior Trip Leader (Recreation Adventure Programs)",
           organization: { "@type": "Organization", name: "Stanford Recreation Adventure Programs" },
           _verificationStatus: "public",
-          _confidence: 0.9,
-          _evidence: "Stanford Profiles title lines and LinkedIn role details.",
+          _confidence: 0.92,
+          _evidence: "Stanford Profiles role lines + detailed LinkedIn operational descriptions.",
+        },
+        {
+          "@type": "Role",
+          roleName: "Resident Assistant",
+          startDate: "2025-03",
+          organization: { "@type": "Organization", name: "Stanford University Residential Education" },
+          _verificationStatus: "self-reported",
+          _confidence: 0.78,
+          _evidence: "LinkedIn role summary with resident support/event operations scope.",
         },
         {
           "@type": "Role",
           roleName: "Columnist (The Stanford Scene)",
           organization: { "@type": "Organization", name: "The Stanford Daily" },
           _verificationStatus: "public",
-          _confidence: 0.86,
-          _evidence: "Bylines in March and May 2025 Stanford Daily film coverage.",
+          _confidence: 0.9,
+          _evidence: "Author page and multiple dated bylines in 2025.",
         },
       ],
       knowsAbout: [
-        { skill: "Civil and Environmental Engineering", type: "domain", _confidence: 0.88, _evidence: "Declared Stanford undergraduate program" },
-        { skill: "Outdoor Leadership / Climbing Operations", type: "domain", _confidence: 0.86, _evidence: "Floor Supervisor and trip leadership roles" },
-        { skill: "Student Journalism / Interviews", type: "domain", _confidence: 0.8, _evidence: "Stanford Daily column work interviewing film community members" },
+        { skill: "Civil and Environmental Engineering", type: "domain", _confidence: 0.9, _evidence: "Declared Stanford undergraduate program (official profile)." },
+        { skill: "Outdoor Leadership / Climbing Operations", type: "domain", _confidence: 0.9, _evidence: "Floor Supervisor + Senior Trip Leader scope includes safety and instruction." },
+        { skill: "Student Journalism / Interview Reporting", type: "domain", _confidence: 0.86, _evidence: "Repeated Stanford Daily feature bylines in The Stanford Scene column." },
+        { skill: "Community Operations", type: "domain", _confidence: 0.78, _evidence: "Resident Assistant role includes event and peer-support operations (self-reported)." },
       ],
       _projects: [
-        { name: "The Stanford Scene (column)", type: "writing", url: "https://stanforddaily.com/2025/03/31/behind-the-scenes-with-restorative-film-collective-in-a-48-hour-film-competition/", description: "Interview and reporting series on Stanford film activities", status: "active" },
+        { name: "The Stanford Scene (column)", type: "writing", url: "https://stanforddaily.com/author/reitz001/", description: "Recurring Stanford Daily interview/reporting series on campus film and arts activity", status: "active" },
+        { name: "RFC 48-Hour Film Competition feature", type: "writing", url: "https://stanforddaily.com/2025/03/31/behind-the-scenes-with-restorative-film-collective-in-a-48-hour-film-competition/", description: "Reported feature documenting Restorative Film Collective production process under 48-hour constraints", status: "completed" },
       ],
       _dataQuality: {
-        sourcesConsulted: 10,
-        sourceList: ["Stanford Profiles (person page)", "Stanford CAP printer profile", "LinkedIn", "Stanford Daily (March 2025 article)", "Stanford Daily (May 2025 article)", "Stanford Recreation (AOERC context)", "Stanford CEE page", "General web disambiguation search"],
+        sourcesConsulted: 12,
+        sourceList: ["Stanford Profiles (person page)", "Stanford CAP printer profile", "LinkedIn", "Stanford Daily author page", "Stanford Daily (March 2025 article)", "Stanford Daily (May 2025 article)", "Stanford Recreation AOERC", "Stanford Recreation Adventure Program context", "Stanford CEE department", "General disambiguation search"],
         lastUpdated: "2026-03",
-        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "HIGH", technicalCapabilities: "LOW", currentWorkDetail: "MEDIUM" },
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM-LOW", currentWorkDetail: "HIGH" },
         gaps: [
-          "No broad public portfolio of engineering projects yet",
-          "Internship history outside campus roles is still sparse in open sources",
+          "Publicly indexed CEE project portfolio remains limited",
+          "Engineering internship outputs are not yet well documented in open sources",
         ],
-        recommendation: "Add internships, technical project pages, or publications to improve engineering-depth coverage.",
+        recommendation: "To match the strength of operations/journalism evidence, add project-level engineering artifacts (reports, posters, code, or internship output summaries).",
       },
     },
     infobox: {
       fullName: "Paolo Ferreira Reitz",
-      currentRole: "Undergraduate Student",
+      currentRole: "CEE Student and Campus Operator",
       org: "Stanford University",
       education: ["Stanford University (Civil and Environmental Engineering)"],
-      knownFor: ["Stanford Recreation Adventure Programs leadership", "AOERC climbing-floor supervision and instruction", "The Stanford Scene student film reporting"],
+      knownFor: ["Stanford Recreation Adventure Programs leadership", "AOERC climbing-floor supervision", "The Stanford Scene reporting at The Stanford Daily", "Restorative Film Collective coverage"],
       links: [
         { label: "Stanford Profile", url: "https://profiles.stanford.edu/paolo-reitz" },
         { label: "LinkedIn", url: "https://linkedin.com/in/paolo-reitz-0889a9324" },
@@ -1078,88 +1110,100 @@ export const profileBatchC: ProfileRecord = {
   ella_moore: {
     slug: "ella_moore",
     name: "Ella Moore",
-    currentRole: "Student / Investor Intern",
+    currentRole: "Biomedical Computation Student Researcher",
     org: "Stanford University",
     education: [
       { institution: "Stanford University", degree: "BS (in progress)", field: "Engineering / Biomedical Computation" },
     ],
     humanContent: `
-<p><strong>Ella Moore</strong> is a Stanford undergraduate with a public profile that combines biomedical research exposure, biotech/health investing internships, and Division I lightweight rowing. Identity and academic affiliation are strongly supported by Stanford Profiles and Stanford lab pages.</p>
+<p><strong>Ella Moore</strong> is a Stanford engineering undergraduate focused on biomedical computation, with a public profile spanning translational neurobiology research, health-tech investing internships, and Division I lightweight rowing. Stanford Profiles and Barron Lab pages provide the strongest primary anchors; LinkedIn adds role-timeline detail.</p>
 
-<h2>Academic and research context</h2>
-<p>Stanford sources identify Moore as an engineering undergraduate, while Barron Lab pages describe Biomedical Computation-oriented work and research tasks related to glioblastoma pathogenesis. Lab pages also reference prior Sharaf Lab experience, supporting a translational biology-to-computation trajectory rather than a purely finance-oriented path.</p>
+<h2>Research and technical focus</h2>
+<p>The Barron Lab biography describes Moore as a biomedical computation major working on glioblastoma multiforme (GBM) pathogenesis with Dr. Stephen Dominy, and references earlier Sharaf Lab work on lipoprotein thermostability. This creates a coherent translational trajectory from bench research toward clinically relevant computational/biological questions.</p>
 
-<h2>Investing and entrepreneurship track</h2>
-<p>Public profile records add biotech investment context through Insight Partners internships and participation in Stanford ChEM-H entrepreneurship programming and Girls Who Invest educational tracks. These sources are strongest for role participation and weaker for confidential deal-level work product, which is expected for internship positions.</p>
+<h2>Biotech investing and entrepreneurship exposure</h2>
+<p>Moore's public timeline includes internships with Insight Partners' bio/health teams (2023 intern, 2025 investment summer analyst), plus educational programming through Stanford's Sarafan ChEM-H undergraduate entrepreneurship track and Girls Who Invest. As expected for internship roles, public sources are strong on participation and weak on confidential deal-level output.</p>
 
-<h2>Athletics and campus footprint</h2>
-<p>Stanford Athletics records show Moore competed in lightweight rowing with documented varsity outcomes, adding independently verifiable non-academic accomplishment context.</p>
+<h2>Athletics and performance record</h2>
+<p>Stanford Athletics records show she competed on lightweight rowing varsity boats, including a WIRA Varsity 8+ championship and an IRA Varsity 8+ runner-up result during the 2022-23 season. This is independently verifiable and adds high-confidence performance evidence outside academic contexts.</p>
 
-<h2>Verification scope</h2>
-<p>Confidence is high on identity, educational affiliation, and role continuity across lab, internship, and athletics contexts. Confidence is moderate on publication-level output or technical ownership due limited public artifact depth. The profile is therefore written conservatively and anchored to directly citable institutional sources.</p>
-<p>Additional papers, posters, or datasets would materially improve technical-depth confidence by clearly separating role participation evidence from direct research-output attribution.</p>
+<h2>Evidence quality and caveats</h2>
+<p>Identity, institutional affiliation, and role continuity are high-confidence. Publication- or artifact-level technical ownership remains moderate because public records are role-centered rather than output-centered. Future profile upgrades should prioritize papers, posters, repositories, or named project artifacts.</p>
 `,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Ella Moore",
       sameAs: ["https://profiles.stanford.edu/ella-moore", "https://linkedin.com/in/ellammoore", "http://gostanford.com/sports/lightweight-rowing/roster/player/ella-moore"],
-      jobTitle: "Undergraduate Student",
+      jobTitle: "Biomedical Computation Student Researcher",
       worksFor: { "@type": "Organization", name: "Stanford University" },
       hasOccupation: [
         {
           "@type": "Role",
-          roleName: "Undergraduate, School of Engineering",
+          roleName: "Undergraduate, School of Engineering (Biomedical Computation)",
           organization: { "@type": "Organization", name: "Stanford University" },
           _verificationStatus: "public",
-          _confidence: 0.95,
+          _confidence: 0.96,
           _evidence: "Stanford Profiles person page.",
         },
         {
           "@type": "Role",
-          roleName: "Undergraduate Researcher (Barron Lab context)",
+          roleName: "Research Assistant, Barron Lab",
           organization: { "@type": "Organization", name: "The Barron Lab, Stanford University" },
           _verificationStatus: "public",
-          _confidence: 0.86,
-          _evidence: "Barron Lab biography describes work on GBM pathogenesis.",
+          _confidence: 0.9,
+          _evidence: "Barron Lab page specifies GBM pathogenesis work and prior Sharaf Lab experience.",
         },
         {
           "@type": "Role",
           roleName: "Investment Summer Analyst (Health Team)",
+          startDate: "2025-06",
+          endDate: "2025-08",
+          organization: { "@type": "Organization", name: "Insight Partners" },
+          _verificationStatus: "self-reported",
+          _confidence: 0.84,
+          _evidence: "LinkedIn role listing with team designation.",
+        },
+        {
+          "@type": "Role",
+          roleName: "Intern, Bio Team",
+          startDate: "2023-06",
+          endDate: "2023-07",
           organization: { "@type": "Organization", name: "Insight Partners" },
           _verificationStatus: "self-reported",
           _confidence: 0.8,
-          _evidence: "LinkedIn role listing.",
+          _evidence: "LinkedIn role listing for prior summer.",
         },
       ],
       knowsAbout: [
-        { skill: "Biomedical Computation", type: "domain", _confidence: 0.86, _evidence: "Stanford and Barron Lab profile descriptions" },
-        { skill: "Translational Neuroscience / Neuroimmunology", type: "domain", _confidence: 0.8, _evidence: "Barron Lab statement of GBM pathogenesis focus" },
-        { skill: "Biotech/Health Investing", type: "domain", _confidence: 0.8, _evidence: "Insight Partners health team internship listing" },
-        { skill: "Rowing", type: "athletic", _confidence: 0.92, _evidence: "Stanford lightweight rowing roster and race outcomes" },
+        { skill: "Biomedical Computation", type: "domain", _confidence: 0.9, _evidence: "Major + Barron Lab technical context." },
+        { skill: "Translational Neurobiology", type: "domain", _confidence: 0.84, _evidence: "GBM pathogenesis work in Barron Lab profile." },
+        { skill: "Biotech/Health Investing", type: "domain", _confidence: 0.84, _evidence: "Insight Partners bio/health internship timeline." },
+        { skill: "Entrepreneurship Education", type: "domain", _confidence: 0.78, _evidence: "Sarafan ChEM-H UEP and Girls Who Invest program participation." },
+        { skill: "Rowing", type: "athletic", _confidence: 0.94, _evidence: "Stanford Athletics roster and race outcomes." },
       ],
       _projects: [
-        { name: "Barron Lab GBM work", type: "research", url: "https://barronlab.stanford.edu/people/ella-moore", description: "Undergraduate work on glioblastoma pathogenesis with Dr. Stephen Dominy", status: "active" },
-        { name: "Insight Partners Health Team internship", type: "internship", url: "https://linkedin.com/in/ellammoore", description: "Health-focused investment summer analyst role", status: "completed" },
+        { name: "Barron Lab GBM work", type: "research", url: "https://barronlab.stanford.edu/people/ella-moore", description: "Research assistant work on glioblastoma pathogenesis; prior lipoprotein thermostability work in Sharaf Lab noted in bio", status: "active" },
+        { name: "Insight Partners Health/Bio internships", type: "internship", url: "https://linkedin.com/in/ellammoore", description: "Bio team and health-team internships across 2023 and 2025 cycles", status: "completed" },
       ],
       _dataQuality: {
-        sourcesConsulted: 10,
-        sourceList: ["Stanford Profiles (person page)", "Barron Lab profile", "LinkedIn", "Stanford Athletics roster", "Insight Partners", "Sarafan ChEM-H program", "Girls Who Invest", "Stanford Profiles browse/disambiguation", "General web disambiguation search"],
+        sourcesConsulted: 12,
+        sourceList: ["Stanford Profiles (person page)", "Barron Lab profile", "Barron Lab people page", "LinkedIn", "Stanford Athletics roster page", "Insight Partners", "Sarafan ChEM-H", "Girls Who Invest", "Stanford Profiles browse/disambiguation", "General disambiguation search"],
         lastUpdated: "2026-03",
-        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "MEDIUM" },
+        overallConfidence: { identity: "HIGH", education: "HIGH", careerTimeline: "HIGH", technicalCapabilities: "MEDIUM", currentWorkDetail: "HIGH" },
         gaps: [
-          "Few publication-indexed outputs currently visible",
-          "Public sources mix research, investing, and athletics without a single canonical bio timeline",
+          "Limited publication/poster attribution in open sources",
+          "Internship outcomes are naturally opaque due to confidentiality",
         ],
-        recommendation: "Add publication links, conference abstracts, or project repositories to strengthen technical attribution.",
+        recommendation: "Add publication or project artifacts to clarify contribution depth beyond role participation.",
       },
     },
     infobox: {
       fullName: "Ella Moore",
-      currentRole: "Undergraduate Student",
+      currentRole: "Biomedical Computation Student Researcher",
       org: "Stanford University",
       education: ["Stanford University (Engineering/Biomedical Computation)"],
-      knownFor: ["Biomedical computation and translational research interests", "Barron Lab GBM-related work", "Insight Partners health-team internship", "Stanford lightweight rowing V8+ competition"],
+      knownFor: ["Barron Lab GBM pathogenesis work", "Insight Partners bio/health internships", "Girls Who Invest + Sarafan ChEM-H programs", "Stanford lightweight rowing (WIRA V8+ champion)"],
       links: [
         { label: "Stanford Profile", url: "https://profiles.stanford.edu/ella-moore" },
         { label: "LinkedIn", url: "https://linkedin.com/in/ellammoore" },

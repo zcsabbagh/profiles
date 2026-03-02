@@ -18,7 +18,7 @@ export default function Infobox({
   links,
 }: InfoboxProps) {
   return (
-    <div className="float-right ml-6 mb-4 w-72 border border-border bg-[#f5f3ee] text-sm font-sans">
+    <div className="w-full mb-6 sm:float-right sm:ml-6 sm:mb-4 sm:w-72 border border-border bg-[#f5f3ee] text-sm font-sans">
       <div className="bg-[#e8e5dd] px-4 py-2.5 text-center">
         <h2 className="font-bold text-base border-0 m-0 p-0">{fullName}</h2>
       </div>

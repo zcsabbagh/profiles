@@ -6,7 +6,7 @@ interface MachineViewProps {
 
 export default function MachineView({ data }: MachineViewProps) {
   return (
-    <div className="machine-content">
+    <div className="machine-content overflow-hidden">
       <div className="section-header">STRUCTURED DATA — JSON-LD (SCHEMA.ORG + EXTENSIONS)</div>
       <p className="text-xs text-muted mb-4 font-sans">
         This data is also embedded in the page &lt;head&gt; as{" "}
@@ -122,14 +122,14 @@ export default function MachineView({ data }: MachineViewProps) {
       {data.knowsAbout?.length > 0 && (
         <Section title="SKILLS & CAPABILITIES">
           {data.knowsAbout.map((skill: any, i: number) => (
-            <div key={i} className="ml-4 mb-1.5 flex items-start gap-2">
+            <div key={i} className="ml-4 mb-1.5 flex items-start gap-2 flex-wrap">
               <span className="font-semibold shrink-0">{skill.skill}</span>
               <span className="text-muted text-xs">({skill.type})</span>
               {skill._confidence != null && (
                 <Confidence value={skill._confidence} />
               )}
               {skill._evidence && (
-                <span className="text-xs text-muted">
+                <span className="text-xs text-muted break-words">
                   — {skill._evidence}
                 </span>
               )}
