@@ -1,12 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-interface MachineViewProps {
-  data: Record<string, any>;
+interface SocialVerification {
+  provider: "linkedin" | "github";
+  providerProfileUrl: string | null;
+  displayName: string | null;
+  verifiedAt: string;
 }
 
-export default function MachineView({ data }: MachineViewProps) {
+interface MachineViewProps {
+  data: Record<string, any>;
+  socialVerifications?: SocialVerification[];
+}
+
+export default function MachineView({ data, socialVerifications = [] }: MachineViewProps) {
   return (
-    <div className="machine-content">
+    <div className="machine-content overflow-hidden">
       <div className="section-header">STRUCTURED DATA — JSON-LD (SCHEMA.ORG + EXTENSIONS)</div>
       <p className="text-xs text-muted mb-4 font-sans">
         This data is also embedded in the page &lt;head&gt; as{" "}
@@ -122,14 +130,14 @@ export default function MachineView({ data }: MachineViewProps) {
       {data.knowsAbout?.length > 0 && (
         <Section title="SKILLS & CAPABILITIES">
           {data.knowsAbout.map((skill: any, i: number) => (
-            <div key={i} className="ml-4 mb-1.5 flex items-start gap-2">
+            <div key={i} className="ml-4 mb-1.5 flex items-start gap-2 flex-wrap">
               <span className="font-semibold shrink-0">{skill.skill}</span>
               <span className="text-muted text-xs">({skill.type})</span>
               {skill._confidence != null && (
                 <Confidence value={skill._confidence} />
               )}
               {skill._evidence && (
-                <span className="text-xs text-muted">
+                <span className="text-xs text-muted break-words">
                   — {skill._evidence}
                 </span>
               )}
@@ -183,6 +191,47 @@ export default function MachineView({ data }: MachineViewProps) {
         </Section>
       )}
 
+      {/* Identity Verification */}
+      {socialVerifications.length > 0 && (
+        <Section title="IDENTITY VERIFICATION">
+          <div className="ml-4 space-y-2">
+            {socialVerifications.map((v) => (
+              <div key={v.provider} className="flex items-center gap-2">
+                <span
+                  className={`inline-block w-2 h-2 rounded-full ${
+                    v.provider === "linkedin" ? "bg-[#0A66C2]" : "bg-[#1f2328]"
+                  }`}
+                />
+                <span className="font-semibold">
+                  {v.provider === "linkedin" ? "LinkedIn" : "GitHub"} Verified
+                </span>
+                {v.displayName && <span className="text-muted">({v.displayName})</span>}
+                {v.providerProfileUrl && (
+                  <a
+                    href={v.providerProfileUrl}
+                    className="text-link hover:underline text-xs break-all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {v.providerProfileUrl}
+                  </a>
+                )}
+                <span className="text-muted text-xs">
+                  verified {new Date(v.verifiedAt).toLocaleDateString()}
+                </span>
+              </div>
+            ))}
+            <div className="mt-2 p-2 bg-[#e8e5dd] rounded text-xs">
+              <span className="font-semibold">Trust boost: </span>
+              Identity verified via {socialVerifications.map((v) =>
+                v.provider === "linkedin" ? "LinkedIn" : "GitHub"
+              ).join(" and ")}
+              . Confidence levels upgraded.
+            </div>
+          </div>
+        </Section>
+      )}
+
       {/* Data Quality */}
       {data._dataQuality && (
         <Section title="DATA QUALITY ASSESSMENT">
@@ -206,24 +255,37 @@ export default function MachineView({ data }: MachineViewProps) {
               <div className="mt-2">
                 <div className="text-muted font-semibold text-xs uppercase tracking-wider mb-1">
                   Confidence Summary
+                  {socialVerifications.length > 0 && (
+                    <span className="ml-2 text-[10px] font-normal normal-case text-[#0A66C2]">
+                      (boosted by identity verification)
+                    </span>
+                  )}
                 </div>
                 {Object.entries(data._dataQuality.overallConfidence).map(
-                  ([key, val]) => (
-                    <div key={key} className="flex gap-2 ml-2">
-                      <span className="w-40 text-muted">{key}:</span>
-                      <span
-                        className={
-                          val === "HIGH"
-                            ? "confidence-high font-semibold"
-                            : val === "MEDIUM"
-                            ? "confidence-medium font-semibold"
-                            : "confidence-low font-semibold"
-                        }
-                      >
-                        {val as string}
-                      </span>
-                    </div>
-                  )
+                  ([key, val]) => {
+                    const boosted = socialVerifications.length > 0
+                      ? boostConfidence(val as string)
+                      : (val as string);
+                    return (
+                      <div key={key} className="flex gap-2 ml-2">
+                        <span className="w-40 text-muted">{key}:</span>
+                        <span
+                          className={
+                            boosted === "HIGH"
+                              ? "confidence-high font-semibold"
+                              : boosted === "MEDIUM"
+                              ? "confidence-medium font-semibold"
+                              : "confidence-low font-semibold"
+                          }
+                        >
+                          {boosted}
+                          {socialVerifications.length > 0 && boosted !== val && (
+                            <span className="text-[10px] font-normal text-muted ml-1">(was {val as string})</span>
+                          )}
+                        </span>
+                      </div>
+                    );
+                  }
                 )}
               </div>
             )}
@@ -316,6 +378,12 @@ function Gaps({ items }: { items: string[] }) {
       ))}
     </div>
   );
+}
+
+function boostConfidence(level: string): string {
+  if (level === "LOW") return "MEDIUM";
+  if (level === "MEDIUM") return "HIGH";
+  return level;
 }
 
 function Field({

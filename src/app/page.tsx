@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { getAllProfiles } from "@/lib/profiles";
+import { getAllProfilesAsync } from "@/lib/profiles";
 import SearchDialog, { SearchTrigger } from "@/components/SearchDialog";
+import CreateProfileForm from "@/components/CreateProfileForm";
 
-export default function Home() {
-  const profiles = getAllProfiles();
+export default async function Home() {
+  const profiles = await getAllProfilesAsync();
   const searchItems = profiles.map((p) => ({ name: p.name, slug: p.slug }));
 
   return (
@@ -49,14 +50,30 @@ export default function Home() {
             </Link>
           ))}
         </div>
+
+        <CreateProfileForm />
       </main>
 
       <footer className="border-t border-border mt-12">
-        <div className="max-w-3xl mx-auto px-6 py-6">
+        <div className="max-w-3xl mx-auto px-6 py-6 flex items-center justify-between">
           <p className="font-sans text-xs text-muted">
             All information sourced from publicly available data. Gaps and
             confidence levels are surfaced transparently in the machine view.
           </p>
+          <div className="flex gap-4 shrink-0">
+            <Link
+              href="/terms"
+              className="font-sans text-xs text-muted hover:text-link transition-colors"
+            >
+              Terms
+            </Link>
+            <Link
+              href="/privacy"
+              className="font-sans text-xs text-muted hover:text-link transition-colors"
+            >
+              Privacy
+            </Link>
+          </div>
         </div>
       </footer>
     </div>

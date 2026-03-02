@@ -1,93 +1,122 @@
-# Project Guide For New AI Agents
+# Agentapedia Profiles — Project Guide
 
-## What This Repo Is
+## What This Is
 
-`profiles` is a Next.js App Router app for Agentapedia profile pages.
+A Next.js 16 App Router app that serves Wikipedia-style professional profiles at `agentapedia.com/{slug}`. Each profile has a **human view** (HTML article + sidebar infobox) and a **machine view** (JSON-LD structured data). Profile owners can claim, edit, and request verification through a Clerk + Supabase runtime layer.
 
-Each profile has:
-- static source data in `src/lib/profiles/data/*`
-- human view + machine view UI
-- optional runtime owner-managed overlays (claim/edit/verifier requests) stored in Supabase
+## Tech Stack
 
-## Core Runtime Features
+| Layer | Tech |
+|---|---|
+| Framework | Next.js 16, React 19, TypeScript |
+| Auth | Clerk (session JWT → Supabase RLS) |
+| Database | Supabase Postgres (RLS-enforced) |
+| Styling | Tailwind CSS 4 |
+| Validation | Zod v4 |
+| Markdown | Marked + Turndown |
+| Scraping | Browserbase (GitHub/LinkedIn connections) |
+| Email | Resend |
+| Testing | Vitest (unit) + Playwright (e2e) |
 
-1. Profile claiming
-- Only unclaimed profiles can be claimed.
-- A user can claim at most one profile.
+## How Auth Works
 
-2. Profile content editing
-- Only claim owner can edit `humanContent`.
+1. **Clerk** manages user sessions and issues JWTs with `role: authenticated`.
+2. The Clerk JWT `sub` claim is the `clerk_user_id` used in Supabase RLS policies.
+3. Server code calls `getSupabaseAccessToken(getToken)` (in `src/lib/clerk-token.ts`) to get a Clerk-issued token, then passes it to `createSupabaseServerClient(accessToken)` (in `src/lib/supabase.ts`).
+4. Supabase RLS policies enforce all authorization — API routes do defensive checks but the DB is the real gatekeeper.
+5. Clerk must be configured with Supabase Third-Party Auth. The JWT template must include `role: authenticated`.
 
-3. Verifier requests
-- Owner can submit verifier requests for selected snippets.
-- Verifier requests are visible only to the owner.
+## How Profiles Work
 
-## Auth + Security Model
+### Static Data (Source of Truth)
 
-- Auth provider: Clerk.
-- Database: Supabase Postgres via Supabase Data API.
-- Security enforcement: Postgres RLS policies (not only app checks).
-- Authenticated DB requests use Clerk session JWT as bearer token.
+Profile content lives in TypeScript files:
+- `src/lib/profiles/data/batch-a.ts` — 8 profiles
+- `src/lib/profiles/data/batch-b.ts` — 4 profiles
+- `src/lib/profiles/data/batch-c.ts` — 14 profiles
 
-Important: Supabase must be configured with Clerk Third-Party Auth and Clerk tokens must include `role: authenticated`.
+All batches are merged in `src/lib/profiles.ts` into a single `profiles` record. Each profile is a `ProfileData` object (defined in `src/lib/profiles/types.ts`):
 
-## Key Files
+```
+ProfileData = {
+  slug, name, currentRole, org, education[],
+  humanContent (HTML), structuredData (JSON-LD),
+  infobox, references[]
+}
+```
 
-- `src/app/[slug]/page.tsx`
-  - profile page SSR; fetches runtime state.
+`getProfileAsync(slug)` tries the Supabase `profiles` table first, falls back to in-memory.
 
-- `src/components/ProfileActions.tsx`
-  - claim/edit/verifier client UI and API calls.
+### Supabase Runtime Tables
 
-- `src/lib/profile-state.ts`
-  - merges static profile with Supabase runtime state.
+These store owner-managed state on top of static profiles:
 
-- `src/lib/supabase.ts`
-  - server-side Supabase client factory.
+| Table | Purpose | RLS |
+|---|---|---|
+| `profile_claims` | One row per claimed profile. Unique slug + unique clerk_user_id. | Public read, owner insert |
+| `profile_contents` | Owner-edited HTML content per slug. FK to claims. | Public read, owner write |
+| `verifier_requests` | Owner-submitted verification tasks for snippets. | Owner-only read/write |
+| `social_verifications` | LinkedIn/GitHub identity verification badges. | Public read, owner write |
+| `social_connections` | Scraped connection data from GitHub/LinkedIn. | Owner-only |
+| `profiles` | Optional canonical registry (DB-first profiles). | Public read only |
 
-- `src/app/api/profiles/[slug]/claim/route.ts`
-- `src/app/api/profiles/[slug]/content/route.ts`
-- `src/app/api/profiles/[slug]/verifiers/route.ts`
-- `src/app/api/profiles/[slug]/state/route.ts`
-  - API surface for runtime profile workflows.
+Migrations are in `supabase/migrations/` (5 files, `202603020001` through `202603020005`).
 
-- `supabase/migrations/202603020001_profile_claiming.sql`
-  - schema + indexes + triggers + RLS policies.
+### Page Rendering Flow
 
-## Data Model (Supabase)
+1. `src/app/[slug]/page.tsx` — SSR entry point
+2. Fetches static profile via `getProfileAsync(slug)`
+3. Fetches runtime state via `getRuntimeProfileState(slug, userId, accessToken)` from `src/lib/profile-state.ts` — merges claims, edited content, verifications, connections
+4. Renders: `Infobox` (sidebar) + `humanContent` (article) + `ViewToggle` (human/machine switch) + `ProfileActions` (owner UI)
 
-- `profile_claims`
-  - one row per claimed profile
-  - unique `slug`, unique `clerk_user_id`
+### API Routes
 
-- `profile_contents`
-  - owner-edited HTML content per slug
-  - unique `slug`, references `profile_claims.slug`
+All under `src/app/api/profiles/[slug]/`:
 
-- `verifier_requests`
-  - owner-submitted verification tasks tied to slug/snippet
+| Route | Method | Purpose |
+|---|---|---|
+| `/state` | GET | Fetch runtime state (claims, content, verifications) |
+| `/claim` | POST | Claim a profile (1 per user, 1 claim per profile) |
+| `/content` | PUT | Update HTML content (owner only) |
+| `/verifiers` | POST | Submit verifier request for a snippet |
+| `/verify/github` | POST | GitHub identity verification |
+| `/verify/linkedin` | POST | LinkedIn identity verification |
+| `/machine` | GET | Machine view structured data |
 
-## Behavioral Notes
+## Key Navigation
 
-- The canonical profile list/slugs comes from static files; database does not define valid slugs.
-- API routes call `assertProfileExists(slug)` before DB writes.
-- `state` API and SSR both read runtime state through `getRuntimeProfileState`.
-- Runtime DB failures should not silently fallback for write operations; they should return API errors.
+| What you need | Where to look |
+|---|---|
+| Profile page rendering | `src/app/[slug]/page.tsx` |
+| Profile types/interfaces | `src/lib/profiles/types.ts` |
+| All profile data | `src/lib/profiles/data/batch-{a,b,c}.ts` |
+| Profile access functions | `src/lib/profiles.ts` |
+| Runtime state merging | `src/lib/profile-state.ts` |
+| Owner UI (claim/edit/verify) | `src/components/ProfileActions.tsx` |
+| Sidebar component | `src/components/Infobox.tsx` |
+| Machine view component | `src/components/MachineView.tsx` |
+| Supabase client factory | `src/lib/supabase.ts` |
+| Clerk token helper | `src/lib/clerk-token.ts` |
+| DB schema + RLS policies | `supabase/migrations/` |
+| Creating new profiles | `NEW_PROFILE.md` |
 
-## Env Vars Expected
+## Commands
+
+- `npm run dev` — local development
+- `npm run build` — production build
+
+## Env Vars
 
 - `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
 - `CLERK_SECRET_KEY`
 - `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (preferred) or `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (or `NEXT_PUBLIC_SUPABASE_ANON_KEY`)
+- `CLERK_SUPABASE_JWT_TEMPLATE` (optional, defaults to trying `undefined` then `"supabase"`)
 
-## Commands
+## Rules
 
-- `npm run dev`
-- `npm run build`
-
-## If You Change Security/Auth
-
-1. Keep RLS and API logic consistent (DB should enforce owner constraints).
-2. Re-check that verifier requests are not leaked to non-owners.
-3. Validate claim constraints still hold under race conditions.
+- The canonical profile list comes from static files. The database does not define valid slugs — `assertProfileExists(slug)` checks the in-memory registry before any DB write.
+- RLS is the primary security enforcement. API-level checks are defensive only.
+- Verifier requests must never leak to non-owners.
+- Runtime DB failures must not silently succeed for writes — return API errors.
+- Profile content max: 120,000 chars (humanContent), 200,000 chars (DB profiles table).
