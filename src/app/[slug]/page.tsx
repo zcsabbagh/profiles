@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Script from "next/script";
+import { headers } from "next/headers";
 import { auth } from "@clerk/nextjs/server";
 import { getProfile } from "@/lib/profiles";
 import ViewToggle from "@/components/ViewToggle";
@@ -24,17 +25,30 @@ export async function generateMetadata({
   return {
     title: `${profile.name} — Agentapedia`,
     description: `Professional profile of ${profile.name}. ${profile.currentRole}${profile.org ? ` at ${profile.org}` : ""}.`,
+    alternates: {
+      canonical: `https://www.agentapedia.com/${slug}`,
+    },
   };
 }
 
 export default async function ProfilePage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ view?: string }>;
 }) {
   const { slug } = await params;
+  const { view } = await searchParams;
   const profile = getProfile(slug);
   if (!profile) notFound();
+  const h = await headers();
+  const userAgent = (h.get("user-agent") ?? "").toLowerCase();
+  const isCrawler =
+    /\bbot\b|\bcrawl\b|\bspider\b|gptbot|claudebot|anthropic-ai|perplexitybot|ccbot|facebookexternalhit|googlebot|bingbot|duckassistbot|applebot/.test(
+      userAgent,
+    );
+  const forceMachineView = view === "machine" || isCrawler;
   const { userId, getToken } = await auth();
   const accessToken = userId ? await getSupabaseAccessToken(getToken) : null;
   const runtimeState = await getRuntimeProfileState(slug, userId ?? null, accessToken);
@@ -77,6 +91,14 @@ export default async function ProfilePage({
 
   const machineView = <MachineView data={profile.structuredData} />;
 
+  const content = forceMachineView ? (
+    <div className="max-w-4xl mx-auto px-6 py-6">
+      <MachineView data={profile.structuredData} />
+    </div>
+  ) : (
+    <ViewToggle humanContent={humanView} machineContent={machineView} />
+  );
+
   return (
     <>
       <Script
@@ -106,7 +128,7 @@ export default async function ProfilePage({
           </p>
         </div>
 
-        <ViewToggle humanContent={humanView} machineContent={machineView} />
+        {content}
 
         <footer className="border-t border-border mt-8">
           <div className="max-w-4xl mx-auto px-6 py-4">
