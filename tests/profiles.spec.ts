@@ -356,6 +356,83 @@ test.describe("API routes", () => {
   });
 });
 
+// ─── Desktop Layout ─────────────────────────────────────────────────────────
+
+test.describe("Desktop layout", () => {
+  test.use({ viewport: { width: 1440, height: 900 } });
+
+  test("landing page — no horizontal overflow at 1440px", async ({ page }) => {
+    await page.goto("/");
+    const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
+    expect(bodyWidth).toBeLessThanOrEqual(1440);
+  });
+
+  test("profile page — infobox floats right on desktop", async ({ page }) => {
+    await page.goto("/zane_sabbagh");
+    const infobox = page.locator(".bg-\\[\\#f5f3ee\\]").first();
+    const articleText = page.locator("h2:has-text('Early life')");
+    const infoboxBox = await infobox.boundingBox();
+    const articleBox = await articleText.boundingBox();
+    // Infobox should be to the right of the article text
+    expect(infoboxBox!.x).toBeGreaterThan(articleBox!.x);
+    // Infobox should be ~288px wide (w-72), not full width
+    expect(infoboxBox!.width).toBeLessThan(350);
+  });
+
+  test("profile page — no horizontal overflow at 1440px", async ({ page }) => {
+    await page.goto("/zane_sabbagh");
+    const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
+    expect(bodyWidth).toBeLessThanOrEqual(1440);
+  });
+
+  test("machine view — no horizontal overflow at 1440px", async ({ page }) => {
+    await page.goto("/zane_sabbagh");
+    await page.locator("button:has-text('MACHINE')").click();
+    await page.waitForTimeout(200);
+    const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
+    expect(bodyWidth).toBeLessThanOrEqual(1440);
+  });
+
+  test("content is centered with max-width", async ({ page }) => {
+    await page.goto("/zane_sabbagh");
+    // The max-w-4xl container should be centered, not spanning full 1440px
+    const container = page.locator("h1").locator("..");
+    const box = await container.boundingBox();
+    // max-w-4xl = 896px, container should be narrower than viewport
+    expect(box!.width).toBeLessThan(1440);
+    // Should have left margin (centered)
+    expect(box!.x).toBeGreaterThan(100);
+  });
+});
+
+// ─── Tablet Layout ──────────────────────────────────────────────────────────
+
+test.describe("Tablet layout (768px)", () => {
+  test.use({ viewport: { width: 768, height: 1024 } });
+
+  test("infobox floats right at tablet width", async ({ page }) => {
+    await page.goto("/zane_sabbagh");
+    const infobox = page.locator(".bg-\\[\\#f5f3ee\\]").first();
+    const infoboxBox = await infobox.boundingBox();
+    // At 768px (above sm:640px breakpoint), infobox should float right (~288px)
+    expect(infoboxBox!.width).toBeLessThan(350);
+  });
+
+  test("no horizontal overflow at 768px", async ({ page }) => {
+    await page.goto("/zane_sabbagh");
+    const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
+    expect(bodyWidth).toBeLessThanOrEqual(768);
+  });
+
+  test("machine view — no horizontal overflow at 768px", async ({ page }) => {
+    await page.goto("/zane_sabbagh");
+    await page.locator("button:has-text('MACHINE')").click();
+    await page.waitForTimeout(200);
+    const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
+    expect(bodyWidth).toBeLessThanOrEqual(768);
+  });
+});
+
 // ─── SEO & Metadata ─────────────────────────────────────────────────────────
 
 test.describe("SEO and metadata", () => {

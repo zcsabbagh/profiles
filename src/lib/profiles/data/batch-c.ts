@@ -1583,4 +1583,95 @@ export const profileBatchC: ProfileRecord = {
     ],
   },
 
+  // ===========================================================================
+  // 27. Eric Zhou
+  // ===========================================================================
+  eric_zhou: {
+    slug: "eric_zhou",
+    name: "Eric Zhou",
+    currentRole: "Partner",
+    org: "Andreessen Horowitz",
+    education: [
+      { institution: "Stanford University", degree: "BS/MS", field: "Computer Science" },
+    ],
+    humanContent: `
+<p><strong>Eric Zhou</strong> is a partner at Andreessen Horowitz (a16z) focused on application-layer generative AI companies. The strongest public source is his official a16z author bio, which also describes his prior operating and founder background.</p>
+
+<h2>Current role at a16z</h2>
+<p>a16z lists Zhou as a partner on its investing team and attributes multiple published pieces and investment announcements to him, including work on enterprise AI workflows, agentic software, and category-specific application opportunities. These first-party publications provide high-confidence evidence of active investing coverage rather than a static directory listing.</p>
+
+<h2>Operating and founder trajectory</h2>
+<p>According to a16z&apos;s own biography, Zhou previously worked as a software engineer at Warp and founded two companies before joining the firm. The same bio states that one of those companies was acquired by Beacons.ai. Additional external reporting and startup-ecosystem records reference Zhou and cofounder Usman Hanif in connection with Portals and creator-economy product work, broadly consistent with the founder history in the a16z profile.</p>
+
+<h2>Stanford linkage</h2>
+<p>a16z identifies Zhou as a Stanford BS/MS Computer Science graduate. Independent ecosystem references also tie him to Stanford entrepreneurship channels, including BASES archival entries naming Portals (Usman Hanif and Eric Zhou) and business-journal coverage describing the two as Stanford computer science classmates.</p>
+
+<h2>Research and disambiguation notes</h2>
+<p>This is a high-disambiguation name. Many unrelated &quot;Eric Zhou&quot; identities appear across academia, design, and sports. The profile therefore anchors primarily to a16z first-party sources and Stanford/startup references that align on cofounder names, company history, and timeline. Unrelated records are excluded even when they are richer in detail.</p>
+
+<h2>Verification scope</h2>
+<p>Confidence is high for current role and firm coverage at a16z, and high for Stanford affiliation as reported by a16z. Confidence is medium for exhaustive chronology of pre-a16z ventures because some external confirmation is partially paywalled or secondary. The profile intentionally avoids over-claiming deal-level ownership or private employment details not publicly documented in primary sources.</p>
+`,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Eric Zhou",
+      sameAs: [
+        "https://a16z.com/author/eric-zhou/",
+      ],
+      jobTitle: "Partner",
+      worksFor: { "@type": "Organization", name: "Andreessen Horowitz", url: "https://a16z.com/" },
+      knowsAbout: [
+        { skill: "Generative AI Applications", type: "domain", _confidence: 0.9, _evidence: "a16z author bio and published investing theses" },
+        { skill: "Enterprise AI", type: "domain", _confidence: 0.85, _evidence: "a16z enterprise newsletter essays and deal announcements" },
+        { skill: "Founder / Product Building", type: "domain", _confidence: 0.8, _evidence: "a16z biography + Stanford startup references (Portals)" },
+      ],
+      _dataQuality: {
+        sourcesConsulted: 13,
+        sourceList: ["a16z author bio", "a16z articles and investment announcements", "BASES archive", "San Francisco Business Times profile", "Warp-adjacent references", "creator-economy acquisition reporting", "disambiguation search artifacts"],
+        lastUpdated: "2026-03",
+        overallConfidence: {
+          identity: "HIGH",
+          education: "HIGH",
+          careerTimeline: "MEDIUM",
+          technicalCapabilities: "MEDIUM",
+          currentWorkDetail: "HIGH",
+        },
+        gaps: [
+          "Canonical public timeline for exact transition dates into/out of Warp and founding roles",
+          "Primary public source for complete acquisition terms/history of prior startup",
+          "Granular deal-attribution boundaries inside a16z team coverage",
+        ],
+      },
+    },
+    infobox: {
+      fullName: "Eric Zhou",
+      currentRole: "Partner",
+      org: "Andreessen Horowitz",
+      education: ["Stanford University (BS/MS Computer Science)"],
+      knownFor: [
+        "Partner at a16z focused on application-layer generative AI",
+        "Former software engineer at Warp",
+        "Founder background in creator/community software",
+      ],
+      links: [
+        { label: "a16z Profile", url: "https://a16z.com/author/eric-zhou/" },
+      ],
+    },
+    references: [
+      { title: "Eric Zhou — a16z author profile", url: "https://a16z.com/author/eric-zhou/" },
+      { title: "a16z — From Dorm Rooms to Boardrooms (Eric Zhou co-author)", url: "https://a16z.com/from-dorm-rooms-to-boardrooms-why-now-is-a-special-time-for-young-founders/" },
+      { title: "a16z — The Rise of Computer Use and Agentic Coworkers (Eric Zhou co-author)", url: "https://a16z.com/the-rise-of-computer-use-and-agentic-coworkers/" },
+      { title: "a16z Enterprise Newsletter — Next-Gen ERPs (Eric Zhou co-author)", url: "https://a16z.com/newsletter/the-opportunity-for-next-gen-erps/" },
+      { title: "a16z — Investing in Toma (Eric Zhou co-author)", url: "https://a16z.com/announcement/investing-in-toma/" },
+      { title: "a16z — Investing in Cluely (Eric Zhou co-author)", url: "https://a16z.com/announcement/investing-in-cluely/" },
+      { title: "BASES archive — Portals (Usman Hanif and Eric Zhou)", url: "http://bases.stanford.edu/bloghome" },
+      { title: "Bay Area Inno Under 25 — Eric Zhou & Usman Hanif (Portals)", url: "https://www.bizjournals.com/sanfrancisco/inno/stories/inno-insights/2021/09/15/eric-zhou-and-usman-hanif-co-founders-portals.html" },
+      { title: "The Information — Beacons in talks to acquire Portals (mentions Eric Zhou)", url: "https://www.theinformation.com/articles/link-in-bio-startup-beacons-in-talks-to-buy-portals-app-tiktok-reveals-shopping-ambitions" },
+      { title: "Zach Lloyd post — Stanford students Eric Zhou and Usman Hanif writing on Warp", url: "https://www.linkedin.com/posts/zachlloyd_why-you-should-join-warp-activity-6945432012488945664-VjqP" },
+      { title: "Prospect Blog — Why you should join Anrok (By Eric Zhou and Usman Hanif)", url: "https://www.joinprospect.com/blog/anrok-deep-dive" },
+      { title: "a16z Enterprise team page", url: "https://a16z.com/enterprise/" },
+    ],
+  },
+
 };
