@@ -1,8 +1,10 @@
 import { marked } from "marked";
+import { sanitizeUserHtml } from "@/lib/sanitize";
 
 export function renderMarkdownToHtml(markdown: string): string {
   const rendered = marked.parse(markdown, { async: false });
-  return typeof rendered === "string" ? rendered : String(rendered);
+  const html = typeof rendered === "string" ? rendered : String(rendered);
+  return sanitizeUserHtml(html);
 }
 
 export function extractReferencesFromMarkdown(markdown: string): Array<{ title: string; url: string }> {

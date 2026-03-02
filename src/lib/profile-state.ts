@@ -4,7 +4,7 @@ import { renderMarkdownToHtml, extractReferencesFromMarkdown } from "@/lib/markd
 import { toEditableMarkdown } from "@/lib/markdown-server";
 
 export interface RuntimeProfileState {
-  claimedByUserId: string | null;
+  isClaimed: boolean;
   claimedAt: string | null;
   isOwner: boolean;
   canClaim: boolean;
@@ -111,7 +111,6 @@ export async function getRuntimeProfileState(
     connectionCount = { linkedin: linkedinCount ?? 0, github: githubCount ?? 0 };
   }
 
-  const claimedByUserId = claim?.clerk_user_id ?? null;
   const isOwner = Boolean(effectiveUserId && claim?.clerk_user_id === effectiveUserId);
   const userClaimedSlug = userClaim?.slug ?? null;
   const rawContent = content?.html_content ?? baseProfile.humanContent;
@@ -124,7 +123,7 @@ export async function getRuntimeProfileState(
   );
 
   return {
-    claimedByUserId,
+    isClaimed: Boolean(claim),
     claimedAt: claim?.claimed_at ?? null,
     isOwner,
     canClaim,

@@ -6,6 +6,9 @@ import { createSupabaseServerClient } from "@/lib/supabase";
 import { getSupabaseAccessToken } from "@/lib/clerk-token";
 import { sendVerifierRequestEmail } from "@/lib/resend";
 
+const RATE_LIMIT_WINDOW_HOURS = 1;
+const MAX_REQUESTS_PER_WINDOW = 5;
+
 const createVerifierRequestSchema = z.object({
   snippet: z.string().trim().min(3).max(1000),
   sectionLabel: z.string().trim().max(200).optional(),
@@ -54,6 +57,22 @@ export async function POST(
     return NextResponse.json({ error: "Invalid verifier request payload" }, { status: 400 });
   }
 
+  // Rate limit: max requests per slug per time window
+  const windowStart = new Date(
+    Date.now() - RATE_LIMIT_WINDOW_HOURS * 60 * 60 * 1000
+  ).toISOString();
+  const { count: recentCount } = await supabase
+    .from("verifier_requests")
+    .select("*", { count: "exact", head: true })
+    .eq("slug", slug)
+    .gte("created_at", windowStart);
+  if ((recentCount ?? 0) >= MAX_REQUESTS_PER_WINDOW) {
+    return NextResponse.json(
+      { error: "Too many verifier requests. Please try again later." },
+      { status: 429 }
+    );
+  }
+
   const { error } = await supabase.from("verifier_requests").insert({
     slug,
     snippet: parsed.data.snippet,
@@ -72,8 +91,12 @@ export async function POST(
     return NextResponse.json({ error: "Failed to submit verifier request" }, { status: 500 });
   }
 
+  let emailWarning: string | null = null;
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? new URL(request.url).origin;
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
+    if (!baseUrl) {
+      throw new Error("NEXT_PUBLIC_APP_URL is not configured");
+    }
     const profileUrl = `${baseUrl.replace(/\/$/, "")}/${slug}`;
 
     await sendVerifierRequestEmail({
@@ -85,9 +108,13 @@ export async function POST(
       profileUrl,
     });
   } catch (emailError) {
-    console.error("Failed to send verifier email", emailError);
+    console.error(
+      "Failed to send verifier email:",
+      emailError instanceof Error ? emailError.message : "Unknown error"
+    );
+    emailWarning = "Verifier request saved but email notification may not have been sent.";
   }
 
   const updatedState = await getRuntimeProfileState(slug, userId, accessToken);
-  return NextResponse.json(updatedState);
+  return NextResponse.json({ ...updatedState, emailWarning });
 }

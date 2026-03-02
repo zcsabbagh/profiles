@@ -3,7 +3,7 @@ import type { RuntimeProfileState } from "@/lib/profile-state";
 
 function makeState(overrides: Partial<RuntimeProfileState> = {}): RuntimeProfileState {
   return {
-    claimedByUserId: null,
+    isClaimed: false,
     claimedAt: null,
     isOwner: false,
     canClaim: true,
@@ -50,12 +50,12 @@ describe("RuntimeProfileState shape", () => {
 
 describe("canClaim logic", () => {
   it("allows claim when unclaimed and user has no other claim", () => {
-    const state = makeState({ canClaim: true, claimedByUserId: null, userClaimedSlug: null });
+    const state = makeState({ canClaim: true, isClaimed: false, userClaimedSlug: null });
     expect(state.canClaim).toBe(true);
   });
 
   it("disallows claim when profile is claimed by another user", () => {
-    const state = makeState({ canClaim: false, claimedByUserId: "other-user" });
+    const state = makeState({ canClaim: false, isClaimed: true });
     expect(state.canClaim).toBe(false);
   });
 

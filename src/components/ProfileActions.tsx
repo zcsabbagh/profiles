@@ -52,10 +52,10 @@ export default function ProfileActions({
   const selectionRangeRef = useRef<Range | null>(null);
 
   const claimStatusText = useMemo(() => {
-    if (!state.claimedByUserId) return "Unclaimed";
+    if (!state.isClaimed) return "Unclaimed";
     if (state.isOwner) return "Claimed by you";
     return "Claimed";
-  }, [state.claimedByUserId, state.isOwner]);
+  }, [state.isClaimed, state.isOwner]);
 
   const hideClaimPanel = Boolean(
     isSignedIn &&

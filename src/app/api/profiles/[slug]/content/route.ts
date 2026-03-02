@@ -4,6 +4,7 @@ import { z } from "zod";
 import { assertProfileExists, getRuntimeProfileState } from "@/lib/profile-state";
 import { createSupabaseServerClient } from "@/lib/supabase";
 import { getSupabaseAccessToken } from "@/lib/clerk-token";
+import { sanitizeUserHtml } from "@/lib/sanitize";
 
 const updateContentSchema = z.object({
   humanContent: z.string().min(1).max(120000),
@@ -52,7 +53,7 @@ export async function PUT(
   const { error } = await supabase.from("profile_contents").upsert(
     {
       slug,
-      html_content: parsed.data.humanContent,
+      html_content: sanitizeUserHtml(parsed.data.humanContent),
       updated_by: userId,
     },
     { onConflict: "slug" }

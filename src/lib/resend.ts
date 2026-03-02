@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { escapeHtml } from "@/lib/sanitize";
 
 function getResendClient(): Resend | null {
   const apiKey = process.env.RESEND_API_KEY;
@@ -24,12 +25,12 @@ export async function sendVerifierRequestEmail(params: {
     to: params.to,
     subject: `Verification requested for ${params.slug.replaceAll("_", " ")}`,
     html: `
-      <p>Hi ${params.verifierName},</p>
+      <p>Hi ${escapeHtml(params.verifierName)},</p>
       <p>You were requested as a verifier for content on Agentapedia.</p>
-      ${params.sectionLabel ? `<p><strong>Section:</strong> ${params.sectionLabel}</p>` : ""}
+      ${params.sectionLabel ? `<p><strong>Section:</strong> ${escapeHtml(params.sectionLabel)}</p>` : ""}
       <p><strong>Snippet:</strong></p>
-      <blockquote>${params.snippet}</blockquote>
-      <p>Profile URL: <a href="${params.profileUrl}">${params.profileUrl}</a></p>
+      <blockquote>${escapeHtml(params.snippet)}</blockquote>
+      <p>Profile URL: <a href="${escapeHtml(params.profileUrl)}">${escapeHtml(params.profileUrl)}</a></p>
       <p>Please reply to this email with confirmation or corrections.</p>
     `,
   });
